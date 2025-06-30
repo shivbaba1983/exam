@@ -1,0 +1,23 @@
+[
+  {
+    "id": "q1",
+    "type": "yesno",
+    "question": "Are you satisfied with today's assistance?"
+  },
+  {
+    "id": "q2",
+    "type": "dropdown",
+    "question": "Which topic did you find most helpful?",
+    "options": ["React", ".NET", "Azure", "CI/CD"]
+  },
+  {
+    "id": "q3",
+    "type": "dragdrop",
+    "question": "Match each concept to its description:",
+    "pairs": [
+      { "left": "RBAC", "right": "Role Based Access Control" },
+      { "left": "CI/CD", "right": "Continuous Integration / Continuous Deployment" },
+      { "left": "NLP", "right": "Natural Language Processing" }
+    ]
+  }
+]
