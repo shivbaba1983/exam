@@ -23,7 +23,7 @@ type Question = YesNoQ | DropdownQ | DragDropQ;
 
 type Answers = Record<string, string | DragPair[]>;
 
-const QuestionForm: React.FC = () => {
+const QuestionForm = () => {
   const [questions, setQuestions] = useState<Question[]>([]);
   const [answers, setAnswers] = useState<Answers>({});
 

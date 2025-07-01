@@ -1,17 +1,24 @@
-.complex-main-route-section {
-    .tab-list {
-       // overflow: hidden;
-        .cms-meganav-section{
-            display: inline-flex;
-            list-style-type: none;
-            .meganav-sublist{
-                margin-right: 10px;
-            }
-        }
-    }
+.cms-container {
+  padding: 16px;
+  font-family: Arial, sans-serif;
+}
 
-    .link-button {
-        display: inline-block;
-        margin-right: 10px;
-    }
+.nav-bar {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.nav-button {
+  padding: 10px 20px;
+  background-color: #0066cc;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: #004999;
+  }
 }
