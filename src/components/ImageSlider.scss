@@ -1,38 +1,38 @@
-@import './SectionedGallery.scss'; // reuse switch styles (optional)
+// @import './SectionedGallery.scss'; // reuse switch styles (optional)
 
-.basic-slider {
-  padding: 1.5rem 1rem;
+// .basic-slider {
+//   padding: 1.5rem 1rem;
 
-  // reuse .slider-toggle styles from SectionedGallery
+//   // reuse .slider-toggle styles from SectionedGallery
 
-  .slider-header {
-    text-align: center;
-    margin: 0 0 1rem;
+//   .slider-header {
+//     text-align: center;
+//     margin: 0 0 1rem;
 
-    .counter {
-      font-size: 1.25rem;
-      font-weight: 600;
-      margin: 0;
-    }
+//     .counter {
+//       font-size: 1.25rem;
+//       font-weight: 600;
+//       margin: 0;
+//     }
 
-    .image-name {
-      font-size: 0.9rem;
-      color: #555;
-      margin: 0.25rem 0 0;
-      word-break: break-all;
-    }
-  }
+//     .image-name {
+//       font-size: 0.9rem;
+//       color: #555;
+//       margin: 0.25rem 0 0;
+//       word-break: break-all;
+//     }
+//   }
 
-  .image-slider {
-    max-width: 900px;
-    margin-inline: auto;
+//   .image-slider {
+//     max-width: 900px;
+//     margin-inline: auto;
 
-    img {
-      width: 100%;
-      height: auto;
-      border-radius: 0.5rem;
-      object-fit: cover;
-      pointer-events: none; // Swiper Zoom handles gestures
-    }
-  }
-}
+//     img {
+//       width: 100%;
+//       height: auto;
+//       border-radius: 0.5rem;
+//       object-fit: cover;
+//       pointer-events: none; // Swiper Zoom handles gestures
+//     }
+//   }
+// }
