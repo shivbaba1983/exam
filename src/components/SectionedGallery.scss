@@ -1,6 +1,63 @@
 .sectioned-gallery {
   padding: 2rem 1rem;
 
+  .slider-toggle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+
+    .toggle-label {
+      font-weight: 500;
+    }
+
+    .switch {
+      position: relative;
+      display: inline-block;
+      width: 50px;
+      height: 26px;
+
+      input {
+        opacity: 0;
+        width: 0;
+        height: 0;
+      }
+
+      .slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #ccc;
+        transition: 0.4s;
+        border-radius: 26px;
+
+        &::before {
+          position: absolute;
+          content: "";
+          height: 20px;
+          width: 20px;
+          left: 3px;
+          bottom: 3px;
+          background-color: white;
+          transition: 0.4s;
+          border-radius: 50%;
+        }
+      }
+
+      input:checked + .slider {
+        background-color: #4caf50;
+      }
+
+      input:checked + .slider::before {
+        transform: translateX(24px);
+      }
+    }
+  }
+
   .gallery-section {
     margin-bottom: 3rem;
 
@@ -8,8 +65,23 @@
       text-transform: capitalize;
       font-size: 1.5rem;
       font-weight: 600;
-      margin: 0 0 1rem;
+      margin: 0 0 0.5rem;
       text-align: center;
+
+      .counter {
+        font-size: 1rem;
+        font-weight: 400;
+        margin-left: 0.5rem;
+        color: #666;
+      }
+    }
+
+    .image-name {
+      text-align: center;
+      margin-bottom: 0.75rem;
+      font-size: 0.9rem;
+      color: #555;
+      word-break: break-all;
     }
 
     .section-swiper {
@@ -21,6 +93,7 @@
         height: auto;
         border-radius: 0.5rem;
         object-fit: cover;
+        pointer-events: none; // Swiper Zoom handles gestures
       }
     }
   }
