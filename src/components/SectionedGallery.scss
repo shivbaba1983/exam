@@ -1,0 +1,27 @@
+.sectioned-gallery {
+  padding: 2rem 1rem;
+
+  .gallery-section {
+    margin-bottom: 3rem;
+
+    .section-title {
+      text-transform: capitalize;
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin: 0 0 1rem;
+      text-align: center;
+    }
+
+    .section-swiper {
+      width: min(960px, 100%);
+      margin-inline: auto;
+
+      img {
+        width: 100%;
+        height: auto;
+        border-radius: 0.5rem;
+        object-fit: cover;
+      }
+    }
+  }
+}
