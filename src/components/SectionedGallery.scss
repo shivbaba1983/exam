@@ -1,33 +1,154 @@
-.section-swiper {
-  position: relative;
+.sectioned-gallery {
+  padding: 1rem;
 
-  // Default margin below image to make space for pagination
-  margin-bottom: 2.5rem;
+  .gallery-section {
+    margin-bottom: 3rem;
 
-  img {
-    width: 100%;
-    height: auto;
-    border-radius: 0.5rem;
-    object-fit: cover;
-    pointer-events: none; // for zoom gesture support
-  }
+    .section-title {
+      display: flex;
+      justify-content: space-between;
+      font-weight: 700;
+      font-size: 1.25rem;
+      margin-bottom: 0.5rem;
+      text-transform: capitalize;
 
-  // Swiper pagination container
-  .swiper-pagination {
-    bottom: 0 !important;
-    margin-top: 0.5rem;
-
-    // On mobile, adjust pagination style
-    @media (max-width: 600px) {
-      bottom: -1.5rem !important;  // move dots below image
-      width: 100%;
-      text-align: center;
-
-      .swiper-pagination-bullet {
-        margin: 0 3px;
-        width: 8px;
-        height: 8px;
+      .counter {
+        font-weight: 400;
+        font-size: 1rem;
+        color: #666;
       }
     }
+
+    .image-name {
+      font-size: 0.875rem;
+      color: #999;
+      margin-bottom: 0.75rem;
+      text-align: center;
+      font-style: italic;
+    }
+
+    // Swiper container adjustments
+    .section-swiper {
+      position: relative;
+      padding-bottom: 40px;  // make space for pagination dots below images
+      overflow: visible; // ensure dots visible outside image container if needed
+
+      .swiper-slide {
+        display: flex;
+        justify-content: center;
+
+        img {
+          max-width: 100%;
+          border-radius: 8px;
+          user-select: none;
+          pointer-events: none;
+          object-fit: contain;
+        }
+      }
+
+      // Position pagination dots below images
+      .swiper-pagination {
+        position: absolute !important;  // override default absolute if needed
+        bottom: 10px !important;
+        left: 0;
+        width: 100%;
+        display: flex !important;
+        justify-content: center !important;
+        gap: 12px;
+        z-index: 10;
+
+        .swiper-pagination-bullet {
+          width: 12px !important;
+          height: 12px !important;
+          background: #ccc !important;
+          opacity: 1 !important;
+          transition: background-color 0.3s ease;
+
+          &-active {
+            background: #007bff !important;
+          }
+        }
+      }
+    }
+  }
+
+  // Responsive tweaks for small screens
+  @media (max-width: 480px) {
+    .gallery-section {
+      .section-swiper {
+        padding-bottom: 30px;
+
+        .swiper-pagination {
+          bottom: 5px !important;
+
+          .swiper-pagination-bullet {
+            width: 10px !important;
+            height: 10px !important;
+            gap: 8px;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Toggle switch styling if you want it in the same file
+.slider-toggle {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.5rem;
+
+  .switch {
+    position: relative;
+    display: inline-block;
+    width: 46px;
+    height: 24px;
+    margin-right: 0.5rem;
+
+    input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+
+    .slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #ccc;
+      transition: 0.4s;
+      border-radius: 24px;
+
+      &.round {
+        border-radius: 24px;
+      }
+
+      &::before {
+        position: absolute;
+        content: "";
+        height: 18px;
+        width: 18px;
+        left: 3px;
+        bottom: 3px;
+        background-color: white;
+        transition: 0.4s;
+        border-radius: 50%;
+      }
+    }
+
+    input:checked + .slider {
+      background-color: #007bff;
+    }
+
+    input:checked + .slider::before {
+      transform: translateX(22px);
+    }
+  }
+
+  .toggle-label {
+    font-weight: 600;
   }
 }
