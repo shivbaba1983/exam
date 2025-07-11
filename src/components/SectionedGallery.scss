@@ -2,34 +2,57 @@
   padding: 1rem;
 
   .gallery-section {
-    margin-bottom: 3rem;
-    position: relative; // to position nav arrows
+    margin-bottom: 2rem;
+    position: relative;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    padding: 1rem;
 
-    /* title + counter */
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      padding: 0.25rem 0.5rem;
+      border-radius: 4px;
+
+      &:hover {
+        background-color: #f5f5f5;
+      }
+
+      .expand-btn {
+        font-size: 1.5rem;
+        font-weight: bold;
+        border: none;
+        background: transparent;
+        color: #007bff;
+        pointer-events: none;
+      }
+    }
+
     .section-title {
       display: flex;
       justify-content: space-between;
-      font: 700 1.25rem/1 'inherit';
-      margin-bottom: 0.5rem;
+      font-weight: 700;
+      font-size: 1.25rem;
       text-transform: capitalize;
 
       .counter {
         font-size: 1rem;
         font-weight: 400;
         color: #666;
+        margin-left: 1rem;
       }
     }
 
-    /* filename under image */
     .image-name {
       text-align: center;
-      margin-bottom: 0.75rem;
+      margin: 0.75rem 0;
       font-size: 0.875rem;
       font-style: italic;
       color: #999;
     }
 
-    /* ◀ / ▶ buttons */
     .nav-btn {
       position: absolute;
       top: 50%;
@@ -58,13 +81,17 @@
       }
     }
 
-    .prev { left: 8px; }
-    .next { right: 8px; }
+    .prev {
+      left: 8px;
+    }
 
-    /* swiper container */
+    .next {
+      right: 8px;
+    }
+
     .section-swiper {
       position: relative;
-      padding-bottom: 40px; // room for dots
+      padding-bottom: 40px;
       overflow: visible;
 
       .swiper-slide {
@@ -72,7 +99,9 @@
         justify-content: center;
 
         img {
-          max-width: 100%;
+          width: 100%;
+          height: auto;
+          max-height: 70vh;
           object-fit: contain;
           border-radius: 8px;
           pointer-events: none;
@@ -80,7 +109,6 @@
         }
       }
 
-      /* dots */
       .swiper-pagination {
         position: absolute !important;
         bottom: 10px !important;
@@ -97,30 +125,58 @@
           opacity: 1 !important;
           transition: background-color 0.3s ease;
 
-          &-active { background: #007bff !important; }
+          &-active {
+            background: #007bff !important;
+          }
         }
       }
     }
   }
 
-  /* small screens */
   @media (max-width: 480px) {
     .gallery-section {
-      .section-swiper { padding-bottom: 30px; }
+      padding: 0.5rem;
+
+      .section-title {
+        font-size: 1rem;
+      }
 
       .nav-btn {
         width: 34px;
         height: 34px;
 
-        svg { width: 16px; height: 16px; }
+        svg {
+          width: 16px;
+          height: 16px;
+        }
       }
 
-      .swiper-pagination { bottom: 6px !important; }
+      .image-name {
+        font-size: 0.75rem;
+      }
+
+      .section-swiper {
+        padding-bottom: 30px;
+
+        .swiper-slide img {
+          width: 100%;
+          height: auto;
+          max-height: 60vh;
+        }
+
+        .swiper-pagination {
+          bottom: 6px !important;
+
+          .swiper-pagination-bullet {
+            width: 10px !important;
+            height: 10px !important;
+          }
+        }
+      }
     }
   }
 }
 
-/* autoplay toggle */
 .slider-toggle {
   display: flex;
   align-items: center;
@@ -132,7 +188,11 @@
     height: 24px;
     margin-right: 0.5rem;
 
-    input { opacity: 0; width: 0; height: 0; }
+    input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
 
     .slider {
       position: absolute;
@@ -153,12 +213,21 @@
         transition: 0.4s;
       }
 
-      &.round { border-radius: 24px; }
+      &.round {
+        border-radius: 24px;
+      }
     }
 
-    input:checked + .slider { background: #007bff; }
-    input:checked + .slider::before { transform: translateX(22px); }
+    input:checked + .slider {
+      background: #007bff;
+    }
+
+    input:checked + .slider::before {
+      transform: translateX(22px);
+    }
   }
 
-  .toggle-label { font-weight: 600; }
+  .toggle-label {
+    font-weight: 600;
+  }
 }
