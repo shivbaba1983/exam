@@ -1,0 +1,57 @@
+.text-viewer {
+  padding: 2rem;
+  max-width: 800px;
+  margin: auto;
+  font-family: 'Segoe UI', sans-serif;
+
+  .title {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+    color: #333;
+  }
+
+  .file-card {
+    background: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 1rem;
+    padding: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    .file-header {
+      display: flex;
+      justify-content: space-between;
+      font-weight: 600;
+      font-size: 1.1rem;
+      color: #007bff;
+    }
+
+    .file-content {
+      margin-top: 1rem;
+      font-size: 0.95rem;
+      color: #444;
+      line-height: 1.5;
+      white-space: pre-wrap;
+
+      p {
+        margin: 0.5rem 0;
+      }
+
+      a {
+        color: #007bff;
+        text-decoration: underline;
+        word-break: break-all;
+      }
+    }
+
+    &:hover {
+      background: #f1f1f1;
+    }
+
+    &.expanded {
+      border: 1px solid #007bff;
+    }
+  }
+}

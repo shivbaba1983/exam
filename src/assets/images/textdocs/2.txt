@@ -1,0 +1,16 @@
+
+708 views  19 Feb 2025
+Link to the training I followed to prepare for and pass the Azure AI-102 / Azure AI Engineer Associate Certification.
+https://sourcelens.com.au/trainings/a...
+
+Link to Microsoft documentations mentioned in the video:
+https://docs.azure.cn/en-us/ai-servic... 
+(Azure AI Vision or Computer Vision)
+
+Question2:
+E-commerce company, GreenCycle, wants to enhance its product pages with optimized images for various devices and screen sizes. Their product team uploads high-resolution images, but these images need to be resized and cropped for Mobile thumbnails. Which feature of AI Vision AnalyzeImage should you use?
+
+A. Detect objects
+B. Generate caption
+C. Smart crop
+D. Tag Visual Features

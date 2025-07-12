@@ -1,0 +1,25 @@
+Link to the training I followed to prepare for and pass the Azure AI-102 / Azure AI Engineer Associate Certification.
+https://sourcelens.com.au/trainings/a...
+
+Link to Microsoft documentations mentioned in the video:
+https://docs.azure.cn/en-us/ai-servic... 
+(Azure AI Vision or Computer Vision)
+https://learn.microsoft.com/en-us/azu...
+(Custom Vision)
+https://learn.microsoft.com/en-us/azu...
+(Document Intelligence)
+
+Question 3:
+You have a library that contains thousands of images. You need to tag the images as photographs, drawings, or clipart. Which service endpoint and response property should you use? To answer, select the appropriate options in the answer area. 
+NOTE: Each correct selection is worth one point. 
+Service endpoint: 
+Document intelligence OCR extraction
+Custom vision image classification  
+Custom vision object detection 
+AI Vision analyze images  
+Property: 
+Metadata
+Description
+Tags
+Imagetype 
+Objects

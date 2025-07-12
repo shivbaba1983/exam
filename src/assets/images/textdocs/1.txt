@@ -1,0 +1,18 @@
+Link to the training I followed to prepare for and pass the Azure AI-102 / Azure AI Engineer Associate Certification.
+https://sourcelens.com.au/trainings/a...
+
+Link to Microsoft documentations mentioned in the video:
+https://docs.azure.cn/en-us/ai-servic... 
+(Azure AI Vision or Computer Vision)
+https://learn.microsoft.com/en-us/azu...
+(Azure AI Face)
+https://learn.microsoft.com/en-us/azu...
+(Azure AI Document Intelligence)
+
+Question:
+You are developing an application using Azure AI Services which will be used to analyze images and to detect objects, faces, and text in images with minimum latency and optimized performance.
+Which Azure AI Service should you use?
+
+A) Azure AI Vision
+B) Azure AI Face
+C) Azure AI Document Intelligence
