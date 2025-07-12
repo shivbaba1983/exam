@@ -1,0 +1,132 @@
+.question-ui {
+  padding: 1rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.question-card {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.options-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.option {
+  padding: 0.5rem;
+  background: #f7f7f7;
+  border-radius: 8px;
+  cursor: pointer;
+
+  input {
+    margin-right: 8px;
+  }
+}
+
+.correct {
+  color: green;
+  font-weight: bold;
+}
+
+.incorrect {
+  color: red;
+  font-weight: bold;
+}
+
+.submit-btn {
+  padding: 0.8rem 1.5rem;
+  font-size: 1rem;
+  background-color: #007acc;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.drag-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 0.5rem;
+  background: #eef;
+  border-radius: 8px;
+  margin-top: 1rem;
+}
+
+// .draggable-item {
+//   padding: 0.5rem;
+//   background: #cde;
+//   border: 1px dashed #88a;
+//   border-radius: 6px;
+//   cursor: grab;
+// }
+
+.controls {
+  margin-top: 1rem;
+  text-align: center;
+}
+.back-btn {
+  background-color: #f0f0f0;
+  color: #333;
+  border: 1px solid #ccc;
+  padding: 8px 16px;
+  margin-right: 8px;
+  font-size: 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+
+  &:hover:not(:disabled) {
+    background-color: #ddd;
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+  }
+}
+
+.next-btn {
+  @extend .submit-btn;
+  background-color: #28a745;
+}
+.drag-panes {
+  display: flex;
+  gap: 2rem;
+  margin-top: 1rem;
+}
+
+.drag-column {
+  flex: 1;
+  background: #f2f4f8;
+  border-radius: 10px;
+  padding: 1rem;
+  min-height: 200px;
+  border: 2px dashed #ccc;
+}
+
+.drag-column h4 {
+  margin-bottom: 0.5rem;
+  text-align: center;
+  font-weight: 600;
+}
+
+.draggable-item {
+  padding: 0.6rem;
+  margin-bottom: 0.5rem;
+  background: #e0eaff;
+  border: 1px solid #aac;
+  border-radius: 8px;
+  cursor: grab;
+  font-size: 1rem;
+  transition: background 0.2s;
+}
+
+.draggable-item:hover {
+  background: #d0e0ff;
+}

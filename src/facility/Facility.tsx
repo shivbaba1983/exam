@@ -1,5 +1,6 @@
 import React from 'react';
 //import ImageSlider from './../components/ImageSlider'
+import QuestionUI from './../components/QuestionUI';
 const Facility = ({ }) => {
 
     return (<div>
@@ -7,6 +8,7 @@ const Facility = ({ }) => {
 
         <h1 className="title">Gallery</h1>
         {/* <ImageSlider /> */}
+        <QuestionUI/>
 
     </div>)
 }

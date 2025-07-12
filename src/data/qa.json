@@ -1,0 +1,62 @@
+[
+  {
+    "id": "q1",
+    "type": "single",
+    "question": "What is the capital of France?",
+    "options": [
+      { "id": "a", "text": "Paris" },
+      { "id": "b", "text": "Rome" },
+      { "id": "c", "text": "Berlin" },
+      { "id": "d", "text": "Madrid" }
+    ],
+    "correctAnswer": "a",
+    "explanation": "Paris is the capital city of France."
+  },
+  {
+    "id": "q2",
+    "type": "multiple",
+    "question": "Select the programming languages:",
+    "options": [
+      { "id": "a", "text": "Python" },
+      { "id": "b", "text": "HTML" },
+      { "id": "c", "text": "Java" },
+      { "id": "d", "text": "CSS" }
+    ],
+    "correctAnswer": ["a", "c"],
+    "explanation": "HTML and CSS are markup/styling, not programming languages."
+  },
+  {
+    "id": "q3",
+    "type": "boolean",
+    "question": "The Earth is flat.",
+    "correctAnswer": "False",
+    "explanation": "Scientific evidence proves the Earth is round."
+  },
+  {
+  "id": "q4",
+  "type": "drag-sequence",
+  "question": "Arrange the lifecycle methods of React (legacy):",
+  "options": [
+    { "id": "a", "text": "componentDidMount" },
+    { "id": "b", "text": "render" },
+    { "id": "c", "text": "constructor" },
+    { "id": "d", "text": "componentWillUnmount" }
+  ],
+  "correctAnswer": ["c", "b", "a", "d"],
+  "explanation": "This is the typical legacy lifecycle: constructor → render → didMount → willUnmount."
+},
+{
+  "id": "q5",
+  "type": "drag-sequence",
+  "question": "Select and arrange the steps of water cycle in correct order:",
+  "options": [
+    { "id": "a", "text": "Condensation" },
+    { "id": "b", "text": "Precipitation" },
+    { "id": "c", "text": "Evaporation" },
+    { "id": "d", "text": "Collection" },
+    { "id": "e", "text": "Photosynthesis" }
+  ],
+  "correctAnswer": ["c", "a", "b", "d"],
+  "explanation": "The correct order is: Evaporation → Condensation → Precipitation → Collection."
+}
+]
