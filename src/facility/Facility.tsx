@@ -1,6 +1,10 @@
 import React from 'react';
 //import ImageSlider from './../components/ImageSlider'
-import QuestionUI from './../components/QuestionUI';
+//import QuestionUI from './../components/QuestionUI';
+import CopyRenameImages from './../components/RenameImages';
+import ImageOCRApp from './../components/ImageOCRApp';
+import FolderOCRApp from './../components/FolderOCRApp';
+import QuestionForm from './../components/QuestionForm';
 const Facility = ({ }) => {
 
     return (<div>
@@ -8,8 +12,11 @@ const Facility = ({ }) => {
 
         <h1 className="title">Gallery</h1>
         {/* <ImageSlider /> */}
-        <QuestionUI/>
-
+        {/* <QuestionUI/> */}
+        <CopyRenameImages/>
+        <ImageOCRApp/>
+        <FolderOCRApp/>
+          <QuestionForm />
     </div>)
 }
 

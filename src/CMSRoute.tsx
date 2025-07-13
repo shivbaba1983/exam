@@ -8,7 +8,7 @@ import './CMSRoute.scss'; // Import styles
 const CMSRoute = () => (
   <div className="cms-container">
     <nav className="nav-bar">
-      <Link to="/dashboard" className="nav-button">Dashboard</Link>
+      <Link to="/dashboard" className="nav-button">Preperation</Link>
       <Link to="/facility" className="nav-button">Facility</Link>
       <Link to="/" className="nav-button">Exam</Link>
     </nav>

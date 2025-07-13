@@ -1,10 +1,8 @@
 
 import "./MainResponsiveLayout.scss";
 import { useEffect, useState } from "react";
-import QuestionForm from './../components/QuestionForm';
-import CopyRenameImages from './../components/RenameImages';
-import ImageOCRApp from './../components/ImageOCRApp';
-import FolderOCRApp from './../components/FolderOCRApp';
+import QuestionUI from './../components/QuestionUI';
+
 const MainResponsiveLayout = () => {
   const [isLogReading, setIsLogReading] = useState(false);
   const [showUSA, setUSA] = useState(true);
@@ -13,10 +11,7 @@ const MainResponsiveLayout = () => {
   return (
     <div className="application-level">
       <div className="main-container">
-        <QuestionForm />
-        <CopyRenameImages/>
-        <ImageOCRApp/>
-        <FolderOCRApp/>
+        <QuestionUI/>
       </div>
     </div>
   );
