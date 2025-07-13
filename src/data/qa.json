@@ -58,5 +58,22 @@
   ],
   "correctAnswer": ["c", "a", "b", "d"],
   "explanation": "The correct order is: Evaporation → Condensation → Precipitation → Collection."
+},
+{
+  "id": "q6",
+  "type": "dropdown-pair",
+  "question": "You are building a chatbot. You need to use the Content Moderator service to identify messages that contain sexually explicit language. Which section in the response from the service will contain the category score, and which category will be assigned to the message?",
+  "leftOptions": [
+    { "id": "classification", "text": "Section-Classification" },
+    { "id": "pi", "text": "Section-pi" },
+    { "id": "terms", "text": "Section-Terms" }
+  ],
+  "rightOptions": [
+    { "id": "cat1", "text": "Category-1" },
+    { "id": "cat2", "text": "Category-2" },
+    { "id": "cat3", "text": "Category-3" }
+  ],
+  "correctAnswer": { "left": "classification", "right": "cat1" },
+  "explanation": "The 'Classification' section returns the likelihood of content falling into various categories like Category-1 for sexual content."
 }
 ]

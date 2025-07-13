@@ -9,6 +9,7 @@ import { DragDropContext, Droppable, Draggable, DropResult } from 'react-beautif
 import './QuestionUI.scss';
 
  const QuestionUI = () => {
+
   const [answers, setAnswers] = useState<any>({});
   const [submitted, setSubmitted] = useState(false);
   const [currentQIndex, setCurrentQIndex] = useState(0);
@@ -24,10 +25,15 @@ import './QuestionUI.scss';
           target: []
         }
       }));
+    } else if (currentQuestion.type === 'dropdown-pair' && !answers[currentQuestion.id]) {
+      setAnswers((prev: any) => ({
+        ...prev,
+        [currentQuestion.id]: { left: '', right: '' }
+      }));
     }
   }, [currentQuestion]);
 
-  const handleOptionChange = (qid: string, value: string | string[] | { source: string[]; target: string[] }) => {
+  const handleOptionChange = (qid: string, value: any) => {
     setAnswers((prev: any) => ({ ...prev, [qid]: value }));
   };
 
@@ -146,6 +152,36 @@ import './QuestionUI.scss';
       );
     }
 
+    if (q.type === 'dropdown-pair') {
+      const answer = answers[q.id] || { left: '', right: '' };
+      return (
+        <div className="dropdown-pair">
+          <select value={answer.left} onChange={(e) => handleOptionChange(q.id, { ...answer, left: e.target.value })}>
+            <option value="">Select Section</option>
+            {q.leftOptions?.map((opt) => (
+              <option key={opt.id} value={opt.id}>{opt.text}</option>
+            ))}
+          </select>
+
+          <select value={answer.right} onChange={(e) => handleOptionChange(q.id, { ...answer, right: e.target.value })}>
+            <option value="">Select Category</option>
+            {q.rightOptions?.map((opt) => {
+              const isCorrect = submitted && q.correctAnswer?.right === opt.id && answer.right === opt.id;
+              return (
+                <option
+                  key={opt.id}
+                  value={opt.id}
+                  className={isCorrect ? 'highlight-correct' : ''}
+                >
+                  {opt.text}
+                </option>
+              );
+            })}
+          </select>
+        </div>
+      );
+    }
+
     switch (q.type) {
       case 'single':
         return q.options?.map((opt) => (
@@ -199,7 +235,9 @@ import './QuestionUI.scss';
   const checkAnswer = (q: Question) => {
     const userAns = q.type === 'drag-sequence'
       ? answers[q.id]?.target
-      : answers[q.id];
+      : q.type === 'dropdown-pair'
+        ? answers[q.id]
+        : answers[q.id];
 
     const correct = JSON.stringify(userAns) === JSON.stringify(q.correctAnswer);
     return (
@@ -219,23 +257,19 @@ import './QuestionUI.scss';
         {submitted && checkAnswer(currentQuestion)}
       </div>
       <div className="controls">
-        {!submitted ? (
-          <button className="submit-btn" onClick={handleSubmit}>
-            Submit
-          </button>
-        ) : (
-          <>
-            <button className="back-btn" onClick={handleBack} disabled={currentQIndex === 0}>
-              Back
-            </button>
-            <button className="next-btn" onClick={handleNext}>
-              Next
-            </button>
-          </>
-        )}
+        <button className="back-btn" onClick={handleBack} disabled={currentQIndex === 0}>
+          Back
+        </button>
+        <button className="submit-btn" onClick={handleSubmit}>
+          Submit
+        </button>
+        <button className="next-btn" onClick={handleNext}>
+          Next
+        </button>
       </div>
     </div>
   );
 };
+
 
 export default QuestionUI

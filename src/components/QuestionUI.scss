@@ -1,132 +1,134 @@
+/* src/components/QuestionUI.scss */
+
 .question-ui {
   padding: 1rem;
-  max-width: 800px;
-  margin: 0 auto;
-}
+  font-family: sans-serif;
 
-.question-card {
-  border: 1px solid #ddd;
-  border-radius: 10px;
-  padding: 1rem;
-  margin-bottom: 1.5rem;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-}
+  .question-card {
+    background: #fdfdfd;
+    border-radius: 12px;
+    padding: 1rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 1rem;
+  }
 
-.options-container {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-}
+  .options-container {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
 
-.option {
-  padding: 0.5rem;
-  background: #f7f7f7;
-  border-radius: 8px;
-  cursor: pointer;
+  .option {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1rem;
+  }
 
-  input {
-    margin-right: 8px;
+  .controls {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-top: 1rem;
+
+    button {
+      padding: 0.5rem 1.2rem;
+      font-size: 1rem;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.2s ease-in-out;
+    }
+
+    .submit-btn {
+      background-color: #007bff;
+      color: white;
+    }
+
+    .next-btn {
+      background-color: #28a745;
+      color: white;
+    }
+
+    .back-btn {
+      background-color: #6c757d;
+      color: white;
+    }
+  }
+
+  .correct {
+    color: green;
+    font-weight: bold;
+    margin-top: 1rem;
+  }
+
+  .incorrect {
+    color: red;
+    margin-top: 1rem;
+    font-weight: bold;
   }
 }
 
-.correct {
-  color: green;
-  font-weight: bold;
-}
-
-.incorrect {
-  color: red;
-  font-weight: bold;
-}
-
-.submit-btn {
-  padding: 0.8rem 1.5rem;
-  font-size: 1rem;
-  background-color: #007acc;
-  color: white;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-}
-.drag-container {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  padding: 0.5rem;
-  background: #eef;
-  border-radius: 8px;
-  margin-top: 1rem;
-}
-
-// .draggable-item {
-//   padding: 0.5rem;
-//   background: #cde;
-//   border: 1px dashed #88a;
-//   border-radius: 6px;
-//   cursor: grab;
-// }
-
-.controls {
-  margin-top: 1rem;
-  text-align: center;
-}
-.back-btn {
-  background-color: #f0f0f0;
-  color: #333;
-  border: 1px solid #ccc;
-  padding: 8px 16px;
-  margin-right: 8px;
-  font-size: 1rem;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-
-  &:hover:not(:disabled) {
-    background-color: #ddd;
-  }
-
-  &:disabled {
-    cursor: not-allowed;
-    opacity: 0.5;
-  }
-}
-
-.next-btn {
-  @extend .submit-btn;
-  background-color: #28a745;
-}
 .drag-panes {
   display: flex;
-  gap: 2rem;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 1rem;
   margin-top: 1rem;
+
+  .drag-column {
+    flex: 1 1 300px;
+    background: #f4f4f4;
+    padding: 1rem;
+    border-radius: 8px;
+    min-height: 200px;
+  }
+
+  .draggable-item {
+    padding: 0.5rem 0.75rem;
+    margin-bottom: 0.5rem;
+    background: white;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    cursor: grab;
+  }
 }
 
-.drag-column {
-  flex: 1;
-  background: #f2f4f8;
-  border-radius: 10px;
-  padding: 1rem;
-  min-height: 200px;
-  border: 2px dashed #ccc;
+@media (max-width: 600px) {
+  .drag-panes {
+    flex-direction: column;
+
+    .drag-column {
+      width: 100%;
+    }
+  }
 }
 
-.drag-column h4 {
-  margin-bottom: 0.5rem;
-  text-align: center;
-  font-weight: 600;
+.dropdown-pair {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin: 1rem 0;
+
+  select {
+    padding: 8px 12px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    background-color: #fff;
+    min-width: 200px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+
+    &:focus {
+      outline: none;
+      border-color: #007bff;
+    }
+  }
 }
 
-.draggable-item {
-  padding: 0.6rem;
-  margin-bottom: 0.5rem;
-  background: #e0eaff;
-  border: 1px solid #aac;
-  border-radius: 8px;
-  cursor: grab;
-  font-size: 1rem;
-  transition: background 0.2s;
-}
-
-.draggable-item:hover {
-  background: #d0e0ff;
+option.highlight-correct {
+  background-color: #d4f7d4 !important;
+  color: #1a4d1a;
+  font-weight: bold;
 }
