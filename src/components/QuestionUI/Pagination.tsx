@@ -8,9 +8,9 @@ interface PaginationProps {
 }
 
 const Pagination = ({ currentIndex, total, onJump }: PaginationProps) => {
-  // Display a sliding window of page numbers, e.g. 10 pages at a time
   const maxVisible = 10;
   let start = 0;
+
   if (currentIndex >= maxVisible / 2) {
     start = Math.min(currentIndex - Math.floor(maxVisible / 2), total - maxVisible);
     if (start < 0) start = 0;
@@ -23,6 +23,14 @@ const Pagination = ({ currentIndex, total, onJump }: PaginationProps) => {
 
   return (
     <div className="pagination">
+      <button
+        className="page-nav"
+        onClick={() => onJump(0)}
+        disabled={currentIndex === 0}
+      >
+        First
+      </button>
+
       {pages.map((i) => (
         <button
           key={i}
@@ -32,6 +40,14 @@ const Pagination = ({ currentIndex, total, onJump }: PaginationProps) => {
           {i + 1}
         </button>
       ))}
+
+      <button
+        className="page-nav"
+        onClick={() => onJump(total - 1)}
+        disabled={currentIndex === total - 1}
+      >
+        Last
+      </button>
     </div>
   );
 };

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './QuestionUI.scss';
-import questionsData from './../data/qa.json';
+import questionsData from './../data/qa-temp.json';
 import { Question, Option } from './../model/type';
 import { DragDropContext, Droppable, Draggable, DropResult } from 'react-beautiful-dnd';
 

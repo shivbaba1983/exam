@@ -3,7 +3,13 @@
   margin-top: 20px;
    overflow-x: hidden;
 }
-
+  /* to disable copy paste */
+/* body {
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+} */
 .App-logo {
   height: 40vmin;
   pointer-events: none;

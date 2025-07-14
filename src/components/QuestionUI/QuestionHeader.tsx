@@ -1,14 +1,22 @@
 import React from 'react';
+import './QuestionHeader.scss';
 
 interface QuestionHeaderProps {
   questionNumber: number;
-  questionText: string;
+  questionText: string[];
 }
 
-const QuestionHeader = ({ questionNumber, questionText }: QuestionHeaderProps) => (
-  <h3>
-    Q{questionNumber}: {questionText}
-  </h3>
-);
+const QuestionHeader = ({ questionNumber, questionText }: QuestionHeaderProps) => {
+  return (
+    <div className="question-header">
+      <h3>Q{questionNumber}:</h3>
+      <ul>
+        {questionText.map((line, idx) => (
+          <li key={idx}>{line}</li>
+        ))}
+      </ul>
+    </div>
+  );
+};
 
 export default QuestionHeader;

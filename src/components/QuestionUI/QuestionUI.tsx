@@ -7,6 +7,16 @@ import Pagination from './Pagination';
 import AnswerFeedback from './AnswerFeedback';
 import './QuestionUI.scss';
 
+// Simple formatter splits by newline and period+space
+const formatQuestionSimple = (text: string): string[] => {
+  if (!text) return [];
+  return text
+    .split('\n')
+    .flatMap(line => line.split('. '))
+    .map(line => line.trim())
+    .filter(Boolean);
+};
+
 const QuestionUI = () => {
   const [answers, setAnswers] = useState<any>({});
   const [submitted, setSubmitted] = useState(false);
@@ -75,7 +85,7 @@ const QuestionUI = () => {
       <div key={currentQuestion.id} className="question-card">
         <QuestionHeader
           questionNumber={currentQIndex + 1}
-          questionText={currentQuestion.question}
+          questionText={formatQuestionSimple(currentQuestion.question)}
         />
 
         <div className="option-container">

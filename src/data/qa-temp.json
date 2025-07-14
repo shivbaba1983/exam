@@ -1,0 +1,487 @@
+[
+  {
+    "id": "q1",
+    "type": "drag-sequence",
+    "question": [
+      "You have an app that manages feedback.",
+      "You need to ensure that the app can detect negative comments by using the Sentiment Analysis API in Azure AI Language.",
+      "The solution must ensure that the managed feedback remains on your company’s internal network.",
+      "Which three actions should you perform in sequence?"
+    ],
+    "options": [
+      { "id": "a", "text": "Provision the Language service resource in Azure" },
+      { "id": "b", "text": "Deploy a Docker container on an on-premises server" },
+      { "id": "c", "text": "Run the container and query the prediction endpoint" },
+      { "id": "d", "text": "Upload data to Azure Blob Storage" }
+    ],
+    "correctAnswer": ["a", "b", "c"],
+    "explanation": "The correct sequence is: Provision the Language service → Deploy the container on-premises → Run the container and query it locally. Uploading to Azure is not required because the solution must keep data on-premises."
+  },
+  {
+    "id": "q2",
+    "type": "dropdown-pair",
+    "question": [
+      "You are building a chatbot.",
+      "You need to use the Content Moderator service to identify messages that contain sexually explicit language.",
+      "Which section in the response from the service will contain the category score, and which category will be assigned to the message?"
+    ],
+    "leftOptions": [
+      { "id": "classification", "text": "Section-Classification" },
+      { "id": "pi", "text": "Section-pi" },
+      { "id": "terms", "text": "Section-Terms" }
+    ],
+    "rightOptions": [
+      { "id": "cat1", "text": "Category-1" },
+      { "id": "cat2", "text": "Category-2" },
+      { "id": "cat3", "text": "Category-3" }
+    ],
+    "correctAnswer": { "left": "classification", "right": "cat1" },
+    "explanation": "The 'Classification' section returns the likelihood of content falling into various categories like Category-1 for sexual content."
+  },
+  {
+    "id": "q3",
+    "type": "drag-sequence",
+    "question": [
+      "You have a question-answering project in Azure AI Language.",
+      "You need to migrate the project to a Language service instance in a different Azure region.",
+      "What are the three sequential actions you should perform to accomplish this?"
+    ],
+    "options": [
+      { "id": "1", "text": "Train and publish model from the new instance." },
+      { "id": "2", "text": "Enable custom entity recognition from the new instance." },
+      { "id": "3", "text": "From the original instance, export the existing project." },
+      { "id": "4", "text": "From the new instance, import the project file." },
+      { "id": "5", "text": "From the new instance, regenerate the keys." }
+    ],
+    "correctAnswer": ["3", "4", "1"],
+    "explanation": "To migrate a question-answering project, first export the project from the original instance (3), then import it into the new instance (4), and finally train and publish the model from the new instance (1)."
+  },
+  {
+    "id": "q4",
+    "type": "drag-sequence",
+    "question": [
+      "You are using a Conversational Language Understanding (CLU) service to handle natural language input from users of a web-based customer agent.",
+      "Users report that the agent frequently responds with a generic message: 'Sorry, I don't understand that.'",
+      "You need to improve the agent's ability to respond to user requests effectively.",
+      "Which three actions should you perform in sequence to achieve this?"
+    ],
+    "options": [
+      { "id": "1", "text": "Validate the utterances logged for review and modify the models." },
+      { "id": "2", "text": "Add prebuilt domain models as required." },
+      { "id": "3", "text": "Enable active learning." },
+      { "id": "4", "text": "Enable log collection by using Log Analytics." },
+      { "id": "5", "text": "Train and republish the language understanding model." },
+      { "id": "6", "text": "Migrate authoring to an Azure resource authoring key." }
+    ],
+    "correctAnswer": ["3", "1", "5"],
+    "explanation": "To improve the model's effectiveness, first enable active learning (3) to collect useful utterances, then validate and refine the model using logged utterances (1), and finally retrain and republish the model (5)."
+  },
+  {
+    "id": "q5",
+    "type": "boolean",
+    "question": [
+      "You develop an application to identify species of plants by training a Custom Vision model.",
+      "You receive images of new plant species.",
+      "You need to add the new images to the classifier.",
+      "Solution: You add the new images, and then use the Smart Labeler tool.",
+      "Does this meet the goal?"
+    ],
+    "correctAnswer": "False",
+    "explanation": "❌ No. The Smart Labeler helps in suggesting tags for existing classes but does not automatically train or classify new species. Additional manual labeling and retraining is required."
+  },
+  {
+    "id": "q6",
+    "type": "boolean",
+    "question": [
+      "You develop an application to identify species of plants by training a Custom Vision model.",
+      "You receive images of new plant species.",
+      "You need to add the new images to the classifier.",
+      "Solution: You create a new model, and then upload the new images and labels.",
+      "Does this meet the goal?"
+    ],
+    "correctAnswer": "False",
+    "explanation": "❌ No. Creating a new model is unnecessary in this case. You can update the existing classifier by adding new images and labels, then retraining it. Creating a new model would not retain the knowledge from the existing trained data."
+  },
+  {
+    "id": "q7",
+    "type": "boolean",
+    "question": [
+      "You develop an application to identify species of plants by training a Custom Vision model.",
+      "You receive images of new plant species.",
+      "You need to add the new images to the classifier.",
+      "Solution: You add the new images and labels to the existing model.",
+      "You retrain the model, and then publish the model.",
+      "Does this meet the goal?"
+    ],
+    "correctAnswer": "True",
+    "explanation": "✅ Yes. This is the correct approach — updating the existing model with new labeled data, retraining, and publishing ensures continuity and improved accuracy for new classes."
+  },
+  {
+    "id": "q8",
+    "type": "drag-sequence",
+    "question": [
+      "You are building an application to identify defects in factory-produced components that are unique to your business.",
+      "To achieve this, you need to use the Custom Vision API for fault detection.",
+      "Which three steps should you follow in order?"
+    ],
+    "options": [
+      { "id": "1", "text": "Train the classifier model" },
+      { "id": "2", "text": "Upload and tag images" },
+      { "id": "3", "text": "Initialize the training dataset" },
+      { "id": "4", "text": "Train the object detection model" },
+      { "id": "5", "text": "Create a project" }
+    ],
+    "correctAnswer": ["5", "2", "4"],
+    "explanation": "To use Custom Vision for defect detection, you first create a project, then upload and tag images with appropriate labels. After that, you train the object detection model using the tagged data."
+  },
+  {
+    "id": "q9",
+    "type": "drag-sequence",
+    "question": [
+      "You are tasked with helping the Finance-Analysts team build an automated document extraction system using Azure AI Document Intelligence.",
+      "The team needs to design a custom model that can extract structured data from various financial forms.",
+      "To achieve this, they will use the built-in labeling tool in Document Intelligence Studio.",
+      "Which three steps should the Finance-Analysts team follow to build and train their custom model? Select the steps in the correct sequence."
+    ],
+    "options": [
+      { "id": "1", "text": "Label key fields in the uploaded documents" },
+      { "id": "2", "text": "Create a pre-trained model for extracting data" },
+      { "id": "3", "text": "Create a combined model for multiple document types" },
+      { "id": "4", "text": "Train the custom extraction model" },
+      { "id": "5", "text": "Create a new project and upload sample documents" }
+    ],
+    "correctAnswer": ["5", "1", "4"],
+    "explanation": "To build a custom model with Azure AI Document Intelligence, first create a project and upload documents. Then, label the key fields using the labeling tool. Finally, train the custom model based on the labeled data. Pre-trained and combined models are optional and not required in this core flow."
+  },
+  {
+    "id": "q10",
+    "type": "drag-sequence",
+    "question": [
+      "You have a Language Understanding solution that you want to deploy using a Docker container on your host computer.",
+      "Which three actions should you perform in sequence to prepare and run the solution on a host computer?",
+      "Select the correct options from below:"
+    ],
+    "options": [
+      { "id": "1", "text": "From the Language Understanding portal, export the solution as a package file." },
+      { "id": "2", "text": "From the host computer, move the package file to the Docker input directory." },
+      { "id": "3", "text": "From the host computer, build the container and specify the output directory." },
+      { "id": "4", "text": "From the Language Understanding portal, retrain the model." },
+      { "id": "5", "text": "From the host computer, run the container and specify the input directory." }
+    ],
+    "correctAnswer": ["1", "2", "5"],
+    "explanation": "To deploy a Language Understanding (LUIS) solution in a Docker container, you first export the model as a package from the Language Understanding portal. Next, move the package file to the Docker container's input directory. Finally, run the container and point it to the input directory to start serving the model."
+  },
+  {
+    "id": "q11",
+    "type": "dropdown-pair",
+    "question": [
+      "You are developing an application that needs to automatically route incoming customer email to either the English or Spanish support teams based on the language of the message.",
+      "Which Azure Cognitive Services API should you use?",
+      "To answer, select two appropriate options."
+    ],
+    "leftOptions": [
+      { "id": "1", "text": "https://centralus.api.cognitive.micro..." },
+      { "id": "2", "text": "https://eu.api.cognitive.microsofttra..." },
+      { "id": "3", "text": "https://portal.azure.com" }
+    ],
+    "rightOptions": [
+      { "id": "1", "text": "/translator/text/v3.0/translate?to=es" },
+      { "id": "2", "text": "/text/analytics/v3.1/languages" },
+      { "id": "3", "text": "/translator/text/v3.0/translate?to=en" }
+    ],
+    "correctAnswer": { "left": "1", "right": "2" },
+    "explanation": "To route based on language, use the Language Detection endpoint from the Text Analytics API. The base endpoint (centralus cognitive) and the path '/text/analytics/v3.1/languages' are appropriate for identifying the language of incoming text."
+  },
+  {
+    "id": "q12",
+    "type": "drag-sequence",
+    "question": [
+      "You have a Custom Vision service project that uses the General domain for classification and contains a trained model.",
+      "You need to export the model for use on a network that is disconnected from the internet.",
+      "Which three actions should you perform in sequence?"
+    ],
+    "options": [
+      { "id": "A", "text": "Optimize model for edge deployment" },
+      { "id": "B", "text": "Retrain the model" },
+      { "id": "C", "text": "Export the model" },
+      { "id": "D", "text": "Change the classification type" },
+      { "id": "E", "text": "Create a new classification model" },
+      { "id": "F", "text": "Change Domains to General (compact)" }
+    ],
+    "correctAnswer": ["F", "B", "C"],
+    "explanation": "To export the model for offline use, you need to change the domain to General (compact) (F), retrain the model (B), and then export it (C)."
+  },
+  {
+    "id": "q13",
+    "type": "drag-sequence",
+    "question": [
+      "You've trained an Azure Custom Vision model to classify clothing products using the Retail domain.",
+      "To integrate this model into your iOS app, what steps should you perform in sequence?"
+    ],
+    "options": [
+      { "id": "A", "text": "Adjust the model to use a different domain." },
+      { "id": "B", "text": "Train the model again after changing the domain." },
+      { "id": "C", "text": "Export the model for deployment." },
+      { "id": "D", "text": "Delete the training data." },
+      { "id": "E", "text": "Test the model." }
+    ],
+    "correctAnswer": ["A", "B", "C"],
+    "explanation": "To export a Custom Vision model for mobile use, you need to first switch to a compact domain (A), retrain the model (B), and then export it for deployment (C)."
+  },
+  {
+    "id": "q14",
+    "type": "single",
+    "question": [
+      "You have an app that analyzes images by using the Computer Vision API.",
+      "You need to configure the app to provide an output for users who are vision impaired.",
+      "The solution must provide the output in complete sentences.",
+      "Which API call should you perform?"
+    ],
+    "options": [
+      { "id": "a", "text": "readInStreamAsync" },
+      { "id": "b", "text": "analyzeImagesByDomainInStreamAsync" },
+      { "id": "c", "text": "tagImageInStreamAsync" },
+      { "id": "d", "text": "describeImageInStreamAsync" }
+    ],
+    "correctAnswer": "d",
+    "explanation": "The correct method is 'describeImageInStreamAsync', which returns a human-readable description of the image in complete sentences — suitable for assisting users with visual impairments."
+  },
+  {
+    "id": "q15",
+    "type": "drag-sequence",
+    "question": [
+      "Your company's product recognition mobile app uses a Custom Vision model.",
+      "You've acquired 1,000 unlabeled product images.",
+      "You are asked to improve the model's accuracy.",
+      "Time is crucial, and you need to retrain the model quickly.",
+      "In the Custom Vision portal, which three steps should you take to efficiently retrain the model with the new images?"
+    ],
+    "options": [
+      { "id": "1", "text": "Upload the images by category." },
+      { "id": "2", "text": "Get suggested tags." },
+      { "id": "3", "text": "Upload all the images." },
+      { "id": "4", "text": "Group the images locally into category folders." },
+      { "id": "5", "text": "Review the suggestions and confirm the tags." },
+      { "id": "6", "text": "Tag the images manually." }
+    ],
+    "correctAnswer": ["3", "2", "5"],
+    "explanation": "To retrain the model quickly, upload all the images (3), use the Smart Labeler to get suggested tags (2), and then review and confirm those suggestions (5). This avoids time-consuming manual or local pre-organization steps."
+  },
+  {
+    "id": "q16",
+    "type": "drag-sequence",
+    "question": [
+      "You have a Custom Vision resource each in dev and prod environment.",
+      "You've trained an image classification model named MyTestModel in MyProject on dev.",
+      "To deploy MyTestModel to prod, which three actions should you perform in sequence?"
+    ],
+    "options": [
+      { "id": "1", "text": "In dev use the Export Project endpoint." },
+      { "id": "2", "text": "In dev use the Get Projects endpoint." },
+      { "id": "3", "text": "In prod use the Import Project endpoint." },
+      { "id": "4", "text": "In dev use the ExportIteration endpoint." },
+      { "id": "5", "text": "In dev use the GetIterations endpoint." },
+      { "id": "6", "text": "In prod use the UpdateProject endpoint." }
+    ],
+    "correctAnswer": ["2", "1", "3"],
+    "explanation": "To deploy the model from dev to prod, first get the list of projects in dev (2), then export the desired project (1), and finally import it into prod (3)."
+  },
+  {
+    "id": "q17",
+    "type": "dropdown-pair",
+    "question": [
+      "You have a form recognition task.",
+      "Which prebuilt model is best suited to extract key-value pairs from invoices?"
+    ],
+    "leftOptions": [
+      { "id": "1", "text": "prebuilt-receipt" },
+      { "id": "2", "text": "prebuilt-invoice" },
+      { "id": "3", "text": "prebuilt-idDocument" }
+    ],
+    "rightOptions": [
+      { "id": "a", "text": "Receipts" },
+      { "id": "b", "text": "Invoices" },
+      { "id": "c", "text": "ID Documents" }
+    ],
+    "correctAnswer": { "left": "2", "right": "b" },
+    "explanation": "The prebuilt-invoice model is designed to extract key-value pairs from invoices."
+  },
+  {
+    "id": "q18",
+    "type": "single",
+    "question": [
+      "You want to analyze customer feedback by extracting key phrases using Azure Text Analytics.",
+      "You need to make the analysis more accurate by filtering out common stop words.",
+      "Which Text Analytics feature should you enable?"
+    ],
+    "options": [
+      { "id": "a", "text": "Language detection" },
+      { "id": "b", "text": "Sentiment analysis" },
+      { "id": "c", "text": "Key phrase extraction" },
+      { "id": "d", "text": "Stop words filtering" }
+    ],
+    "correctAnswer": "d",
+    "explanation": "Enabling stop words filtering improves key phrase extraction by excluding common words that add no semantic value."
+  },
+  {
+    "id": "q19",
+    "type": "single",
+    "question": [
+      "You want to implement Named Entity Recognition (NER) in your app to identify person names, organizations, and locations in user text.",
+      "Which Azure Cognitive Service endpoint should you call?"
+    ],
+    "options": [
+      { "id": "a", "text": "/text/analytics/v3.1/entities/recognition/general" },
+      { "id": "b", "text": "/vision/v3.2/analyze" },
+      { "id": "c", "text": "/customvision/v3.0/Prediction" },
+      { "id": "d", "text": "/translator/text/v3.0/translate" }
+    ],
+    "correctAnswer": "a",
+    "explanation": "The Named Entity Recognition endpoint is part of Text Analytics and is accessed via the entities recognition API."
+  },
+  {
+    "id": "q20",
+    "type": "drag-sequence",
+    "question": [
+      "You need to create an Azure AI Text Analytics pipeline that takes customer emails,",
+      "detects language, performs sentiment analysis, and extracts key phrases.",
+      "In what order should the tasks be performed?"
+    ],
+    "options": [
+      { "id": "1", "text": "Detect language" },
+      { "id": "2", "text": "Extract key phrases" },
+      { "id": "3", "text": "Perform sentiment analysis" },
+      { "id": "4", "text": "Normalize text" }
+    ],
+    "correctAnswer": ["1", "4", "3", "2"],
+    "explanation": "The typical processing flow is to detect language first, normalize text for consistent processing, then perform sentiment analysis, and finally extract key phrases."
+  },
+  {
+    "id": "q21",
+    "type": "boolean",
+    "question": [
+      "You are using Azure Form Recognizer prebuilt receipt model to extract data from scanned receipts.",
+      "The model does not recognize a new field called 'Tax ID'.",
+      "Solution: You create a custom model using labeled data to extract the Tax ID field.",
+      "Does this meet the goal?"
+    ],
+    "correctAnswer": "True",
+    "explanation": "✅ Custom models trained on labeled data can extract fields not recognized by the prebuilt receipt model."
+  },
+  {
+    "id": "q22",
+    "type": "drag-sequence",
+    "question": [
+      "You are tasked with creating a multi-lingual chatbot using Azure Conversational Language Understanding.",
+      "Which three steps should you perform in order?"
+    ],
+    "options": [
+      { "id": "1", "text": "Create the language understanding app for the primary language" },
+      { "id": "2", "text": "Train and publish the app" },
+      { "id": "3", "text": "Clone the app for additional languages" },
+      { "id": "4", "text": "Enable multi-turn conversation" },
+      { "id": "5", "text": "Integrate the chatbot with channels" }
+    ],
+    "correctAnswer": ["1", "2", "3"],
+    "explanation": "Create the app in the primary language, train and publish it, then clone it to add support for other languages."
+  },
+  {
+    "id": "q23",
+    "type": "dropdown-pair",
+    "question": [
+      "You want to implement a sentiment analysis service with custom categories to classify product reviews.",
+      "Which service and endpoint combination will help you achieve this?"
+    ],
+    "leftOptions": [
+      { "id": "1", "text": "Azure Text Analytics" },
+      { "id": "2", "text": "Azure Language Understanding (LUIS)" },
+      { "id": "3", "text": "Azure Custom Vision" }
+    ],
+    "rightOptions": [
+      { "id": "1", "text": "/sentiment/v3.1/custom" },
+      { "id": "2", "text": "/language/:analyze-text" },
+      { "id": "3", "text": "/vision/analyze" }
+    ],
+    "correctAnswer": { "left": "1", "right": "1" },
+    "explanation": "Azure Text Analytics custom sentiment endpoint supports custom categories for sentiment classification."
+  },
+  {
+    "id": "q24",
+    "type": "boolean",
+    "question": [
+      "You want to detect whether an image contains adult or racy content using Azure Computer Vision.",
+      "You configure the Analyze Image API with the 'Adult' visual feature enabled.",
+      "Solution: You send images to the API and check the 'isAdultContent' property in the response.",
+      "Does this meet the goal?"
+    ],
+    "correctAnswer": "True",
+    "explanation": "✅ The 'isAdultContent' boolean property indicates the presence of adult or racy content in the image."
+  },
+  {
+    "id": "q25",
+    "type": "single",
+    "question": [
+      "You have a Custom Speech service in Azure.",
+      "You want to improve the accuracy of the speech-to-text model for industry-specific terminology.",
+      "Which method should you use?"
+    ],
+    "options": [
+      { "id": "a", "text": "Use the prebuilt model without changes" },
+      { "id": "b", "text": "Create and train a custom speech model with phrase lists" },
+      { "id": "c", "text": "Use Custom Vision service" },
+      { "id": "d", "text": "Use Language Understanding (LUIS)" }
+    ],
+    "correctAnswer": "b",
+    "explanation": "Training a custom speech model with phrase lists improves recognition for domain-specific words."
+  },
+  {
+    "id": "q26",
+    "type": "drag-sequence",
+    "question": [
+      "You want to deploy an Azure Text Analytics solution that complies with data residency regulations and processes data locally.",
+      "Which three steps should you perform?"
+    ],
+    "options": [
+      { "id": "1", "text": "Provision an Azure Text Analytics resource with Private Endpoint." },
+      { "id": "2", "text": "Deploy Text Analytics container on-premises." },
+      { "id": "3", "text": "Export the model from Azure portal." },
+      { "id": "4", "text": "Run the container locally and configure local data storage." },
+      { "id": "5", "text": "Send data to the public Azure Text Analytics endpoint." }
+    ],
+    "correctAnswer": ["1", "2", "4"],
+    "explanation": "Provision resource with Private Endpoint to ensure network isolation, deploy container on-premises, and run it locally with proper data storage configuration to comply with data residency."
+  },
+  {
+    "id": "q27",
+    "type": "single",
+    "question": [
+      "You want to analyze video content to detect objects and activities using Azure Video Analyzer.",
+      "Which component of the Azure Video Analyzer solution is responsible for extracting insights from video streams?"
+    ],
+    "options": [
+      { "id": "a", "text": "Edge modules" },
+      { "id": "b", "text": "Video Analyzer service" },
+      { "id": "c", "text": "Stream processor" },
+      { "id": "d", "text": "Video Indexer" }
+    ],
+    "correctAnswer": "c",
+    "explanation": "The Stream Processor is responsible for processing video streams and extracting insights such as objects and activities."
+  },
+  {
+    "id": "q28",
+    "type": "drag-sequence",
+    "question": [
+      "You want to create a pipeline for document processing using Azure AI Document Intelligence.",
+      "Which three steps should you perform in order?"
+    ],
+    "options": [
+      { "id": "1", "text": "Upload the documents to a Blob Storage container" },
+      { "id": "2", "text": "Create a Document Intelligence project" },
+      { "id": "3", "text": "Label the documents with key-value pairs" },
+      { "id": "4", "text": "Train the custom model" },
+      { "id": "5", "text": "Deploy the model" }
+    ],
+    "correctAnswer": ["1", "2", "3"],
+    "explanation": "You first upload the documents, then create a project, and label the documents before training and deploying the model."
+  }
+]
