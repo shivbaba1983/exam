@@ -28,6 +28,7 @@
 
   .controls {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     gap: 1rem;
     margin-top: 1rem;
@@ -54,6 +55,12 @@
     .back-btn {
       background-color: #6c757d;
       color: white;
+    }
+
+    .reset-btn {
+      background-color: #ffc107;
+      color: black;
+      align-self: flex-end;
     }
   }
 
@@ -131,4 +138,47 @@ option.highlight-correct {
   background-color: #d4f7d4 !important;
   color: #1a4d1a;
   font-weight: bold;
+}
+
+.reset-btn {
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  border-radius: 6px;
+  border: none;
+  background-color: #ffc107;
+  color: black;
+  cursor: pointer;
+  width: auto;
+  align-self: flex-start;
+}
+.pagination {
+  margin-top: 1rem;
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  .page-btn {
+    background: #e0e0e0;
+    border: none;
+    padding: 0.5rem 0.75rem;
+    font-size: 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    min-width: 32px;
+    text-align: center;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background: #ccc;
+    }
+
+    &.active {
+      background-color: #007bff;
+      color: white;
+      font-weight: bold;
+      cursor: default;
+    }
+  }
 }

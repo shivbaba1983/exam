@@ -2,14 +2,9 @@ import React, { useState, useEffect } from 'react';
 import './QuestionUI.scss';
 import questionsData from './../data/qa.json';
 import { Question, Option } from './../model/type';
-import './QuestionUI.scss';
 import { DragDropContext, Droppable, Draggable, DropResult } from 'react-beautiful-dnd';
 
-
-import './QuestionUI.scss';
-
- const QuestionUI = () => {
-
+const QuestionUI = () => {
   const [answers, setAnswers] = useState<any>({});
   const [submitted, setSubmitted] = useState(false);
   const [currentQIndex, setCurrentQIndex] = useState(0);
@@ -55,6 +50,17 @@ import './QuestionUI.scss';
     }
   };
 
+  const handleJumpToQuestion = (index: number) => {
+    setSubmitted(false);
+    setCurrentQIndex(index);
+  };
+
+  const handleResetDrag = (qid: string) => {
+    const originalOptions = questionsData.find(q => q.id === qid)?.options?.map(o => o.id) || [];
+    handleOptionChange(qid, { source: originalOptions, target: [] });
+    setSubmitted(false);
+  };
+
   const handleDragEnd = (result: DropResult) => {
     const { source, destination } = result;
     if (!destination) return;
@@ -94,61 +100,66 @@ import './QuestionUI.scss';
       };
       const answer = answers[q.id] || defaultAnswer;
       return (
-        <DragDropContext onDragEnd={handleDragEnd}>
-          <div className="drag-panes">
-            <Droppable droppableId="source">
-              {(provided) => (
-                <div className="drag-column" ref={provided.innerRef} {...provided.droppableProps}>
-                  <h4>Available Options</h4>
-                  {answer.source.map((id: string, index: number) => {
-                    const opt = q.options?.find(o => o.id === id);
-                    return (
-                      <Draggable key={id} draggableId={id} index={index}>
-                        {(provided) => (
-                          <div
-                            className="draggable-item"
-                            ref={provided.innerRef}
-                            {...provided.draggableProps}
-                            {...provided.dragHandleProps}
-                          >
-                            {opt?.text}
-                          </div>
-                        )}
-                      </Draggable>
-                    );
-                  })}
-                  {provided.placeholder}
-                </div>
-              )}
-            </Droppable>
+        <>
+          <DragDropContext onDragEnd={handleDragEnd}>
+            <div className="drag-panes">
+              <Droppable droppableId="source">
+                {(provided) => (
+                  <div className="drag-column" ref={provided.innerRef} {...provided.droppableProps}>
+                    <h4>Available Options</h4>
+                    {answer.source.map((id: string, index: number) => {
+                      const opt = q.options?.find(o => o.id === id);
+                      return (
+                        <Draggable key={id} draggableId={id} index={index}>
+                          {(provided) => (
+                            <div
+                              className="draggable-item"
+                              ref={provided.innerRef}
+                              {...provided.draggableProps}
+                              {...provided.dragHandleProps}
+                            >
+                              {opt?.text}
+                            </div>
+                          )}
+                        </Draggable>
+                      );
+                    })}
+                    {provided.placeholder}
+                  </div>
+                )}
+              </Droppable>
 
-            <Droppable droppableId="target">
-              {(provided) => (
-                <div className="drag-column" ref={provided.innerRef} {...provided.droppableProps}>
-                  <h4>Drop in Order</h4>
-                  {answer.target.map((id: string, index: number) => {
-                    const opt = q.options?.find(o => o.id === id);
-                    return (
-                      <Draggable key={id} draggableId={id} index={index}>
-                        {(provided) => (
-                          <div
-                            className="draggable-item"
-                            ref={provided.innerRef}
-                            {...provided.draggableProps}
-                            {...provided.dragHandleProps}
-                          >
-                            {opt?.text}
-                          </div>
-                        )}
-                      </Draggable>
-                    );
-                  })}
-                  {provided.placeholder}
-                </div>
-              )}
-            </Droppable>
-          </div>
-        </DragDropContext>
+              <Droppable droppableId="target">
+                {(provided) => (
+                  <div className="drag-column" ref={provided.innerRef} {...provided.droppableProps}>
+                    <h4>Drop in Order</h4>
+                    {answer.target.map((id: string, index: number) => {
+                      const opt = q.options?.find(o => o.id === id);
+                      return (
+                        <Draggable key={id} draggableId={id} index={index}>
+                          {(provided) => (
+                            <div
+                              className="draggable-item"
+                              ref={provided.innerRef}
+                              {...provided.draggableProps}
+                              {...provided.dragHandleProps}
+                            >
+                              {opt?.text}
+                            </div>
+                          )}
+                        </Draggable>
+                      );
+                    })}
+                    {provided.placeholder}
+                  </div>
+                )}
+              </Droppable>
+            </div>
+          </DragDropContext>
+          <button className="reset-btn" onClick={() => handleResetDrag(q.id)}>
+            Reset
+          </button>
+        </>
       );
     }
 
@@ -242,7 +253,7 @@ import './QuestionUI.scss';
     const correct = JSON.stringify(userAns) === JSON.stringify(q.correctAnswer);
     return (
       <div className={correct ? 'correct' : 'incorrect'}>
-        {correct ? '✅ Correct' : `❌ Incorrect. ${q.explanation}`}
+        {correct ? `✅ Correct: ${q.explanation}` : `❌ Incorrect. `}
       </div>
     );
   };
@@ -263,13 +274,24 @@ import './QuestionUI.scss';
         <button className="submit-btn" onClick={handleSubmit}>
           Submit
         </button>
-        <button className="next-btn" onClick={handleNext}>
+        <button className="next-btn" onClick={handleNext} disabled={currentQIndex === questionsData.length - 1}>
           Next
         </button>
+      </div>
+      {/* Pagination */}
+      <div className="pagination">
+        {questionsData.map((q, i) => (
+          <button
+            key={q.id}
+            className={`page-btn ${i === currentQIndex ? 'active' : ''}`}
+            onClick={() => handleJumpToQuestion(i)}
+          >
+            {i + 1}
+          </button>
+        ))}
       </div>
     </div>
   );
 };
 
-
-export default QuestionUI
+export default QuestionUI;
