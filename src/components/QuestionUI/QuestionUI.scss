@@ -1,0 +1,56 @@
+/* You can keep your original question-ui styles here, or import component-specific styles instead */
+
+/* For example: */
+.question-ui {
+  padding: 1rem;
+  font-family: sans-serif;
+
+  .question-card {
+    background: #fdfdfd;
+    border-radius: 12px;
+    padding: 1rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 1rem;
+  }
+
+  .option-container {
+    width: 100%;
+    max-height: 70vh;
+    overflow-y: auto;
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    padding: 8px 0;
+    position: relative;
+    z-index: 1000;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  @media (max-width: 480px) {
+    .option-container {
+      max-height: 80vh;
+      font-size: 14px;
+    }
+  }
+
+  .option {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1rem;
+  }
+
+  .reset-btn {
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    border-radius: 6px;
+    border: none;
+    background-color: #ffc107;
+    color: black;
+    cursor: pointer;
+    width: auto;
+    align-self: flex-start;
+  }
+}

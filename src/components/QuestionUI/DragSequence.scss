@@ -1,0 +1,35 @@
+.drag-panes {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1rem;
+
+  .drag-column {
+    flex: 1 1 300px;
+    background: #f4f4f4;
+    padding: 1rem;
+    border-radius: 8px;
+    min-height: 200px;
+    position: relative;
+  }
+
+  .draggable-item {
+    padding: 0.5rem 0.75rem;
+    margin-bottom: 0.5rem;
+    background: white;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    cursor: grab;
+  }
+}
+
+@media (max-width: 600px) {
+  .drag-panes {
+    flex-direction: column;
+
+    .drag-column {
+      width: 100%;
+    }
+  }
+}

@@ -1,12 +1,15 @@
 import React from 'react';
 import SectionedGallery from './../components/SectionedGallery';
 import TextFileViewer from './../components/TextFileViewer';
+import QuestionUI from './../components/QuestionUI'
 const Dashboard = ({ }) => {
 
     return (<div>
         <p> Welcome, This Dashboard page</p>
-        <SectionedGallery/>
+             <QuestionUI/>
+        {/* <SectionedGallery/>
         <TextFileViewer/>
+    */}
     </div>)
 }
 
