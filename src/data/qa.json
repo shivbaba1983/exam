@@ -463,7 +463,185 @@
   ],
   "correctAnswer": ["5", "1", "4"],
   "explanation": "The team should first create a new project and upload sample documents (5), then train the custom extraction model (4), and finally label key fields in the uploaded documents (1) to complete the process."
+},
+{
+  "id": "q21",
+  "type": "drag-sequence",
+  "question": "You are building an application to identify defects in factory-produced components that are unique to your business. To achieve this, you need to use the Custom Vision API for fault detection. Which three steps should you follow in order?",
+  "options": [
+    { "id": "1", "text": "Train the classifier model." },
+    { "id": "2", "text": "Upload and tag images." },
+    { "id": "3", "text": "Initialize the training dataset." },
+    { "id": "4", "text": "Train the object detection model." },
+    { "id": "5", "text": "Create a project." }
+  ],
+  "correctAnswer": ["5", "2", "4"],
+  "explanation": "To build a fault detection model using Custom Vision, you start by creating a project (5), then upload and tag images (2), and finally train the object detection model (4)."
 }
+,{
+  "id": "q22",
+  "type": "drag-sequence",
+  "question": "You have a question-answering project in Azure AI Language. You need to migrate the project to a Language service instance in a different Azure region. What are the three sequential actions you should perform to accomplish this?",
+  "options": [
+    { "id": "1", "text": "Train and publish model from the new instance." },
+    { "id": "2", "text": "Enable custom entity recognition from the new instance." },
+    { "id": "3", "text": "From the original instance, export the existing project." },
+    { "id": "4", "text": "From the new instance, import the project file." },
+    { "id": "5", "text": "From the new instance, regenerate the keys." }
+  ],
+  "correctAnswer": ["3", "4", "1"],
+  "explanation": "To migrate a question-answering project, first export the existing project from the original instance (3), then import the project file into the new instance (4), and finally train and publish the model from the new instance (1)."
+},{
+  "id": "q23",
+  "type": "drag-sequence",
+  "question": "You are building a retail chatbot that uses Custom Question Answering, a feature of Azure AI Language. You upload an internal support document to train the model. The document contains the following question: \"What is your return policy?\"\n\nUsers report that the chatbot returns the default answer when they ask:\n\"Can I return a product after purchase?\"\n\nHowever, the chatbot returns the correct answer when users ask:\n\"What is your return policy?\"\n\nBoth questions should return the same answer.\nYou need to increase the accuracy of the chatbot responses.\nWhich three actions should you perform in sequence?",
+  "options": [
+    { "id": "1", "text": "Add a new question and answer (QnA) pair." },
+    { "id": "2", "text": "Retrain the model." },
+    { "id": "3", "text": "Add additional questions to the document." },
+    { "id": "4", "text": "Republish the model." },
+    { "id": "5", "text": "Add alternative phrasing to the question and answer (QnA) pair." }
+  ],
+  "correctAnswer": ["5", "2", "4"],
+  "explanation": "To improve accuracy, first add alternative phrasings to the existing QnA pair (5) so that semantically similar questions are matched. Then retrain the model (2) to incorporate the updates, and republish it (4) to reflect changes in the deployed service."
+},
+{
+  "id": "q24",
+  "type": "drag-sequence",
+  "question": "You have a chatbot that uses a custom Question Answering application. You enable active learning for the knowledge base used by the application. You need to integrate user input into the model. Which four actions should you perform in sequence?",
+  "options": [
+    { "id": "1", "text": "For the knowledge base, select Show active learning suggestions." },
+    { "id": "2", "text": "Create a new model with alternate questions." },
+    { "id": "3", "text": "Approve and reject suggestions." },
+    { "id": "4", "text": "Save and train the knowledge base." },
+    { "id": "5", "text": "Select the properties of the Azure Cognitive Services resource." },
+    { "id": "6", "text": "Publish the knowledge base." },
+    { "id": "7", "text": "Modify the automation task logic app to run an Azure Resource Manager template that creates the Azure Cognitive Services resource." }
+  ],
+  "correctAnswer": ["1", "3", "4", "6"],
+  "explanation": "To incorporate user input via active learning: (1) Review active learning suggestions, (3) approve or reject them, (4) save and train the knowledge base, and finally (6) publish the updated version to make it available to the chatbot."
+},
+{
+  "id": "q25",
+  "type": "drag-sequence",
+  "question": "You have a question-answering project in Azure AI Language. You need to migrate the project to a Language service instance in a different Azure region. What are the three sequential actions you should perform to accomplish this?",
+  "options": [
+    { "id": "1", "text": "Train and publish model from the new instance." },
+    { "id": "2", "text": "Enable custom entity recognition from the new instance." },
+    { "id": "3", "text": "From the original instance, export the existing project." },
+    { "id": "4", "text": "From the new instance, import the project file." },
+    { "id": "5", "text": "From the new instance, regenerate the keys." }
+  ],
+  "correctAnswer": ["3", "4", "1"],
+  "explanation": "To migrate a question-answering project: First export the project from the original instance (3), then import it into the new instance (4), and finally train and publish it in the new environment (1)."
+},
+{
+  "id": "q26",
+  "type": "drag-sequence",
+  "question": "You are building a retail chatbot that uses Custom Question Answering, a feature of Azure AI Language. You upload an internal support document to train the model. The document contains the following question: \"What is your return policy?\"\n\nUsers report that the chatbot returns the default answer when they ask:\n\"Can I return a product after purchase?\"\n\nHowever, the chatbot returns the correct answer when users ask:\n\"What is your return policy?\"\n\nBoth questions should return the same answer. You need to increase the accuracy of the chatbot responses.\nWhich three actions should you perform in sequence?",
+  "options": [
+    { "id": "1", "text": "Add a new question and answer (QnA) pair." },
+    { "id": "2", "text": "Retrain the model." },
+    { "id": "3", "text": "Add additional questions to the document." },
+    { "id": "4", "text": "Republish the model." },
+    { "id": "5", "text": "Add alternative phrasing to the question and answer (QnA) pair." }
+  ],
+  "correctAnswer": ["5", "2", "4"],
+  "explanation": "To improve chatbot accuracy: First, add alternative phrasing (5) so that similar questions are matched. Then retrain the model (2) to include the updates, and finally republish it (4) to make the changes live."
+},{
+  "id": "q28",
+  "type": "drag-sequence",
+  "question": "You have a Language Understanding solution that you want to deploy using Docker container in your host computer. \nWhich three actions should you perform in sequence to prepare and run the solution on a host computer?",
+  "options": [
+    { "id": "1", "text": "From the Language Understanding portal, export the solution as a package file." },
+    { "id": "2", "text": "From the host computer, move the package file to the Docker input directory." },
+    { "id": "3", "text": "From the host computer, build the container and specify the output directory." },
+    { "id": "4", "text": "From the Language Understanding portal, retrain the model." },
+    { "id": "5", "text": "From the host computer, run the container and specify the input directory." }
+  ],
+  "correctAnswer": ["1", "2", "5"],
+  "explanation": "To deploy a LUIS model using Docker: First, export the solution from the portal (1). Then move the package to Docker's input directory (2). Finally, run the container with the appropriate input path (5)."
+},{
+  "id": "q29",
+  "type": "drag-sequence",
+  "question": "Using Azure AI Services you have built a speech model which transcribes physics lectures. When you put the model for testing it is not able to transcribe scientific terms.\nHow will you improve the accuracy of the model? Select the most appropriate five steps which you should perform in sequence to achieve the goal.",
+  "options": [
+    { "id": "1", "text": "Create a project with inbuilt-scientific term detector." },
+    { "id": "2", "text": "Deploy the model." },
+    { "id": "3", "text": "Create a speech-to-text model." },
+    { "id": "4", "text": "Create a Custom Speech project." },
+    { "id": "5", "text": "Upload training datasets." },
+    { "id": "6", "text": "Train the model." },
+    { "id": "7", "text": "Create a Conversational Language Understanding model." }
+  ],
+  "correctAnswer": ["4", "3", "5", "6", "2"],
+  "explanation": "To improve recognition of scientific terms in transcriptions: (4) First create a Custom Speech project to customize the model. (3) Define a speech-to-text model. (5) Upload audio and transcripts with scientific vocabulary. (6) Train the model. (2) Finally, deploy the improved model for use."
+},{
+  "id": "q30",
+  "type": "drag-sequence",
+  "question": "You have a Language Understanding solution that you want to deploy using a Docker container on your host computer. Which three actions should you perform in sequence to prepare and run the solution on a host computer?",
+  "options": [
+    {
+      "id": "1",
+      "text": "From the Language Understanding portal, export the solution as a package file."
+    },
+    {
+      "id": "2",
+      "text": "From the host computer, move the package file to the Docker input directory."
+    },
+    {
+      "id": "3",
+      "text": "From the host computer, build the container and specify the output directory."
+    },
+    {
+      "id": "4",
+      "text": "From the Language Understanding portal, retrain the model."
+    },
+    {
+      "id": "5",
+      "text": "From the host computer, run the container and specify the input directory."
+    }
+  ],
+  "correctAnswer": ["1", "2", "5"],
+  "explanation": "To deploy a Language Understanding (LUIS) solution in a Docker container, first export the model as a package file (1), then move the package to the container’s input directory (2), and finally run the container specifying the input directory (5)."
+},{
+  "id": "q31",
+  "type": "drag-sequence",
+  "question": "You're developing an Azure OpenAI-powered content generation tool. You need to configure the model to write press releases. The model should be hosted for web application access. The solution must minimize development effort. Which three actions should you perform in sequence in Azure OpenAI Studio?",
+  "options": [
+    {
+      "id": "1",
+      "text": "Create a deployment that uses the text-embedding-ada-002 model."
+    },
+    {
+      "id": "2",
+      "text": "Apply the Customer Service Assistant system message template."
+    },
+    {
+      "id": "3",
+      "text": "Apply the Marketing Writing Assistant system message template."
+    },
+    {
+      "id": "4",
+      "text": "Create a deployment that uses the GPT-35 Turbo model."
+    },
+    {
+      "id": "5",
+      "text": "Deploy the solution to a new web app."
+    },
+    {
+      "id": "6",
+      "text": "Apply the Default system message template."
+    }
+  ],
+  "correctAnswer": ["4", "3", "5"],
+  "explanation": "First, create a deployment using GPT-35 Turbo (4) as it's suitable for content generation. Then, apply the Marketing Writing Assistant template (3) to tailor the model for press release style. Finally, deploy the solution to a new web app (5) for web access."
+}
+
+
+
+
+
 
 
 
