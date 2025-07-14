@@ -264,7 +264,7 @@ const QuestionUI = () => {
         <h3>
           Q{currentQIndex + 1}: {currentQuestion.question}
         </h3>
-        <div className="options-container">{renderOptions(currentQuestion)}</div>
+        <div className="option-container">{renderOptions(currentQuestion)}</div>
         {submitted && checkAnswer(currentQuestion)}
       </div>
       <div className="controls">
