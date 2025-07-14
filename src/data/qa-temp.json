@@ -1674,7 +1674,7 @@
   "correctAnswer": ["b"],
   "explanation": "To optimize TTS voice quality in Azure AI Speech using SSML, the `effect` attribute of the `<voice>` element can be used to apply voice transformation effects like 'style', 'whispered', or 'robotic'. This allows fine-tuning of voice output for specialized environments like motor vehicle systems."
 },{
-  "id": "q81",
+  "id": "q82",
   "type": "multiple",
   "question": [
     "How would you complete the following SSML script for a text-to-speech app that uses a custom neural voice, ensuring the voice has a calm tone and imitates a young adult female?",
@@ -1776,37 +1776,32 @@
     "2": "h"
   },
   "explanation": "To create a custom neural voice, you use the Speech Studio portal, which provides tools for voice customization and training. To generate narration from scripted text, Text-to-Speech service is used to synthesize audio from text."
-},{
-  "id": "q85",
-  "type": "matching-pairs",
+},
+  {
+    "id": "q85",
+    "type": "dropdown-pair",
   "question": [
     "You are developing a customer call handling solution which will receive calls from Spanish-speaking and Hindi-speaking callers. The system is supposed to perform the following tasks:",
     "- The inbound voice is to be captured as text",
     "- Replay the received messages in English.",
     "Which Azure AI Services should you use?"
   ],
-  "leftOptions": [
-    { "id": "1", "text": "To capture messages" },
-    { "id": "2", "text": "To replay messages" }
-  ],
-  "rightOptions": [
+    "leftOptions": [
     { "id": "a", "text": "Speaker Recognition" },
     { "id": "b", "text": "Speech-to-text" },
     { "id": "c", "text": "Text-to-speech" },
-    { "id": "d", "text": "Translator" },
+    { "id": "d", "text": "Translator" }
+    ],
+    "rightOptions": [
     { "id": "e", "text": "Speech-to-text only" },
     { "id": "f", "text": "Speech-to-text and Language" },
     { "id": "g", "text": "Speaker Recognition and Language" },
     { "id": "h", "text": "Text-to-speech and Language" },
     { "id": "i", "text": "Text-to-speech and Translator" }
-  ],
-  "correctAnswer": {
-    "1": "b",
-    "2": "i"
-  },
-  "explanation": "To capture messages from Spanish and Hindi speakers, the system should use Speech-to-text to transcribe the audio and Translator to convert it into English text. To replay the messages in English, use Text-to-speech to synthesize the translated English text back into audio, combined with Translator to ensure language conversion."
-}
-
+    ],
+    "correctAnswer": { "left": "b", "right": "i" },
+     "explanation": "To capture messages from Spanish and Hindi speakers, the system should use Speech-to-text to transcribe the audio and Translator to convert it into English text. To replay the messages in English, use Text-to-speech to synthesize the translated English text back into audio, combined with Translator to ensure language conversion."
+  }
 
 
 

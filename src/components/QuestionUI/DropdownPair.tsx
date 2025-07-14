@@ -12,14 +12,14 @@ interface DropdownPairProps {
 const DropdownPair = ({ question: q, answer, submitted, onOptionChange }: DropdownPairProps) => (
   <div className="dropdown-pair">
     <select value={answer?.left || ''} onChange={(e) => onOptionChange(q.id, { ...answer, left: e.target.value })}>
-      <option value="">Select Section</option>
+      <option value="">Select</option>
       {q.leftOptions?.map((opt) => (
         <option key={opt.id} value={opt.id}>{opt.text}</option>
       ))}
     </select>
 
     <select value={answer?.right || ''} onChange={(e) => onOptionChange(q.id, { ...answer, right: e.target.value })}>
-      <option value="">Select Category</option>
+      <option value="">Select</option>
       {q.rightOptions?.map((opt) => {
         const isCorrect = submitted && q.correctAnswer?.right === opt.id && answer?.right === opt.id;
         return (
