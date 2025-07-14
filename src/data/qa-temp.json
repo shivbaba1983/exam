@@ -1617,7 +1617,204 @@
     "2": "f"
   },
   "explanation": "Use '--kind OpenAI' to specify the Azure OpenAI resource type. Use '--encryption' to configure the resource to use customer-managed keys stored in Azure Key Vault for data encryption."
+},{
+  "id": "q79",
+  "type": "multiple",
+  "question": [
+    "You need to upload speech samples to a Speech Studio project for use in training.",
+    "How should you upload the samples?"
+  ],
+  "options": [
+    { "id": "a", "text": "Combine the speech samples into a single audio file in the .wma format and upload the file." },
+    { "id": "b", "text": "Upload a .zip file that contains a collection of audio files in the .wav format and a corresponding text transcript file." },
+    { "id": "c", "text": "Upload individual audio files in the FLAC format and manually upload a corresponding transcript in Microsoft Word format." },
+    { "id": "d", "text": "Upload individual audio files in the .wma format." }
+  ],
+  "correctAnswer": ["b"],
+  "explanation": "To train custom models in Speech Studio, you should upload a .zip file that includes multiple .wav audio files along with a transcript file in the specified format. Other formats like .wma or Word documents are not supported for training."
+},{
+  "id": "q80",
+  "type": "multiple",
+  "question": [
+    "What should you upload to a voice talent profile for a custom neural voice in a retail self-service check-out system?"
+  ],
+  "options": [
+    {
+      "id": "a",
+      "text": "A five-minute .wmp or .mp3 file of the voice talent describing the retailer."
+    },
+    {
+      "id": "b",
+      "text": "A .zip file that contains 60-second .wav files and the associated transcripts as .txt files."
+    },
+    {
+      "id": "c",
+      "text": "A five-minute .flac audio file and the associated transcript as a .txt file."
+    },
+    {
+      "id": "d",
+      "text": "A .wav or .mp3 file of the voice talent consenting to the creation of a synthetic version of their voice."
+    }
+  ],
+  "correctAnswer": ["b"],
+  "explanation": "For Custom Neural Voice training in Azure, you must upload a .zip file containing 60-second .wav audio clips and corresponding .txt transcript files. This structured dataset is required to train the synthetic voice model accurately."
+},{
+  "id": "q81",
+  "type": "multiple",
+  "question": [
+    "You are assigned a new job to develop an app that will be used in motor vehicles which make use of the text-to-speech functionality of Azure AI Speech service.",
+    "How can you optimize text-to-speech voice quality for the app using SSML?"
+  ],
+  "options": [
+    { "id": "a", "text": "the style attribute of the mstts:express-as element" },
+    { "id": "b", "text": "the effect attribute of the voice element" },
+    { "id": "c", "text": "Use mstts:ttsembedding element" },
+    { "id": "d", "text": "Use volume attribute in prosody element" }
+  ],
+  "correctAnswer": ["b"],
+  "explanation": "To optimize TTS voice quality in Azure AI Speech using SSML, the `effect` attribute of the `<voice>` element can be used to apply voice transformation effects like 'style', 'whispered', or 'robotic'. This allows fine-tuning of voice output for specialized environments like motor vehicle systems."
+},{
+  "id": "q81",
+  "type": "multiple",
+  "question": [
+    "How would you complete the following SSML script for a text-to-speech app that uses a custom neural voice, ensuring the voice has a calm tone and imitates a young adult female?",
+    "Select two most appropriate answers from the options.",
+    "",
+    "Example snippet:",
+    "",
+    "<mstts:express-as ...=\"YoungAdultFemale\" ...=\"gentle\">",
+    "How can I assist you?",
+    "</mstts:express-as>"
+  ],
+  "options": [
+    { "id": "a", "text": "role" },
+    { "id": "b", "text": "style" },
+    { "id": "c", "text": "styledegree" },
+    { "id": "d", "text": "type" },
+    { "id": "e", "text": "voice" }
+  ],
+  "correctAnswer": ["a", "b"],
+  "explanation": "In SSML for Azure TTS, `role` is used to define the persona (e.g., YoungAdultFemale), and `style` defines the speaking tone (e.g., gentle). These attributes help create more natural and expressive speech output."
+},{
+  "id": "q83",
+  "type": "matching-pairs",
+  "question": [
+    "How do you translate an English lecture into French and German using Azure AI services? The function named append_to_transcript_file takes translated text and a language identifier as input parameters. Complete the code snippet with appropriate options.",
+    "",
+    "```python",
+    "speech_key = os.environ['SPEECH_SUBSCRIPTION_KEY']",
+    "service_region = os.environ['SPEECH_SERVICE_REGION']",
+    "",
+    "def translate_speech():",
+    "    translation_config = speechsdk.translation.SpeechTranslationConfig(subscription=speech_key, region=service_region)",
+    "    translation_config.speech_recognition_language = \"en\"",
+    "",
+    "    languages = ",
+    "    for language in languages:",
+    "        translation_config.add_target_language(language)",
+    "",
+    "    audio_config = speechsdk.audio.AudioConfig(use_default_microphone=True)",
+    "    recognizer = speechsdk.translation.",
+    "        translation_config=translation_config, audio_config=audio_config)",
+    "",
+    "    result = recognizer.recognize_once()",
+    "",
+    "    if result.reason == speechsdk.ResultReason.TranslatedSpeech:",
+    "        append_to_transcript_file(result.text, \"en\")",
+    "        for language in result.translations:",
+    "            append_to_transcript_file(result.translations[language], language)",
+    "",
+    "translate_speech()",
+    "```"
+  ],
+  "leftOptions": [
+    { "id": "1", "text": "Languages list" },
+    { "id": "2", "text": "Recognizer initialization" }
+  ],
+  "rightOptions": [
+    { "id": "a", "text": "(['fr', 'de'])" },
+    { "id": "b", "text": "(['French', 'German'])" },
+    { "id": "c", "text": "(['en-GB'])" },
+    { "id": "d", "text": "(['languages'])" },
+    { "id": "e", "text": "SpeechTranslator(" },
+    { "id": "f", "text": "SpeechSynthesizer(" },
+    { "id": "g", "text": "TranslationRecognizer(" },
+    { "id": "h", "text": "SpeakerRecognizer(" }
+  ],
+  "correctAnswer": {
+    "1": "a",
+    "2": "g"
+  },
+  "explanation": "The target languages for translation are specified as language codes like ['fr', 'de']. The correct recognizer class to use for speech translation in Azure Speech SDK is TranslationRecognizer."
+},{
+  "id": "q84",
+  "type": "matching-pairs",
+  "question": [
+    "A leading online education platform, \"LearnGo\", wants to create engaging video courses with personalized narration. They require a customized voice that resonates with their brand identity. The narration should be synthesized from scripted text.",
+    "As a developer, design a solution using Azure AI Services to:",
+    "1. Create a custom voice for LearnGo's narration.",
+    "2. Generate audio narration from scripted text.",
+    "",
+    "Match the tasks with the appropriate Azure AI service or tool."
+  ],
+  "leftOptions": [
+    { "id": "1", "text": "Create a custom voice for LearnGo's narration" },
+    { "id": "2", "text": "Generate audio narration from scripted text" }
+  ],
+  "rightOptions": [
+    { "id": "a", "text": "Microsoft Bot Framework Composer" },
+    { "id": "b", "text": "The Azure portal" },
+    { "id": "c", "text": "The Language Understanding portal" },
+    { "id": "d", "text": "The Speech Studio portal" },
+    { "id": "e", "text": "Language Understanding" },
+    { "id": "f", "text": "Speaker Recognition" },
+    { "id": "g", "text": "Speech-to-text" },
+    { "id": "h", "text": "Text-to-speech" }
+  ],
+  "correctAnswer": {
+    "1": "d",
+    "2": "h"
+  },
+  "explanation": "To create a custom neural voice, you use the Speech Studio portal, which provides tools for voice customization and training. To generate narration from scripted text, Text-to-Speech service is used to synthesize audio from text."
+},{
+  "id": "q85",
+  "type": "matching-pairs",
+  "question": [
+    "You are developing a customer call handling solution which will receive calls from Spanish-speaking and Hindi-speaking callers. The system is supposed to perform the following tasks:",
+    "- The inbound voice is to be captured as text",
+    "- Replay the received messages in English.",
+    "Which Azure AI Services should you use?"
+  ],
+  "leftOptions": [
+    { "id": "1", "text": "To capture messages" },
+    { "id": "2", "text": "To replay messages" }
+  ],
+  "rightOptions": [
+    { "id": "a", "text": "Speaker Recognition" },
+    { "id": "b", "text": "Speech-to-text" },
+    { "id": "c", "text": "Text-to-speech" },
+    { "id": "d", "text": "Translator" },
+    { "id": "e", "text": "Speech-to-text only" },
+    { "id": "f", "text": "Speech-to-text and Language" },
+    { "id": "g", "text": "Speaker Recognition and Language" },
+    { "id": "h", "text": "Text-to-speech and Language" },
+    { "id": "i", "text": "Text-to-speech and Translator" }
+  ],
+  "correctAnswer": {
+    "1": "b",
+    "2": "i"
+  },
+  "explanation": "To capture messages from Spanish and Hindi speakers, the system should use Speech-to-text to transcribe the audio and Translator to convert it into English text. To replay the messages in English, use Text-to-speech to synthesize the translated English text back into audio, combined with Translator to ensure language conversion."
 }
+
+
+
+
+
+
+
+
+
 
 
 

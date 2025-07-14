@@ -7,125 +7,126 @@ import Pagination from './Pagination';
 import AnswerFeedback from './AnswerFeedback';
 import './QuestionUI.scss';
 
-// Simple formatter splits by newline and period+space
 const formatQuestionSimple = (text: string | string[]): string[] => {
   if (Array.isArray(text)) {
     return text.map(line => line.trim()).filter(Boolean);
   }
-
-  if (typeof text === 'string') {
-    return text
-      .split('\n')
-      .flatMap(line => line.split('. '))
-      .map(line => line.trim())
-      .filter(Boolean);
-  }
-
-  return ['[Invalid or missing question text]'];
+  return text
+    .split('\n')
+    .flatMap(line => line.split('. '))
+    .map(line => line.trim())
+    .filter(Boolean);
 };
-
 
 const QuestionUI = () => {
   const [answers, setAnswers] = useState<any>({});
   const [submitted, setSubmitted] = useState(false);
-  const [currentQIndex, setCurrentQIndex] = useState(0);
+  const [currentPage, setCurrentPage] = useState(0);
+  const [questionsPerPage, setQuestionsPerPage] = useState(1);
 
-  const currentQuestion = questionsData[currentQIndex];
+  const totalPages = Math.ceil(questionsData.length / questionsPerPage);
+  const pageQuestions = questionsData.slice(
+    currentPage * questionsPerPage,
+    currentPage * questionsPerPage + questionsPerPage
+  );
 
   useEffect(() => {
-    if (currentQuestion.type === 'drag-sequence' && !answers[currentQuestion.id]) {
-      setAnswers((prev: any) => ({
-        ...prev,
-        [currentQuestion.id]: {
-          source: currentQuestion.options?.map(o => o.id) || [],
-          target: []
-        }
-      }));
-    } else if (currentQuestion.type === 'dropdown-pair' && !answers[currentQuestion.id]) {
-      setAnswers((prev: any) => ({
-        ...prev,
-        [currentQuestion.id]: { left: '', right: '' }
-      }));
-    }
-  }, [currentQuestion]);
+    pageQuestions.forEach(q => {
+      if ((q.type === 'drag-sequence' || q.type === 'dropdown-pair') && !answers[q.id]) {
+        setAnswers(prev => ({
+          ...prev,
+          [q.id]: q.type === 'drag-sequence'
+            ? { source: q.options?.map(o => o.id) || [], target: [] }
+            : { left: '', right: '' }
+        }));
+      }
+    });
+  }, [pageQuestions]);
 
   const handleOptionChange = (qid: string, value: any) => {
-    setAnswers((prev: any) => ({ ...prev, [qid]: value }));
+    setAnswers(prev => ({ ...prev, [qid]: value }));
   };
 
   const handleSubmit = () => setSubmitted(true);
 
-  const handleNext = () => {
-    setSubmitted(false);
-    if (currentQIndex < questionsData.length - 1) {
-      setCurrentQIndex(currentQIndex + 1);
-    }
-  };
-
-  const handleBack = () => {
-    setSubmitted(false);
-    if (currentQIndex > 0) {
-      setCurrentQIndex(currentQIndex - 1);
-    }
-  };
-
-  const handleJumpToQuestion = (index: number) => {
-    setSubmitted(false);
-    setCurrentQIndex(index);
-  };
-
   const handleResetDrag = (qid: string) => {
-    const originalOptions = questionsData.find(q => q.id === qid)?.options?.map(o => o.id) || [];
-    handleOptionChange(qid, { source: originalOptions, target: [] });
+    const original = questionsData.find(q => q.id === qid)?.options?.map(o => o.id) || [];
+    handleOptionChange(qid, { source: original, target: [] });
     setSubmitted(false);
   };
 
-  const userAnswer = currentQuestion.type === 'drag-sequence'
-    ? answers[currentQuestion.id]?.target
-    : currentQuestion.type === 'dropdown-pair'
-      ? answers[currentQuestion.id]
-      : answers[currentQuestion.id];
-
-  const isCorrect = JSON.stringify(userAnswer) === JSON.stringify(currentQuestion.correctAnswer);
+  const handlePageJump = (index: number) => {
+    setSubmitted(false);
+    setCurrentPage(index);
+  };
 
   return (
     <div className="question-ui">
-      <div key={currentQuestion.id} className="question-card">
-<QuestionHeader
-  questionNumber={currentQIndex + 1}
-  questionText={formatQuestionSimple(currentQuestion.question)}
-/>
-
-        <div className="option-container">
-          <OptionsRenderer
-            question={currentQuestion}
-            answers={answers}
-            submitted={submitted}
-            onOptionChange={handleOptionChange}
-            onResetDrag={handleResetDrag}
-          />
-        </div>
-
-        {submitted && (
-          <AnswerFeedback
-            isCorrect={isCorrect}
-            explanation={currentQuestion.explanation}
-          />
-        )}
+      <div className="question-count-selector" style={{ marginBottom: '1rem' }}>
+        <label htmlFor="perPage">Questions per page: </label>
+        <select
+          id="perPage"
+          value={questionsPerPage}
+          onChange={e => {
+            setQuestionsPerPage(Number(e.target.value));
+            setCurrentPage(0); // reset to first page
+          }}
+        >
+          <option value={1}>1</option>
+          <option value={5}>5</option>
+          <option value={10}>10</option>
+        </select>
       </div>
 
+      {pageQuestions.map((question, index) => {
+        const userAnswer =
+          question.type === 'drag-sequence'
+            ? answers[question.id]?.target
+            : question.type === 'dropdown-pair'
+              ? answers[question.id]
+              : answers[question.id];
+
+        const isCorrect = JSON.stringify(userAnswer) === JSON.stringify(question.correctAnswer);
+
+        return (
+          <div key={question.id} className="question-card">
+            <QuestionHeader
+              questionNumber={currentPage * questionsPerPage + index + 1}
+              questionText={formatQuestionSimple(question.question)}
+            />
+
+            <div className="option-container">
+              <OptionsRenderer
+                question={question}
+                answers={answers}
+                submitted={submitted}
+                onOptionChange={handleOptionChange}
+                onResetDrag={handleResetDrag}
+              />
+            </div>
+
+            {submitted && (
+              <AnswerFeedback
+                isCorrect={isCorrect}
+                explanation={question.explanation}
+              />
+            )}
+          </div>
+        );
+      })}
+
       <Controls
-        onBack={handleBack}
+        onBack={() => handlePageJump(currentPage - 1)}
         onSubmit={handleSubmit}
-        onNext={handleNext}
-        disableBack={currentQIndex === 0}
-        disableNext={currentQIndex === questionsData.length - 1}
+        onNext={() => handlePageJump(currentPage + 1)}
+        disableBack={currentPage === 0}
+        disableNext={currentPage === totalPages - 1}
       />
 
       <Pagination
-        currentIndex={currentQIndex}
-        total={questionsData.length}
-        onJump={handleJumpToQuestion}
+        currentIndex={currentPage}
+        total={totalPages}
+        onJump={handlePageJump}
       />
     </div>
   );
