@@ -9,10 +9,10 @@ const Dashboard = ({ }) => {
     return (<div>
         <p> Welcome, This Dashboard page</p>
              <QuestionUI/>
-             {/* <TestQuestionUI/> */}
-        {/* <SectionedGallery/>
-        <TextFileViewer/>
-    */}
+             {/* <TestQuestionUI/>  */}
+       <SectionedGallery/>
+        {/* <TextFileViewer/> */}
+   
     </div>)
 }
 
