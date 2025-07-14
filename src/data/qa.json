@@ -636,5 +636,36 @@
   ],
   "correctAnswer": ["4", "3", "5"],
   "explanation": "First, create a deployment using GPT-35 Turbo (4) as it's suitable for content generation. Then, apply the Marketing Writing Assistant template (3) to tailor the model for press release style. Finally, deploy the solution to a new web app (5) for web access."
+},{
+  "id": "q31",
+  "type": "single",
+  "question": [
+    "You are developing an application using Azure AI Services.",
+    "Which Azure AI Service should you use to analyze images and detect objects, faces, and text with minimum latency and optimized performance?"
+  ],
+  "options": [
+    { "id": "a", "text": "Azure AI Vision" },
+    { "id": "b", "text": "Azure AI Face" },
+    { "id": "c", "text": "Azure AI Document Intelligence" }
+  ],
+  "correctAnswer": "a",
+  "explanation": "Azure AI Vision is the best service to analyze images and detect objects, faces, and text with optimized performance."
+},
+
+{
+  "id": "q32",
+  "type": "single",
+  "question": [
+    "An e-commerce company wants to optimize images for mobile thumbnails.",
+    "Which feature of AI Vision AnalyzeImage should you use?"
+  ],
+  "options": [
+    { "id": "a", "text": "Detect objects" },
+    { "id": "b", "text": "Generate caption" },
+    { "id": "c", "text": "Smart crop" },
+    { "id": "d", "text": "Tag Visual Features" }
+  ],
+  "correctAnswer": "c",
+  "explanation": "Smart crop allows images to be resized and cropped optimized for thumbnails."
 }
 ]

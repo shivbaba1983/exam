@@ -2,6 +2,7 @@ import React from 'react';
 import { Question } from './../model/type';
 import DragSequence from './DragSequence';
 import DropdownPair from './DropdownPair';
+import MatchingPairs from './MatchingPairs';  // <--- import here
 
 interface OptionsRendererProps {
   question: Question;
@@ -11,7 +12,13 @@ interface OptionsRendererProps {
   onResetDrag: (qid: string) => void;
 }
 
-const OptionsRenderer = ({ question: q, answers, submitted, onOptionChange, onResetDrag }: OptionsRendererProps) => {
+const OptionsRenderer = ({
+  question: q,
+  answers,
+  submitted,
+  onOptionChange,
+  onResetDrag
+}: OptionsRendererProps) => {
   if (q.type === 'drag-sequence') {
     return (
       <DragSequence
@@ -34,9 +41,30 @@ const OptionsRenderer = ({ question: q, answers, submitted, onOptionChange, onRe
     );
   }
 
+  if (q.type === 'matching-pairs') {
+    const answer = answers[q.id] || {};
+
+    const handleMatchChange = (leftId: string, rightId: string) => {
+      onOptionChange(q.id, { ...answer, [leftId]: rightId });
+    };
+
+    return (
+      <MatchingPairs
+        leftOptions={q.leftOptions || []}
+        rightOptions={q.rightOptions || []}
+        answer={answer}
+        submitted={submitted}
+        onChange={handleMatchChange}
+      />
+    );
+  }
+
+  // Other question types as before...
+
   switch (q.type) {
     case 'single':
-      return q.options?.map((opt) => (
+      if (!q.options || q.options.length === 0) return <p>No options available.</p>;
+      return q.options.map((opt) => (
         <label key={opt.id} className="option">
           <input
             type="radio"
@@ -50,7 +78,8 @@ const OptionsRenderer = ({ question: q, answers, submitted, onOptionChange, onRe
       ));
 
     case 'multiple':
-      return q.options?.map((opt) => (
+      if (!q.options || q.options.length === 0) return <p>No options available.</p>;
+      return q.options.map((opt) => (
         <label key={opt.id} className="option">
           <input
             type="checkbox"
@@ -80,7 +109,7 @@ const OptionsRenderer = ({ question: q, answers, submitted, onOptionChange, onRe
       ));
 
     default:
-      return null;
+      return <p>Question type "{q.type}" not supported.</p>;
   }
 };
 

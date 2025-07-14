@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import questionsData from './../../data/qa.json';
+import questionsData from './../../data/qa-temp.json';
 import QuestionHeader from './QuestionHeader';
 import OptionsRenderer from './OptionsRenderer';
 import Controls from './Controls';
@@ -8,14 +8,22 @@ import AnswerFeedback from './AnswerFeedback';
 import './QuestionUI.scss';
 
 // Simple formatter splits by newline and period+space
-const formatQuestionSimple = (text: string): string[] => {
-  if (!text) return [];
-  return text
-    .split('\n')
-    .flatMap(line => line.split('. '))
-    .map(line => line.trim())
-    .filter(Boolean);
+const formatQuestionSimple = (text: string | string[]): string[] => {
+  if (Array.isArray(text)) {
+    return text.map(line => line.trim()).filter(Boolean);
+  }
+
+  if (typeof text === 'string') {
+    return text
+      .split('\n')
+      .flatMap(line => line.split('. '))
+      .map(line => line.trim())
+      .filter(Boolean);
+  }
+
+  return ['[Invalid or missing question text]'];
 };
+
 
 const QuestionUI = () => {
   const [answers, setAnswers] = useState<any>({});
@@ -83,10 +91,10 @@ const QuestionUI = () => {
   return (
     <div className="question-ui">
       <div key={currentQuestion.id} className="question-card">
-        <QuestionHeader
-          questionNumber={currentQIndex + 1}
-          questionText={formatQuestionSimple(currentQuestion.question)}
-        />
+<QuestionHeader
+  questionNumber={currentQIndex + 1}
+  questionText={formatQuestionSimple(currentQuestion.question)}
+/>
 
         <div className="option-container">
           <OptionsRenderer

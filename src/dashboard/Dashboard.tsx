@@ -10,7 +10,7 @@ const Dashboard = ({ }) => {
         <p> Welcome, This Dashboard page</p>
              <QuestionUI/>
              {/* <TestQuestionUI/>  */}
-       <SectionedGallery/>
+       {/* <SectionedGallery/> */}
         {/* <TextFileViewer/> */}
    
     </div>)

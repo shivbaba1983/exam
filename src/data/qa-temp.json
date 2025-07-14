@@ -483,5 +483,1149 @@
     ],
     "correctAnswer": ["1", "2", "3"],
     "explanation": "You first upload the documents, then create a project, and label the documents before training and deploying the model."
-  }
+  },{
+  "id": "q29",
+  "type": "single",
+  "question": "You are developing an application using Azure AI Services which will be used to:\n• Analyze images\n• Detect objects, faces, and text in images\n\nThe solution must ensure:\n• Minimum latency\n• Optimized performance\n\nWhich Azure AI Service should you use?",
+  "options": [
+    {
+      "id": "a",
+      "text": "Azure AI Vision"
+    },
+    {
+      "id": "b",
+      "text": "Azure AI Face"
+    },
+    {
+      "id": "c",
+      "text": "Azure AI Document Intelligence"
+    }
+  ],
+  "correctAnswer": "a",
+  "explanation": "✅ The Azure AI Vision service supports analyzing images for objects, faces, and text. It provides comprehensive image analysis capabilities in one service, making it optimal for scenarios requiring high performance and low latency."
+},{
+  "id": "q30",
+  "type": "single",
+  "question": "E-commerce company, GreenCycle, wants to enhance its product pages by optimizing images for:\n• Various devices\n• Different screen sizes\n\nTheir product team uploads high-resolution images.\nThese images need to be:\n• Resized\n• Cropped automatically for mobile thumbnails\n\nWhich feature of **AI Vision AnalyzeImage** should you use?",
+  "options": [
+    {
+      "id": "a",
+      "text": "Detect objects"
+    },
+    {
+      "id": "b",
+      "text": "Generate caption"
+    },
+    {
+      "id": "c",
+      "text": "Smart crop"
+    },
+    {
+      "id": "d",
+      "text": "Tag Visual Features"
+    }
+  ],
+  "correctAnswer": "c",
+  "explanation": "✅ Smart crop automatically generates image crops optimized for the region of interest, making it ideal for creating responsive thumbnails for mobile and other devices."
+},{
+  "id": "q31",
+  "type": "single",
+  "question": [
+    "You are developing an application using Azure AI Services.",
+    "Which Azure AI Service should you use to analyze images and detect objects, faces, and text with minimum latency and optimized performance?"
+  ],
+  "options": [
+    { "id": "a", "text": "Azure AI Vision" },
+    { "id": "b", "text": "Azure AI Face" },
+    { "id": "c", "text": "Azure AI Document Intelligence" }
+  ],
+  "correctAnswer": "a",
+  "explanation": "Azure AI Vision is the best service to analyze images and detect objects, faces, and text with optimized performance."
+},
+
+{
+  "id": "q32",
+  "type": "single",
+  "question": [
+    "An e-commerce company wants to optimize images for mobile thumbnails.",
+    "Which feature of AI Vision AnalyzeImage should you use?"
+  ],
+  "options": [
+    { "id": "a", "text": "Detect objects" },
+    { "id": "b", "text": "Generate caption" },
+    { "id": "c", "text": "Smart crop" },
+    { "id": "d", "text": "Tag Visual Features" }
+  ],
+  "correctAnswer": "c",
+  "explanation": "Smart crop allows images to be resized and cropped optimized for thumbnails."
+},{
+  "id": "q33",
+  "type": "multiple",
+  "question": [
+    "You are developing a method that uses the Computer Vision client library.",
+    "The method will perform optical character recognition (OCR) in images.",
+    "During testing, you discover that the call to the GetReadResultAsync method occurs before the read operation is complete.",
+    "You need to prevent the GetReadResultAsync method from proceeding until the read operation is complete.",
+    "Which two actions should you perform? Each correct answer presents part of the solution.",
+    "NOTE: Each correct selection is worth one point.",
+    "Code snippet:",
+    "public static async Task ReadFileUrl(ComputerVisionClient client, string urlFile)",
+    "{",
+    "    const int numberOfCharsInOperationId = 36;",
+    "    var txtHeaders = await client.ReadAsync(urlFile, language: \"en\");",
+    "    string opLocation = txtHeaders.OperationLocation;",
+    "    string operationId = opLocation.Substring(opLocation.Length - numberOfCharsInOperationId);",
+    "    ReadOperationResult results;",
+    "    results = await client.GetReadResultAsync(Guid.Parse(operationId));",
+    "    var textUrlFileResults = results.AnalyzeResult.ReadResults;",
+    "    foreach (ReadResult page in textUrlFileResults)",
+    "    {",
+    "        foreach (Line line in page.Lines)",
+    "        {",
+    "            Console.WriteLine(line.Text);",
+    "        }",
+    "    }",
+    "}"
+  ],
+  "options": [
+    { "id": "A", "text": "Wrap the call to GetReadResultAsync within a loop that contains a delay." },
+    { "id": "B", "text": "Add code to verify the results.Status value." },
+    { "id": "C", "text": "Add code to verify the status of the txtHeaders.Status value." },
+    { "id": "D", "text": "Remove the Guid.Parse(operationId) parameter." }
+  ],
+  "correctAnswer": ["A", "B"],
+  "explanation": "To ensure GetReadResultAsync waits until the read operation is complete, wrap the call in a loop with a delay to poll the status, and check the results.Status to confirm completion before proceeding."
+},{
+  "id": "q34",
+  "type": "single",
+  "question": [
+    "You're building a corporate website that will showcase meeting recordings using Azure Video Analyzer for Media.",
+    "You embed the Player and Insights widgets into your webpage.",
+    "The solution must:",
+    "• Enable keyword search within the video content.",
+    "• Display identified people and their names from the video.",
+    "• Show video captions in US English.",
+    "How should you configure the URLs for the widgets to meet these requirements?",
+    "Cognitive Insights Widget URL:",
+    "https://www.videoindexer.ai/embed/ins.... &controls= ..................................",
+    "Player Widget URL:",
+    "https://www.videoindexer.ai/embed/pla.... &captions= ..........................."
+  ],
+  "options": [
+    { "id": "A", "text": "widgets=people, search, controls=search; showcaptions=true, captions=en-US" },
+    { "id": "B", "text": "widgets=false, controls=search; showcaptions=true, captions=en-US" },
+    { "id": "C", "text": "widgets=people,keywords, controls=search; showcaptions=true, captions=en-US" }
+  ],
+  "correctAnswer": "C",
+  "explanation": "Option C correctly configures the Insights widget to show people and keywords widgets with search controls, while the Player widget is set to show captions in US English."
+},{
+  "id": "q35",
+  "type": "single",
+  "question": [
+    "You are building an app that will include one million scanned magazine articles.",
+    "Each article will be stored as an image file.",
+    "You need to configure the app to extract text from the images.",
+    "The solution must minimize development effort.",
+    "What should you include in the solution?"
+  ],
+  "options": [
+    { "id": "A", "text": "Computer vision image analysis" },
+    { "id": "B", "text": "The read API in Azure AI Vision" },
+    { "id": "C", "text": "Document Intelligence" },
+    { "id": "D", "text": "Azure AI service for language" }
+  ],
+  "correctAnswer": "B",
+  "explanation": "The Read API in Azure AI Vision is designed for OCR and can efficiently extract text from images, minimizing development effort."
+},{
+  "id": "q36",
+  "type": "multiple",
+  "question": [
+    "You use the Custom Vision service to build a classifier.",
+    "After training is complete, you need to evaluate the classifier.",
+    "Which two metrics are available for review?",
+    "Each correct answer presents a complete solution.",
+    "NOTE: Each correct selection is worth one point."
+  ],
+  "options": [
+    { "id": "A", "text": "recall" },
+    { "id": "B", "text": "F-score" },
+    { "id": "C", "text": "weighted accuracy" },
+    { "id": "D", "text": "precision" },
+    { "id": "E", "text": "area under the curve (AUC)" }
+  ],
+  "correctAnswer": ["A", "D"],
+  "explanation": "Custom Vision provides precision and recall as standard evaluation metrics. These help in assessing how well your classifier is performing in terms of relevant and correct predictions."
+},
+{
+  "id": "q37",
+  "type": "single",
+  "question": [
+    "You have created an object detection project named ‘MyDetectionProject’.",
+    "You trained the custom vision model and the following is the performance of the model based on training data.",
+    "Select the most appropriate choice for the following statement based on the information in the image:",
+    "**The percentage of false positives is**"
+  ],
+  "options": [
+    { "id": "a", "text": "0" },
+    { "id": "b", "text": "66.7" },
+    { "id": "c", "text": "95.8" },
+    { "id": "d", "text": "50" },
+    { "id": "e", "text": "100" }
+  ],
+  "correctAnswer": "a",
+  "explanation": "✅ The percentage of false positives is 0%, meaning the model did not incorrectly classify any negative example as positive."
+},{
+  "id": "q38",
+  "type": "single",
+  "question": [
+    "The value for the number of true positives divided by the total number of true positives and false negatives is",
+    "[answer choice]%."
+  ],
+  "options": [
+    { "id": "a", "text": "0" },
+    { "id": "b", "text": "66.7" },
+    { "id": "c", "text": "95.8" },
+    { "id": "d", "text": "50" },
+    { "id": "e", "text": "100" }
+  ],
+  "correctAnswer": "b",
+  "explanation": "✅ This value represents **recall**. Based on the image's data, the recall (true positives / (true positives + false negatives)) is 66.7%."
+},{
+  "id": "q39",
+  "type": "single",
+  "question": [
+    "You have an Azure subscription that contains an Azure AI Content Safety resource named CS1.",
+    "You plan to build an app that will analyze user-generated documents and identify obscure offensive terms.",
+    "You need to create a dictionary that will contain the offensive terms.",
+    "The solution must minimize development effort.",
+    "What should you use?"
+  ],
+  "options": [
+    { "id": "a", "text": "a text classifier" },
+    { "id": "b", "text": "language detection" },
+    { "id": "c", "text": "text moderation" },
+    { "id": "d", "text": "a blocklist" }
+  ],
+  "correctAnswer": "d",
+  "explanation": "✅ A **blocklist** in Azure AI Content Safety allows you to define custom offensive terms (including obscure ones) with minimal development effort. This is ideal for user-generated content filtering."
+},{
+  "id": "q40",
+  "type": "single",
+  "question": [
+    "You have an Azure subscription with an Azure OpenAI resource named AI1.",
+    "You developed a chatbot using AI1 to generate answers for specific questions.",
+    "You need to prevent users from bypassing the built-in safety mechanisms when asking questions.",
+    "Which Azure AI Content Safety feature should you implement?"
+  ],
+  "options": [
+    { "id": "a", "text": "Monitor online activity" },
+    { "id": "b", "text": "Jailbreak risk detection" },
+    { "id": "c", "text": "Moderate text content" },
+    { "id": "d", "text": "Protected material text detection" }
+  ],
+  "correctAnswer": "b",
+  "explanation": "✅ Jailbreak risk detection is a feature in Azure AI Content Safety that identifies attempts to circumvent content filters or safety mechanisms, which is essential when deploying chatbots built with Azure OpenAI."
+}
+,{
+  "id": "q41",
+  "type": "single",
+  "question": [
+    "You have an Azure subscription that contains an Azure OpenAI resource named AI1 and an Azure AI Content Safety resource named CS1.",
+    "You build a chatbot that uses AI1 to provide generative answers to specific questions and CS1 to check input and output for objectionable content.",
+    "You need to optimize the content filter configurations by running tests on sample questions.",
+    "Select the most appropriate solution from the options given below."
+  ],
+  "options": [
+    { "id": "a", "text": "From Content Safety Studio, you use the Moderate text content feature to run the tests." },
+    { "id": "b", "text": "From Content Safety Studio, you use the Safety metaprompt feature to run the tests." },
+    { "id": "c", "text": "From Content Safety Studio, you use the Monitor online activity feature to run the tests." },
+    { "id": "d", "text": "From Content Safety Studio, you use the Protected material detection feature to run the tests." }
+  ],
+  "correctAnswer": "a",
+  "explanation": "✅ The 'Moderate text content' feature in Content Safety Studio allows you to test and configure filtering thresholds by submitting sample prompts or completions, ensuring objectionable input/output is flagged correctly."
+},{
+  "id": "q42",
+  "type": "dropdown-pair",
+  "question": [
+    "You have an Azure subscription that contains an Azure AI Content Safety resource.",
+    "You are building a social media app that will enable users to share images.",
+    "You need to configure the app to moderate inappropriate content uploaded by the users.",
+    "How should you complete the code? To answer, select the appropriate options in the answer area."
+  ],
+  "leftOptions": [
+    { "id": "1", "text": "AnalyzeTextOptions" },
+    { "id": "2", "text": "BlocklistClient" },
+    { "id": "3", "text": "ContentSafetyClient" },
+    { "id": "4", "text": "TextCategoriesAnalysis" }
+  ],
+  "rightOptions": [
+    { "id": "5", "text": "AnalyzeImage(request)" },
+    { "id": "6", "text": "client.AnalyzeImage(request)" },
+    { "id": "7", "text": "client.AnalyzeText(request)" },
+    { "id": "8", "text": "request.AnalyzeImage(client)" }
+  ],
+  "correctAnswer": {
+    "left": "3",
+    "right": "6"
+  },
+  "explanation": "To moderate image content using Azure AI Content Safety, you instantiate the ContentSafetyClient and then call the AnalyzeImage method on the client instance passing the request."
+},{
+  "id": "q43",
+  "type": "multiple",
+  "question": [
+    "You have an Azure subscription with an Azure AI Content Safety resource named CS1.",
+    "You need to send a request to CS1 to detect hateful language in user input.",
+    "How should you complete the curl command URL?"
+  ],
+  "options": [
+    { "id": "a", "text": "completions" },
+    { "id": "b", "text": "contentsafety" },
+    { "id": "c", "text": "healthinsights/" },
+    { "id": "d", "text": "language/" },
+    { "id": "e", "text": "embeddings" },
+    { "id": "f", "text": "text:analyze" },
+    { "id": "g", "text": "text/blocklists" }
+  ],
+  "correctAnswer": ["b", "f"],
+  "explanation": "The Azure AI Content Safety endpoint URL must include 'contentsafety' to target the service, and 'text:analyze' is the correct path to analyze text for hateful language detection."
+},{
+  "id": "q44",
+  "type": "single",
+  "question": [
+    "You have an Azure subscription that contains an Azure AI Content Safety resource named CS1.",
+    "You create a test image that contains a square.",
+    "You submit the test image to CS1 by using the curl command and the following command-line parameters.",
+    "",
+    "What should you expect as the output?"
+  ],
+  "options": [
+    { "id": "a", "text": "0" },
+    { "id": "b", "text": "0.0" },
+    { "id": "c", "text": "7" },
+    { "id": "d", "text": "100" }
+  ],
+  "correctAnswer": "a",
+  "explanation": "The output score for the test image containing a simple shape like a square is expected to be 0, indicating no flagged content or zero severity."
+},{
+  "id": "q45",
+  "type": "single",
+  "question": [
+    "You are developing a custom question answering project in Azure AI Service for Language.",
+    "The project will be used by a chatbot to provide answers to user queries.",
+    "You need to configure the project to support multi-turn conversations,",
+    "where the chatbot can ask follow-up questions or clarify user intent.",
+    "What should you do to enable this functionality?"
+  ],
+  "options": [
+    { "id": "a", "text": "Add follow-up prompts." },
+    { "id": "b", "text": "Enable active learning." },
+    { "id": "c", "text": "Add alternate questions." },
+    { "id": "d", "text": "Enable chit-chat." }
+  ],
+  "correctAnswer": "a",
+  "explanation": "Adding follow-up prompts allows the chatbot to engage in multi-turn conversations by asking clarifying questions or guiding the user for additional input."
+},{
+  "id": "q46",
+  "type": "single",
+  "question": [
+    "You're developing a contact management chatbot using Azure AI Language Understanding.",
+    "The FindContact intent helps users search for contacts by location.",
+    "Your manager provides you with the following list of phrases to use for training the model:",
+    "\"Find contacts in North Virginia.\", \"Who do I know in Sydney?\", \"Search for contacts in Melbourne.\"",
+    "You need to implement these phrases in Language Understanding to improve the model.",
+    "What should you do?"
+  ],
+  "options": [
+    { "id": "a", "text": "You create a new utterance for each phrase in the FindContact intent" },
+    { "id": "b", "text": "You create a new intent for location." },
+    { "id": "c", "text": "You create a new entity for the domain." },
+    { "id": "d", "text": "You create a new pattern in the FindContact intent." }
+  ],
+  "correctAnswer": "a",
+  "explanation": "To improve the model, you add new utterances (example phrases) under the existing FindContact intent. This helps the model better recognize user requests related to finding contacts by location."
+},{
+  "id": "q47",
+  "type": "multiple",
+  "question": [
+    "You have trained a Conversational Language Understanding (CLU) model to interpret natural language input from users.",
+    "Before deploying the model, you need to evaluate its accuracy.",
+    "What are two methods you can use to evaluate the model's performance?"
+  ],
+  "options": [
+    { "id": "a", "text": "From the language authoring REST endpoint, retrieve the model evaluation summary." },
+    { "id": "b", "text": "From Language Studio, enable Active Learning, and then validate the utterances logged for review." },
+    { "id": "c", "text": "From Language Studio, select Model performance." },
+    { "id": "d", "text": "From the Azure portal, enable log collection in Log Analytics, and then analyze the logs." }
+  ],
+  "correctAnswer": ["a", "c"],
+  "explanation": "You can evaluate the model by retrieving the evaluation summary via the REST endpoint and by viewing Model performance metrics directly in Language Studio."
+},{
+  "id": "q48",
+  "type": "single",
+  "question": [
+    "You have an Azure AI Language model named IntentModel that identifies the intent of text input.",
+    "You are developing a Python application named ChatApp and need to configure it to use IntentModel.",
+    "Which Python package should you add to ChatApp to integrate with the Azure AI Language service?"
+  ],
+  "options": [
+    { "id": "a", "text": "azure-ai-language-conversations" },
+    { "id": "b", "text": "azure-cognitiveservices-language-textanalytics" },
+    { "id": "c", "text": "azure.cognitiveservices.speech" },
+    { "id": "d", "text": "azure-ai-documentintelligence" }
+  ],
+  "correctAnswer": "a",
+  "explanation": "The azure-ai-language-conversations package is used to integrate Azure AI Language models that handle conversational and intent recognition tasks."
+},{
+  "id": "q49",
+  "type": "single",
+  "question": [
+    "You are building a conversational language understanding model.",
+    "You need to enable active learning.",
+    "What should you do?"
+  ],
+  "options": [
+    { "id": "a", "text": "Add show-all-intents=true to the prediction endpoint query." },
+    { "id": "b", "text": "Enable speech priming." },
+    { "id": "c", "text": "Add log=true to the prediction endpoint query." },
+    { "id": "d", "text": "Enable sentiment analysis." }
+  ],
+  "correctAnswer": "c",
+  "explanation": "Adding log=true to the prediction endpoint query enables active learning by logging utterances for review and improvement."
+},{
+  "id": "q50",
+  "type": "single",
+  "question": [
+    "You develop a Conversational Language Understanding model by using Language Studio.",
+    "During testing, users receive incorrect responses to requests that do NOT relate to the capabilities of the model.",
+    "You need to ensure that the model identifies spurious (not genuine or authentic: false) requests.",
+    "How should you solve this?"
+  ],
+  "options": [
+    { "id": "a", "text": "Enable active learning." },
+    { "id": "b", "text": "Add entities." },
+    { "id": "c", "text": "Add examples to the None intent." },
+    { "id": "d", "text": "Add examples to the custom intents." }
+  ],
+  "correctAnswer": "c",
+  "explanation": "Adding examples to the None intent helps the model recognize requests that don't belong to any defined intent, thus identifying spurious inputs."
+},{
+  "id": "q51",
+  "type": "single",
+  "question": [
+    "You are working on a project to develop a language model using Azure's AI Language Understanding (classic) service.",
+    "You need to allow additional team members to contribute to the development and training of the model.",
+    "What should you use to grant access to the authoring resources for your Language Understanding (classic) service?"
+  ],
+  "options": [
+    { "id": "a", "text": "The Access control (IAM) page for the authoring resources in the Azure portal" },
+    { "id": "b", "text": "Access Policy in Azure subscription management page in the Azure portal." },
+    { "id": "c", "text": "The Access control (IAM) page for the prediction resources in the Azure portal" },
+    { "id": "d", "text": "The Microsoft Active Directory Portal." }
+  ],
+  "correctAnswer": "a",
+  "explanation": "To grant team members access to authoring resources for the Language Understanding (classic) service, use the Access control (IAM) page specifically for the authoring resources in the Azure portal."
+},{
+  "id": "q52",
+  "type": "single",
+  "question": [
+    "You are building a Conversational Language Understanding (CLU) model using the Language Services portal.",
+    "After exporting the model as a JSON file, you analyze the following sample:",
+    "{",
+    "  \"text\": \"average amount of rain by month at chicago last year\",",
+    "  \"intent\": \"Weather.CheckWeatherValue\",",
+    "  \"entities\": [",
+    "    {",
+    "      \"entity\": \"Weather.WeatherRange\",",
+    "      \"startPos\": 0,",
+    "      \"endPos\": 6,",
+    "      \"children\": []",
+    "    },",
+    "    {",
+    "      \"entity\": \"Weather.WeatherCondition\",",
+    "      \"startPos\": 18,",
+    "      \"endPos\": 21,",
+    "      \"children\": []",
+    "    },",
+    "    {",
+    "      \"entity\": \"Weather.Historic\",",
+    "      \"startPos\": 23,",
+    "      \"endPos\": 30,",
+    "      \"children\": []",
+    "    }",
+    "  ]",
+    "}",
+    "In the utterance \"average amount of rain by month at chicago last year\", what does the Weather.Historic entity correspond to?"
+  ],
+  "options": [
+    { "id": "a", "text": "by month" },
+    { "id": "b", "text": "chicago" },
+    { "id": "c", "text": "rain" },
+    { "id": "d", "text": "location" }
+  ],
+  "correctAnswer": "a",
+  "explanation": "The Weather.Historic entity corresponds to the phrase 'by month' which is located at positions 23 to 30 in the utterance, representing a time or range descriptor."
+},{
+  "id": "53",
+  "type": "matching-pairs",
+  "question": [
+    "Match the phrases with their entity types."
+  ],
+  "leftOptions": [
+    { "id": "1", "text": "New York" },
+    { "id": "2", "text": "email@xyz.com" },
+    { "id": "3", "text": "3 audit business" }
+  ],
+  "rightOptions": [
+    { "id": "a", "text": "geographyv2" },
+    { "id": "b", "text": "email" },
+    { "id": "c", "text": "machinelearned" }
+  ],
+  "correctAnswer": {
+    "1": "a",
+    "2": "b",
+    "3": "c"
+  },
+  "explanation": "Match the location, email and phrase with their correct entity types."
+},{
+  "id": "q54",
+  "type": "single",
+  "question": [
+    "You are developing a Conversational Language Understanding (CLU) model for an e-commerce chatbot.",
+    "The chatbot prompts users to provide their billing address, which can be spoken or typed.",
+    "Which entity type should you use to capture billing addresses effectively?"
+  ],
+  "options": [
+    { "id": "a", "text": "machine learned" },
+    { "id": "b", "text": "Regex" },
+    { "id": "c", "text": "geographyV2" },
+    { "id": "d", "text": "Pattern.any" },
+    { "id": "e", "text": "list" }
+  ],
+  "correctAnswer": "a",
+  "explanation": "Billing addresses are complex and vary greatly in format, so a machine learned entity is best suited to accurately capture this type of information in the CLU model."
+},{
+  "id": "q55",
+  "type": "single",
+  "question": [
+    "In LUIS (Language Understanding Intelligent Service), which type of entity is designed to capture any sequence of words in a user utterance, providing flexibility to match varying input patterns?"
+  ],
+  "options": [
+    { "id": "a", "text": "Prebuilt Entity" },
+    { "id": "b", "text": "Simple Entity" },
+    { "id": "c", "text": "List Entity" },
+    { "id": "d", "text": "Pattern.any" }
+  ],
+  "correctAnswer": "d",
+  "explanation": "The Pattern.any entity in LUIS is designed to capture any sequence of words, offering flexibility in matching variable input patterns."
+},{
+  "id": "q56",
+  "type": "single",
+  "question": [
+    "You are building an Azure AI Language Understanding (LUIS) solution.",
+    "During development, you notice that many intents include similar utterances containing airport names or airport codes.",
+    "You need to minimize the number of utterances required to train the model while ensuring accurate recognition of airport-related information.",
+    "Which type of custom entity should you use?"
+  ],
+  "options": [
+    { "id": "a", "text": "List" },
+    { "id": "b", "text": "machine-learning" },
+    { "id": "c", "text": "Number" },
+    { "id": "d", "text": "Regex" }
+  ],
+  "correctAnswer": "a",
+  "explanation": "A List entity is useful for capturing a predefined set of values, such as airport names or codes, minimizing the training utterances needed."
+},{
+  "id": "q57",
+  "type": "single",
+  "question": [
+    "You are developing a Natural Language Processing model for a customer support chatbot that collects shipping addresses from users.",
+    "Users can either type or dictate their shipping address when interacting with the chatbot.",
+    "Which entity type should you implement to effectively capture shipping addresses?"
+  ],
+  "options": [
+    { "id": "a", "text": "machine learned" },
+    { "id": "b", "text": "Regex" },
+    { "id": "c", "text": "geographyV2" },
+    { "id": "d", "text": "Pattern.any" },
+    { "id": "e", "text": "list" }
+  ],
+  "correctAnswer": "a",
+  "explanation": "A machine-learned entity is best suited for capturing complex inputs like shipping addresses that may vary significantly in format."
+},{
+  "id": "q58",
+  "type": "single",
+  "question": [
+    "You have a Language service resource that performs the following:",
+    "• Sentiment analysis",
+    "• Named Entity Recognition (NER)",
+    "• Personally Identifiable Information (PII) identification",
+    "You need to prevent the resource from persisting input data once the data is analyzed.",
+    "Which query parameter in the Language service API should you configure?"
+  ],
+  "options": [
+    { "id": "a", "text": "model-version" },
+    { "id": "b", "text": "piiCategories" },
+    { "id": "c", "text": "showStats" },
+    { "id": "d", "text": "loggingOptOut" }
+  ],
+  "correctAnswer": "d",
+  "explanation": "The 'loggingOptOut' query parameter prevents the Language service from persisting input data, ensuring user data privacy."
+},{
+  "id": "q59",
+  "type": "multiple",
+  "question": [
+    "You plan to deploy a containerized Text Analytics Sentiment Analysis service on an Azure virtual machine using Docker.",
+    "To run the container, you need to:",
+    "- Use the latest version of the Text Analytics Sentiment Analysis container.",
+    "- Configure the container to use your Cognitive Services endpoint URI: https://TechCorp.cognitiveservices.azure.com",
+    "How should you complete the Docker run command? Select 2 options in the correct order."
+  ],
+  "options": [
+    { "id": "a", "text": "mcr.microsoft.com/azure-cognitive-services/text analytics/keyphrase" },
+    { "id": "b", "text": "http://TechCorp.blob.core.windows.net" },
+    { "id": "c", "text": "mcr.microsoft.com/azure-cognitive-services/textanalytics/sentiment" },
+    { "id": "d", "text": "https://TechCorp.cognitiveservices.azure.com" }
+  ],
+  "correctAnswer": ["c", "d"],
+  "explanation": "The correct container image is the latest Text Analytics Sentiment Analysis container 'mcr.microsoft.com/azure-cognitive-services/textanalytics/sentiment'. You also need to configure the 'Billing' environment variable with your Cognitive Services endpoint URI, which is 'https://TechCorp.cognitiveservices.azure.com'."
+},{
+  "id": "q60",
+  "type": "single",
+  "question": [
+    "You have an Azure subscription that contains an Azure Cognitive Service for Language resource.",
+    "You need to identify the URL of the REST interface for the Language service.",
+    "Which blade should you use in the Azure portal?"
+  ],
+  "options": [
+    { "id": "a", "text": "Identity" },
+    { "id": "b", "text": "Keys and Endpoint" },
+    { "id": "c", "text": "Networking" },
+    { "id": "d", "text": "Properties" }
+  ],
+  "correctAnswer": "b",
+  "explanation": "The 'Keys and Endpoint' blade in the Azure portal provides the API endpoint URL and the keys required to access the REST interface for the Azure Cognitive Service for Language."
+},{
+  "id": "q60",
+  "type": "multiple",
+  "question": [
+    "You are building a solution that students will use to find references for essays.",
+    "You use the following code to start building the solution:",
+    "",
+    "```csharp",
+    "using Azure;",
+    "using System;",
+    "using Azure.AI.TextAnalytics;",
+    "",
+    "private static readonly AzureKeyCredential credentials = new AzureKeyCredential(\"key\");",
+    "private static readonly Uri endpoint = new Uri(\"endpoint\");",
+    "",
+    "static void EntityLinker (TextAnalyticsClient client)",
+    "{",
+    "    var response = client.RecognizeLinkedEntities(",
+    "        \"Our tour guide took us up the Space Needle during our trip to Seattle last week.\");",
+    "}",
+    "```",
+    "",
+    "For each of the following statements, select **Yes** if the statement is true. Otherwise, select **No**."
+  ],
+  "options": [
+    {
+      "id": "a",
+      "text": "The code will detect the language of documents.",
+      "isCorrect": false
+    },
+    {
+      "id": "b",
+      "text": "The url attribute returned for each linked entity will be a Bing search link.",
+      "isCorrect": false
+    },
+    {
+      "id": "c",
+      "text": "The matches attribute returned for each linked entity will provide the location in a document where the entity is referenced.",
+      "isCorrect": true
+    }
+  ],
+  "correctAnswer": ["c"],
+  "explanation": "The `RecognizeLinkedEntities` method is used to link entities in the text to entries in a knowledge base such as Wikipedia. It does **not** detect language (you'd need a separate call for that), and the `url` is usually a link to a Wikipedia article, **not Bing**. The `matches` attribute identifies text spans where the entity appears, so option C is correct."
+},{
+  "id": "q61",
+  "type": "single",
+  "question": [
+    "You are developing a solution that extracts key phrases from text using Azure AI Text Analytics.",
+    "You write the following code:",
+    "",
+    "```csharp",
+    "var response = client.ExtractKeyPhrases(\"Our tour of Paris included Eiffel Tower.\");",
+    "```",
+    "",
+    "What are the expected key phrases?"
+  ],
+  "options": [
+    { "id": "a", "text": "Our, Eiffel, Included" },
+    { "id": "b", "text": "Included, Paris, Our" },
+    { "id": "c", "text": "Tour, Paris, Eiffel Tower" },
+    { "id": "d", "text": "Client, Tour, Tower" }
+  ],
+  "correctAnswer": "c",
+  "explanation": "The `ExtractKeyPhrases` API identifies important noun phrases. For the input 'Our tour of Paris included Eiffel Tower', the correct key phrases extracted would be 'Tour', 'Paris', and 'Eiffel Tower'."
+},{
+  "id": "q62",
+  "type": "single",
+  "question": [
+    "You are planning to create a word cloud based on the reviews of a company's products.",
+    "Which Text Analytics REST API endpoint should you use?"
+  ],
+  "options": [
+    { "id": "a", "text": "entities/recognition/general" },
+    { "id": "b", "text": "sentiment" },
+    { "id": "c", "text": "/entities/recognition/pii" },
+    { "id": "d", "text": "keyPhrases" }
+  ],
+  "correctAnswer": "d",
+  "explanation": "To create a word cloud based on reviews, you should extract the key phrases that represent important terms from the text. The 'keyPhrases' endpoint is designed to do this by identifying the main concepts in unstructured text."
+},{
+  "id": "q63",
+  "type": "multiple",
+  "question": [
+    "To build a multilingual chatbot that sends different responses for positive and negative messages,",
+    "which two Language Service APIs should you use?"
+  ],
+  "options": [
+    { "id": "a", "text": "Linked entities from a well-known knowledge base" },
+    { "id": "b", "text": "Named Entity Recognition" },
+    { "id": "c", "text": "PII recognition" },
+    { "id": "d", "text": "Detect Language" },
+    { "id": "e", "text": "Sentiment Analysis" }
+  ],
+  "correctAnswer": ["d", "e"],
+  "explanation": "To build a multilingual chatbot, you must first detect the language of the input using the **Detect Language** API. Then, use **Sentiment Analysis** to classify the message as positive or negative, allowing your chatbot to tailor responses accordingly."
+},{
+  "id": "q64",
+  "type": "matching-pairs",
+  "question": [
+    "Match the requirements with the appropriate Azure AI Language service."
+  ],
+  "leftOptions": [
+    { "id": "1", "text": "Identify messages with phone number in it" },
+    { "id": "2", "text": "Extract domain-specific entities" }
+  ],
+  "rightOptions": [
+    { "id": "a", "text": "Custom named entity recognition (NER)" },
+    { "id": "b", "text": "Language detection" },
+    { "id": "c", "text": "Named Entity Recognition (NER)" },
+    { "id": "d", "text": "Personally Identifiable Information (PII) detection" },
+    { "id": "e", "text": "Sentiment analysis" }
+  ],
+  "correctAnswer": {
+    "1": "d",
+    "2": "a"
+  },
+  "explanation": "Phone numbers are considered PII and are detected using the Personally Identifiable Information (PII) detection service. Domain-specific entities require Custom Named Entity Recognition (NER)."
+},{
+  "id": "65",
+  "type": "single",
+  "question": [
+    "You want to analyze public sentiment about your brand on social media using natural language processing.",
+    "Which Azure service should you use?"
+  ],
+  "options": [
+    { "id": "a", "text": "Content Moderator" },
+    { "id": "b", "text": "Computer Vision" },
+    { "id": "c", "text": "Language service" },
+    { "id": "d", "text": "Document Intelligence" }
+  ],
+  "correctAnswer": "c",
+  "explanation": "The Azure Language service provides natural language processing capabilities such as sentiment analysis, which is suitable for analyzing public sentiment about your brand."
+},{
+  "id": "66",
+  "type": "single",
+  "question": [
+    "You have an Azure OpenAI model.",
+    "You are building a web app by using the Azure OpenAI SDK.",
+    "You need to configure the App to connect to your OpenAI model.",
+    "What information must you provide?"
+  ],
+  "options": [
+    { "id": "a", "text": "the endpoint, key, and model name" },
+    { "id": "b", "text": "the deployment name, key, and model name" },
+    { "id": "c", "text": "the deployment name, endpoint, and key" },
+    { "id": "d", "text": "the endpoint, key, and model type" }
+  ],
+  "correctAnswer": "c",
+  "explanation": "To connect to an Azure OpenAI model using the SDK, you need the deployment name (which identifies the specific deployed model), the endpoint URL of your Azure OpenAI resource, and the subscription key for authentication."
+},{
+  "id": "66",
+  "type": "single",
+  "question": [
+    "You have an Azure OpenAI model.",
+    "You are building a web app by using the Azure OpenAI SDK.",
+    "You need to configure the App to connect to your OpenAI model.",
+    "What information must you provide?"
+  ],
+  "options": [
+    { "id": "a", "text": "the endpoint, key, and model name" },
+    { "id": "b", "text": "the deployment name, key, and model name" },
+    { "id": "c", "text": "the deployment name, endpoint, and key" },
+    { "id": "d", "text": "the endpoint, key, and model type" }
+  ],
+  "correctAnswer": "c",
+  "explanation": "To connect to an Azure OpenAI model using the SDK, you need the deployment name (which identifies the specific deployed model), the endpoint URL of your Azure OpenAI resource, and the subscription key for authentication."
+},{
+  "id": "68",
+  "type": "single",
+  "question": [
+    "You have an Azure subscription.",
+    "You need to build an app that will compare documents for semantic similarity.",
+    "The solution must meet the following requirements:",
+    "• Return numeric vectors that represent the tokens of each document.",
+    "• Minimize development effort.",
+    "Which Azure OpenAI model should you use?"
+  ],
+  "options": [
+    { "id": "a", "text": "GPT-3.5" },
+    { "id": "b", "text": "GPT-4" },
+    { "id": "c", "text": "embeddings" },
+    { "id": "d", "text": "DALL-E" }
+  ],
+  "correctAnswer": "c",
+  "explanation": "The embeddings model generates numeric vector representations of text which are suitable for semantic similarity comparisons and require minimal development effort."
+},{
+  "id": "q69",
+  "type": "matching-pairs",
+  "question": [
+    "Complete the following code snippet by matching each placeholder with the correct value:",
+    "```",
+    "new ChatCompletionsOptions()  ",
+    "{  ",
+    "    Messages =  ",
+    "    {  ",
+    "        new ChatMessage(..............., @\" What are the benefits of creative writing? \")  ",
+    "    },    ",
+    "    .................... = (float)1.0,    ",
+    "    MaxTokens = 800,  ",
+    "};",
+    "```"
+  ],
+  "leftOptions": [
+    { "id": "1", "text": "ChatMessage role" },
+    { "id": "2", "text": "Parameter to increase creativity" }
+  ],
+  "rightOptions": [
+    { "id": "a", "text": "ChatRole.User" },
+    { "id": "b", "text": "ChatRole.Assistant" },
+    { "id": "c", "text": "Temperature" },
+    { "id": "d", "text": "PresencePenalty" }
+  ],
+  "correctAnswer": {
+    "1": "a",
+    "2": "c"
+  },
+  "explanation": "Use ChatRole.User to specify that the message is from the user. The 'Temperature' parameter controls creativity; higher values increase creativity and reduce determinism."
+},{
+  "id": "q70",
+  "type": "multiple",
+  "question": [
+    "Using Azure OpenAI resource a model is built with the below settings:",
+    "• Top probabilities: 0.5",
+    "• Temperature: 1",
+    "• Max response tokens: 100",
+    "",
+    "Here is the model response:",
+    "```json",
+    "{",
+    "  \"choices\": [",
+    "    {",
+    "      \"finish_reason\": \"stop\",",
+    "      \"index\": 0,",
+    "      \"message\": {",
+    "        \"content\": \"The founders of Microsoft are Bill Gates and Paul Allen. They co-founded the company in 1975.\",",
+    "        \"role\": \"assistant\"",
+    "      }",
+    "    }",
+    "  ],",
+    "  \"model\": \"gpt-3.5-turbo-0301\",",
+    "  \"usage\": {",
+    "    \"completion_tokens\": 86,",
+    "    \"prompt_tokens\": 37,",
+    "    \"total_tokens\": 123",
+    "  }",
+    "}",
+    "```",
+    "Which among the following statements are true?"
+  ],
+  "options": [
+    { "id": "a", "text": "The model used was text-embedding-ada-002" },
+    { "id": "b", "text": "The prompt_tokens value will be included in the calculation of the Max response tokens value." },
+    { "id": "c", "text": "The subscription will be charged 86 tokens for the execution of the session." },
+    { "id": "d", "text": "The text completion was truncated because the Max response tokens value was exceeded." },
+        { "id": "e", "text": "None" }
+  ],
+  "correctAnswer": ["e"],
+  "explanation": "None of the statements are correct. The model used is gpt-3.5-turbo, not text-embedding-ada-002. Prompt tokens are not counted in the max response token limit. Charges are based on total tokens (prompt + completion), not just completion. The completion stopped naturally, not due to token limits."
+},{
+  "id": "q71",
+  "type": "matching-pairs",
+  "question": [
+    "Match the actions with the correct method for accessing Azure OpenAI deployments."
+  ],
+  "leftOptions": [
+    { "id": "1", "text": "Provide access to AI1dev by using" },
+    { "id": "2", "text": "Connect to the deployment by using" }
+  ],
+  "rightOptions": [
+    { "id": "a", "text": "A bearer token" },
+    { "id": "b", "text": "An API key" },
+    { "id": "c", "text": "An AD token" },
+    { "id": "d", "text": "A deployment name" },
+    { "id": "e", "text": "A deployment endpoint" }
+  ],
+  "correctAnswer": {
+    "1": "b",
+    "2": "d"
+  },
+  "explanation": "To access Azure OpenAI resources, you typically use an API key. Each app should connect using the specific deployment name configured in the Azure OpenAI Studio."
+},{
+  "id": "q67",
+  "type": "single",
+  "question": [
+    "You are setting up an Azure OpenAI resource for a chatbot application using an Azure Resource Manager (ARM) template.",
+    "The chatbot is expected to handle a significant volume of queries, approximately 600 requests per minute.",
+    "You need to configure the Azure OpenAI resource to support 600 requests per minute.",
+    "How would you adjust the deployment template to meet this requirement?"
+  ],
+  "options": [
+    { "id": "a", "text": "count, 100" },
+    { "id": "b", "text": "capacity, 600" },
+    { "id": "c", "text": "capacity, 100" },
+    { "id": "d", "text": "size, 1" }
+  ],
+  "correctAnswer": "c",
+  "explanation": "In Azure OpenAI ARM templates, the `capacity` field under `sku` defines the number of compute units allocated. Setting `capacity: 100` enables the resource to handle higher throughput, such as 600 requests per minute, depending on the model and request complexity."
+},{
+  "id": "q68",
+  "type": "single",
+  "question": [
+    "You've integrated Azure OpenAI's GPT-4 model into your application, MyApp.",
+    "MyApp occasionally returns responses containing hate speech.",
+    "You need to prevent MyApp from generating responses with hate speech.",
+    "How do you achieve the goal?"
+  ],
+  "options": [
+    { "id": "a", "text": "the Temperature parameter" },
+    { "id": "b", "text": "a content filter" },
+    { "id": "c", "text": "abuse monitoring" },
+    { "id": "d", "text": "the Frequency penalty parameter" }
+  ],
+  "correctAnswer": "b",
+  "explanation": "To prevent harmful or inappropriate outputs such as hate speech, Azure OpenAI provides built-in content filtering. The content filter analyzes and blocks inappropriate content before it's returned to the user. Parameters like Temperature or Frequency penalty affect creativity and repetition but do not prevent unsafe content."
+},{
+  "id": "q69",
+  "type": "single",
+  "question": [
+    "You're developing an e-commerce platform that requires automated generation of product titles and descriptions from existing product specifications.",
+    "Which Azure AI model is best suited for generating concise and relevant product titles from detailed product descriptions?"
+  ],
+  "options": [
+    { "id": "a", "text": "Embeddings" },
+    { "id": "b", "text": "DALL·E" },
+    { "id": "c", "text": "Whisper" },
+    { "id": "d", "text": "GPT-4" }
+  ],
+  "correctAnswer": "d",
+  "explanation": "GPT-4 is a large language model optimized for natural language generation tasks such as summarization, content generation, and rephrasing. It is best suited for transforming detailed product specs into concise, human-readable titles and descriptions. Embeddings are used for similarity search, DALL·E for image generation, and Whisper for speech recognition."
+},{
+  "id": "q70",
+  "type": "single",
+  "question": [
+    "You have an Azure subscription and 1000 ASCII files.",
+    "You need to identify files that contain specific phrases and the chosen solution must use cosine similarity.",
+    "Which Azure OpenAI model should you use?"
+  ],
+  "options": [
+    { "id": "a", "text": "text-embedding-ada-002" },
+    { "id": "b", "text": "GPT-4" },
+    { "id": "c", "text": "GPT-35 Turbo" },
+    { "id": "d", "text": "GPT-4-32k" }
+  ],
+  "correctAnswer": "a",
+  "explanation": "The `text-embedding-ada-002` model is specifically designed for generating vector embeddings that capture the semantic meaning of text. These embeddings can be compared using cosine similarity, making this model ideal for identifying documents with semantically similar content. GPT models are designed for text generation rather than efficient embedding and similarity comparison."
+},{
+  "id": "q71",
+  "type": "single",
+  "question": [
+    "You're developing a conversational AI using Azure OpenAI's GPT-35 Turbo model.",
+    "The System Message you provided is:",
+    "\"You're an AI assistant that helps people find information. Answer in as few words as possible.\"",
+    "Determine which type of prompt engineering technique this system message represents."
+  ],
+  "options": [
+    { "id": "a", "text": "Affordance" },
+    { "id": "b", "text": "Few-shot learning" },
+    { "id": "c", "text": "Chain of thought" },
+    { "id": "d", "text": "Priming" }
+  ],
+  "correctAnswer": "d",
+  "explanation": "This is an example of **priming**, where the system prompt sets the tone, context, and behavior of the assistant before any user input. Priming helps guide the model’s responses without requiring additional input examples."
+},{
+  "id": "q72",
+  "type": "matching-pairs",
+  "question": [
+    "Complete the Python code snippet to upload company data and ensure the chatbot uses it to answer questions:",
+    "import openai",
+    "import os",
+    "response = openai. .......... .create(",
+    "    messages=[{\"role\": \"user\", \"content\": \"What are the different Azure AI services?\"}],",
+    "    deployment_id=os.environ.get(\"AOAIDeploymentId\"),",
+    "    dataSources=[",
+    "        {",
+    "            \"type\": \".............\",",
+    "            \"parameters\": {",
+    "                \"endpoint\": os.environ.get(\"SearchEndpoint\"),",
+    "                \"key\": os.environ.get(\"SearchKey\"),",
+    "                \"indexName\": os.environ.get(\"SearchIndex\"),",
+    "            }",
+    "        }",
+    "    ]",
+    ")",
+    "print(response)"
+  ],
+  "leftOptions": [
+    { "id": "1", "text": "openai method to call" },
+    { "id": "2", "text": "type value in dataSources" }
+  ],
+  "rightOptions": [
+    { "id": "a", "text": "Chat.completions" },
+    { "id": "b", "text": "Completion" },
+    { "id": "c", "text": "Embedding" },
+    { "id": "d", "text": "AzureAISearch" },
+    { "id": "e", "text": "AzureDocumentIntelligence" },
+    { "id": "f", "text": "Blobstorage" }
+  ],
+  "correctAnswer": {
+    "1": "a",
+    "2": "d"
+  },
+  "explanation": "The openai method 'Chat.completions' is used to generate chat responses. The 'type' in dataSources should be 'AzureAISearch' to connect with Azure Cognitive Search for enriched data."
+},{
+  "id": "q73",
+  "type": "single",
+  "question": [
+    "What is the most appropriate Azure role to assign to User1 to ensure they can identify resource endpoints, view available models for deployment, and generate text and images using deployed models in Azure OpenAI Studio, following the principle of least privilege?"
+  ],
+  "options": [
+    { "id": "a", "text": "Cognitive Services OpenAI User" },
+    { "id": "b", "text": "Cognitive Services Contributor" },
+    { "id": "c", "text": "Cognitive Services Usages Reader" },
+    { "id": "d", "text": "Cognitive Services OpenAI Contributor" }
+  ],
+  "correctAnswer": "a",
+  "explanation": "The 'Cognitive Services OpenAI User' role allows users to identify resource endpoints, view available deployed models, and generate text/images with least privilege, while Contributor roles grant broader permissions not required here."
+}
+,{
+  "id": "q74",
+  "type": "single",
+  "question": [
+    "You're fine-tuning an Azure OpenAI model with 500 prompt-completion pairs. What file format should you use to ensure seamless data ingestion and processing by the Azure OpenAI fine-tuning API?"
+  ],
+  "options": [
+    { "id": "a", "text": "TSV" },
+    { "id": "b", "text": "JSONL (JSON Lines)" },
+    { "id": "c", "text": "JSON" },
+    { "id": "d", "text": "CSV" }
+  ],
+  "correctAnswer": "b",
+  "explanation": "Azure OpenAI fine-tuning API expects training data in JSONL format, where each line is a JSON object with 'prompt' and 'completion' fields for seamless processing."
+},{
+  "id": "q75",
+  "type": "multiple",
+  "question": [
+    "Select the TRUE statements about the following Azure OpenAI chatbot code snippet."
+  ],
+  "codeSnippet": [
+    "import openai",
+    "openai.api_key = key",
+    "openai.api_base = endpoint",
+    "response = openai.ChatCompletion.create(",
+    "    engine=deployment_name,",
+    "    messages=[",
+    "        {\"role\": \"system\", \"content\": \"You are a helpful assistant.\"},",
+    "        {\"role\": \"user\", \"content\": \"What is an LLM?\"}",
+    "    ]",
+    ")",
+    "print(response['choices'][0]['message']['content'])"
+  ],
+  "options": [
+    { "id": "a", "text": "The code guarantees that responses will be sourced from the latest, up-to-date AI research." },
+    { "id": "b", "text": "Changing \"What is an LLM?\" to \"What is an LLM in the context of AI models?\" will produce a more accurate response." },
+    { "id": "c", "text": "The code will only retrieve definitions from trusted AI sources." },
+    { "id": "d", "text": "Changing \"You are a helpful assistant.\" to \"You must answer only within the context of AI language models.\" will produce a more relevant response." }
+  ],
+  "correctAnswer": ["b", "d"],
+  "explanation": "The prompt content can improve accuracy and relevance. However, the API response depends on the underlying model and does not guarantee up-to-date or source-verified information."
+},{
+  "id": "q77",
+  "type": "matching-pairs",
+  "question": [
+    "Complete the following code snippet by matching each placeholder with the correct code fragment to call the Azure OpenAI resource and print the response."
+  ],
+  "codeSnippet": [
+    "openai.api_key = key",
+    "openai.api_base = endpoint",
+    "response = ……………………….( ",
+    "    engine=deployment_name,",
+    "    prompt=\"What is Azure OpenAI?\"  ",
+    ")",
+    "Print ………………………"
+  ],
+  "leftOptions": [
+    { "id": "1", "text": "Method to call OpenAI resource" },
+    { "id": "2", "text": "Print statement to output response text" }
+  ],
+  "rightOptions": [
+    { "id": "a", "text": "openai.ChatCompletion.create" },
+    { "id": "b", "text": "openai.Embedding.create" },
+    { "id": "c", "text": "openai.Image.create" },
+    { "id": "d", "text": "(response.choices[0].text)" },
+    { "id": "e", "text": "(response.text)" },
+    { "id": "f", "text": "(response.id)" }
+  ],
+  "correctAnswer": {
+    "1": "a",
+    "2": "d"
+  },
+  "explanation": "To generate a text completion, use openai.ChatCompletion.create. The response's text output is found in response.choices[0].text."
+},{
+  "id": "q78",
+  "type": "matching-pairs",
+  "question": [
+    "Complete the Azure CLI command below by matching each placeholder with the correct value to deploy an Azure OpenAI resource using a customer-managed key stored in Azure Key Vault:\n\naz cognitiveservices account create \\ \n  -n myopenai \\ \n  -g myresourcegroup \\ \n  --kind ........... \\ \n  --sku S-1 \\ \n  --location westus2 \\ \n  --.............. '{\\ \n    \"keySource\": \"Microsoft.KeyVault\",\\ \n    \"keyVaultProperties\": {\\ \n      \"keyName\": \"mykey\",\\ \n      \"keyVersion\": \"1.0\",\\ \n      \"keyVaultUri\": \"https://mykeyvault.vault.azure.net/\"\\ \n    }\\ \n  }'"
+  ],
+  "leftOptions": [
+    { "id": "1", "text": "Value for --kind" },
+    { "id": "2", "text": "Option for enabling customer-managed key encryption" }
+  ],
+  "rightOptions": [
+    { "id": "a", "text": "OpenAI" },
+    { "id": "b", "text": "LanguageAuthoring" },
+    { "id": "c", "text": "AlServices" },
+    { "id": "d", "text": "--api-properties" },
+    { "id": "e", "text": "--assign-identity" },
+    { "id": "f", "text": "--encryption" }
+  ],
+  "correctAnswer": {
+    "1": "a",
+    "2": "f"
+  },
+  "explanation": "Use '--kind OpenAI' to specify the Azure OpenAI resource type. Use '--encryption' to configure the resource to use customer-managed keys stored in Azure Key Vault for data encryption."
+}
+
+
+
+
+
+
+
+
+
+
 ]
