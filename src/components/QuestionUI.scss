@@ -12,33 +12,26 @@
     margin-bottom: 1rem;
   }
 
-  // .options-container {
-  //   margin-top: 1rem;
-  //   display: flex;
-  //   flex-direction: column;
-  //   gap: 0.5rem;
-  // }
+  .option-container {
+    width: 100%;
+    max-height: 70vh;
+    overflow-y: auto;
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    padding: 8px 0;
+    position: relative;
+    z-index: 1000;
+    -webkit-overflow-scrolling: touch;
+  }
 
-.option-container {
-  width: 100%;
-  max-height: 70vh;          // use viewport height to allow big scrolling area
-  overflow-y: auto;
-  background: #fff;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  padding: 8px 0;
-  position: relative;        // or absolute if dropdown
-
-  // Make sure the container is above other elements (dropdowns)
-  z-index: 1000;
-
-
-
-  // Smooth scrolling on iOS
-  -webkit-overflow-scrolling: touch;
-}
-
+  @media (max-width: 480px) {
+    .option-container {
+      max-height: 80vh;
+      font-size: 14px;
+    }
+  }
 
   .option {
     display: flex;
@@ -101,9 +94,9 @@
 .drag-panes {
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
   gap: 1rem;
   margin-top: 1rem;
+  align-items: flex-start;
 
   .drag-column {
     flex: 1 1 300px;
@@ -111,6 +104,7 @@
     padding: 1rem;
     border-radius: 8px;
     min-height: 200px;
+    position: relative;
   }
 
   .draggable-item {
@@ -173,24 +167,27 @@ option.highlight-correct {
   width: auto;
   align-self: flex-start;
 }
+
 .pagination {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 6px;       // space between page numbers, adjust smaller if needed
+  gap: 6px;
   padding: 8px 0;
   user-select: none;
   font-family: Arial, sans-serif;
 
-  .page-number {
-    padding: 4px 6px;      // some padding for easier clicking but no border
+  .page-number, .page-btn {
+    padding: 4px 6px;
     margin: 0;
     cursor: pointer;
     font-size: 14px;
     line-height: 1;
-    color: #0078d4;        // link color
-    text-decoration: none; // no underline by default
-    border-radius: 0;      // no rounded corners
+    color: #0078d4;
+    text-decoration: none;
+    border-radius: 0;
+    background: none;
+    border: none;
 
     &:hover {
       text-decoration: underline;
@@ -217,10 +214,13 @@ option.highlight-correct {
     }
   }
 }
-  // For small screens, give more vertical space
-@media (max-width: 480px) {
-  .your-selector {
-    max-height: 80vh;
-    font-size: 14px;
+@media (max-width: 600px) {
+  .drag-panes {
+    flex-direction: column;
+    flex-wrap: wrap;
+
+    .drag-column {
+      width: 100%;
+    }
   }
 }
