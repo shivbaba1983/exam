@@ -1801,7 +1801,134 @@
     ],
     "correctAnswer": { "left": "b", "right": "i" },
      "explanation": "To capture messages from Spanish and Hindi speakers, the system should use Speech-to-text to transcribe the audio and Translator to convert it into English text. To replay the messages in English, use Text-to-speech to synthesize the translated English text back into audio, combined with Translator to ensure language conversion."
-  }
+  },{
+  "id": "q86",
+  "type": "multi-select",
+  "question": [
+    "You have an Azure AI Search service that has experienced a steady increase in query volume over the past 6 months.",
+    "You notice that some search requests are being throttled.",
+    "What possible action can you take to reduce query throttling?"
+  ],
+  "options": [
+    { "id": "a", "text": "You add indexes." },
+    { "id": "b", "text": "You enable customer-managed key (CMK) encryption." },
+    { "id": "c", "text": "You add replicas." },
+    { "id": "d", "text": "You migrate to an AI Search service that uses a higher tier." },
+    { "id": "e", "text": "Deploy the application and a private endpoint to a virtual network." }
+  ],
+  "correctAnswer": ["c", "d"],
+  "explanation": "To reduce query throttling in Azure AI Search, you can add **replicas** to handle more queries simultaneously, or **migrate to a higher tier** for increased capacity. Adding indexes, enabling CMK, or deploying to a private endpoint does not directly address throttling."
+},{
+  "id": "q88",
+  "type": "single-select",
+  "question": [
+    "You're developing a contact management chatbot using Azure AI Language Understanding.",
+    "The FindContact intent helps users search for contacts by location.",
+    "Your manager provides you with the following list of phrases to use for training the model:",
+    "- Find contacts in North Virginia.",
+    "- Who do I know in Sydney?",
+    "- Search for contacts in Melbourne.",
+    "You need to implement these phrases in Language Understanding to improve the model.",
+    "What should you do?"
+  ],
+  "options": [
+    { "id": "a", "text": "You create a new utterance for each phrase in the FindContact intent" },
+    { "id": "b", "text": "You create a new intent for location." },
+    { "id": "c", "text": "You create a new entity for the domain." },
+    { "id": "d", "text": "You create a new pattern in the FindContact intent" }
+  ],
+  "correctAnswer": "a",
+  "explanation": "To improve a specific intent like FindContact, you should add more training data by creating new utterances. Each phrase represents a variation in how users might phrase the same intent, helping the model generalize better. Location can be captured as an entity within those utterances."
+},{
+  "id": "q90",
+  "type": "drag-sequence",
+  "question": [
+    "You are building a retail chatbot that uses Custom Question Answering, a feature of Azure AI Language.",
+    "You upload an internal support document to train the model. The document contains the following question: \"What is your return policy?\"",
+    "Users report that the chatbot returns the default answer when they ask:",
+    "\"Can I return a product after purchase?\"",
+    "However, the chatbot returns the correct answer when users ask:",
+    "\"What is your return policy?\"",
+    "Both questions should return the same answer.",
+    "You need to increase the accuracy of the chatbot responses.",
+    "Which three actions should you perform in sequence?"
+  ],
+  "options": [
+    { "id": "1", "text": "Add a new question and answer (QnA) pair." },
+    { "id": "2", "text": "Retrain the model." },
+    { "id": "3", "text": "Add additional questions to the document." },
+    { "id": "4", "text": "Republish the model." },
+    { "id": "5", "text": "Add alternative phrasing to the question and answer (QnA) pair." }
+  ],
+  "correctAnswer": ["5", "2", "4"],
+  "explanation": "You should first add alternative phrasing to help the model recognize variations of the question. Then retrain and republish the model to apply the updates."
+},
+{
+  "id": "q91",
+  "type": "drag-sequence",
+  "question": [
+    "You have a chatbot that uses a custom Question Answering application.",
+    "You enable active learning for the knowledge base used by the application.",
+    "You need to integrate user input into the model.",
+    "Which four actions should you perform in sequence?"
+  ],
+  "options": [
+    { "id": "1", "text": "For the knowledge base, select Show active learning suggestions." },
+    { "id": "2", "text": "Create a new model with alternate questions." },
+    { "id": "3", "text": "Approve and reject suggestions." },
+    { "id": "4", "text": "Save and train the knowledge base." },
+    { "id": "5", "text": "Select the properties of the Azure Cognitive Services resource." },
+    { "id": "6", "text": "Publish the knowledge base." },
+    { "id": "7", "text": "Modify the automation task logic app to run an Azure Resource Manager template that creates the Azure Cognitive Services resource." }
+  ],
+  "correctAnswer": ["1", "3", "4", "6"],
+  "explanation": "To integrate user input using active learning, you start by showing suggestions, approve/reject them, train the model, and then publish the updated knowledge base."
+},{
+  "id": "q92",
+  "type": "drag-sequence",
+  "question": [
+    "Using Azure AI Services you have built a speech model which transcribes physics lectures.",
+    "When you put the model for testing it is not able to transcribe scientific terms.",
+    "How will you improve the accuracy of the model?",
+    "Select the most appropriate five steps which you should perform in sequence to achieve the goal."
+  ],
+  "options": [
+    { "id": "1", "text": "Create a project with inbuilt-scientific term detector." },
+    { "id": "2", "text": "Deploy the model." },
+    { "id": "3", "text": "Create a speech-to-text model." },
+    { "id": "4", "text": "Create a Custom Speech project." },
+    { "id": "5", "text": "Upload training datasets." },
+    { "id": "6", "text": "Train the model." },
+    { "id": "7", "text": "Create a Conversational Language Understanding model." }
+  ],
+  "correctAnswer": ["4", "3", "5", "6", "2"],
+  "explanation": "To improve transcription accuracy for scientific terms, start by creating a Custom Speech project. Then, create a speech-to-text model, upload domain-specific training data, train the model, and finally deploy it."
+},{
+  "id": "q93",
+  "type": "single-select",
+  "question": [
+    "You have an Azure subscription.",
+    "You need to build an app that will compare documents for semantic similarity.",
+    "The solution must meet the following requirements:",
+    "• Return numeric vectors that represent the tokens of each document.",
+    "• Minimize development effort.",
+    "Which Azure OpenAI model should you use?"
+  ],
+  "options": [
+    { "id": "a", "text": "GPT-3.5" },
+    { "id": "b", "text": "GPT-4" },
+    { "id": "c", "text": "embeddings" },
+    { "id": "d", "text": "DALL-E" }
+  ],
+  "correctAnswer": "c",
+  "explanation": "Azure OpenAI embeddings models are designed to return dense numeric vectors that represent semantic meaning. This makes them ideal for document comparison tasks with minimal development effort. GPT-3.5 and GPT-4 are general-purpose language models, and DALL-E is for image generation."
+}
+
+
+
+
+
+
 
 
 
