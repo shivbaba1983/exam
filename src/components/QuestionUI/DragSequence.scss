@@ -1,26 +1,45 @@
 .drag-panes {
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
   gap: 1rem;
   margin-top: 1rem;
+  align-items: flex-start;
 
   .drag-column {
-    flex: 1 1 300px;
+    flex: 1 1 0;                // take up equal available space
+    max-width: 100%;
     background: #f4f4f4;
     padding: 1rem;
     border-radius: 8px;
     min-height: 200px;
-    position: relative;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+  }
+
+  .drag-items {
+    min-height: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+
+    .draggable-item,
+    .react-beautiful-dnd-placeholder {
+      min-height: 40px;
+    }
   }
 
   .draggable-item {
     padding: 0.5rem 0.75rem;
-    margin-bottom: 0.5rem;
     background: white;
     border: 1px solid #ccc;
     border-radius: 4px;
     cursor: grab;
+    user-select: none;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
   }
 }
 
@@ -30,6 +49,7 @@
 
     .drag-column {
       width: 100%;
+      max-width: 100%;
     }
   }
 }
