@@ -2,13 +2,13 @@
 
 /* For example: */
 .question-ui {
-  padding: 1rem;
+  //padding: 1rem;
   font-family: sans-serif;
 
   .question-card {
     background: #fdfdfd;
     border-radius: 12px;
-    padding: 1rem;
+    padding: 0.1rem;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     margin-bottom: 1rem;
   }
@@ -21,7 +21,7 @@
     border: 1px solid #ccc;
     border-radius: 4px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    padding: 8px 0;
+    padding: 2px 0;
     position: relative;
     z-index: 1000;
     -webkit-overflow-scrolling: touch;
@@ -42,8 +42,8 @@
   }
 
   .reset-btn {
-    margin-top: 1rem;
-    padding: 0.5rem 1rem;
+    margin-top: 3px;
+    padding: 0.1rem;
     font-size: 1rem;
     border-radius: 6px;
     border: none;

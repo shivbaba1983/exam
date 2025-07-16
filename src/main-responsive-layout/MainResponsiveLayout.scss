@@ -59,20 +59,7 @@
 @media only screen and (max-width: 600px) {
   .main-container {
     flex-direction: column;
-  }
-  .left-section {
-    margin-top: 20px;
-    flex: 1;
-   // min-width: 300px;
-   width: 100%;
-  
-  }
-  
-  .right-section {
-    margin-top: 20px;
-    flex: 1;
-    //min-width: 300px;
     width: 100%;
-  
+    padding: 0 10px;
   }
 }
