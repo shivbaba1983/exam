@@ -7,7 +7,7 @@ import { DragDropContext, Droppable, Draggable, DropResult } from 'react-beautif
 const QuestionUI = () => {
   const [answers, setAnswers] = useState<any>({});
   const [submitted, setSubmitted] = useState(false);
-  const [currentQIndex, setCurrentQIndex] = useState(0);
+  const [currentQIndex, setCurrentQIndex] = useState(1);
 
   const currentQuestion = questionsData[currentQIndex];
 

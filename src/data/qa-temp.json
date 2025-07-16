@@ -1105,49 +1105,6 @@
   "correctAnswer": "b",
   "explanation": "The 'Keys and Endpoint' blade in the Azure portal provides the API endpoint URL and the keys required to access the REST interface for the Azure Cognitive Service for Language."
 },{
-  "id": "q60",
-  "type": "multiple",
-  "question": [
-    "You are building a solution that students will use to find references for essays.",
-    "You use the following code to start building the solution:",
-    "",
-    "```csharp",
-    "using Azure;",
-    "using System;",
-    "using Azure.AI.TextAnalytics;",
-    "",
-    "private static readonly AzureKeyCredential credentials = new AzureKeyCredential(\"key\");",
-    "private static readonly Uri endpoint = new Uri(\"endpoint\");",
-    "",
-    "static void EntityLinker (TextAnalyticsClient client)",
-    "{",
-    "    var response = client.RecognizeLinkedEntities(",
-    "        \"Our tour guide took us up the Space Needle during our trip to Seattle last week.\");",
-    "}",
-    "```",
-    "",
-    "For each of the following statements, select **Yes** if the statement is true. Otherwise, select **No**."
-  ],
-  "options": [
-    {
-      "id": "a",
-      "text": "The code will detect the language of documents.",
-      "isCorrect": false
-    },
-    {
-      "id": "b",
-      "text": "The url attribute returned for each linked entity will be a Bing search link.",
-      "isCorrect": false
-    },
-    {
-      "id": "c",
-      "text": "The matches attribute returned for each linked entity will provide the location in a document where the entity is referenced.",
-      "isCorrect": true
-    }
-  ],
-  "correctAnswer": ["c"],
-  "explanation": "The `RecognizeLinkedEntities` method is used to link entities in the text to entries in a knowledge base such as Wikipedia. It does **not** detect language (you'd need a separate call for that), and the `url` is usually a link to a Wikipedia article, **not Bing**. The `matches` attribute identifies text spans where the entity appears, so option C is correct."
-},{
   "id": "q61",
   "type": "single",
   "question": [
@@ -1254,7 +1211,7 @@
   "correctAnswer": "c",
   "explanation": "To connect to an Azure OpenAI model using the SDK, you need the deployment name (which identifies the specific deployed model), the endpoint URL of your Azure OpenAI resource, and the subscription key for authentication."
 },{
-  "id": "66",
+  "id": "67",
   "type": "single",
   "question": [
     "You have an Azure OpenAI model.",
@@ -1363,110 +1320,6 @@
   "correctAnswer": ["e"],
   "explanation": "None of the statements are correct. The model used is gpt-3.5-turbo, not text-embedding-ada-002. Prompt tokens are not counted in the max response token limit. Charges are based on total tokens (prompt + completion), not just completion. The completion stopped naturally, not due to token limits."
 },{
-  "id": "q71",
-  "type": "matching-pairs",
-  "question": [
-    "Match the actions with the correct method for accessing Azure OpenAI deployments."
-  ],
-  "leftOptions": [
-    { "id": "1", "text": "Provide access to AI1dev by using" },
-    { "id": "2", "text": "Connect to the deployment by using" }
-  ],
-  "rightOptions": [
-    { "id": "a", "text": "A bearer token" },
-    { "id": "b", "text": "An API key" },
-    { "id": "c", "text": "An AD token" },
-    { "id": "d", "text": "A deployment name" },
-    { "id": "e", "text": "A deployment endpoint" }
-  ],
-  "correctAnswer": {
-    "1": "b",
-    "2": "d"
-  },
-  "explanation": "To access Azure OpenAI resources, you typically use an API key. Each app should connect using the specific deployment name configured in the Azure OpenAI Studio."
-},{
-  "id": "q67",
-  "type": "single",
-  "question": [
-    "You are setting up an Azure OpenAI resource for a chatbot application using an Azure Resource Manager (ARM) template.",
-    "The chatbot is expected to handle a significant volume of queries, approximately 600 requests per minute.",
-    "You need to configure the Azure OpenAI resource to support 600 requests per minute.",
-    "How would you adjust the deployment template to meet this requirement?"
-  ],
-  "options": [
-    { "id": "a", "text": "count, 100" },
-    { "id": "b", "text": "capacity, 600" },
-    { "id": "c", "text": "capacity, 100" },
-    { "id": "d", "text": "size, 1" }
-  ],
-  "correctAnswer": "c",
-  "explanation": "In Azure OpenAI ARM templates, the `capacity` field under `sku` defines the number of compute units allocated. Setting `capacity: 100` enables the resource to handle higher throughput, such as 600 requests per minute, depending on the model and request complexity."
-},{
-  "id": "q68",
-  "type": "single",
-  "question": [
-    "You've integrated Azure OpenAI's GPT-4 model into your application, MyApp.",
-    "MyApp occasionally returns responses containing hate speech.",
-    "You need to prevent MyApp from generating responses with hate speech.",
-    "How do you achieve the goal?"
-  ],
-  "options": [
-    { "id": "a", "text": "the Temperature parameter" },
-    { "id": "b", "text": "a content filter" },
-    { "id": "c", "text": "abuse monitoring" },
-    { "id": "d", "text": "the Frequency penalty parameter" }
-  ],
-  "correctAnswer": "b",
-  "explanation": "To prevent harmful or inappropriate outputs such as hate speech, Azure OpenAI provides built-in content filtering. The content filter analyzes and blocks inappropriate content before it's returned to the user. Parameters like Temperature or Frequency penalty affect creativity and repetition but do not prevent unsafe content."
-},{
-  "id": "q69",
-  "type": "single",
-  "question": [
-    "You're developing an e-commerce platform that requires automated generation of product titles and descriptions from existing product specifications.",
-    "Which Azure AI model is best suited for generating concise and relevant product titles from detailed product descriptions?"
-  ],
-  "options": [
-    { "id": "a", "text": "Embeddings" },
-    { "id": "b", "text": "DALL·E" },
-    { "id": "c", "text": "Whisper" },
-    { "id": "d", "text": "GPT-4" }
-  ],
-  "correctAnswer": "d",
-  "explanation": "GPT-4 is a large language model optimized for natural language generation tasks such as summarization, content generation, and rephrasing. It is best suited for transforming detailed product specs into concise, human-readable titles and descriptions. Embeddings are used for similarity search, DALL·E for image generation, and Whisper for speech recognition."
-},{
-  "id": "q70",
-  "type": "single",
-  "question": [
-    "You have an Azure subscription and 1000 ASCII files.",
-    "You need to identify files that contain specific phrases and the chosen solution must use cosine similarity.",
-    "Which Azure OpenAI model should you use?"
-  ],
-  "options": [
-    { "id": "a", "text": "text-embedding-ada-002" },
-    { "id": "b", "text": "GPT-4" },
-    { "id": "c", "text": "GPT-35 Turbo" },
-    { "id": "d", "text": "GPT-4-32k" }
-  ],
-  "correctAnswer": "a",
-  "explanation": "The `text-embedding-ada-002` model is specifically designed for generating vector embeddings that capture the semantic meaning of text. These embeddings can be compared using cosine similarity, making this model ideal for identifying documents with semantically similar content. GPT models are designed for text generation rather than efficient embedding and similarity comparison."
-},{
-  "id": "q71",
-  "type": "single",
-  "question": [
-    "You're developing a conversational AI using Azure OpenAI's GPT-35 Turbo model.",
-    "The System Message you provided is:",
-    "\"You're an AI assistant that helps people find information. Answer in as few words as possible.\"",
-    "Determine which type of prompt engineering technique this system message represents."
-  ],
-  "options": [
-    { "id": "a", "text": "Affordance" },
-    { "id": "b", "text": "Few-shot learning" },
-    { "id": "c", "text": "Chain of thought" },
-    { "id": "d", "text": "Priming" }
-  ],
-  "correctAnswer": "d",
-  "explanation": "This is an example of **priming**, where the system prompt sets the tone, context, and behavior of the assistant before any user input. Priming helps guide the model’s responses without requiring additional input examples."
-},{
   "id": "q72",
   "type": "matching-pairs",
   "question": [
@@ -1562,6 +1415,48 @@
   ],
   "correctAnswer": ["b", "d"],
   "explanation": "The prompt content can improve accuracy and relevance. However, the API response depends on the underlying model and does not guarantee up-to-date or source-verified information."
+},
+{
+  "id": "q76",
+  "type": "single",
+  "question": [
+    "You are developing a solution to process receipt images using the Document Intelligence API.",
+    "After uploading the images, the API returns a JSON response with extracted data, including various fields and their confidence scores.",
+    "To ensure the accuracy of the extracted information, you need to establish a criterion that triggers a manual review by a designated team if any of the confidence scores for the extracted fields fall below a certain threshold.",
+    "Given the JSON structure shown below, which expression should you use to trigger a manual review?",
+    "{",
+    "  \"documentResults\": [",
+    "    {",
+    "      \"docType\": \"prebuilt: receipt\",",
+    "      \"pageRange\": [],",
+    "      \"fields\": {",
+    "        \"ReceiptType\": {",
+    "          \"type\": \"string\",",
+    "          \"valueString\": \"Itemized\",",
+    "          \"confidence\": 0.672",
+    "        },",
+    "        \"MerchantName\": {",
+    "          \"type\": \"string\",",
+    "          \"valueString\": \"Tailwind\",",
+    "          \"text\": \"Tailwind\",",
+    "          \"boundingBox\": [],",
+    "          \"page\": 1,",
+    "          \"confidence\": 0.913,",
+    "          \"elements\": []",
+    "        }",
+    "      }",
+    "    }",
+    "  ]",
+    "}"
+  ],
+  "options": [
+    { "id": "a", "text": "documentResults.fields.ReceiptType.confidence less than 0.5" },
+    { "id": "b", "text": "documentResults.fields.ReceiptType.confidence greater than 0.7" },
+    { "id": "c", "text": "documentResults.fields.*.confidence less than 0.7" },
+    { "id": "d", "text": "documentResults.fields.MerchantName.valueString == \"Tailwind\"" }
+  ],
+  "correctAnswer": "c",
+  "explanation": "To trigger manual review when any extracted field has a confidence score below a threshold, you need to check all fields dynamically. The expression 'documentResults.fields.*.confidence less than 0.7' captures this by evaluating all confidence values in the fields object."
 },{
   "id": "q77",
   "type": "matching-pairs",
@@ -1822,7 +1717,7 @@
   "explanation": "Embeddings models in Azure OpenAI are designed to return numeric vectors that represent the meaning of text. These vectors can then be compared to compute semantic similarity efficiently, making them ideal for document comparison tasks."
 },
 {
-  "id": "q86",
+  "id": "q87",
   "type": "multiple",
   "question": [
     "You have an Azure AI Search service that has experienced a steady increase in query volume over the past 6 months.",
@@ -2115,5 +2010,153 @@
   ],
   "correctAnswer": "b",
   "explanation": "The prebuilt 'Invoice' model in Azure AI Document Intelligence is specifically designed to extract common invoice fields such as billing address, due date, subtotal, shipping address, tax, customer ID, and amount due, making it the best fit with minimal development effort."
+},{
+  "id": "q100",
+  "type": "multiple",
+  "question": [
+    "You are building a solution that students will use to find references for essays.",
+    "You use the following code to start building the solution:",
+    "",
+    "```csharp",
+    "using Azure;",
+    "using System;",
+    "using Azure.AI.TextAnalytics;",
+    "",
+    "private static readonly AzureKeyCredential credentials = new AzureKeyCredential(\"key\");",
+    "private static readonly Uri endpoint = new Uri(\"endpoint\");",
+    "",
+    "static void EntityLinker (TextAnalyticsClient client)",
+    "{",
+    "    var response = client.RecognizeLinkedEntities(",
+    "        \"Our tour guide took us up the Space Needle during our trip to Seattle last week.\");",
+    "}",
+    "```",
+    "",
+    "For each of the following statements, select **Yes** if the statement is true. Otherwise, select **No**."
+  ],
+  "options": [
+    {
+      "id": "a",
+      "text": "The code will detect the language of documents.",
+      "isCorrect": false
+    },
+    {
+      "id": "b",
+      "text": "The url attribute returned for each linked entity will be a Bing search link.",
+      "isCorrect": false
+    },
+    {
+      "id": "c",
+      "text": "The matches attribute returned for each linked entity will provide the location in a document where the entity is referenced.",
+      "isCorrect": true
+    }
+  ],
+  "correctAnswer": ["c"],
+  "explanation": "The `RecognizeLinkedEntities` method is used to link entities in the text to entries in a knowledge base such as Wikipedia. It does **not** detect language (you'd need a separate call for that), and the `url` is usually a link to a Wikipedia article, **not Bing**. The `matches` attribute identifies text spans where the entity appears, so option C is correct."
+},
+{
+  "id": "q101",
+  "type": "matching-pairs",
+  "question": [
+    "Match the actions with the correct method for accessing Azure OpenAI deployments."
+  ],
+  "leftOptions": [
+    { "id": "1", "text": "Provide access to AI1dev by using" },
+    { "id": "2", "text": "Connect to the deployment by using" }
+  ],
+  "rightOptions": [
+    { "id": "a", "text": "A bearer token" },
+    { "id": "b", "text": "An API key" },
+    { "id": "c", "text": "An AD token" },
+    { "id": "d", "text": "A deployment name" },
+    { "id": "e", "text": "A deployment endpoint" }
+  ],
+  "correctAnswer": {
+    "1": "b",
+    "2": "d"
+  },
+  "explanation": "To access Azure OpenAI resources, you typically use an API key. Each app should connect using the specific deployment name configured in the Azure OpenAI Studio."
+},{
+  "id": "q102",
+  "type": "single",
+  "question": [
+    "You are setting up an Azure OpenAI resource for a chatbot application using an Azure Resource Manager (ARM) template.",
+    "The chatbot is expected to handle a significant volume of queries, approximately 600 requests per minute.",
+    "You need to configure the Azure OpenAI resource to support 600 requests per minute.",
+    "How would you adjust the deployment template to meet this requirement?"
+  ],
+  "options": [
+    { "id": "a", "text": "count, 100" },
+    { "id": "b", "text": "capacity, 600" },
+    { "id": "c", "text": "capacity, 100" },
+    { "id": "d", "text": "size, 1" }
+  ],
+  "correctAnswer": "c",
+  "explanation": "In Azure OpenAI ARM templates, the `capacity` field under `sku` defines the number of compute units allocated. Setting `capacity: 100` enables the resource to handle higher throughput, such as 600 requests per minute, depending on the model and request complexity."
+},{
+  "id": "q103",
+  "type": "single",
+  "question": [
+    "You've integrated Azure OpenAI's GPT-4 model into your application, MyApp.",
+    "MyApp occasionally returns responses containing hate speech.",
+    "You need to prevent MyApp from generating responses with hate speech.",
+    "How do you achieve the goal?"
+  ],
+  "options": [
+    { "id": "a", "text": "the Temperature parameter" },
+    { "id": "b", "text": "a content filter" },
+    { "id": "c", "text": "abuse monitoring" },
+    { "id": "d", "text": "the Frequency penalty parameter" }
+  ],
+  "correctAnswer": "b",
+  "explanation": "To prevent harmful or inappropriate outputs such as hate speech, Azure OpenAI provides built-in content filtering. The content filter analyzes and blocks inappropriate content before it's returned to the user. Parameters like Temperature or Frequency penalty affect creativity and repetition but do not prevent unsafe content."
+},{
+  "id": "q104",
+  "type": "single",
+  "question": [
+    "You're developing an e-commerce platform that requires automated generation of product titles and descriptions from existing product specifications.",
+    "Which Azure AI model is best suited for generating concise and relevant product titles from detailed product descriptions?"
+  ],
+  "options": [
+    { "id": "a", "text": "Embeddings" },
+    { "id": "b", "text": "DALL·E" },
+    { "id": "c", "text": "Whisper" },
+    { "id": "d", "text": "GPT-4" }
+  ],
+  "correctAnswer": "d",
+  "explanation": "GPT-4 is a large language model optimized for natural language generation tasks such as summarization, content generation, and rephrasing. It is best suited for transforming detailed product specs into concise, human-readable titles and descriptions. Embeddings are used for similarity search, DALL·E for image generation, and Whisper for speech recognition."
+},{
+  "id": "q105",
+  "type": "single",
+  "question": [
+    "You have an Azure subscription and 1000 ASCII files.",
+    "You need to identify files that contain specific phrases and the chosen solution must use cosine similarity.",
+    "Which Azure OpenAI model should you use?"
+  ],
+  "options": [
+    { "id": "a", "text": "text-embedding-ada-002" },
+    { "id": "b", "text": "GPT-4" },
+    { "id": "c", "text": "GPT-35 Turbo" },
+    { "id": "d", "text": "GPT-4-32k" }
+  ],
+  "correctAnswer": "a",
+  "explanation": "The `text-embedding-ada-002` model is specifically designed for generating vector embeddings that capture the semantic meaning of text. These embeddings can be compared using cosine similarity, making this model ideal for identifying documents with semantically similar content. GPT models are designed for text generation rather than efficient embedding and similarity comparison."
+},{
+  "id": "q106",
+  "type": "single",
+  "question": [
+    "You're developing a conversational AI using Azure OpenAI's GPT-35 Turbo model.",
+    "The System Message you provided is:",
+    "\"You're an AI assistant that helps people find information. Answer in as few words as possible.\"",
+    "Determine which type of prompt engineering technique this system message represents."
+  ],
+  "options": [
+    { "id": "a", "text": "Affordance" },
+    { "id": "b", "text": "Few-shot learning" },
+    { "id": "c", "text": "Chain of thought" },
+    { "id": "d", "text": "Priming" }
+  ],
+  "correctAnswer": "d",
+  "explanation": "This is an example of **priming**, where the system prompt sets the tone, context, and behavior of the assistant before any user input. Priming helps guide the model’s responses without requiring additional input examples."
 }
 ]
