@@ -1801,9 +1801,29 @@
     ],
     "correctAnswer": { "left": "b", "right": "i" },
      "explanation": "To capture messages from Spanish and Hindi speakers, the system should use Speech-to-text to transcribe the audio and Translator to convert it into English text. To replay the messages in English, use Text-to-speech to synthesize the translated English text back into audio, combined with Translator to ensure language conversion."
-  },{
+  },
+  {
   "id": "q86",
-  "type": "multi-select",
+  "type": "single",
+  "question": [
+    "You have an Azure subscription.",
+    "You need to build an app that will compare documents for semantic similarity. The solution must meet the following requirements:",
+    "• Return numeric vectors that represent the tokens of each document.",
+    "• Minimize development effort.",
+    "Which Azure OpenAI model should you use?"
+  ],
+  "options": [
+    { "id": "a", "text": "GPT-3.5" },
+    { "id": "b", "text": "GPT-4" },
+    { "id": "c", "text": "embeddings" },
+    { "id": "d", "text": "DALL-E" }
+  ],
+  "correctAnswer": "c",
+  "explanation": "Embeddings models in Azure OpenAI are designed to return numeric vectors that represent the meaning of text. These vectors can then be compared to compute semantic similarity efficiently, making them ideal for document comparison tasks."
+},
+{
+  "id": "q86",
+  "type": "multiple",
   "question": [
     "You have an Azure AI Search service that has experienced a steady increase in query volume over the past 6 months.",
     "You notice that some search requests are being throttled.",
@@ -1818,9 +1838,10 @@
   ],
   "correctAnswer": ["c", "d"],
   "explanation": "To reduce query throttling in Azure AI Search, you can add **replicas** to handle more queries simultaneously, or **migrate to a higher tier** for increased capacity. Adding indexes, enabling CMK, or deploying to a private endpoint does not directly address throttling."
-},{
+},
+{
   "id": "q88",
-  "type": "single-select",
+  "type": "single",
   "question": [
     "You're developing a contact management chatbot using Azure AI Language Understanding.",
     "The FindContact intent helps users search for contacts by location.",
@@ -1839,8 +1860,115 @@
   ],
   "correctAnswer": "a",
   "explanation": "To improve a specific intent like FindContact, you should add more training data by creating new utterances. Each phrase represents a variation in how users might phrase the same intent, helping the model generalize better. Location can be captured as an entity within those utterances."
-},{
+},
+{
+  "id": "q89",
+  "type": "dropdown-pair",
+  "question": [
+    "Your factory produces cardboard packaging for food products but experiences intermittent internet connectivity.",
+    "Each package must contain four product samples, and you need a Custom Vision model to identify defects and verify product count while providing defect locations to an operator.",
+    "Which project type and domain should you choose?"
+  ],
+  "leftOptions": [
+    { "id": "classification", "text": "Classification" },
+    { "id": "object-detection", "text": "Object Detection" }
+  ],
+  "rightOptions": [
+    { "id": "retail", "text": "Retail" },
+    { "id": "general-compact", "text": "General (compact)" },
+    { "id": "general", "text": "General" },
+    { "id": "manufacturing", "text": "Manufacturing" }
+  ],
+  "correctAnswer": {
+    "left": "object-detection",
+    "right": "general-compact"
+  },
+  "explanation": "To detect individual product samples and locate defects, 'Object Detection' is required. Since the environment has intermittent internet, the 'General (compact)' domain enables edge deployment on devices without needing constant cloud connectivity."
+},
+{
   "id": "q90",
+  "type": "single",
+  "question": [
+    "You are developing a solution for a retail store that wants to monitor customer behavior in the store to improve sales and customer experience.",
+    "The store has multiple cameras installed throughout and wants to gather data on:",
+    "• How many people enter the store.",
+    "• Which sections of the store get the most foot traffic.",
+    "• How long customers spend in different areas.",
+    "You need to analyze video feeds from the cameras to gather these insights in real time.",
+    "Which Azure AI service feature should you use to achieve this?"
+  ],
+  "options": [
+    { "id": "a", "text": "Speech-to-text in the Azure AI Speech service" },
+    { "id": "b", "text": "Object detection in Azure AI Custom Vision" },
+    { "id": "c", "text": "Spatial analysis in Azure AI Vision" },
+    { "id": "d", "text": "Azure AI Video Indexer" }
+  ],
+  "correctAnswer": "c",
+  "explanation": "Spatial analysis in Azure AI Vision is designed specifically for real-time video analytics in physical environments. It can track people, count entries, measure dwell time, and identify high-traffic areas—making it ideal for retail behavior analysis. The other options are not optimized for real-time spatial or behavioral video analysis."
+},{
+  "id": "q91",
+  "type": "dropdown-pair",
+  "question": [
+    "You have a library that contains thousands of images.",
+    "You need to tag the images as photographs, drawings, or clipart.",
+    "Which service endpoint and response property should you use?",
+    "NOTE: Each correct selection is worth one point."
+  ],
+  "leftOptions": [
+    { "id": "doc-ocr", "text": "Document intelligence OCR extraction" },
+    { "id": "custom-classification", "text": "Custom vision image classification" },
+    { "id": "custom-detection", "text": "Custom vision object detection" },
+    { "id": "ai-vision", "text": "AI Vision analyze images" }
+  ],
+  "rightOptions": [
+    { "id": "metadata", "text": "Metadata" },
+    { "id": "description", "text": "Description" },
+    { "id": "tags", "text": "Tags" },
+    { "id": "imagetype", "text": "Imagetype" },
+    { "id": "objects", "text": "Objects" }
+  ],
+  "correctAnswer": {
+    "left": "ai-vision",
+    "right": "imagetype"
+  },
+  "explanation": "To determine image categories like photograph, drawing, or clipart, use the Azure AI Vision 'analyze image' API. This includes the 'imagetype' field, which provides image classification. Custom Vision is for custom models, while AI Vision offers built-in visual analysis features."
+},    {
+  "id": "q92",
+  "type": "multiple",
+  "question": [
+    "A customer uses Azure AI Search and plans to enable server-side encryption using customer-managed keys (CMK) stored in Azure Key Vault.",
+    "What are three implications of this change?"
+  ],
+  "options": [
+    { "id": "a", "text": "The index size will increase." },
+    { "id": "b", "text": "Query times will increase." },
+    { "id": "c", "text": "A self-signed X.509 certificate is required." },
+    { "id": "d", "text": "The index size will decrease." },
+    { "id": "e", "text": "Query times will decrease." },
+    { "id": "f", "text": "Azure Key Vault is required." }
+  ],
+  "correctAnswer": ["b", "c", "f"],
+  "explanation": "Enabling customer-managed keys (CMK) in Azure AI Search requires integration with Azure Key Vault (F), and the customer must provide a self-signed X.509 certificate (C). Using CMK can increase query latency (B) due to additional encryption key access overhead. Index size is not directly impacted."
+},
+{
+  "id": "q93",
+  "type": "multiple",
+  "question": [
+    "A customer uses Azure AI Search and plans to enable server-side encryption using customer-managed keys (CMK) stored in Azure Key Vault.",
+    "What are three implications of this change?"
+  ],
+  "options": [
+    { "id": "a", "text": "The index size will increase." },
+    { "id": "b", "text": "Query times will increase." },
+    { "id": "c", "text": "A self-signed X.509 certificate is required." },
+    { "id": "d", "text": "The index size will decrease." },
+    { "id": "e", "text": "Query times will decrease." },
+    { "id": "f", "text": "Azure Key Vault is required." }
+  ],
+  "correctAnswer": ["a", "b", "f"],
+  "explanation": "When enabling server-side encryption with customer-managed keys (CMK) in Azure AI Search, integration with Azure Key Vault is required (F). Query performance may be affected and can lead to increased latency (B). Additionally, encrypted indexes may lead to slightly larger storage footprints (A) due to encryption overhead."
+},{
+  "id": "q94",
   "type": "drag-sequence",
   "question": [
     "You are building a retail chatbot that uses Custom Question Answering, a feature of Azure AI Language.",
@@ -1861,10 +1989,9 @@
     { "id": "5", "text": "Add alternative phrasing to the question and answer (QnA) pair." }
   ],
   "correctAnswer": ["5", "2", "4"],
-  "explanation": "You should first add alternative phrasing to help the model recognize variations of the question. Then retrain and republish the model to apply the updates."
-},
-{
-  "id": "q91",
+  "explanation": "First, add alternative phrasing to the QnA pair so the model recognizes varied user questions. Then retrain and republish the model to apply these improvements."
+},{
+  "id": "q95",
   "type": "drag-sequence",
   "question": [
     "You have a chatbot that uses a custom Question Answering application.",
@@ -1882,9 +2009,9 @@
     { "id": "7", "text": "Modify the automation task logic app to run an Azure Resource Manager template that creates the Azure Cognitive Services resource." }
   ],
   "correctAnswer": ["1", "3", "4", "6"],
-  "explanation": "To integrate user input using active learning, you start by showing suggestions, approve/reject them, train the model, and then publish the updated knowledge base."
+  "explanation": "To integrate user input using active learning, first show active learning suggestions, then approve or reject them, save and train the knowledge base, and finally publish the updated knowledge base."
 },{
-  "id": "q92",
+  "id": "q96",
   "type": "drag-sequence",
   "question": [
     "Using Azure AI Services you have built a speech model which transcribes physics lectures.",
@@ -1902,49 +2029,91 @@
     { "id": "7", "text": "Create a Conversational Language Understanding model." }
   ],
   "correctAnswer": ["4", "3", "5", "6", "2"],
-  "explanation": "To improve transcription accuracy for scientific terms, start by creating a Custom Speech project. Then, create a speech-to-text model, upload domain-specific training data, train the model, and finally deploy it."
-},{
-  "id": "q93",
-  "type": "single-select",
+  "explanation": "To improve transcription accuracy for scientific terms, start by creating a Custom Speech project. Then create a speech-to-text model, upload domain-specific training datasets, train the model, and finally deploy it."
+},
+ {
+  "id": "q97",
+  "type": "single",
   "question": [
-    "You have an Azure subscription.",
-    "You need to build an app that will compare documents for semantic similarity.",
-    "The solution must meet the following requirements:",
-    "• Return numeric vectors that represent the tokens of each document.",
-    "• Minimize development effort.",
-    "Which Azure OpenAI model should you use?"
+    "You have an application, utilizing a custom Azure AI Document Intelligence model to recognize contract documents.",
+    "You now need to support an additional contract format.",
+    "Requirements:",
+    "Minimize development effort.",
+    "Select one option to fulfill the requirement."
   ],
   "options": [
-    { "id": "a", "text": "GPT-3.5" },
-    { "id": "b", "text": "GPT-4" },
-    { "id": "c", "text": "embeddings" },
-    { "id": "d", "text": "DALL-E" }
+    { "id": "a", "text": "Create a new training set and add the new contract format to the new training set." },
+    { "id": "b", "text": "Lower the accuracy threshold of App1." },
+    { "id": "c", "text": "Use a pre-trained language model for image recognition." },
+    { "id": "d", "text": "Add the additional contract format to the existing training set and retrain the model." },
+    { "id": "e", "text": "Create and train a new custom model." }
+  ],
+  "correctAnswer": "d",
+  "explanation": "To support a new contract format with minimal development effort, the best approach is to add examples of the new format to the existing training set and retrain the custom Document Intelligence model. This avoids building a new model from scratch while improving recognition accuracy for the new format."
+},
+{
+  "id": "q98",
+  "type": "single",
+  "question": [
+    "You are developing a solution to process receipt images using the Document Intelligence API.",
+    "After uploading the images, the API returns a JSON response with extracted data, including various fields and their confidence scores.",
+    "To ensure the accuracy of the extracted information, you need to establish a criterion that triggers a manual review by a designated team if any of the confidence scores for the extracted fields fall below a certain threshold.",
+    "Given the JSON structure shown below, which expression should you use to trigger a manual review?",
+    "{",
+    "  \"documentResults\": [",
+    "    {",
+    "      \"docType\": \"prebuilt: receipt\",",
+    "      \"pageRange\": [],",
+    "      \"fields\": {",
+    "        \"ReceiptType\": {",
+    "          \"type\": \"string\",",
+    "          \"valueString\": \"Itemized\",",
+    "          \"confidence\": 0.672",
+    "        },",
+    "        \"MerchantName\": {",
+    "          \"type\": \"string\",",
+    "          \"valueString\": \"Tailwind\",",
+    "          \"text\": \"Tailwind\",",
+    "          \"boundingBox\": [],",
+    "          \"page\": 1,",
+    "          \"confidence\": 0.913,",
+    "          \"elements\": []",
+    "        }",
+    "      }",
+    "    }",
+    "  ]",
+    "}"
+  ],
+  "options": [
+    { "id": "a", "text": "documentResults.fields.ReceiptType.confidence less than 0.5" },
+    { "id": "b", "text": "documentResults.fields.ReceiptType.confidence greater than 0.7" },
+    { "id": "c", "text": "documentResults.fields.*.confidence less than 0.7" },
+    { "id": "d", "text": "documentResults.fields.MerchantName.valueString == \"Tailwind\"" }
   ],
   "correctAnswer": "c",
-  "explanation": "Azure OpenAI embeddings models are designed to return dense numeric vectors that represent semantic meaning. This makes them ideal for document comparison tasks with minimal development effort. GPT-3.5 and GPT-4 are general-purpose language models, and DALL-E is for image generation."
+  "explanation": "To trigger manual review when any extracted field has a confidence score below a threshold, you need to check all fields dynamically. The expression 'documentResults.fields.*.confidence less than 0.7' captures this by evaluating all confidence values in the fields object."
+},
+{
+  "id": "q99",
+  "type": "single",
+  "question": [
+    "Which Azure AI Document Intelligence model is best suited to extract the following data from scanned documents:",
+    "",
+    "• Billing address",
+    "• Due date",
+    "• Subtotal",
+    "• Shipping address",
+    "• Total tax",
+    "• Customer ID",
+    "• Amount due"
+  ],
+  "options": [
+    { "id": "a", "text": "Contract" },
+    { "id": "b", "text": "Invoice" },
+    { "id": "c", "text": "General document" },
+    { "id": "d", "text": "Custom extraction model" }
+  ],
+  "correctAnswer": "b",
+  "explanation": "The prebuilt 'Invoice' model in Azure AI Document Intelligence is specifically designed to extract common invoice fields such as billing address, due date, subtotal, shipping address, tax, customer ID, and amount due, making it the best fit with minimal development effort."
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ]
