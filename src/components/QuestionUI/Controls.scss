@@ -1,5 +1,5 @@
 .controls {
-  display: flex;
+  //display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   gap: 1rem;
@@ -17,11 +17,13 @@
   .submit-btn {
     background-color: #007bff;
     color: white;
+       margin:10px;
   }
 
   .next-btn {
     background-color: #28a745;
     color: white;
+ 
   }
 
   .back-btn {

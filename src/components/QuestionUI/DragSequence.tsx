@@ -38,6 +38,9 @@ const DragSequence = ({ question: q, answer, onOptionChange, onResetDrag }: Drag
 
   return (
     <>
+      <button className="reset-btn" onClick={() => onResetDrag(q.id)}>
+        Reset
+      </button>
       <DragDropContext onDragEnd={handleDragEnd}>
         <div className="drag-panes">
           <Droppable droppableId="source">
@@ -65,38 +68,36 @@ const DragSequence = ({ question: q, answer, onOptionChange, onResetDrag }: Drag
               </div>
             )}
           </Droppable>
-<Droppable droppableId="target">
-  {(provided) => (
-    <div className="drag-column" ref={provided.innerRef} {...provided.droppableProps}>
-      <h4>Drop in Order</h4>
-      <div className="drag-items">
-        {answer?.target?.map((id: string, index: number) => {
-          const opt = q.options?.find(o => o.id === id);
-          return (
-            <Draggable key={id} draggableId={id} index={index}>
-              {(provided) => (
-                <div
-                  className="draggable-item"
-                  ref={provided.innerRef}
-                  {...provided.draggableProps}
-                  {...provided.dragHandleProps}
-                >
-                  {opt?.text}
+          <Droppable droppableId="target">
+            {(provided) => (
+              <div className="drag-column" ref={provided.innerRef} {...provided.droppableProps}>
+                <h4>Drop in Order</h4>
+                <div className="drag-items">
+                  {answer?.target?.map((id: string, index: number) => {
+                    const opt = q.options?.find(o => o.id === id);
+                    return (
+                      <Draggable key={id} draggableId={id} index={index}>
+                        {(provided) => (
+                          <div
+                            className="draggable-item"
+                            ref={provided.innerRef}
+                            {...provided.draggableProps}
+                            {...provided.dragHandleProps}
+                          >
+                            {opt?.text}
+                          </div>
+                        )}
+                      </Draggable>
+                    );
+                  })}
+                  {provided.placeholder}
                 </div>
-              )}
-            </Draggable>
-          );
-        })}
-        {provided.placeholder}
-      </div>
-    </div>
-  )}
-</Droppable>
+              </div>
+            )}
+          </Droppable>
         </div>
       </DragDropContext>
-      <button className="reset-btn" onClick={() => onResetDrag(q.id)}>
-        Reset
-      </button>
+
     </>
   );
 };

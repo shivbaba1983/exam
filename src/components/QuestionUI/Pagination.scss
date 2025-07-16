@@ -1,5 +1,5 @@
 .pagination {
-  display: flex;
+ // display: flex;
   align-items: center;
   gap: 8px;
 
@@ -52,6 +52,34 @@
         outline: none;
         border-color: #0078d4;
         box-shadow: 0 0 5px rgba(0, 120, 212, 0.5);
+      }
+    }
+  }
+}
+@media (max-width: 600px) {
+  .pagination {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 4px;
+
+    .page-number,
+    .page-nav {
+      padding: 6px 8px;
+      font-size: 0.85rem;
+    }
+
+    .page-jump {
+      width: 100%;
+      justify-content: center;
+      margin-top: 8px;
+
+      label {
+        font-size: 0.85rem;
+      }
+
+      input {
+        font-size: 0.85rem;
+        width: 50px;
       }
     }
   }
