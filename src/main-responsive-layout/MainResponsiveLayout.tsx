@@ -1,8 +1,8 @@
 
 import "./MainResponsiveLayout.scss";
 import { useEffect, useState } from "react";
-import QuestionUI from './../components/QuestionUI';
-
+import QuestionUIOld from './../components/QuestionUI';
+import QuestionUI from './../components/QuestionUI/QuestionUI';
 const MainResponsiveLayout = () => {
   const [isLogReading, setIsLogReading] = useState(false);
   const [showUSA, setUSA] = useState(true);
@@ -11,6 +11,7 @@ const MainResponsiveLayout = () => {
   return (
     <div className="application-level">
       <div className="main-container">
+        {/* <QuestionUIOld/> */}
         <QuestionUI/>
       </div>
     </div>

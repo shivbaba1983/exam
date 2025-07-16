@@ -8,7 +8,7 @@ const Dashboard = ({ }) => {
 
     return (<div>
         <p> Welcome, This Dashboard page</p>
-             <QuestionUI/>
+             {/* <QuestionUI/> */}
              {/* <TestQuestionUI/>  */}
        {/* <SectionedGallery/> */}
         {/* <TextFileViewer/> */}
