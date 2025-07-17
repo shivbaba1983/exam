@@ -6,7 +6,7 @@ import './DragSequence.scss';
 interface DragSequenceProps {
   question: Question;
   answer: { source: string[]; target: string[] };
-  onOptionChange: (qid: string, value: any) => void;
+  onOptionChange: (qid: string, value: { source: string[]; target: string[] }) => void;
   onResetDrag: (qid: string) => void;
 }
 
@@ -15,25 +15,33 @@ const DragSequence = ({ question: q, answer, onOptionChange, onResetDrag }: Drag
     const { source, destination } = result;
     if (!destination) return;
 
-    const sourceList = Array.from(answer[source.droppableId]);
-    const destList = Array.from(answer[destination.droppableId]);
-
-    const [moved] = sourceList.splice(source.index, 1);
+    // Copy current source and target arrays
+    const newSource = Array.from(answer.source);
+    const newTarget = Array.from(answer.target);
 
     if (source.droppableId === destination.droppableId) {
-      destList.splice(destination.index, 0, moved);
+      // Reordering within the same list
+      const list = source.droppableId === 'source' ? newSource : newTarget;
+      const [moved] = list.splice(source.index, 1);
+      list.splice(destination.index, 0, moved);
+
+      if (source.droppableId === 'source') {
+        onOptionChange(q.id, { source: list, target: newTarget });
+      } else {
+        onOptionChange(q.id, { source: newSource, target: list });
+      }
     } else {
+      // Moving between lists
+      const sourceList = source.droppableId === 'source' ? newSource : newTarget;
+      const destList = destination.droppableId === 'source' ? newSource : newTarget;
+
+      const [moved] = sourceList.splice(source.index, 1);
       if (!destList.includes(moved)) {
         destList.splice(destination.index, 0, moved);
       }
+
+      onOptionChange(q.id, { source: newSource, target: newTarget });
     }
-
-    const updated = {
-      source: source.droppableId === 'source' ? sourceList : destList,
-      target: source.droppableId === 'target' ? sourceList : destList,
-    };
-
-    onOptionChange(q.id, updated);
   };
 
   return (
@@ -47,8 +55,8 @@ const DragSequence = ({ question: q, answer, onOptionChange, onResetDrag }: Drag
             {(provided) => (
               <div className="option-drag-column" ref={provided.innerRef} {...provided.droppableProps}>
                 <h4>Available Options</h4>
-                {answer?.source?.map((id: string, index: number) => {
-                  const opt = q.options?.find(o => o.id === id);
+                {answer?.source?.map((id, index) => {
+                  const opt = q.options?.find((o) => o.id === id);
                   return (
                     <Draggable key={id} draggableId={id} index={index}>
                       {(provided) => (
@@ -73,8 +81,8 @@ const DragSequence = ({ question: q, answer, onOptionChange, onResetDrag }: Drag
               <div className="answer-drag-column" ref={provided.innerRef} {...provided.droppableProps}>
                 <h4>Drop in Order</h4>
                 <div className="drag-items">
-                  {answer?.target?.map((id: string, index: number) => {
-                    const opt = q.options?.find(o => o.id === id);
+                  {answer?.target?.map((id, index) => {
+                    const opt = q.options?.find((o) => o.id === id);
                     return (
                       <Draggable key={id} draggableId={id} index={index}>
                         {(provided) => (
@@ -97,7 +105,6 @@ const DragSequence = ({ question: q, answer, onOptionChange, onResetDrag }: Drag
           </Droppable>
         </div>
       </DragDropContext>
-
     </>
   );
 };

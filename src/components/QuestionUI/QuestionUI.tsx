@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import questionsData from './../../data/qa-temp.json';
 import QuestionHeader from './QuestionHeader';
 import OptionsRenderer from './OptionsRenderer';
@@ -23,6 +23,8 @@ const QuestionUI = () => {
   const [submitted, setSubmitted] = useState<{ [key: string]: boolean }>({});
   const [currentPage, setCurrentPage] = useState(0);
   const [questionsPerPage, setQuestionsPerPage] = useState(1);
+
+  const questionRefs = useRef<{ [key: string]: HTMLDivElement | null }>({});
 
   const totalPages = Math.ceil(questionsData.length / questionsPerPage);
   const pageQuestions = questionsData.slice(
@@ -60,90 +62,122 @@ const QuestionUI = () => {
   const handlePageJump = (index: number) => {
     setCurrentPage(index);
   };
+
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }, [currentPage]);
+
   return (
-    <div className="question-ui">
-      <div className="question-count-selector" style={{ marginBottom: '1rem' }}>
-        <label htmlFor="perPage">Questions per page: </label>
-        <select
-          id="perPage"
-          value={questionsPerPage}
-          onChange={e => {
-            setQuestionsPerPage(Number(e.target.value));
-            setCurrentPage(0);
-          }}
-        >
-          <option value={1}>1</option>
-          <option value={5}>5</option>
-          <option value={10}>10</option>
-        </select>
-      </div>
-
-      {pageQuestions.map((question, index) => {
-        const userAnswer =
-          question.type === 'drag-sequence'
-            ? answers[question.id]?.target
-            : question.type === 'dropdown-pair'
-              ? answers[question.id]
-              : answers[question.id];
-
-        const isCorrect = JSON.stringify(userAnswer) === JSON.stringify(question.correctAnswer);
-        const isSubmitted = submitted[question.id];
-
-        return (
-          <div key={question.id} className="question-card">
-            <QuestionHeader
-              questionNumber={currentPage * questionsPerPage + index + 1}
-              questionText={formatQuestionSimple(question.question)}
-            />
-
-            <div className="option-container">
-              <OptionsRenderer
-                question={question}
-                answers={answers}
-                submitted={isSubmitted}
-                onOptionChange={handleOptionChange}
-                onResetDrag={handleResetDrag}
-              />
-            </div>
-
-            {questionsPerPage !== 1 && !isSubmitted && (
-              <button
-                className="submit-btn"
-                onClick={() => handleSubmit(question.id)}
-              >
-                Submit
-              </button>
-            )}
-
-            {isSubmitted && (
-              <AnswerFeedback
-                isCorrect={isCorrect}
-                explanation={question.explanation}
-              />
-            )}
-          </div>
-        );
-      })}
-
-      {/* Show global controls only for single-question-per-page */}
-      {questionsPerPage === 1 && pageQuestions[0] && (
-        <Controls
-          onBack={() => handlePageJump(currentPage - 1)}
-          onSubmit={() => handleSubmit(pageQuestions[0].id)}
-          onNext={() => handlePageJump(currentPage + 1)}
-          disableBack={currentPage === 0}
-          disableNext={currentPage === totalPages - 1}
-        />
-      )}
-
+    <div>
       <Pagination
         currentIndex={currentPage}
         total={totalPages}
         onJump={handlePageJump}
       />
+
+
+      <div className="question-ui">
+
+
+        {pageQuestions.map((question, index) => {
+          const userAnswer =
+            question.type === 'drag-sequence'
+              ? answers[question.id]?.target
+              : question.type === 'dropdown-pair'
+                ? answers[question.id]
+                : answers[question.id];
+
+          const isCorrect = JSON.stringify(userAnswer) === JSON.stringify(question.correctAnswer);
+          const isSubmitted = submitted[question.id];
+
+          return (
+            <div
+              key={question.id}
+              className="question-card"
+              ref={el => (questionRefs.current[question.id] = el)}
+            >
+              <QuestionHeader
+                questionNumber={currentPage * questionsPerPage + index + 1}
+                questionText={formatQuestionSimple(question.question)}
+              />
+
+              <div className="option-container">
+                <OptionsRenderer
+                  question={question}
+                  answers={answers}
+                  submitted={isSubmitted}
+                  onOptionChange={handleOptionChange}
+                  onResetDrag={handleResetDrag}
+                />
+              </div>
+
+              {/* Show Submit only if not already submitted and multi-question mode */}
+              {questionsPerPage !== 1 && !isSubmitted && (
+                <button
+                  className="submit-btn"
+                  onClick={() => {
+                    handleSubmit(question.id);
+
+                    // Scroll to next question card
+                    setTimeout(() => {
+                      const currentIndex = pageQuestions.findIndex(q => q.id === question.id);
+                      const nextQuestion = pageQuestions[currentIndex + 1];
+                      if (nextQuestion) {
+                        const nextEl = questionRefs.current[nextQuestion.id];
+                        if (nextEl) {
+                          nextEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        }
+                      }
+                    }, 100);
+                  }}
+                >
+                  Submit
+                </button>
+              )}
+
+              {isSubmitted && (
+                <AnswerFeedback
+                  isCorrect={isCorrect}
+                  explanation={question.explanation}
+                />
+              )}
+            </div>
+          );
+        })}
+
+        {/* Show global controls only for single-question-per-page */}
+        {questionsPerPage === 1 && pageQuestions[0] && (
+          <Controls
+            onBack={() => handlePageJump(currentPage - 1)}
+            onSubmit={() => handleSubmit(pageQuestions[0].id)}
+            onNext={() => handlePageJump(currentPage + 1)}
+            disableBack={currentPage === 0}
+            disableNext={currentPage === totalPages - 1}
+          />
+        )}
+
+        <Pagination
+          currentIndex={currentPage}
+          total={totalPages}
+          onJump={handlePageJump}
+        />
+                <div className="question-count-selector" style={{ marginBottom: '1rem' }}>
+          <label htmlFor="perPage">Questions per page: </label>
+          <select
+            id="perPage"
+            value={questionsPerPage}
+            onChange={e => {
+              setQuestionsPerPage(Number(e.target.value));
+              setCurrentPage(0);
+            }}
+          >
+            <option value={1}>1</option>
+            <option value={5}>5</option>
+            <option value={10}>10</option>
+            <option value={20}>20</option>
+          </select>
+        </div>
+      </div>
     </div>
   );
 };
