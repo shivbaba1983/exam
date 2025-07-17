@@ -3,7 +3,7 @@ import { Question } from './../model/type';
 import DragSequence from './DragSequence';
 import DropdownPair from './DropdownPair';
 import MatchingPairs from './MatchingPairs';  // <--- import here
-
+import './OptionsRenderer.scss';
 interface OptionsRendererProps {
   question: Question;
   answers: any;

@@ -3558,7 +3558,255 @@
   ],
   "correctAnswer": ["A", "D"],
   "explanation": "The 'begin' method is used to start a new waterfall dialog by pushing it onto the dialog stack. The 'prompt' method also initiates a dialog to ask the user for input, effectively pushing a dialog on the stack. 'Replace' swaps the current dialog, and 'cancel' ends dialogs."
+},{
+  "id": "q152",
+  "type": "single",
+  "question": [
+    "You are currently using the Azure Speech service to convert text to speech.",
+    "The prerequisites have been met, including installing the Speech SDK and including the required packages.",
+    "Your task is to configure the SpeechSynthesizer for three different use cases:",
+    "Use Case 1: Output audio to a wav file",
+    "Use Case 2: Output audio to a speaker",
+    "Use Case 3: Output audio as an in-memory stream",
+    "You configure four variables to meet the requirements per use case.",
+    "Var 1: using var synthesizer = new SpeechSynthesizer(speechConfig, null);",
+    "Var 2: using var synthesizer = new SpeechSynthesizer(null, audioConfig);",
+    "Var 3: using var synthesizer = new SpeechSynthesizer(speechConfig, audioConfig);",
+    "Var 4: using var synthesizer = new SpeechSynthesizer(speechConfig);",
+    "Take a moment to review each use case and map them to the corresponding variables to meet the objective."
+  ],
+  "options": [
+    { "id": "a", "text": "Use Case Var 3; Use Case 2a 2; Use Case Sar 1" },
+    { "id": "b", "text": "Use Case Var 3; Use Case 2: Var 1; Use Case 3: Var 2" },
+    { "id": "c", "text": "Use Case Var 3; Use Case 2:Var 1; Use Case ar 2" },
+    { "id": "d", "text": "Use Case Var 3; Use Case 2Var 4; Use Case Sar 2" }
+  ],
+  "correctAnswer": "b",
+  "explanation": [
+    "Use Case 1: Output to a wav file → Var 3 (speechConfig + audioConfig).",
+    "Use Case 2: Output to a speaker → Var 1 (speechConfig, null).",
+    "Use Case 3: Output as an in-memory stream → Var 2 (null, audioConfig)."
+  ]
+},{
+  "id": "q153",
+  "type": "single",
+  "question": [
+    "In your organizational application, you have navigation options for various functions across different screens.",
+    "You now need to achieve a similar objective in your Azure bot application.",
+    "To do this, you design the conversational flow through a multi-turn conversation that switches context smoothly, providing a seamless experience for the end user.",
+    "You use the Bot Framework SDK and dialog libraries to define the flow of conversation.",
+    "Which dialog would you use to ask for user input and return a result?"
+  ],
+  "options": [
+    { "id": "a", "text": "Input dialog" },
+    { "id": "b", "text": "QnA Maker dialog" },
+    { "id": "c", "text": "Action dialog" },
+    { "id": "d", "text": "Prompt dialog" }
+  ],
+  "correctAnswer": "d",
+  "explanation": [
+    "Prompt dialogs are part of the Bot Framework SDK and are used to collect user input during a conversation.",
+    "They support various input types such as text, number, date, and confirmations, and are ideal for asking for and returning values."
+  ]
 }
+,{
+  "id": "q154",
+  "type": "single",
+  "question": [
+    "You are developing a monitoring system that will analyze engine sensor data, such as rotation speed, angle, temperature, and pressure.",
+    "The system must generate an alert in response to atypical values.",
+    "What should you include in the solution?"
+  ],
+  "options": [
+    { "id": "a", "text": "Application insights in Azure Monitor" },
+    { "id": "b", "text": "Metric alerts in Azure Monitor" },
+    { "id": "c", "text": "Multivariate Anomaly Detection" },
+    { "id": "d", "text": "Univariate Anomaly Detection" }
+  ],
+  "correctAnswer": "d",
+  "explanation": [
+    "Univariate Anomaly Detection is best suited for analyzing individual time-series signals, such as engine temperature or pressure, to detect outliers.",
+    "It is ideal for scenarios where each signal is monitored independently and you want to generate alerts for anomalous behavior."
+  ]
+}
+,{
+  "id": "q155",
+  "type": "single",
+  "question": [
+    "What does RAG with Azure OpenAI enable developers to do?"
+  ],
+  "options": [
+    { "id": "a", "text": "Create their own AI chat models" },
+    { "id": "b", "text": "Access Azure OpenAI without an approved subscription" },
+    { "id": "c", "text": "Use supported AI chat models that can reference specific sources of data" }
+  ],
+  "correctAnswer": "c",
+  "explanation": [
+    "RAG (Retrieval-Augmented Generation) allows developers to build AI systems that use external data sources during response generation.",
+    "In Azure OpenAI, this enables chat models like GPT to retrieve and reference specific organizational or custom data at runtime, improving relevance and accuracy."
+  ]
+}
+,{
+  "id": "q156",
+  "type": "single",
+  "question": [
+    "What are some recommended prompt engineering techniques when using RAG with Azure OpenAI on your own data?"
+  ],
+  "options": [
+    { "id": "a", "text": "Break down the task and use chain of thought prompting" },
+    { "id": "b", "text": "Include as much conversation history as possible in your call" },
+    { "id": "c", "text": "Use a single long prompt to provide all necessary information" }
+  ],
+  "correctAnswer": "a",
+  "explanation": [
+    "Breaking down complex tasks and using chain-of-thought prompting is an effective technique in RAG-based systems.",
+    "It improves reasoning and encourages the model to follow logical steps using retrieved content.",
+    "Using long prompts or excessive conversation history can lead to token overuse or reduced context relevance in RAG setups."
+  ]
+},{
+  "id": "q157",
+  "type": "single",
+  "question": [
+    "What is the recommended way to add data when using Azure OpenAI on your data?"
+  ],
+  "options": [
+    { "id": "a", "text": "Using any data source option available for Azure OpenAI on your data" },
+    { "id": "b", "text": "Using Azure AI Studio to create the search resource and index" },
+    { "id": "c", "text": "Connecting to files in storage account without using Azure AI Studio" }
+  ],
+  "correctAnswer": "b",
+  "explanation": [
+    "The recommended and streamlined approach is to use **Azure AI Studio**, which allows you to create the Azure AI Search resource, define an index, and ingest your data easily.",
+    "Azure AI Studio provides a guided interface for connecting various data sources like PDFs, websites, and blob storage with minimal setup.",
+    "While direct connections to storage accounts are possible, using AI Studio ensures compatibility and optimized indexing for RAG-based scenarios."
+  ]
+},{
+  "id": "q158",
+  "type": "single",
+  "question": [
+    "Members of a group named Management-Bookkeeper must define how to extract tables from the financial documents.",
+    "Members of a group named Consultant-Bookkeeper must be able to process the financial documents.",
+    "Knowledgebase Requirements:",
+    "- Supports searches for equivalent terms",
+    "- Can transcribe jargon with high accuracy",
+    "- Can search content in different formats, including video",
+    "- Provides relevant links to external resources for further research",
+    "You are developing the chatbot. You create the following components:",
+    "A. A QnA Maker resource",
+    "B. A chatbot by using the Azure Bot Framework SDK",
+    "You need to integrate the components to meet the chatbot requirements.",
+    "Which property should you use?"
+  ],
+  "options": [
+    { "id": "a", "text": "OnAMakerOptions StrictFilters" },
+    { "id": "b", "text": "OnADialogResponseOptions CardMatchText" },
+    { "id": "c", "text": "OnAMakerOptions RankerType" },
+    { "id": "d", "text": "QnAMakerOptions ScoreThreshold" }
+  ],
+  "correctAnswer": "d",
+  "explanation": [
+    "The ScoreThreshold property in QnAMakerOptions defines the minimum confidence score for answers to be returned by the QnA Maker knowledgebase.",
+    "This helps to filter out irrelevant or low-confidence matches, improving the chatbot's accuracy and relevance in responses."
+  ]
+},
+{
+  "id": "q159",
+  "type": "single",
+  "question": [
+    "You have a factory that produces food products.",
+    "You need to build a monitoring solution for staff compliance with personal protective equipment (PPE) requirements.",
+    "The solution must meet the following requirements:",
+    "A. Identify staff who have removed masks or safety glasses.",
+    "B. Perform a compliance check every 15 minutes.",
+    "C. Minimize development effort.",
+    "D. Minimize costs.",
+    "Which service should you use?"
+  ],
+  "options": [
+    { "id": "a", "text": "Face" },
+    { "id": "b", "text": "Computer Vision" },
+    { "id": "c", "text": "Video Analyzer for Media (former Video Indexer)" }
+  ],
+  "correctAnswer": "a",
+  "explanation": [
+    "The Azure Face service provides advanced facial recognition capabilities including detection of facial attributes, such as presence or absence of masks or glasses.",
+    "It is suitable for monitoring PPE compliance by analyzing images or video frames at intervals, meeting the requirement for periodic compliance checks.",
+    "This service minimizes development effort with pre-built models specialized for facial attribute detection, and is cost-effective compared to building custom video analysis pipelines."
+  ]
+}
+,{
+  "id": "q160",
+  "type": "single",
+  "question": [
+    "You are designing a content management system.",
+    "You need to ensure that the reading experience is optimized for users who have reduced comprehension and learning differences, such as dyslexia.",
+    "The solution must minimize development effort.",
+    "Which Azure service should you include in the solution?"
+  ],
+  "options": [
+    { "id": "a", "text": "Azure AI Immersive Reader" },
+    { "id": "b", "text": "Azure AI Translator" },
+    { "id": "c", "text": "Azure AI Document Intelligence" },
+    { "id": "d", "text": "Azure AI Language" }
+  ],
+  "correctAnswer": "a",
+  "explanation": [
+    "Azure AI Immersive Reader is designed to improve reading comprehension and accessibility for users with dyslexia and other learning differences.",
+    "It provides features such as text-to-speech, highlighting, reading speed controls, and grammar tools with minimal integration effort.",
+    "Other Azure AI services focus on translation, document processing, or language understanding but do not directly optimize the reading experience."
+  ]
+}
+,{
+  "id": "q161",
+  "type": "single",
+  "question": [
+    "You are building a chatbot for a travel agent.",
+    "The bot will ask users for a destination and must repeat the question until a valid input is received, or the user closes the conversation.",
+    "Which type of dialog should you use?"
+  ],
+  "options": [
+    { "id": "a", "text": "prompt" },
+    { "id": "b", "text": "input" },
+    { "id": "c", "text": "adaptive" },
+    { "id": "d", "text": "QnA Maker" }
+  ],
+  "correctAnswer": "a",
+  "explanation": [
+    "Prompt dialogs are specifically designed to prompt the user for input and continue to re-ask the question until valid input is provided or the dialog is canceled.",
+    "They are ideal for scenarios where input validation and repetition are necessary.",
+    "Adaptive dialogs provide more complex conversation flows but prompts are the simplest way to achieve repeated input collection."
+  ]
+},{
+  "id": "q162",
+  "type": "multiple",
+  "question": [
+    "You build a chatbot by using Azure OpenAI Studio.",
+    "You need to ensure that the responses are more deterministic and less creative.",
+    "Which two parameters should you configure? (Choose 2)"
+  ],
+  "options": [
+    { "id": "a", "text": "Max Response" },
+    { "id": "b", "text": "Temperature" },
+    { "id": "c", "text": "Top P" },
+    { "id": "d", "text": "Stop Sequence" },
+    { "id": "e", "text": "Frequency penalty" },
+    { "id": "f", "text": "Presence penalty" }
+  ],
+  "correctAnswers": ["b", "c"],
+  "explanation": [
+    "**Temperature** controls randomness. A lower value (e.g., 0.2) makes the output more focused and deterministic.",
+    "**Top P (nucleus sampling)** further narrows the selection of words to a cumulative probability, affecting diversity.",
+    "To make output less creative and more repeatable, reduce both values.",
+    "**Max Response** affects length, not creativity.",
+    "**Stop Sequence** defines where to stop generation.",
+    "**Frequency/Penalty** control repetition but not determinism."
+  ]
+}
+
+
+
+
+
 
 
 

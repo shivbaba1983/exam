@@ -42,7 +42,7 @@ function ImageOCRApp() {
 
   return (
     <div style={{ maxWidth: 800, margin: '0 auto', padding: 16 }}>
-      <h1>Image → Text OCR</h1>
+      <h1>Single Image → Text OCR</h1>
 
       <input type="file" accept="image/*" multiple onChange={handleFiles} />
 
