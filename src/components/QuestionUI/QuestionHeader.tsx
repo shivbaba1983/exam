@@ -4,12 +4,13 @@ import './QuestionHeader.scss';
 interface QuestionHeaderProps {
   questionNumber: number;
   questionText: string[];
+  id:string
 }
 
-const QuestionHeader = ({ questionNumber, questionText }: QuestionHeaderProps) => {
+const QuestionHeader = ({ questionNumber, questionText,id }: QuestionHeaderProps) => {
   return (
     <div className="question-header">
-      <h3>Q{questionNumber}:</h3>
+      <h3>{id}:</h3>
       <ul>
         {questionText.map((line, idx) => (
           <li key={idx}>{line}</li>

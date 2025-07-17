@@ -12,7 +12,7 @@ interface ControlsProps {
 const Controls = ({ onBack, onSubmit, onNext, disableBack, disableNext }: ControlsProps) => (
   <div className="controls">
     <button className="back-btn" onClick={onBack} disabled={disableBack}>
-      Back
+      Previous
     </button>
     <button className="submit-btn" onClick={onSubmit}>
       Submit

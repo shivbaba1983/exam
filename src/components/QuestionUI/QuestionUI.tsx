@@ -148,6 +148,7 @@ const QuestionUI = () => {
               <QuestionHeader
                 questionNumber={currentPage * questionsPerPage + index + 1}
                 questionText={formatQuestionSimple(question.question)}
+                id={question.id}
               />
 
               <div className="option-container">
