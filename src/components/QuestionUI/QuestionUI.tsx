@@ -83,28 +83,44 @@ const QuestionUI = () => {
 
   return (
     <div>
-      <Pagination
+      {/* <Pagination
         currentIndex={currentPage}
         total={totalPages}
         onJump={handlePageJump}
-        className="top-pagination"
-      />
+      /> */}
       {/* Top bar with search and pagination side by side */}
-      <div className="top-bar">
+<div className="top-bar">
+  <div className="pagination-wrapper">
+    <Pagination
+      currentIndex={currentPage}
+      total={totalPages}
+      onJump={handlePageJump}
+    />
+  </div>
 
-
-        <input
-          type="text"
-          placeholder="Search questions..."
-          value={searchTerm}
-          onChange={e => setSearchTerm(e.target.value)}
-          onKeyDown={e => {
-            if (e.key === 'Enter') setCurrentPage(0);
-          }}
-          aria-label="Search questions"
-          className="top-search"
-        />
-      </div>
+  <div className="search-wrapper">
+    <input
+      type="text"
+      placeholder="Search questions..."
+      value={searchTerm}
+      onChange={e => setSearchTerm(e.target.value)}
+      onKeyDown={e => {
+        if (e.key === 'Enter') setCurrentPage(0);
+      }}
+      aria-label="Search questions"
+      className="top-search"
+    />
+    {searchTerm && (
+      <button
+        className="clear-search"
+        onClick={() => setSearchTerm('')}
+        aria-label="Clear search"
+      >
+        ×
+      </button>
+    )}
+  </div>
+</div>
 
       <div className="question-ui">
 
