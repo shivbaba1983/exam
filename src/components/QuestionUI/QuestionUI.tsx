@@ -23,11 +23,21 @@ const QuestionUI = () => {
   const [submitted, setSubmitted] = useState<{ [key: string]: boolean }>({});
   const [currentPage, setCurrentPage] = useState(0);
   const [questionsPerPage, setQuestionsPerPage] = useState(1);
+  const [searchTerm, setSearchTerm] = useState('');
 
   const questionRefs = useRef<{ [key: string]: HTMLDivElement | null }>({});
 
-  const totalPages = Math.ceil(questionsData.length / questionsPerPage);
-  const pageQuestions = questionsData.slice(
+  const filteredQuestions = questionsData.filter(q =>
+    (Array.isArray(q.question)
+      ? q.question.join(' ')
+      : q.question
+    )
+      .toLowerCase()
+      .includes(searchTerm.toLowerCase())
+  );
+
+  const totalPages = Math.ceil(filteredQuestions.length / questionsPerPage);
+  const pageQuestions = filteredQuestions.slice(
     currentPage * questionsPerPage,
     currentPage * questionsPerPage + questionsPerPage
   );
@@ -44,6 +54,10 @@ const QuestionUI = () => {
       }
     });
   }, [pageQuestions]);
+
+  useEffect(() => {
+    setCurrentPage(0);
+  }, [searchTerm, questionsPerPage]);
 
   const handleOptionChange = (qid: string, value: any) => {
     setAnswers(prev => ({ ...prev, [qid]: value }));
@@ -73,11 +87,30 @@ const QuestionUI = () => {
         currentIndex={currentPage}
         total={totalPages}
         onJump={handlePageJump}
+        className="top-pagination"
       />
+      {/* Top bar with search and pagination side by side */}
+      <div className="top-bar">
 
+
+        <input
+          type="text"
+          placeholder="Search questions..."
+          value={searchTerm}
+          onChange={e => setSearchTerm(e.target.value)}
+          onKeyDown={e => {
+            if (e.key === 'Enter') setCurrentPage(0);
+          }}
+          aria-label="Search questions"
+          className="top-search"
+        />
+      </div>
 
       <div className="question-ui">
 
+        {pageQuestions.length === 0 && (
+          <p>No questions match your search.</p>
+        )}
 
         {pageQuestions.map((question, index) => {
           const userAnswer =
@@ -111,14 +144,11 @@ const QuestionUI = () => {
                 />
               </div>
 
-              {/* Show Submit only if not already submitted and multi-question mode */}
               {questionsPerPage !== 1 && !isSubmitted && (
                 <button
                   className="submit-btn"
                   onClick={() => {
                     handleSubmit(question.id);
-
-                    // Scroll to next question card
                     setTimeout(() => {
                       const currentIndex = pageQuestions.findIndex(q => q.id === question.id);
                       const nextQuestion = pageQuestions[currentIndex + 1];
@@ -145,7 +175,6 @@ const QuestionUI = () => {
           );
         })}
 
-        {/* Show global controls only for single-question-per-page */}
         {questionsPerPage === 1 && pageQuestions[0] && (
           <Controls
             onBack={() => handlePageJump(currentPage - 1)}
@@ -161,7 +190,7 @@ const QuestionUI = () => {
           total={totalPages}
           onJump={handlePageJump}
         />
-                <div className="question-count-selector" style={{ marginBottom: '1rem' }}>
+        <div className="question-count-selector" style={{ marginBottom: '1rem' }}>
           <label htmlFor="perPage">Questions per page: </label>
           <select
             id="perPage"

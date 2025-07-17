@@ -3393,7 +3393,177 @@
     "- ❌ Option A is more advanced and typically used for network isolation scenarios.",
     "- ❌ Option C controls user permissions but does not affect IP-based access."
   ]
+},{
+  "id": "q146",
+  "type": "single",
+  "question": [
+    "When utilizing the 'create compose model' operation within Azure AI Document Intelligence,",
+    "attempting to create a composed model with unlabeled custom models will result in what outcome?"
+  ],
+  "options": [
+    {
+      "id": "a",
+      "text": "Using unlabeled models improves the accuracy of the composed model."
+    },
+    {
+      "id": "b",
+      "text": "Composed model will be created but it will ignore the unlabeled models."
+    },
+    {
+      "id": "c",
+      "text": "Composed model will be created but with limited accuracy."
+    },
+    {
+      "id": "d",
+      "text": "It produces an error."
+    }
+  ],
+  "correctAnswer": "d",
+  "explanation": [
+    "When creating a composed model, all models included must be labeled.",
+    "Attempting to include unlabeled custom models causes the operation to fail and produces an error.",
+    "- ✅ Option D is correct.",
+    "- ❌ Options A, B, and C are incorrect because unlabeled models are not supported in composed model creation."
+  ]
+},{
+  "id": "q147",
+  "type": "single",
+  "question": [
+    "You are defining an alert that notifies you when a key regeneration event is recorded in the Activity Log for your Azure AI Services resource.",
+    "What should you do?"
+  ],
+  "options": [
+    {
+      "id": "a",
+      "text": "Specify Scope of Activity Log"
+    },
+    {
+      "id": "b",
+      "text": "Specify an Action that uses an Azure Log Analytics API to read the activity log"
+    },
+    {
+      "id": "c",
+      "text": "Specify condition with Signal Type of Activity Log"
+    }
+  ],
+  "correctAnswer": "c",
+  "explanation": [
+    "To create an alert based on Activity Log events such as key regeneration, you specify a condition with the Signal Type set to Activity Log.",
+    "This allows the alert rule to trigger based on activity events recorded in the Azure Activity Log.",
+    "- ✅ Option C is correct.",
+    "- ❌ Option A is part of scoping but not sufficient alone for the alert condition.",
+    "- ❌ Option B involves querying logs but is more complex and not required for a basic activity log alert."
+  ]
+},{
+  "id": "q148",
+  "type": "single",
+  "question": [
+    "You are building a solution that will detect anomalies in sensor data from the previous 24 hours.",
+    "You need to ensure that the solution scans the entire dataset at once.",
+    "Which type of detection should you use?"
+  ],
+  "options": [
+    {
+      "id": "a",
+      "text": "batch"
+    },
+    {
+      "id": "b",
+      "text": "streaming"
+    },
+    {
+      "id": "c",
+      "text": "change point"
+    }
+  ],
+  "correctAnswer": "a",
+  "explanation": [
+    "Batch anomaly detection processes the entire dataset in one go, suitable for analyzing historical data such as sensor data over the past 24 hours.",
+    "Streaming detection is used for real-time anomaly detection on incoming data.",
+    "Change point detection identifies shifts in data behavior but does not scan the entire dataset for anomalies.",
+    "- ✅ Option A is correct."
+  ]
 }
+,{
+  "id": "q149",
+  "type": "single",
+  "question": [
+    "You are viewing a metric for your Azure AI Services resource in a chart.",
+    "You want to combine the chart with visualizations of other resources and data.",
+    "What should you do?"
+  ],
+  "options": [
+    {
+      "id": "a",
+      "text": "Add chart to dashboard"
+    },
+    {
+      "id": "b",
+      "text": "Share the chart"
+    },
+    {
+      "id": "c",
+      "text": "Clone the chart"
+    }
+  ],
+  "correctAnswer": "a",
+  "explanation": [
+    "Adding a chart to an Azure dashboard lets you combine it with visualizations from other resources for a unified view.",
+    "- ✅ Option A is correct.",
+    "- ❌ Sharing the chart only shares a link but doesn't combine visualizations.",
+    "- ❌ Cloning duplicates the chart but does not combine it with others."
+  ]
+},{
+  "id": "q150",
+  "type": "single",
+  "question": [
+    "You need to regenerate the primary subscription key for an Azure AI Services resource that an app uses.",
+    "What should you do first to minimize service interruption for the app?"
+  ],
+  "options": [
+    {
+      "id": "a",
+      "text": "Switch the app to use the secondary key"
+    },
+    {
+      "id": "b",
+      "text": "Change the resource endpoint"
+    },
+    {
+      "id": "c",
+      "text": "Enable a firewall"
+    }
+  ],
+  "correctAnswer": "a",
+  "explanation": [
+    "Switching the app to use the secondary key allows you to regenerate the primary key without interrupting service.",
+    "This key rotation strategy minimizes downtime by allowing one key to be regenerated while the other remains active.",
+    "- ✅ Option A is correct.",
+    "- ❌ Changing the resource endpoint is unrelated to key regeneration.",
+    "- ❌ Enabling a firewall does not address key regeneration."
+  ]
+},
+{
+  "id": "q151",
+  "type": "multiple",
+  "question": [
+    "In a multi-turn conversation, which methods would you use to initiate a waterfall dialog,",
+    "pushing the new instance of the referenced dialog onto the top of the stack?"
+  ],
+  "options": [
+    { "id": "A", "text": "begin" },
+    { "id": "B", "text": "replace" },
+    { "id": "C", "text": "cancel" },
+    { "id": "D", "text": "prompt" }
+  ],
+  "correctAnswer": ["A", "D"],
+  "explanation": "The 'begin' method is used to start a new waterfall dialog by pushing it onto the dialog stack. The 'prompt' method also initiates a dialog to ask the user for input, effectively pushing a dialog on the stack. 'Replace' swaps the current dialog, and 'cancel' ends dialogs."
+}
+
+
+
+
+
 
 
 
