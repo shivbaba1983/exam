@@ -26,7 +26,15 @@
     z-index: 1000;
     -webkit-overflow-scrolling: touch;
   }
-
+.submit-btn {
+  margin-top: 1rem;
+  padding: 8px 16px;
+  background-color: #0078d4;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
   @media (max-width: 480px) {
     .option-container {
       max-height: 80vh;

@@ -306,23 +306,23 @@
     "correctAnswer": { "left": "2", "right": "b" },
     "explanation": "The prebuilt-invoice model is designed to extract key-value pairs from invoices."
   },
-  {
-    "id": "q18",
-    "type": "single",
-    "question": [
-      "You want to analyze customer feedback by extracting key phrases using Azure Text Analytics.",
-      "You need to make the analysis more accurate by filtering out common stop words.",
-      "Which Text Analytics feature should you enable?"
-    ],
-    "options": [
-      { "id": "a", "text": "Language detection" },
-      { "id": "b", "text": "Sentiment analysis" },
-      { "id": "c", "text": "Key phrase extraction" },
-      { "id": "d", "text": "Stop words filtering" }
-    ],
-    "correctAnswer": "d",
-    "explanation": "Enabling stop words filtering improves key phrase extraction by excluding common words that add no semantic value."
-  },
+{
+  "id": "q18",
+  "type": "single",
+  "question": [
+    "You want to analyze customer feedback by extracting key phrases using Azure Text Analytics.",
+    "You need to make the analysis more accurate by filtering out common stop words.",
+    "Which Text Analytics feature should you enable?"
+  ],
+  "options": [
+    { "id": "a", "text": "Language detection" },
+    { "id": "b", "text": "Sentiment analysis" },
+    { "id": "c", "text": "Key phrase extraction" },
+    { "id": "d", "text": "Stop words filtering" }
+  ],
+  "correctAnswer": "c",
+  "explanation": "Key phrase extraction is the Text Analytics feature that automatically extracts the most important phrases from text while internally filtering out common stop words such as 'and', 'is', and 'the'."
+},
   {
     "id": "q19",
     "type": "single",
@@ -451,39 +451,40 @@
     "correctAnswer": ["1", "2", "4"],
     "explanation": "Provision resource with Private Endpoint to ensure network isolation, deploy container on-premises, and run it locally with proper data storage configuration to comply with data residency."
   },
-  {
-    "id": "q27",
-    "type": "single",
-    "question": [
-      "You want to analyze video content to detect objects and activities using Azure Video Analyzer.",
-      "Which component of the Azure Video Analyzer solution is responsible for extracting insights from video streams?"
-    ],
-    "options": [
-      { "id": "a", "text": "Edge modules" },
-      { "id": "b", "text": "Video Analyzer service" },
-      { "id": "c", "text": "Stream processor" },
-      { "id": "d", "text": "Video Indexer" }
-    ],
-    "correctAnswer": "c",
-    "explanation": "The Stream Processor is responsible for processing video streams and extracting insights such as objects and activities."
-  },
-  {
-    "id": "q28",
-    "type": "drag-sequence",
-    "question": [
-      "You want to create a pipeline for document processing using Azure AI Document Intelligence.",
-      "Which three steps should you perform in order?"
-    ],
-    "options": [
-      { "id": "1", "text": "Upload the documents to a Blob Storage container" },
-      { "id": "2", "text": "Create a Document Intelligence project" },
-      { "id": "3", "text": "Label the documents with key-value pairs" },
-      { "id": "4", "text": "Train the custom model" },
-      { "id": "5", "text": "Deploy the model" }
-    ],
-    "correctAnswer": ["1", "2", "3"],
-    "explanation": "You first upload the documents, then create a project, and label the documents before training and deploying the model."
-  },{
+{
+  "id": "q27",
+  "type": "single",
+  "question": [
+    "You want to analyze video content to detect objects and activities using Azure Video Analyzer.",
+    "Which component of the Azure Video Analyzer solution is responsible for extracting insights from video streams?"
+  ],
+  "options": [
+    { "id": "a", "text": "Edge modules" },
+    { "id": "b", "text": "Video Analyzer service" },
+    { "id": "c", "text": "Stream processor" },
+    { "id": "d", "text": "Video Indexer" }
+  ],
+  "correctAnswer": "d",
+  "explanation": "Azure Video Indexer is the component responsible for extracting rich insights from video streams, such as object detection, face recognition, speech transcription, and activity detection. While other components like edge modules and stream processors are used for ingesting and processing video streams, the actual insight extraction is performed by Video Indexer."
+},
+ {
+  "id": "q28",
+  "type": "drag-sequence",
+  "question": [
+    "You want to create a pipeline for document processing using Azure AI Document Intelligence.",
+    "Which three steps should you perform in order?"
+  ],
+  "options": [
+    { "id": "1", "text": "Upload the documents to a Blob Storage container" },
+    { "id": "2", "text": "Create a Document Intelligence project" },
+    { "id": "3", "text": "Label the documents with key-value pairs" },
+    { "id": "4", "text": "Train the custom model" },
+    { "id": "5", "text": "Deploy the model" }
+  ],
+  "correctAnswer": ["1", "2", "3"],
+  "explanation": "To start building a custom document model with Azure AI Document Intelligence, the correct initial steps are: (1) Upload documents to Blob Storage to make them accessible to the training service, (2) Create a Document Intelligence project in the studio or via API to organize and manage the training data, and (3) Label the uploaded documents with key-value pairs to provide ground truth for model training. Only after labeling can you proceed to train (step 4) and deploy (step 5) the model."
+}
+,{
   "id": "q29",
   "type": "single",
   "question": "You are developing an application using Azure AI Services which will be used to:\n• Analyze images\n• Detect objects, faces, and text in images\n\nThe solution must ensure:\n• Minimum latency\n• Optimized performance\n\nWhich Azure AI Service should you use?",
@@ -531,18 +532,20 @@
   "id": "q31",
   "type": "single",
   "question": [
-    "You are developing an application using Azure AI Services.",
-    "Which Azure AI Service should you use to analyze images and detect objects, faces, and text with minimum latency and optimized performance?"
+    "You're developing a conversational AI using Azure OpenAI's GPT-35 Turbo model.",
+    "The System Message you provided is:",
+    "\"You're an AI assistant that helps people find information. Answer in as few words as possible.\"",
+    "Determine which type of prompt engineering technique this system message represents."
   ],
   "options": [
-    { "id": "a", "text": "Azure AI Vision" },
-    { "id": "b", "text": "Azure AI Face" },
-    { "id": "c", "text": "Azure AI Document Intelligence" }
+    { "id": "a", "text": "Affordance" },
+    { "id": "b", "text": "Few-shot learning" },
+    { "id": "c", "text": "Chain of thought" },
+    { "id": "d", "text": "Priming" }
   ],
-  "correctAnswer": "a",
-  "explanation": "Azure AI Vision is the best service to analyze images and detect objects, faces, and text with optimized performance."
+  "correctAnswer": "d",
+  "explanation": "This is an example of **priming**, where the system prompt sets the tone, context, and behavior of the assistant before any user input. Priming helps guide the model’s responses without requiring additional input examples."
 },
-
 {
   "id": "q32",
   "type": "single",
@@ -1847,21 +1850,20 @@
 },
 {
   "id": "q93",
-  "type": "multiple",
+  "type": "single",
   "question": [
-    "A customer uses Azure AI Search and plans to enable server-side encryption using customer-managed keys (CMK) stored in Azure Key Vault.",
-    "What are three implications of this change?"
+    "You have an Azure subscription and 1000 ASCII files.",
+    "You need to identify files that contain specific phrases and the chosen solution must use cosine similarity.",
+    "Which Azure OpenAI model should you use?"
   ],
   "options": [
-    { "id": "a", "text": "The index size will increase." },
-    { "id": "b", "text": "Query times will increase." },
-    { "id": "c", "text": "A self-signed X.509 certificate is required." },
-    { "id": "d", "text": "The index size will decrease." },
-    { "id": "e", "text": "Query times will decrease." },
-    { "id": "f", "text": "Azure Key Vault is required." }
+    { "id": "a", "text": "text-embedding-ada-002" },
+    { "id": "b", "text": "GPT-4" },
+    { "id": "c", "text": "GPT-35 Turbo" },
+    { "id": "d", "text": "GPT-4-32k" }
   ],
-  "correctAnswer": ["a", "b", "f"],
-  "explanation": "When enabling server-side encryption with customer-managed keys (CMK) in Azure AI Search, integration with Azure Key Vault is required (F). Query performance may be affected and can lead to increased latency (B). Additionally, encrypted indexes may lead to slightly larger storage footprints (A) due to encryption overhead."
+  "correctAnswer": "a",
+  "explanation": "The `text-embedding-ada-002` model is specifically designed for generating vector embeddings that capture the semantic meaning of text. These embeddings can be compared using cosine similarity, making this model ideal for identifying documents with semantically similar content. GPT models are designed for text generation rather than efficient embedding and similarity comparison."
 },{
   "id": "q94",
   "type": "drag-sequence",
@@ -2125,38 +2127,5 @@
   ],
   "correctAnswer": "d",
   "explanation": "GPT-4 is a large language model optimized for natural language generation tasks such as summarization, content generation, and rephrasing. It is best suited for transforming detailed product specs into concise, human-readable titles and descriptions. Embeddings are used for similarity search, DALL·E for image generation, and Whisper for speech recognition."
-},{
-  "id": "q105",
-  "type": "single",
-  "question": [
-    "You have an Azure subscription and 1000 ASCII files.",
-    "You need to identify files that contain specific phrases and the chosen solution must use cosine similarity.",
-    "Which Azure OpenAI model should you use?"
-  ],
-  "options": [
-    { "id": "a", "text": "text-embedding-ada-002" },
-    { "id": "b", "text": "GPT-4" },
-    { "id": "c", "text": "GPT-35 Turbo" },
-    { "id": "d", "text": "GPT-4-32k" }
-  ],
-  "correctAnswer": "a",
-  "explanation": "The `text-embedding-ada-002` model is specifically designed for generating vector embeddings that capture the semantic meaning of text. These embeddings can be compared using cosine similarity, making this model ideal for identifying documents with semantically similar content. GPT models are designed for text generation rather than efficient embedding and similarity comparison."
-},{
-  "id": "q106",
-  "type": "single",
-  "question": [
-    "You're developing a conversational AI using Azure OpenAI's GPT-35 Turbo model.",
-    "The System Message you provided is:",
-    "\"You're an AI assistant that helps people find information. Answer in as few words as possible.\"",
-    "Determine which type of prompt engineering technique this system message represents."
-  ],
-  "options": [
-    { "id": "a", "text": "Affordance" },
-    { "id": "b", "text": "Few-shot learning" },
-    { "id": "c", "text": "Chain of thought" },
-    { "id": "d", "text": "Priming" }
-  ],
-  "correctAnswer": "d",
-  "explanation": "This is an example of **priming**, where the system prompt sets the tone, context, and behavior of the assistant before any user input. Priming helps guide the model’s responses without requiring additional input examples."
 }
 ]

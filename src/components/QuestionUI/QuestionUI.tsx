@@ -20,7 +20,7 @@ const formatQuestionSimple = (text: string | string[]): string[] => {
 
 const QuestionUI = () => {
   const [answers, setAnswers] = useState<any>({});
-  const [submitted, setSubmitted] = useState(false);
+  const [submitted, setSubmitted] = useState<{ [key: string]: boolean }>({});
   const [currentPage, setCurrentPage] = useState(0);
   const [questionsPerPage, setQuestionsPerPage] = useState(1);
 
@@ -47,16 +47,17 @@ const QuestionUI = () => {
     setAnswers(prev => ({ ...prev, [qid]: value }));
   };
 
-  const handleSubmit = () => setSubmitted(true);
+  const handleSubmit = (qid: string) => {
+    setSubmitted(prev => ({ ...prev, [qid]: true }));
+  };
 
   const handleResetDrag = (qid: string) => {
     const original = questionsData.find(q => q.id === qid)?.options?.map(o => o.id) || [];
     handleOptionChange(qid, { source: original, target: [] });
-    setSubmitted(false);
+    setSubmitted(prev => ({ ...prev, [qid]: false }));
   };
 
   const handlePageJump = (index: number) => {
-    setSubmitted(false);
     setCurrentPage(index);
   };
 
@@ -69,7 +70,7 @@ const QuestionUI = () => {
           value={questionsPerPage}
           onChange={e => {
             setQuestionsPerPage(Number(e.target.value));
-            setCurrentPage(0); // reset to first page
+            setCurrentPage(0);
           }}
         >
           <option value={1}>1</option>
@@ -87,6 +88,7 @@ const QuestionUI = () => {
               : answers[question.id];
 
         const isCorrect = JSON.stringify(userAnswer) === JSON.stringify(question.correctAnswer);
+        const isSubmitted = submitted[question.id];
 
         return (
           <div key={question.id} className="question-card">
@@ -99,13 +101,22 @@ const QuestionUI = () => {
               <OptionsRenderer
                 question={question}
                 answers={answers}
-                submitted={submitted}
+                submitted={isSubmitted}
                 onOptionChange={handleOptionChange}
                 onResetDrag={handleResetDrag}
               />
             </div>
 
-            {submitted && (
+{questionsPerPage !== 1 && !isSubmitted && (
+  <button
+    className="submit-btn"
+    onClick={() => handleSubmit(question.id)}
+  >
+    Submit
+  </button>
+)}
+
+            {isSubmitted && (
               <AnswerFeedback
                 isCorrect={isCorrect}
                 explanation={question.explanation}
@@ -115,13 +126,16 @@ const QuestionUI = () => {
         );
       })}
 
-      <Controls
-        onBack={() => handlePageJump(currentPage - 1)}
-        onSubmit={handleSubmit}
-        onNext={() => handlePageJump(currentPage + 1)}
-        disableBack={currentPage === 0}
-        disableNext={currentPage === totalPages - 1}
-      />
+      {/* Show global controls only for single-question-per-page */}
+      {questionsPerPage === 1 && pageQuestions[0] && (
+        <Controls
+          onBack={() => handlePageJump(currentPage - 1)}
+          onSubmit={() => handleSubmit(pageQuestions[0].id)}
+          onNext={() => handlePageJump(currentPage + 1)}
+          disableBack={currentPage === 0}
+          disableNext={currentPage === totalPages - 1}
+        />
+      )}
 
       <Pagination
         currentIndex={currentPage}

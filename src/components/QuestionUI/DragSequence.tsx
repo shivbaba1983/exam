@@ -45,7 +45,7 @@ const DragSequence = ({ question: q, answer, onOptionChange, onResetDrag }: Drag
         <div className="drag-panes">
           <Droppable droppableId="source">
             {(provided) => (
-              <div className="drag-column" ref={provided.innerRef} {...provided.droppableProps}>
+              <div className="option-drag-column" ref={provided.innerRef} {...provided.droppableProps}>
                 <h4>Available Options</h4>
                 {answer?.source?.map((id: string, index: number) => {
                   const opt = q.options?.find(o => o.id === id);
@@ -70,7 +70,7 @@ const DragSequence = ({ question: q, answer, onOptionChange, onResetDrag }: Drag
           </Droppable>
           <Droppable droppableId="target">
             {(provided) => (
-              <div className="drag-column" ref={provided.innerRef} {...provided.droppableProps}>
+              <div className="answer-drag-column" ref={provided.innerRef} {...provided.droppableProps}>
                 <h4>Drop in Order</h4>
                 <div className="drag-items">
                   {answer?.target?.map((id: string, index: number) => {
