@@ -60,7 +60,9 @@ const QuestionUI = () => {
   const handlePageJump = (index: number) => {
     setCurrentPage(index);
   };
-
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, [currentPage]);
   return (
     <div className="question-ui">
       <div className="question-count-selector" style={{ marginBottom: '1rem' }}>
@@ -107,14 +109,14 @@ const QuestionUI = () => {
               />
             </div>
 
-{questionsPerPage !== 1 && !isSubmitted && (
-  <button
-    className="submit-btn"
-    onClick={() => handleSubmit(question.id)}
-  >
-    Submit
-  </button>
-)}
+            {questionsPerPage !== 1 && !isSubmitted && (
+              <button
+                className="submit-btn"
+                onClick={() => handleSubmit(question.id)}
+              >
+                Submit
+              </button>
+            )}
 
             {isSubmitted && (
               <AnswerFeedback

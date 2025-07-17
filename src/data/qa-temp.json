@@ -1318,7 +1318,7 @@
     { "id": "b", "text": "The prompt_tokens value will be included in the calculation of the Max response tokens value." },
     { "id": "c", "text": "The subscription will be charged 86 tokens for the execution of the session." },
     { "id": "d", "text": "The text completion was truncated because the Max response tokens value was exceeded." },
-        { "id": "e", "text": "None" }
+        { "id": "e", "text": "All false" }
   ],
   "correctAnswer": ["e"],
   "explanation": "None of the statements are correct. The model used is gpt-3.5-turbo, not text-embedding-ada-002. Prompt tokens are not counted in the max response token limit. Charges are based on total tokens (prompt + completion), not just completion. The completion stopped naturally, not due to token limits."
