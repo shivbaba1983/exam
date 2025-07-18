@@ -3803,7 +3803,465 @@
     "It provides features such as text-to-speech, highlighting, reading speed controls, and grammar tools with minimal integration effort.",
     "Other Azure AI services focus on translation, document processing, or language understanding but do not directly optimize the reading experience."
   ]
+},{
+  "id": "Q161",
+  "type": "single",
+  "question": [
+    "You build a language model by using a Language Understanding service.",
+    "The language model is used to search for information on a contact list by using an intent named FindContact.",
+    "A conversational expert provides you with the following list of phrases to use for training:",
+    " - Find contacts in London.",
+    " - Who do I know in Seattle?",
+    " - Search for contacts in Ukraine.",
+    "You need to implement the phrase list in Language Understanding.",
+    "Solution: You create a new intent for location.",
+    "Does this meet the goal?"
+  ],
+  "options": [
+    { "id": "a", "text": "Yes" },
+    { "id": "b", "text": "No" }
+  ],
+  "correctAnswer": "b",
+  "explanation": [
+    "Creating a new intent for location does not meet the goal.",
+    "The intent should remain as 'FindContact' because all sample phrases indicate the user’s intent is to find a contact.",
+    "Locations like 'London', 'Seattle', and 'Ukraine' should be captured as entities, not modeled as separate intents."
+  ]
 }
+,{
+  "id": "Q162",
+  "type": "single",
+  "question": [
+    "You build a language model by using a Language Understanding service.",
+    "The language model is used to search for information on a contact list by using an intent named FindContact.",
+    "A conversational expert provides you with the following list of phrases to use for training:",
+    " - Find contacts in London.",
+    " - Who do I know in Seattle?",
+    " - Search for contacts in Ukraine.",
+    "You need to implement the phrase list in Language Understanding.",
+    "Solution: You create a new entity for the domain.",
+    "Does this meet the goal?"
+  ],
+  "options": [
+    { "id": "a", "text": "Yes" },
+    { "id": "b", "text": "No" }
+  ],
+  "correctAnswer": "a",
+  "explanation": [
+    "Yes, creating a new entity for 'Location' (which is part of the domain in this context) is the correct way to model variable data like city names.",
+    "The intent remains as 'FindContact', while the locations such as 'London', 'Seattle', and 'Ukraine' are extracted using the custom entity.",
+    "This approach enables better generalization and reuse across utterances without creating unnecessary intents."
+  ]
+}
+,{
+  "id": "Q163",
+  "type": "single",
+  "question": [
+    "You build a language model by using a Language Understanding service.",
+    "The language model is used to search for information on a contact list by using an intent named FindContact.",
+    "A conversational expert provides you with the following list of phrases to use for training:",
+    " - Find contacts in London.",
+    " - Who do I know in Seattle?",
+    " - Search for contacts in Ukraine.",
+    "You need to implement the phrase list in Language Understanding.",
+    "Solution: You create a new pattern in the FindContact intent.",
+    "Does this meet the goal?"
+  ],
+  "options": [
+    { "id": "a", "text": "Yes" },
+    { "id": "b", "text": "No" }
+  ],
+  "correctAnswer": "a",
+  "explanation": [
+    "Yes, creating a pattern in the FindContact intent meets the goal.",
+    "Patterns are used in Language Understanding to provide structured templates with entity placeholders, improving recognition accuracy.",
+    "Using patterns helps LUIS generalize from the training phrases and correctly identify the intent and entities such as location."
+  ]
+}
+,{
+  "id": "Q164",
+  "type": "single",
+  "question": [
+    "You develop an application to identify species of flowers by training a Custom Vision model.",
+    "You receive images of new flower species.",
+    "You need to add the new images to the classifier.",
+    "Solution: You add the new images, and then use the Smart Labeler tool.",
+    "Does this meet the goal?"
+  ],
+  "options": [
+    { "id": "a", "text": "Yes" },
+    { "id": "b", "text": "No" }
+  ],
+  "correctAnswer": "a",
+  "explanation": [
+    "Yes, the Smart Labeler tool in Custom Vision can automatically suggest tags for newly uploaded images based on previously trained data.",
+    "This helps speed up the labeling process for new flower species, especially when similar tags or features already exist in the project.",
+    "It is an efficient and supported method for expanding your classifier with minimal manual labeling effort."
+  ]
+}
+,{
+  "id": "Q165",
+  "type": "single",
+  "question": [
+    "You develop an application to identify species of flowers by training a Custom Vision model.",
+    "You receive images of new flower species.",
+    "You need to add the new images to the classifier.",
+    "Solution: You add the new images and labels to the existing model. You retrain the model, and then publish the model.",
+    "Does this meet the goal?"
+  ],
+  "options": [
+    { "id": "a", "text": "Yes" },
+    { "id": "b", "text": "No" }
+  ],
+  "correctAnswer": "a",
+  "explanation": [
+    "Yes, this meets the goal. To update a Custom Vision model with new classes or images, you must upload the new labeled images, retrain the model, and publish it.",
+    "This ensures the updated model reflects the newly added flower species and can accurately identify them during prediction.",
+    "Publishing makes the retrained model available for use via the prediction endpoint."
+  ]
+}
+,{
+  "id": "Q166",
+  "type": "single",
+  "question": [
+    "You develop an application to identify species of flowers by training a Custom Vision model.",
+    "You receive images of new flower species.",
+    "You need to add the new images to the classifier.",
+    "Solution: You create a new model, and then upload the new images and labels.",
+    "Does this meet the goal?"
+  ],
+  "options": [
+    { "id": "a", "text": "Yes" },
+    { "id": "b", "text": "No" }
+  ],
+  "correctAnswer": "b",
+  "explanation": [
+    "No, creating a new model is not necessary to add new images to an existing classifier.",
+    "The goal is to enhance the existing model with new flower species, which should be done by adding new labeled images to the existing model and retraining it.",
+    "Creating a new model would reset previous training and lose all prior knowledge, which is not optimal for ongoing improvements."
+  ]
+},{
+  "id": "Q167",
+  "type": "single",
+  "question": [
+    "You deploy a web app that is used as a management portal for indexing in Azure Cognitive Search.",
+    "The app is configured to use the primary admin key.",
+    "During a security review, you discover unauthorized changes to the search index. You suspect that the primary access key is compromised.",
+    "You need to prevent unauthorized access to the index management endpoint. The solution must minimize downtime.",
+    "What should you do next?"
+  ],
+  "options": [
+    {
+      "id": "a",
+      "text": "Regenerate the primary admin key, change the app to use the secondary admin key, and then regenerate the secondary admin key."
+    },
+    {
+      "id": "b",
+      "text": "Change the app to use a query key, and then regenerate the primary admin key and the secondary admin key."
+    },
+    {
+      "id": "c",
+      "text": "Regenerate the secondary admin key, change the app to use the secondary admin key, and then regenerate the primary key."
+    },
+    {
+      "id": "d",
+      "text": "Add a new query key, change the app to use the new query key, and then delete all the unused query keys."
+    }
+  ],
+  "correctAnswer": "c",
+  "explanation": [
+    "The app is currently using the compromised primary admin key, which has full access to Azure Cognitive Search.",
+    "To minimize downtime, first regenerate the secondary admin key to ensure it's secure and valid.",
+    "Then, update the app to use the newly regenerated secondary key.",
+    "After switching the app to the secondary key, regenerate the compromised primary key to invalidate any unauthorized access.",
+    "This sequence ensures continuous access with minimal disruption while securing the system."
+  ]
+}
+,{
+  "id": "Q168",
+  "type": "single",
+  "question": [
+    "You have an existing Azure Cognitive Search service.",
+    "You have an Azure Blob storage account that contains millions of scanned documents stored as images and PDFs.",
+    "You need to make the scanned documents available to search as quickly as possible.",
+    "What should you do?"
+  ],
+  "options": [
+    {
+      "id": "a",
+      "text": "Split the data into multiple blob containers. Create a Cognitive Search service for each container. Within each indexer definition, schedule the same runtime execution pattern."
+    },
+    {
+      "id": "b",
+      "text": "Split the data into multiple blob containers. Create an indexer for each container. Increase the search units. Within each indexer definition, schedule a sequential execution pattern."
+    },
+    {
+      "id": "c",
+      "text": "Create a Cognitive Search service for each type of document."
+    },
+    {
+      "id": "d",
+      "text": "Split the data into multiple virtual folders. Create an indexer for each folder. Increase the search units. Within each indexer definition, schedule the same runtime execution pattern."
+    }
+  ],
+  "correctAnswer": "d",
+  "explanation": [
+    "The most efficient and scalable solution is to split the data into multiple virtual folders (directories) within the same blob container.",
+    "You can then create an indexer for each folder, allowing for parallel indexing operations.",
+    "Increasing the number of search units (SUs) improves throughput and reduces indexing time.",
+    "Scheduling indexers to run with the same runtime pattern ensures consistent and fast ingestion.",
+    "Creating multiple Cognitive Search services increases cost and management complexity, and splitting by container without parallel execution does not maximize performance."
+  ]
+}
+,{
+  "id": "Q169",
+  "type": "multiple",
+  "question": [
+    "You need to implement a table projection to generate a physical expression of an Azure Cognitive Search index.",
+    "Which three properties should you specify in the skillset definition JSON configuration table node?",
+    "Each correct answer presents part of the solution.",
+    "NOTE: Each correct selection is worth one point.",
+    "(Choose three.)"
+  ],
+  "options": [
+    { "id": "a", "text": "tableName" },
+    { "id": "b", "text": "generatedKeyName" },
+    { "id": "c", "text": "dataSource" },
+    { "id": "d", "text": "dataSourceConnection" },
+    { "id": "e", "text": "source" }
+  ],
+  "correctAnswer": ["a", "b", "e"],
+  "explanation": [
+    "The 'tableName' property specifies the target table for the projection.",
+    "'generatedKeyName' is used to define the name of the generated key for the table entries.",
+    "'source' indicates the input data or source from which to project the table.",
+    "'dataSource' and 'dataSourceConnection' are not valid properties in the skillset JSON for table projections."
+  ]
+}
+,{
+  "id": "Q170",
+  "type": "single",
+  "question": [
+    "You have the following data sources:",
+    "✑ Finance: On-premises Microsoft SQL Server database",
+    "✑ Sales: Azure Cosmos DB using the Core (SQL) API",
+    "✑ Logs: Azure Table storage",
+    "✑ HR: Azure SQL database",
+    "You need to ensure that you can search all the data by using the Azure Cognitive Search REST API.",
+    "What should you do?"
+  ],
+  "options": [
+    { "id": "a", "text": "Configure multiple read replicas for the data in Sales." },
+    { "id": "b", "text": "Mirror Finance to an Azure SQL database." },
+    { "id": "c", "text": "Migrate the data in Sales to the MongoDB API." },
+    { "id": "d", "text": "Ingest the data in Logs into Azure Sentinel." }
+  ],
+  "correctAnswer": "b",
+  "explanation": [
+    "Azure Cognitive Search supports direct integration with Azure SQL Database but does not support on-premises SQL Server directly as a data source.",
+    "To index Finance data from the on-premises SQL Server, you need to mirror or replicate it into an Azure SQL Database, which Azure Cognitive Search can connect to.",
+    "Sales data in Cosmos DB using the Core (SQL) API can be indexed directly.",
+    "Azure Table storage can also be indexed directly.",
+    "Azure Sentinel is used for security analytics and not for general search indexing.",
+    "Migrating Sales data to MongoDB API is unnecessary because Core (SQL) API is supported."
+  ]
+},{
+  "id": "Q171",
+  "type": "single",
+  "question": [
+    "You are building a bot on a local computer by using the Microsoft Bot Framework.",
+    "The bot will use an existing Language Understanding model.",
+    "You need to translate the Language Understanding model locally by using the Bot Framework CLI.",
+    "What should you do first?"
+  ],
+  "options": [
+    { "id": "a", "text": "From the Language Understanding portal, clone the model." },
+    { "id": "b", "text": "Export the model as an .lu file." },
+    { "id": "c", "text": "Create a new Speech service." },
+    { "id": "d", "text": "Create a new Language Understanding service." }
+  ],
+  "correctAnswer": "b",
+  "explanation": [
+    "To translate or work with the Language Understanding (LUIS) model locally using the Bot Framework CLI, you first need to export the model as an .lu file.",
+    "The .lu file format contains the model's utterances, intents, and entities in a format that the Bot Framework CLI can process.",
+    "Cloning the model or creating new services is not required for local translation.",
+    "Creating a Speech service is unrelated to translating the LUIS model."
+  ]
+},{
+  "id": "Q172",
+  "type": "multiple",
+  "question": [
+    "You noticed that attempts to connect frequently result in HTTP 403 Forbidden and HTTP 401 Unauthorized errors.",
+    "What could be the root cause of the 403 errors? (Choose 3 answers)"
+  ],
+  "options": [
+    { "id": "a", "text": "The subscription key is missing." },
+    { "id": "b", "text": "The subscription usage quota exceeded." },
+    { "id": "c", "text": "The endpoint is invalid." },
+    { "id": "d", "text": "The subscription key is invalid." }
+  ],
+  "correctAnswer": ["a", "b", "d"],
+  "explanation": [
+    "HTTP 403 Forbidden errors typically occur when authentication fails or access is denied.",
+    "Possible causes include a missing subscription key, exceeding the subscription usage quota, or an invalid subscription key.",
+    "An invalid endpoint usually results in a different error (such as DNS failure or 404 Not Found) rather than 403 Forbidden."
+  ]
+},{
+  "id": "Q173",
+  "type": "single",
+  "question": [
+    "You have been asked to develop a real-time speech-to-speech translation prototype that will be showcased in the next corporate webinar.",
+    "The prototype will translate conversational English to Spanish, French, and Italian for now.",
+    "What is the most suitable approach to follow?"
+  ],
+  "options": [
+    {
+      "id": "a",
+      "text": "Develop one app using Azure AI Translator and select translation of English into Spanish, French, and Italian."
+    },
+    {
+      "id": "b",
+      "text": "Develop one app using the Speech Service SDK and add Spanish, French, and Italian as target translation languages."
+    },
+    {
+      "id": "c",
+      "text": "Develop separate apps using the Speech Service SDK to translate English into one of the three target languages."
+    },
+    {
+      "id": "d",
+      "text": "Develop one app to convert the speech to text using the Speech Service SDK, translate the speech with Azure AI Translator, and then read the translations with Azure AI Immersive Reader."
+    }
+  ],
+  "correctAnswer": "b",
+  "explanation": [
+    "The Speech Service SDK supports real-time speech-to-speech translation into multiple languages within a single app, making it the most suitable approach for a prototype.",
+    "This approach simplifies development and allows for simultaneous translation into Spanish, French, and Italian.",
+    "Azure AI Translator focuses on text translation and would require additional steps for speech recognition and synthesis.",
+    "Immersive Reader is designed to improve text readability and comprehension, not for speech synthesis."
+  ]
+},{
+  "id": "Q174",
+  "type": "multiple",
+  "question": [
+    "After your company's call center support staff receive a call, you need to implement an AI solution to identify additional metrics.",
+    "The solution requires:",
+    " - Processing speech in English, French, and Spanish.",
+    " - Identifying the main topics of customer calls, and",
+    " - Implementing sentiment analysis.",
+    "Which of the following Azure AI services does this solution require? (Choose 2 answers)"
+  ],
+  "options": [
+    { "id": "a", "text": "Azure AI Speech service's Speech-to-Text" },
+    { "id": "b", "text": "Azure AI Speech service's Text-to-Speech" },
+    { "id": "c", "text": "Azure AI Translator" },
+    { "id": "d", "text": "Azure AI Language" }
+  ],
+  "correctAnswer": ["a", "d"],
+  "explanation": [
+    "The Speech-to-Text feature of Azure AI Speech service is needed to convert the spoken calls into text.",
+    "Azure AI Language service provides capabilities such as key phrase extraction and sentiment analysis, which help identify main topics and sentiment from the transcribed text.",
+    "Text-to-Speech is not required as the solution focuses on analysis, not generating speech.",
+    "Azure AI Translator is not needed if the processing is performed on the original languages and no translation is required."
+  ]
+}
+,{
+  "id": "Q175",
+  "type": "single",
+  "question": [
+    "You are training a Conversational Language Understanding (CLU) application.",
+    "After you finish training a CLU app, it receives a prediction score of 0.01.",
+    "How can you describe the result?"
+  ],
+  "options": [
+    { "id": "a", "text": "A definite failure to match" },
+    { "id": "b", "text": "A high-confidence, low-error model" },
+    { "id": "c", "text": "A low-confidence, high-error model" },
+    { "id": "d", "text": "A definite match" }
+  ],
+  "correctAnswer": "c",
+  "explanation": [
+    "A prediction score of 0.01 indicates very low confidence in the prediction.",
+    "This means the model is likely to be inaccurate (high error) and uncertain (low confidence) about the intent.",
+    "Hence, this score reflects a low-confidence, high-error model rather than a definite match or definite failure."
+  ]
+}
+,{
+  "id": "Q176",
+  "type": "single",
+  "question": [
+    "Your company decided to use the Azure AI Vision to analyze images for insights extraction.",
+    "Given a set of input parameters, such as region/transactions and required features, you have been asked to estimate the upfront and recurring fees for implementing and using this service in a production-level environment.",
+    "How could you estimate costs?"
+  ],
+  "options": [
+    { "id": "a", "text": "Collect the required features/input elements and send a request to Azure support." },
+    { "id": "b", "text": "Use the Azure Price Calculator to estimate costs." },
+    { "id": "c", "text": "Create the resources, send sample traffic, and then extrapolate costs using Cost Analysis in the Azure Portal." },
+    { "id": "d", "text": "Hire a specialized firm for an accurate estimation." }
+  ],
+  "correctAnswer": "b",
+  "explanation": [
+    "The Azure Price Calculator is the primary tool for estimating both upfront and recurring costs for Azure services based on parameters such as region, usage, and features.",
+    "It provides customizable estimates without needing to create resources or send traffic.",
+    "While Cost Analysis can provide actual costs after usage, it cannot be used for upfront estimation.",
+    "Contacting Azure support or hiring a firm might help but are not standard methods for initial cost estimation."
+  ]
+},{
+  "id": "Q177",
+  "type": "single",
+  "question": [
+    "You developed a chatbot using Conversational Language Understanding (CLU) and published it.",
+    "The end user interacts with the bot by sending inputs to be interpreted by the application and receiving responses.",
+    "What is the exact nomination of those inputs?"
+  ],
+  "options": [
+    { "id": "a", "text": "Utterances" },
+    { "id": "b", "text": "Intents" },
+    { "id": "c", "text": "Entities" },
+    { "id": "d", "text": "Patterns" }
+  ],
+  "correctAnswer": "a",
+  "explanation": [
+    "Utterances are the exact user inputs (phrases or sentences) sent to the chatbot for interpretation.",
+    "Intents represent the goal or action the user wants to achieve, which the system tries to infer from the utterances.",
+    "Entities are specific pieces of information extracted from utterances to help fulfill intents.",
+    "Patterns are predefined templates or rules used to match utterances."
+  ]
+},{
+  "id": "Q178",
+  "type": "single",
+  "question": [
+    "You have an Azure Cognitive Search solution and a collection of blog posts that include a category field.",
+    "You need to index the posts. The solution must meet the following requirements:",
+    " - Include the category field in the search results.",
+    " - Ensure that users can search for words in the category field.",
+    " - Ensure that users can perform drill down filtering based on category.",
+    "Which index attributes should you configure for the category field?"
+  ],
+  "options": [
+    { "id": "a", "text": "searchable, sortable, and retrievable" },
+    { "id": "b", "text": "searchable, facetable, and retrievable" },
+    { "id": "c", "text": "retrievable, filterable, and sortable" },
+    { "id": "d", "text": "retrievable, facetable, and key" }
+  ],
+  "correctAnswer": "b",
+  "explanation": [
+    "To meet the requirements:",
+    "- The category field must be searchable so users can search for words in it.",
+    "- It must be retrievable to include the field in search results.",
+    "- It must be facetable to allow drill-down filtering (facets).",
+    "Sortable is not strictly required based on the requirements.",
+    "Key is used for unique identifiers and is not applicable here."
+  ]
+}
+
+
+
+
+
+
+
+
 
 
 ]

@@ -16,7 +16,9 @@ function ImageOCRApp() {
 
     Array.from(e.target.files).forEach(file => {
       const id = `${file.name}-${crypto.randomUUID()}`
-      setResults(prev => [...prev, { id, fileName: file.name, text: '', progress: 0 }])
+      
+      // Prepend result instead of appending it
+      setResults(prev => [{ id, fileName: file.name, text: '', progress: 0 }, ...prev])
 
       const reader = new FileReader()
       reader.onload = () => {
@@ -42,7 +44,7 @@ function ImageOCRApp() {
 
   return (
     <div style={{ maxWidth: 800, margin: '0 auto', padding: 16 }}>
-      <h1>Single Image → Text OCR</h1>
+      <h1>Single Image → Text OCR</h1>
 
       <input type="file" accept="image/*" multiple onChange={handleFiles} />
 
