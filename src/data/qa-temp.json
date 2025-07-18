@@ -1,6 +1,6 @@
 [
   {
-    "id": "Q1",
+    "id": "1",
     "type": "drag-sequence",
     "question": [
       "You have an app that manages feedback.",
@@ -18,7 +18,7 @@
     "explanation": "The correct sequence is: Provision the Language service → Deploy the container on-premises → Run the container and query it locally. Uploading to Azure is not required because the solution must keep data on-premises."
   },
   {
-    "id": "Q2",
+    "id": "2",
     "type": "dropdown-pair",
     "question": [
       "You are building a chatbot.",
@@ -39,7 +39,7 @@
     "explanation": "The 'Classification' section returns the likelihood of content falling into various categories like Category-1 for sexual content."
   },
   {
-    "id": "Q3",
+    "id": "3",
     "type": "drag-sequence",
     "question": [
       "You have a question-answering project in Azure AI Language.",
@@ -57,7 +57,7 @@
     "explanation": "To migrate a question-answering project, first export the project from the original instance (3), then import it into the new instance (4), and finally train and publish the model from the new instance (1)."
   },
   {
-    "id": "Q4",
+    "id": "4",
     "type": "drag-sequence",
     "question": [
       "You are using a Conversational Language Understanding (CLU) service to handle natural language input from users of a web-based customer agent.",
@@ -77,7 +77,7 @@
     "explanation": "To improve the model's effectiveness, first enable active learning (3) to collect useful utterances, then validate and refine the model using logged utterances (1), and finally retrain and republish the model (5)."
   },
   {
-    "id": "Q5",
+    "id": "5",
     "type": "boolean",
     "question": [
       "You develop an application to identify species of plants by training a Custom Vision model.",
@@ -90,7 +90,7 @@
     "explanation": "❌ No. The Smart Labeler helps in suggesting tags for existing classes but does not automatically train or classify new species. Additional manual labeling and retraining is required."
   },
   {
-    "id": "Q6",
+    "id": "6",
     "type": "boolean",
     "question": [
       "You develop an application to identify species of plants by training a Custom Vision model.",
@@ -103,7 +103,7 @@
     "explanation": "❌ No. Creating a new model is unnecessary in this case. You can update the existing classifier by adding new images and labels, then retraining it. Creating a new model would not retain the knowledge from the existing trained data."
   },
   {
-    "id": "Q7",
+    "id": "7",
     "type": "boolean",
     "question": [
       "You develop an application to identify species of plants by training a Custom Vision model.",
@@ -117,7 +117,7 @@
     "explanation": "✅ Yes. This is the correct approach — updating the existing model with new labeled data, retraining, and publishing ensures continuity and improved accuracy for new classes."
   },
   {
-    "id": "Q8",
+    "id": "8",
     "type": "drag-sequence",
     "question": [
       "You are building an application to identify defects in factory-produced components that are unique to your business.",
@@ -135,7 +135,7 @@
     "explanation": "To use Custom Vision for defect detection, you first create a project, then upload and tag images with appropriate labels. After that, you train the object detection model using the tagged data."
   },
   {
-    "id": "Q9",
+    "id": "9",
     "type": "drag-sequence",
     "question": [
       "You are tasked with helping the Finance-Analysts team build an automated document extraction system using Azure AI Document Intelligence.",
@@ -154,7 +154,7 @@
     "explanation": "To build a custom model with Azure AI Document Intelligence, first create a project and upload documents. Then, label the key fields using the labeling tool. Finally, train the custom model based on the labeled data. Pre-trained and combined models are optional and not required in this core flow."
   },
   {
-    "id": "Q10",
+    "id": "10",
     "type": "drag-sequence",
     "question": [
       "You have a Language Understanding solution that you want to deploy using a Docker container on your host computer.",
@@ -172,7 +172,7 @@
     "explanation": "To deploy a Language Understanding (LUIS) solution in a Docker container, you first export the model as a package from the Language Understanding portal. Next, move the package file to the Docker container's input directory. Finally, run the container and point it to the input directory to start serving the model."
   },
   {
-    "id": "Q11",
+    "id": "11",
     "type": "dropdown-pair",
     "question": [
       "You are developing an application that needs to automatically route incoming customer email to either the English or Spanish support teams based on the language of the message.",
@@ -193,7 +193,7 @@
     "explanation": "To route based on language, use the Language Detection endpoint from the Text Analytics API. The base endpoint (centralus cognitive) and the path '/text/analytics/v3.1/languages' are appropriate for identifying the language of incoming text."
   },
   {
-    "id": "Q12",
+    "id": "12",
     "type": "drag-sequence",
     "question": [
       "You have a Custom Vision service project that uses the General domain for classification and contains a trained model.",
@@ -212,7 +212,7 @@
     "explanation": "To export the model for offline use, you need to change the domain to General (compact) (F), retrain the model (B), and then export it (C)."
   },
   {
-    "id": "Q13",
+    "id": "13",
     "type": "drag-sequence",
     "question": [
       "You've trained an Azure Custom Vision model to classify clothing products using the Retail domain.",
@@ -229,7 +229,7 @@
     "explanation": "To export a Custom Vision model for mobile use, you need to first switch to a compact domain (A), retrain the model (B), and then export it for deployment (C)."
   },
   {
-    "id": "Q14",
+    "id": "14",
     "type": "single",
     "question": [
       "You have an app that analyzes images by using the Computer Vision API.",
@@ -247,7 +247,7 @@
     "explanation": "The correct method is 'describeImageInStreamAsync', which returns a human-readable description of the image in complete sentences — suitable for assisting users with visual impairments."
   },
   {
-    "id": "Q15",
+    "id": "15",
     "type": "drag-sequence",
     "question": [
       "Your company's product recognition mobile app uses a Custom Vision model.",
@@ -268,7 +268,7 @@
     "explanation": "To retrain the model quickly, upload all the images (3), use the Smart Labeler to get suggested tags (2), and then review and confirm those suggestions (5). This avoids time-consuming manual or local pre-organization steps."
   },
   {
-    "id": "Q16",
+    "id": "16",
     "type": "drag-sequence",
     "question": [
       "You have a Custom Vision resource each in dev and prod environment.",
@@ -287,7 +287,7 @@
     "explanation": "To deploy the model from dev to prod, first get the list of projects in dev (2), then export the desired project (1), and finally import it into prod (3)."
   },
   {
-    "id": "Q17",
+    "id": "17",
     "type": "dropdown-pair",
     "question": [
       "You have a form recognition task.",
@@ -307,7 +307,7 @@
     "explanation": "The prebuilt-invoice model is designed to extract key-value pairs from invoices."
   },
 {
-  "id": "Q18",
+  "id": "18",
   "type": "single",
   "question": [
     "You want to analyze customer feedback by extracting key phrases using Azure Text Analytics.",
@@ -324,7 +324,7 @@
   "explanation": "Key phrase extraction is the Text Analytics feature that automatically extracts the most important phrases from text while internally filtering out common stop words such as 'and', 'is', and 'the'."
 },
   {
-    "id": "Q19",
+    "id": "19",
     "type": "single",
     "question": [
       "You want to implement Named Entity Recognition (NER) in your app to identify person names, organizations, and locations in user text.",
@@ -340,7 +340,7 @@
     "explanation": "The Named Entity Recognition endpoint is part of Text Analytics and is accessed via the entities recognition API."
   },
   {
-    "id": "Q20",
+    "id": "20",
     "type": "drag-sequence",
     "question": [
       "You need to create an Azure AI Text Analytics pipeline that takes customer emails,",
@@ -357,7 +357,7 @@
     "explanation": "The typical processing flow is to detect language first, normalize text for consistent processing, then perform sentiment analysis, and finally extract key phrases."
   },
   {
-    "id": "Q21",
+    "id": "21",
     "type": "boolean",
     "question": [
       "You are using Azure Form Recognizer prebuilt receipt model to extract data from scanned receipts.",
@@ -369,7 +369,7 @@
     "explanation": "✅ Custom models trained on labeled data can extract fields not recognized by the prebuilt receipt model."
   },
   {
-    "id": "Q22",
+    "id": "22",
     "type": "drag-sequence",
     "question": [
       "You are tasked with creating a multi-lingual chatbot using Azure Conversational Language Understanding.",
@@ -386,7 +386,7 @@
     "explanation": "Create the app in the primary language, train and publish it, then clone it to add support for other languages."
   },
   {
-    "id": "Q23",
+    "id": "23",
     "type": "dropdown-pair",
     "question": [
       "You want to implement a sentiment analysis service with custom categories to classify product reviews.",
@@ -406,7 +406,7 @@
     "explanation": "Azure Text Analytics custom sentiment endpoint supports custom categories for sentiment classification."
   },
   {
-    "id": "Q24",
+    "id": "24",
     "type": "boolean",
     "question": [
       "You want to detect whether an image contains adult or racy content using Azure Computer Vision.",
@@ -418,7 +418,7 @@
     "explanation": "✅ The 'isAdultContent' boolean property indicates the presence of adult or racy content in the image."
   },
   {
-    "id": "Q25",
+    "id": "25",
     "type": "single",
     "question": [
       "You have a Custom Speech service in Azure.",
@@ -435,7 +435,7 @@
     "explanation": "Training a custom speech model with phrase lists improves recognition for domain-specific words."
   },
   {
-    "id": "Q26",
+    "id": "26",
     "type": "drag-sequence",
     "question": [
       "You want to deploy an Azure Text Analytics solution that complies with data residency regulations and processes data locally.",
@@ -452,7 +452,7 @@
     "explanation": "Provision resource with Private Endpoint to ensure network isolation, deploy container on-premises, and run it locally with proper data storage configuration to comply with data residency."
   },
 {
-  "id": "Q27",
+  "id": "27",
   "type": "single",
   "question": [
     "You want to analyze video content to detect objects and activities using Azure Video Analyzer.",
@@ -468,7 +468,7 @@
   "explanation": "Azure Video Indexer is the component responsible for extracting rich insights from video streams, such as object detection, face recognition, speech transcription, and activity detection. While other components like edge modules and stream processors are used for ingesting and processing video streams, the actual insight extraction is performed by Video Indexer."
 },
  {
-  "id": "Q28",
+  "id": "28",
   "type": "drag-sequence",
   "question": [
     "You want to create a pipeline for document processing using Azure AI Document Intelligence.",
@@ -485,7 +485,7 @@
   "explanation": "To start building a custom document model with Azure AI Document Intelligence, the correct initial steps are: (1) Upload documents to Blob Storage to make them accessible to the training service, (2) Create a Document Intelligence project in the studio or via API to organize and manage the training data, and (3) Label the uploaded documents with key-value pairs to provide ground truth for model training. Only after labeling can you proceed to train (step 4) and deploy (step 5) the model."
 }
 ,{
-  "id": "Q29",
+  "id": "29",
   "type": "single",
   "question": "You are developing an application using Azure AI Services which will be used to:\n• Analyze images\n• Detect objects, faces, and text in images\n\nThe solution must ensure:\n• Minimum latency\n• Optimized performance\n\nWhich Azure AI Service should you use?",
   "options": [
@@ -505,7 +505,7 @@
   "correctAnswer": "a",
   "explanation": "✅ The Azure AI Vision service supports analyzing images for objects, faces, and text. It provides comprehensive image analysis capabilities in one service, making it optimal for scenarios requiring high performance and low latency."
 },{
-  "id": "Q30",
+  "id": "30",
   "type": "single",
   "question": "E-commerce company, GreenCycle, wants to enhance its product pages by optimizing images for:\n• Various devices\n• Different screen sizes\n\nTheir product team uploads high-resolution images.\nThese images need to be:\n• Resized\n• Cropped automatically for mobile thumbnails\n\nWhich feature of **AI Vision AnalyzeImage** should you use?",
   "options": [
@@ -529,7 +529,7 @@
   "correctAnswer": "c",
   "explanation": "✅ Smart crop automatically generates image crops optimized for the region of interest, making it ideal for creating responsive thumbnails for mobile and other devices."
 },{
-  "id": "Q31",
+  "id": "31",
   "type": "single",
   "question": [
     "You're developing a conversational AI using Azure OpenAI's GPT-35 Turbo model.",
@@ -547,7 +547,7 @@
   "explanation": "This is an example of **priming**, where the system prompt sets the tone, context, and behavior of the assistant before any user input. Priming helps guide the model’s responses without requiring additional input examples."
 },
 {
-  "id": "Q32",
+  "id": "32",
   "type": "single",
   "question": [
     "An e-commerce company wants to optimize images for mobile thumbnails.",
@@ -562,7 +562,7 @@
   "correctAnswer": "c",
   "explanation": "Smart crop allows images to be resized and cropped optimized for thumbnails."
 },{
-  "id": "Q33",
+  "id": "33",
   "type": "multiple",
   "question": [
     "You are developing a method that uses the Computer Vision client library.",
@@ -599,7 +599,7 @@
   "correctAnswer": ["A", "B"],
   "explanation": "To ensure GetReadResultAsync waits until the read operation is complete, wrap the call in a loop with a delay to poll the status, and check the results.Status to confirm completion before proceeding."
 },{
-  "id": "Q34",
+  "id": "34",
   "type": "single",
   "question": [
     "You're building a corporate website that will showcase meeting recordings using Azure Video Analyzer for Media.",
@@ -622,7 +622,7 @@
   "correctAnswer": "C",
   "explanation": "Option C correctly configures the Insights widget to show people and keywords widgets with search controls, while the Player widget is set to show captions in US English."
 },{
-  "id": "Q35",
+  "id": "35",
   "type": "single",
   "question": [
     "You are building an app that will include one million scanned magazine articles.",
@@ -640,7 +640,7 @@
   "correctAnswer": "B",
   "explanation": "The Read API in Azure AI Vision is designed for OCR and can efficiently extract text from images, minimizing development effort."
 },{
-  "id": "Q36",
+  "id": "36",
   "type": "multiple",
   "question": [
     "You use the Custom Vision service to build a classifier.",
@@ -660,7 +660,7 @@
   "explanation": "Custom Vision provides precision and recall as standard evaluation metrics. These help in assessing how well your classifier is performing in terms of relevant and correct predictions."
 },
 {
-  "id": "Q37",
+  "id": "37",
   "type": "single",
   "question": [
     "You have created an object detection project named ‘MyDetectionProject’.",
@@ -678,7 +678,7 @@
   "correctAnswer": "a",
   "explanation": "✅ The percentage of false positives is 0%, meaning the model did not incorrectly classify any negative example as positive."
 },{
-  "id": "Q38",
+  "id": "38",
   "type": "single",
   "question": [
     "The value for the number of true positives divided by the total number of true positives and false negatives is",
@@ -694,7 +694,7 @@
   "correctAnswer": "b",
   "explanation": "✅ This value represents **recall**. Based on the image's data, the recall (true positives / (true positives + false negatives)) is 66.7%."
 },{
-  "id": "Q39",
+  "id": "39",
   "type": "single",
   "question": [
     "You have an Azure subscription that contains an Azure AI Content Safety resource named CS1.",
@@ -712,7 +712,7 @@
   "correctAnswer": "d",
   "explanation": "✅ A **blocklist** in Azure AI Content Safety allows you to define custom offensive terms (including obscure ones) with minimal development effort. This is ideal for user-generated content filtering."
 },{
-  "id": "Q40",
+  "id": "40",
   "type": "single",
   "question": [
     "You have an Azure subscription with an Azure OpenAI resource named AI1.",
@@ -730,7 +730,7 @@
   "explanation": "✅ Jailbreak risk detection is a feature in Azure AI Content Safety that identifies attempts to circumvent content filters or safety mechanisms, which is essential when deploying chatbots built with Azure OpenAI."
 }
 ,{
-  "id": "Q41",
+  "id": "41",
   "type": "single",
   "question": [
     "You have an Azure subscription that contains an Azure OpenAI resource named AI1 and an Azure AI Content Safety resource named CS1.",
@@ -747,7 +747,7 @@
   "correctAnswer": "a",
   "explanation": "✅ The 'Moderate text content' feature in Content Safety Studio allows you to test and configure filtering thresholds by submitting sample prompts or completions, ensuring objectionable input/output is flagged correctly."
 },{
-  "id": "Q42",
+  "id": "42",
   "type": "dropdown-pair",
   "question": [
     "You have an Azure subscription that contains an Azure AI Content Safety resource.",
@@ -773,7 +773,7 @@
   },
   "explanation": "To moderate image content using Azure AI Content Safety, you instantiate the ContentSafetyClient and then call the AnalyzeImage method on the client instance passing the request."
 },{
-  "id": "Q43",
+  "id": "43",
   "type": "multiple",
   "question": [
     "You have an Azure subscription with an Azure AI Content Safety resource named CS1.",
@@ -792,7 +792,7 @@
   "correctAnswer": ["b", "f"],
   "explanation": "The Azure AI Content Safety endpoint URL must include 'contentsafety' to target the service, and 'text:analyze' is the correct path to analyze text for hateful language detection."
 },{
-  "id": "Q44",
+  "id": "44",
   "type": "single",
   "question": [
     "You have an Azure subscription that contains an Azure AI Content Safety resource named CS1.",
@@ -810,7 +810,7 @@
   "correctAnswer": "a",
   "explanation": "The output score for the test image containing a simple shape like a square is expected to be 0, indicating no flagged content or zero severity."
 },{
-  "id": "Q45",
+  "id": "45",
   "type": "single",
   "question": [
     "You are developing a custom question answering project in Azure AI Service for Language.",
@@ -828,7 +828,7 @@
   "correctAnswer": "a",
   "explanation": "Adding follow-up prompts allows the chatbot to engage in multi-turn conversations by asking clarifying questions or guiding the user for additional input."
 },{
-  "id": "Q46",
+  "id": "46",
   "type": "single",
   "question": [
     "You're developing a contact management chatbot using Azure AI Language Understanding.",
@@ -847,7 +847,7 @@
   "correctAnswer": "a",
   "explanation": "To improve the model, you add new utterances (example phrases) under the existing FindContact intent. This helps the model better recognize user requests related to finding contacts by location."
 },{
-  "id": "Q47",
+  "id": "47",
   "type": "multiple",
   "question": [
     "You have trained a Conversational Language Understanding (CLU) model to interpret natural language input from users.",
@@ -863,7 +863,7 @@
   "correctAnswer": ["a", "c"],
   "explanation": "You can evaluate the model by retrieving the evaluation summary via the REST endpoint and by viewing Model performance metrics directly in Language Studio."
 },{
-  "id": "Q48",
+  "id": "48",
   "type": "single",
   "question": [
     "You have an Azure AI Language model named IntentModel that identifies the intent of text input.",
@@ -879,7 +879,7 @@
   "correctAnswer": "a",
   "explanation": "The azure-ai-language-conversations package is used to integrate Azure AI Language models that handle conversational and intent recognition tasks."
 },{
-  "id": "Q49",
+  "id": "49",
   "type": "single",
   "question": [
     "You are building a conversational language understanding model.",
@@ -895,7 +895,7 @@
   "correctAnswer": "c",
   "explanation": "Adding log=true to the prediction endpoint query enables active learning by logging utterances for review and improvement."
 },{
-  "id": "Q50",
+  "id": "50",
   "type": "single",
   "question": [
     "You develop a Conversational Language Understanding model by using Language Studio.",
@@ -912,7 +912,7 @@
   "correctAnswer": "c",
   "explanation": "Adding examples to the None intent helps the model recognize requests that don't belong to any defined intent, thus identifying spurious inputs."
 },{
-  "id": "Q51",
+  "id": "51",
   "type": "single",
   "question": [
     "You are working on a project to develop a language model using Azure's AI Language Understanding (classic) service.",
@@ -928,7 +928,7 @@
   "correctAnswer": "a",
   "explanation": "To grant team members access to authoring resources for the Language Understanding (classic) service, use the Access control (IAM) page specifically for the authoring resources in the Azure portal."
 },{
-  "id": "Q52",
+  "id": "52",
   "type": "single",
   "question": [
     "You are building a Conversational Language Understanding (CLU) model using the Language Services portal.",
@@ -990,7 +990,7 @@
   },
   "explanation": "Match the location, email and phrase with their correct entity types."
 },{
-  "id": "Q54",
+  "id": "54",
   "type": "single",
   "question": [
     "You are developing a Conversational Language Understanding (CLU) model for an e-commerce chatbot.",
@@ -1007,7 +1007,7 @@
   "correctAnswer": "a",
   "explanation": "Billing addresses are complex and vary greatly in format, so a machine learned entity is best suited to accurately capture this type of information in the CLU model."
 },{
-  "id": "Q55",
+  "id": "55",
   "type": "single",
   "question": [
     "In LUIS (Language Understanding Intelligent Service), which type of entity is designed to capture any sequence of words in a user utterance, providing flexibility to match varying input patterns?"
@@ -1021,7 +1021,7 @@
   "correctAnswer": "d",
   "explanation": "The Pattern.any entity in LUIS is designed to capture any sequence of words, offering flexibility in matching variable input patterns."
 },{
-  "id": "Q56",
+  "id": "56",
   "type": "single",
   "question": [
     "You are building an Azure AI Language Understanding (LUIS) solution.",
@@ -1038,7 +1038,7 @@
   "correctAnswer": "a",
   "explanation": "A List entity is useful for capturing a predefined set of values, such as airport names or codes, minimizing the training utterances needed."
 },{
-  "id": "Q57",
+  "id": "57",
   "type": "single",
   "question": [
     "You are developing a Natural Language Processing model for a customer support chatbot that collects shipping addresses from users.",
@@ -1055,7 +1055,7 @@
   "correctAnswer": "a",
   "explanation": "A machine-learned entity is best suited for capturing complex inputs like shipping addresses that may vary significantly in format."
 },{
-  "id": "Q58",
+  "id": "58",
   "type": "single",
   "question": [
     "You have a Language service resource that performs the following:",
@@ -1074,7 +1074,7 @@
   "correctAnswer": "d",
   "explanation": "The 'loggingOptOut' query parameter prevents the Language service from persisting input data, ensuring user data privacy."
 },{
-  "id": "Q59",
+  "id": "59",
   "type": "multiple",
   "question": [
     "You plan to deploy a containerized Text Analytics Sentiment Analysis service on an Azure virtual machine using Docker.",
@@ -1092,7 +1092,7 @@
   "correctAnswer": ["c", "d"],
   "explanation": "The correct container image is the latest Text Analytics Sentiment Analysis container 'mcr.microsoft.com/azure-cognitive-services/textanalytics/sentiment'. You also need to configure the 'Billing' environment variable with your Cognitive Services endpoint URI, which is 'https://TechCorp.cognitiveservices.azure.com'."
 },{
-  "id": "Q60",
+  "id": "60",
   "type": "single",
   "question": [
     "You have an Azure subscription that contains an Azure Cognitive Service for Language resource.",
@@ -1108,7 +1108,7 @@
   "correctAnswer": "b",
   "explanation": "The 'Keys and Endpoint' blade in the Azure portal provides the API endpoint URL and the keys required to access the REST interface for the Azure Cognitive Service for Language."
 },{
-  "id": "Q61",
+  "id": "61",
   "type": "single",
   "question": [
     "You are developing a solution that extracts key phrases from text using Azure AI Text Analytics.",
@@ -1129,7 +1129,7 @@
   "correctAnswer": "c",
   "explanation": "The `ExtractKeyPhrases` API identifies important noun phrases. For the input 'Our tour of Paris included Eiffel Tower', the correct key phrases extracted would be 'Tour', 'Paris', and 'Eiffel Tower'."
 },{
-  "id": "Q62",
+  "id": "62",
   "type": "single",
   "question": [
     "You are planning to create a word cloud based on the reviews of a company's products.",
@@ -1144,7 +1144,7 @@
   "correctAnswer": "d",
   "explanation": "To create a word cloud based on reviews, you should extract the key phrases that represent important terms from the text. The 'keyPhrases' endpoint is designed to do this by identifying the main concepts in unstructured text."
 },{
-  "id": "Q63",
+  "id": "63",
   "type": "multiple",
   "question": [
     "To build a multilingual chatbot that sends different responses for positive and negative messages,",
@@ -1160,7 +1160,7 @@
   "correctAnswer": ["d", "e"],
   "explanation": "To build a multilingual chatbot, you must first detect the language of the input using the **Detect Language** API. Then, use **Sentiment Analysis** to classify the message as positive or negative, allowing your chatbot to tailor responses accordingly."
 },{
-  "id": "Q64",
+  "id": "64",
   "type": "matching-pairs",
   "question": [
     "Match the requirements with the appropriate Azure AI Language service."
@@ -1250,7 +1250,7 @@
   "correctAnswer": "c",
   "explanation": "The embeddings model generates numeric vector representations of text which are suitable for semantic similarity comparisons and require minimal development effort."
 },{
-  "id": "Q69",
+  "id": "69",
   "type": "matching-pairs",
   "question": [
     "Complete the following code snippet by matching each placeholder with the correct value:",
@@ -1282,7 +1282,7 @@
   },
   "explanation": "Use ChatRole.User to specify that the message is from the user. The 'Temperature' parameter controls creativity; higher values increase creativity and reduce determinism."
 },{
-  "id": "Q70",
+  "id": "70",
   "type": "multiple",
   "question": [
     "Using Azure OpenAI resource a model is built with the below settings:",
@@ -1322,8 +1322,35 @@
   ],
   "correctAnswer": ["e"],
   "explanation": "None of the statements are correct. The model used is gpt-3.5-turbo, not text-embedding-ada-002. Prompt tokens are not counted in the max response token limit. Charges are based on total tokens (prompt + completion), not just completion. The completion stopped naturally, not due to token limits."
+},
+{
+  "id": "71",
+  "type": "single",
+  "question": [
+    "You have an Azure Cognitive Search solution and a collection of blog posts that include a category field.",
+    "You need to index the posts. The solution must meet the following requirements:",
+    " - Include the category field in the search results.",
+    " - Ensure that users can search for words in the category field.",
+    " - Ensure that users can perform drill down filtering based on category.",
+    "Which index attributes should you configure for the category field?"
+  ],
+  "options": [
+    { "id": "a", "text": "searchable, sortable, and retrievable" },
+    { "id": "b", "text": "searchable, facetable, and retrievable" },
+    { "id": "c", "text": "retrievable, filterable, and sortable" },
+    { "id": "d", "text": "retrievable, facetable, and key" }
+  ],
+  "correctAnswer": "b",
+  "explanation": [
+    "To meet the requirements:",
+    "- The category field must be searchable so users can search for words in it.",
+    "- It must be retrievable to include the field in search results.",
+    "- It must be facetable to allow drill-down filtering (facets).",
+    "Sortable is not strictly required based on the requirements.",
+    "Key is used for unique identifiers and is not applicable here."
+  ]
 },{
-  "id": "Q72",
+  "id": "72",
   "type": "matching-pairs",
   "question": [
     "Complete the Python code snippet to upload company data and ensure the chatbot uses it to answer questions:",
@@ -1363,7 +1390,7 @@
   },
   "explanation": "The openai method 'Chat.completions' is used to generate chat responses. The 'type' in dataSources should be 'AzureAISearch' to connect with Azure Cognitive Search for enriched data."
 },{
-  "id": "Q73",
+  "id": "73",
   "type": "single",
   "question": [
     "What is the most appropriate Azure role to assign to User1 to ensure they can identify resource endpoints, view available models for deployment, and generate text and images using deployed models in Azure OpenAI Studio, following the principle of least privilege?"
@@ -1378,7 +1405,7 @@
   "explanation": "The 'Cognitive Services OpenAI User' role allows users to identify resource endpoints, view available deployed models, and generate text/images with least privilege, while Contributor roles grant broader permissions not required here."
 }
 ,{
-  "id": "Q74",
+  "id": "74",
   "type": "single",
   "question": [
     "You're fine-tuning an Azure OpenAI model with 500 prompt-completion pairs. What file format should you use to ensure seamless data ingestion and processing by the Azure OpenAI fine-tuning API?"
@@ -1392,7 +1419,7 @@
   "correctAnswer": "b",
   "explanation": "Azure OpenAI fine-tuning API expects training data in JSONL format, where each line is a JSON object with 'prompt' and 'completion' fields for seamless processing."
 },{
-  "id": "Q75",
+  "id": "75",
   "type": "multiple",
   "question": [
     "Select the TRUE statements about the following Azure OpenAI chatbot code snippet."
@@ -1420,7 +1447,7 @@
   "explanation": "The prompt content can improve accuracy and relevance. However, the API response depends on the underlying model and does not guarantee up-to-date or source-verified information."
 },
 {
-  "id": "Q76",
+  "id": "76",
   "type": "single",
   "question": [
     "You are developing a solution to process receipt images using the Document Intelligence API.",
@@ -1461,7 +1488,7 @@
   "correctAnswer": "c",
   "explanation": "To trigger manual review when any extracted field has a confidence score below a threshold, you need to check all fields dynamically. The expression 'documentResults.fields.*.confidence less than 0.7' captures this by evaluating all confidence values in the fields object."
 },{
-  "id": "Q77",
+  "id": "77",
   "type": "matching-pairs",
   "question": [
     "Complete the following code snippet by matching each placeholder with the correct code fragment to call the Azure OpenAI resource and print the response."
@@ -1493,7 +1520,7 @@
   },
   "explanation": "To generate a text completion, use openai.ChatCompletion.create. The response's text output is found in response.choices[0].text."
 },{
-  "id": "Q78",
+  "id": "78",
   "type": "matching-pairs",
   "question": [
     "Complete the Azure CLI command below by matching each placeholder with the correct value to deploy an Azure OpenAI resource using a customer-managed key stored in Azure Key Vault:\n\naz cognitiveservices account create \\ \n  -n myopenai \\ \n  -g myresourcegroup \\ \n  --kind ........... \\ \n  --sku S-1 \\ \n  --location westus2 \\ \n  --.............. '{\\ \n    \"keySource\": \"Microsoft.KeyVault\",\\ \n    \"keyVaultProperties\": {\\ \n      \"keyName\": \"mykey\",\\ \n      \"keyVersion\": \"1.0\",\\ \n      \"keyVaultUri\": \"https://mykeyvault.vault.azure.net/\"\\ \n    }\\ \n  }'"
@@ -1516,7 +1543,7 @@
   },
   "explanation": "Use '--kind OpenAI' to specify the Azure OpenAI resource type. Use '--encryption' to configure the resource to use customer-managed keys stored in Azure Key Vault for data encryption."
 },{
-  "id": "Q79",
+  "id": "79",
   "type": "multiple",
   "question": [
     "You need to upload speech samples to a Speech Studio project for use in training.",
@@ -1531,7 +1558,7 @@
   "correctAnswer": ["b"],
   "explanation": "To train custom models in Speech Studio, you should upload a .zip file that includes multiple .wav audio files along with a transcript file in the specified format. Other formats like .wma or Word documents are not supported for training."
 },{
-  "id": "Q80",
+  "id": "80",
   "type": "multiple",
   "question": [
     "What should you upload to a voice talent profile for a custom neural voice in a retail self-service check-out system?"
@@ -1557,7 +1584,7 @@
   "correctAnswer": ["b"],
   "explanation": "For Custom Neural Voice training in Azure, you must upload a .zip file containing 60-second .wav audio clips and corresponding .txt transcript files. This structured dataset is required to train the synthetic voice model accurately."
 },{
-  "id": "Q81",
+  "id": "81",
   "type": "multiple",
   "question": [
     "You are assigned a new job to develop an app that will be used in motor vehicles which make use of the text-to-speech functionality of Azure AI Speech service.",
@@ -1572,7 +1599,7 @@
   "correctAnswer": ["b"],
   "explanation": "To optimize TTS voice quality in Azure AI Speech using SSML, the `effect` attribute of the `<voice>` element can be used to apply voice transformation effects like 'style', 'whispered', or 'robotic'. This allows fine-tuning of voice output for specialized environments like motor vehicle systems."
 },{
-  "id": "Q82",
+  "id": "82",
   "type": "multiple",
   "question": [
     "How would you complete the following SSML script for a text-to-speech app that uses a custom neural voice, ensuring the voice has a calm tone and imitates a young adult female?",
@@ -1594,7 +1621,7 @@
   "correctAnswer": ["a", "b"],
   "explanation": "In SSML for Azure TTS, `role` is used to define the persona (e.g., YoungAdultFemale), and `style` defines the speaking tone (e.g., gentle). These attributes help create more natural and expressive speech output."
 },{
-  "id": "Q83",
+  "id": "83",
   "type": "matching-pairs",
   "question": [
     "How do you translate an English lecture into French and German using Azure AI services? The function named append_to_transcript_file takes translated text and a language identifier as input parameters. Complete the code snippet with appropriate options.",
@@ -1645,7 +1672,7 @@
   },
   "explanation": "The target languages for translation are specified as language codes like ['fr', 'de']. The correct recognizer class to use for speech translation in Azure Speech SDK is TranslationRecognizer."
 },{
-  "id": "Q84",
+  "id": "84",
   "type": "matching-pairs",
   "question": [
     "A leading online education platform, \"LearnGo\", wants to create engaging video courses with personalized narration. They require a customized voice that resonates with their brand identity. The narration should be synthesized from scripted text.",
@@ -1676,7 +1703,7 @@
   "explanation": "To create a custom neural voice, you use the Speech Studio portal, which provides tools for voice customization and training. To generate narration from scripted text, Text-to-Speech service is used to synthesize audio from text."
 },
   {
-    "id": "Q85",
+    "id": "85",
     "type": "dropdown-pair",
   "question": [
     "You are developing a customer call handling solution which will receive calls from Spanish-speaking and Hindi-speaking callers. The system is supposed to perform the following tasks:",
@@ -1701,7 +1728,7 @@
      "explanation": "To capture messages from Spanish and Hindi speakers, the system should use Speech-to-text to transcribe the audio and Translator to convert it into English text. To replay the messages in English, use Text-to-speech to synthesize the translated English text back into audio, combined with Translator to ensure language conversion."
   },
   {
-  "id": "Q86",
+  "id": "86",
   "type": "single",
   "question": [
     "You have an Azure subscription.",
@@ -1720,7 +1747,7 @@
   "explanation": "Embeddings models in Azure OpenAI are designed to return numeric vectors that represent the meaning of text. These vectors can then be compared to compute semantic similarity efficiently, making them ideal for document comparison tasks."
 },
 {
-  "id": "Q87",
+  "id": "87",
   "type": "multiple",
   "question": [
     "You have an Azure AI Search service that has experienced a steady increase in query volume over the past 6 months.",
@@ -1738,7 +1765,7 @@
   "explanation": "To reduce query throttling in Azure AI Search, you can add **replicas** to handle more queries simultaneously, or **migrate to a higher tier** for increased capacity. Adding indexes, enabling CMK, or deploying to a private endpoint does not directly address throttling."
 },
 {
-  "id": "Q88",
+  "id": "88",
   "type": "single",
   "question": [
     "You're developing a contact management chatbot using Azure AI Language Understanding.",
@@ -1760,7 +1787,7 @@
   "explanation": "To improve a specific intent like FindContact, you should add more training data by creating new utterances. Each phrase represents a variation in how users might phrase the same intent, helping the model generalize better. Location can be captured as an entity within those utterances."
 },
 {
-  "id": "Q89",
+  "id": "89",
   "type": "dropdown-pair",
   "question": [
     "Your factory produces cardboard packaging for food products but experiences intermittent internet connectivity.",
@@ -1784,7 +1811,7 @@
   "explanation": "To detect individual product samples and locate defects, 'Object Detection' is required. Since the environment has intermittent internet, the 'General (compact)' domain enables edge deployment on devices without needing constant cloud connectivity."
 },
 {
-  "id": "Q90",
+  "id": "90",
   "type": "single",
   "question": [
     "You are developing a solution for a retail store that wants to monitor customer behavior in the store to improve sales and customer experience.",
@@ -1804,7 +1831,7 @@
   "correctAnswer": "c",
   "explanation": "Spatial analysis in Azure AI Vision is designed specifically for real-time video analytics in physical environments. It can track people, count entries, measure dwell time, and identify high-traffic areas—making it ideal for retail behavior analysis. The other options are not optimized for real-time spatial or behavioral video analysis."
 },{
-  "id": "Q91",
+  "id": "91",
   "type": "dropdown-pair",
   "question": [
     "You have a library that contains thousands of images.",
@@ -1831,7 +1858,7 @@
   },
   "explanation": "To determine image categories like photograph, drawing, or clipart, use the Azure AI Vision 'analyze image' API. This includes the 'imagetype' field, which provides image classification. Custom Vision is for custom models, while AI Vision offers built-in visual analysis features."
 }, {
-  "id": "Q92",
+  "id": "92",
   "type": "multiple",
   "question": [
     "A customer uses Azure AI Search and plans to enable server-side encryption using customer-managed keys (CMK) stored in Azure Key Vault.",
@@ -1849,7 +1876,7 @@
   "explanation": "When using customer-managed keys (CMK) for server-side encryption in Azure AI Search, integration with Azure Key Vault is mandatory to securely store and manage the encryption keys (f). Accessing CMK adds encryption/decryption overhead, which can lead to increased query latency (b). Additionally, encryption metadata and key wrapping mechanisms may increase the overall index size slightly (a). A self-signed certificate is not required; Azure Key Vault handles the key storage securely without that dependency."
 },
 {
-  "id": "Q93",
+  "id": "93",
   "type": "single",
   "question": [
     "You have an Azure subscription and 1000 ASCII files.",
@@ -1865,7 +1892,7 @@
   "correctAnswer": "a",
   "explanation": "The `text-embedding-ada-002` model is specifically designed for generating vector embeddings that capture the semantic meaning of text. These embeddings can be compared using cosine similarity, making this model ideal for identifying documents with semantically similar content. GPT models are designed for text generation rather than efficient embedding and similarity comparison."
 },{
-  "id": "Q94",
+  "id": "94",
   "type": "drag-sequence",
   "question": [
     "You are building a retail chatbot that uses Custom Question Answering, a feature of Azure AI Language.",
@@ -1888,7 +1915,7 @@
   "correctAnswer": ["5", "2", "4"],
   "explanation": "First, add alternative phrasing to the QnA pair so the model recognizes varied user questions. Then retrain and republish the model to apply these improvements."
 },{
-  "id": "Q95",
+  "id": "95",
   "type": "drag-sequence",
   "question": [
     "You have a chatbot that uses a custom Question Answering application.",
@@ -1908,7 +1935,7 @@
   "correctAnswer": ["1", "3", "4", "6"],
   "explanation": "To integrate user input using active learning, first show active learning suggestions, then approve or reject them, save and train the knowledge base, and finally publish the updated knowledge base."
 },{
-  "id": "Q96",
+  "id": "96",
   "type": "drag-sequence",
   "question": [
     "Using Azure AI Services you have built a speech model which transcribes physics lectures.",
@@ -1929,7 +1956,7 @@
   "explanation": "To improve transcription accuracy for scientific terms, start by creating a Custom Speech project. Then create a speech-to-text model, upload domain-specific training datasets, train the model, and finally deploy it."
 },
  {
-  "id": "Q97",
+  "id": "97",
   "type": "single",
   "question": [
     "You have an application, utilizing a custom Azure AI Document Intelligence model to recognize contract documents.",
@@ -1949,7 +1976,7 @@
   "explanation": "To support a new contract format with minimal development effort, the best approach is to add examples of the new format to the existing training set and retrain the custom Document Intelligence model. This avoids building a new model from scratch while improving recognition accuracy for the new format."
 },
 {
-  "id": "Q98",
+  "id": "98",
   "type": "single",
   "question": [
     "You are developing a solution to process receipt images using the Document Intelligence API.",
@@ -1991,7 +2018,7 @@
   "explanation": "To trigger manual review when any extracted field has a confidence score below a threshold, you need to check all fields dynamically. The expression 'documentResults.fields.*.confidence less than 0.7' captures this by evaluating all confidence values in the fields object."
 },
 {
-  "id": "Q99",
+  "id": "99",
   "type": "single",
   "question": [
     "Which Azure AI Document Intelligence model is best suited to extract the following data from scanned documents:",
@@ -2013,7 +2040,7 @@
   "correctAnswer": "b",
   "explanation": "The prebuilt 'Invoice' model in Azure AI Document Intelligence is specifically designed to extract common invoice fields such as billing address, due date, subtotal, shipping address, tax, customer ID, and amount due, making it the best fit with minimal development effort."
 },{
-  "id": "Q100",
+  "id": "100",
   "type": "multiple",
   "question": [
     "You are building a solution that students will use to find references for essays.",
@@ -2057,7 +2084,7 @@
   "explanation": "The `RecognizeLinkedEntities` method is used to link entities in the text to entries in a knowledge base such as Wikipedia. It does **not** detect language (you'd need a separate call for that), and the `url` is usually a link to a Wikipedia article, **not Bing**. The `matches` attribute identifies text spans where the entity appears, so option C is correct."
 },
 {
-  "id": "Q101",
+  "id": "101",
   "type": "matching-pairs",
   "question": [
     "Match the actions with the correct method for accessing Azure OpenAI deployments."
@@ -2079,7 +2106,7 @@
   },
   "explanation": "To access Azure OpenAI resources, you typically use an API key. Each app should connect using the specific deployment name configured in the Azure OpenAI Studio."
 },{
-  "id": "Q102",
+  "id": "102",
   "type": "single",
   "question": [
     "You are setting up an Azure OpenAI resource for a chatbot application using an Azure Resource Manager (ARM) template.",
@@ -2096,7 +2123,7 @@
   "correctAnswer": "c",
   "explanation": "In Azure OpenAI ARM templates, the `capacity` field under `sku` defines the number of compute units allocated. Setting `capacity: 100` enables the resource to handle higher throughput, such as 600 requests per minute, depending on the model and request complexity."
 },{
-  "id": "Q103",
+  "id": "103",
   "type": "single",
   "question": [
     "You've integrated Azure OpenAI's GPT-4 model into your application, MyApp.",
@@ -2113,7 +2140,7 @@
   "correctAnswer": "b",
   "explanation": "To prevent harmful or inappropriate outputs such as hate speech, Azure OpenAI provides built-in content filtering. The content filter analyzes and blocks inappropriate content before it's returned to the user. Parameters like Temperature or Frequency penalty affect creativity and repetition but do not prevent unsafe content."
 },{
-  "id": "Q104",
+  "id": "104",
   "type": "single",
   "question": [
     "You're developing an e-commerce platform that requires automated generation of product titles and descriptions from existing product specifications.",
@@ -2129,7 +2156,7 @@
   "explanation": "GPT-4 is a large language model optimized for natural language generation tasks such as summarization, content generation, and rephrasing. It is best suited for transforming detailed product specs into concise, human-readable titles and descriptions. Embeddings are used for similarity search, DALL·E for image generation, and Whisper for speech recognition."
 },
 {
-  "id": "Q105",
+  "id": "105",
   "type": "single",
   "question": [
     "You are developing the shopping on-the-go project.",
@@ -2169,7 +2196,7 @@
   "explanation": "The correct expression to localize text dynamically in Adaptive Cards is 'name[language]'. This accesses the correct localized value of the 'name' field based on the current language setting."
 },
 {
-  "id": "Q106",
+  "id": "106",
   "type": "single",
   "question": [
     "You are developing the shopping on-the-go project.",
@@ -2207,7 +2234,7 @@
   "correctAnswer": "a",
   "explanation": "In Adaptive Cards, the `$when` property uses a logical expression to determine if an element should be rendered. To conditionally render an element when the `stockLevel` is not equal to `'OK'`, the correct syntax is `stockLevel != 'OK'`. This is evaluated at runtime by the Adaptive Card host environment."
 },{
-  "id": "Q107",
+  "id": "107",
   "type": "single",
   "question": [
     "You are developing the shopping on-the-go project.",
@@ -2248,7 +2275,7 @@
   "correctAnswer": "d",
   "explanation": "In Adaptive Cards, to access a dynamic property like a language-specific key from an object (e.g., `image.altText`), bracket notation is used. `image.altText[language]` accesses the property where `language` is a variable holding the key (e.g., 'en', 'fr'). Dot notation does not evaluate dynamic keys."
 },{
-  "id": "Q108",
+  "id": "108",
   "type": "single",
   "question": [
     "You are developing the shopping on-the-go project.",
@@ -2265,7 +2292,7 @@
   "correctAnswer": "d",
   "explanation": "The 'QnA Maker Editor' role provides the necessary permissions to create, update, delete, and publish QnA Maker knowledge bases. It is specifically designed for users who manage content in QnA Maker (classic). This is the most appropriate role to assign to users who need authoring access without granting broader access like Contributor or Owner."
 },{
-  "id": "Q109",
+  "id": "109",
   "type": "single",
   "question": [
     "You are developing the shopping on-the-go project.",
@@ -2282,7 +2309,7 @@
   "correctAnswer": "a",
   "explanation": "The 'Cognitive Services User' role is required for users to access and use QnA Maker (classic) runtime endpoints. This includes the ability to query the knowledge base via the bot or application, making it suitable for stakeholders like the Leadership Team who need to interact with the QnA bot but do not require authoring permissions."
 },{
-  "id": "Q110",
+  "id": "110",
   "type": "multiple",
   "question": [
     "You are developing the smart e-commerce project.",
@@ -2327,7 +2354,7 @@
     "❌ Option E (`searchAnalyzer`) is used for query-time analysis in search, not in suggesters."
   ]
 },{
-  "id": "Q111",
+  "id": "111",
   "type": "single",
   "question": [
     "You are planning the product creation project.",
@@ -2363,7 +2390,7 @@
     "- ❌ Option D is an invalid or misformatted endpoint."
   ]
 },{
-  "id": "Q112",
+  "id": "112",
   "type": "single",
   "question": [
     "You are planning the product creation project.",
@@ -2397,7 +2424,7 @@
     "- ❌ Option C 'text-to-speech' is unrelated to translation."
   ]
 },{
-  "id": "Q113",
+  "id": "113",
   "type": "single",
   "question": [
     "You need to develop code to upload images for the product creation project.",
@@ -2426,7 +2453,7 @@
     "- ❌ Option B 'stream' is used for binary image data but is not the correct choice for this specific code snippet."
   ]
 },{
-  "id": "Q114",
+  "id": "114",
   "type": "single",
   "question": [
     "You need to develop code to upload images for the product creation project.",
@@ -2460,7 +2487,7 @@
     "- ❌ Option D 'VisualFeatureTypes.Tags' provides tags but not descriptive text suitable for alt text."
   ]
 },{
-  "id": "Q115",
+  "id": "115",
   "type": "single",
   "question": [
     "You need to develop code to upload images for the product creation project.",
@@ -2494,7 +2521,7 @@
     "- ❌ Option D 'Objects' provides object detection results, not descriptive captions."
   ]
 },{
-  "id": "Q116",
+  "id": "116",
   "type": "single",
   "question": [
     "You are planning the product creation project.",
@@ -2530,7 +2557,7 @@
     "- Options A, C, and D include incorrect steps or incorrect order."
   ]
 },{
-  "id": "Q117",
+  "id": "117",
   "type": "single",
   "question": [
     "Which expression should you use to trigger a manual review of the extracted information by a member of the Consultant-Bookkeeper?"
@@ -2562,7 +2589,7 @@
     "- ❌ Option D checks confidence on a single field only; broader check is better."
   ]
 },{
-  "id": "Q118",
+  "id": "118",
   "type": "single",
   "question": [
     "You are developing the knowledgebase by using Azure Cognitive Search.",
@@ -2596,7 +2623,7 @@
     "- ❌ Option D 'key phrase extraction skill' extracts important phrases but does not affect term equivalency in search."
   ]
 },{
-  "id": "Q119",
+  "id": "119",
   "type": "single",
   "question": [
     "You are developing the knowledgebase by using Azure Cognitive Search.",
@@ -2629,7 +2656,7 @@
     "- ❌ Option C uses document extraction skill which may not be necessary here."
   ]
 },{
-  "id": "Q120",
+  "id": "120",
   "type": "multiple",
   "question": [
     "You are developing the knowledgebase by using Azure Cognitive Search.",
@@ -2668,7 +2695,7 @@
     "- ❌ 'null' is invalid and should not be used."
   ]
 },{
-  "id": "Q121",
+  "id": "121",
   "type": "multiple",
   "question": [
     "You are developing the document processing workflow.",
@@ -2706,7 +2733,7 @@
     "- ❌ Options D and E are for image description, not document processing."
   ]
 },{
-  "id": "Q122",
+  "id": "122",
   "type": "single",
   "question": [
     "You are developing a solution for the Management-Bookkeepers group to meet the document processing requirements.",
@@ -2742,7 +2769,7 @@
     "- Options A, B, and C are out of order or include unrelated steps."
   ]
 },{
-  "id": "Q123",
+  "id": "123",
   "type": "single",
   "question": [
     "You are developing the knowledgebase.",
@@ -2775,7 +2802,7 @@
     "- ❌ Options B, C, and D do not directly improve transcription quality for the knowledgebase."
   ]
 },{
-  "id": "Q124",
+  "id": "124",
   "type": "single",
   "question": [
     "Which Computer Vision client library feature is used to analyze image description?"
@@ -2805,7 +2832,7 @@
     "- ❌ Other options provide metadata or tags, but not a description."
   ]
 },{
-  "id": "Q125",
+  "id": "125",
   "type": "single",
   "question": [
     "Which Computer Vision client library feature is used to analyze image tags?"
@@ -2836,7 +2863,7 @@
   ]
 }
 ,{
-  "id": "Q126",
+  "id": "126",
   "type": "single",
   "question": [
     "How to read a file from local file system?"
@@ -2866,7 +2893,7 @@
     "- ❌ Other options are invalid or do not exist in .NET."
   ]
 },{
-  "id": "Q127",
+  "id": "127",
   "type": "single",
   "question": [
     "Which Azure Service is best suited for analyzing visual content in images & videos to categorize content?"
@@ -2899,7 +2926,7 @@
   ]
 }
 ,{
-  "id": "Q128",
+  "id": "128",
   "type": "single",
   "question": [
     "Which of the following best describes the predictions made by a machine learning model?"
@@ -2927,7 +2954,7 @@
   ]
 }
 ,{
-  "id": "Q129",
+  "id": "129",
   "type": "single",
   "question": [
     "To enhance security, which of the following steps should be taken to protect account keys for Azure AI Services?"
@@ -2959,7 +2986,7 @@
   ]
 }
 ,{
-  "id": "Q130",
+  "id": "130",
   "type": "single",
   "question": [
     "You want to index a collection of text documents, and search them from a mobile application.",
@@ -2991,7 +3018,7 @@
   ]
 }
 ,{
-  "id": "Q131",
+  "id": "131",
   "type": "single",
   "question": [
     "A data scientist has used Azure Machine Learning to train a machine learning model.",
@@ -3020,7 +3047,7 @@
   ]
 }
 ,{
-  "id": "Q132",
+  "id": "132",
   "type": "single",
   "question": [
     "When configuring diagnostic logging for Azure AI Services, which of the below actions are necessary?"
@@ -3048,7 +3075,7 @@
   ]
 }
 ,{
-  "id": "Q133",
+  "id": "133",
   "type": "single",
   "question": [
     "You build a bot by using the Microsoft Bot Framework SDK.",
@@ -3082,7 +3109,7 @@
     "- ❌ Option D is a terminal and does not provide bot validation capabilities."
   ]
 },{
-  "id": "Q134",
+  "id": "134",
   "type": "single",
   "question": [
     "Which Azure Service provides capability to understand human language, sentiment analysis, and language translation?"
@@ -3113,7 +3140,7 @@
   ]
 }
 ,{
-  "id": "Q135",
+  "id": "135",
   "type": "single",
   "question": [
     "When designing a system to provide personalized recommendations, which service would be most appropriate?"
@@ -3141,7 +3168,7 @@
   ]
 }
 ,{
-  "id": "Q136",
+  "id": "136",
   "type": "single",
   "question": [
     "You are building a solution in Azure that will use Azure Cognitive Service for Language to process sensitive customer data.",
@@ -3177,7 +3204,7 @@
   ]
 }
 ,{
-  "id": "Q137",
+  "id": "137",
   "type": "single",
   "question": [
     "When evaluating a solution for compliance with Responsible AI principles, which of the following factors should be considered?"
@@ -3210,7 +3237,7 @@
   ]
 }
 ,{
-  "id": "Q138",
+  "id": "138",
   "type": "single",
   "question": [
     "Which of the following steps are crucial when creating an Azure AI Resource?"
@@ -3238,7 +3265,7 @@
   ]
 }
 ,{
-  "id": "Q139",
+  "id": "139",
   "type": "single",
   "question": [
     "You plan to perform predictive maintenance.",
@@ -3272,7 +3299,7 @@
   ]
 }
 ,{
-  "id": "Q140",
+  "id": "140",
   "type": "single",
   "question": [
     "How are client applications typically granted access to an Azure AI Services endpoint?"
@@ -3300,7 +3327,7 @@
   ]
 }
 ,{
-  "id": "Q141",
+  "id": "141",
   "type": "single",
   "question": [
     "In which format are messages exchanged between a client application and an Azure AI Services resource when using a REST API?"
@@ -3328,7 +3355,7 @@
   ]
 },
 {
-  "id": "Q142",
+  "id": "142",
   "type": "single",
   "question": [
     "You are building a chatbot for a travel agent.",
@@ -3348,7 +3375,7 @@
     "Adaptive dialogs provide more complex conversation flows but prompts are the simplest way to achieve repeated input collection."
   ]
 },{
-  "id": "Q143",
+  "id": "143",
   "type": "multiple",
   "question": [
     "You build a chatbot by using Azure OpenAI Studio.",
@@ -3374,7 +3401,7 @@
   ]
 }
 ,{
-  "id": "Q144",
+  "id": "144",
   "type": "single",
   "question": [
     "You have been assigned the task of using the Face service in Azure to identify the gender and age of individuals in a particular dataset.",
@@ -3411,7 +3438,7 @@
   ]
 }
 ,{
-  "id": "Q145",
+  "id": "145",
   "type": "single",
   "question": [
     "When running code on your computer that connects to Azure AI Services, you receive an error that access is denied.",
@@ -3440,7 +3467,7 @@
     "- ❌ Option C controls user permissions but does not affect IP-based access."
   ]
 },{
-  "id": "Q146",
+  "id": "146",
   "type": "single",
   "question": [
     "When utilizing the 'create compose model' operation within Azure AI Document Intelligence,",
@@ -3472,7 +3499,7 @@
     "- ❌ Options A, B, and C are incorrect because unlabeled models are not supported in composed model creation."
   ]
 },{
-  "id": "Q147",
+  "id": "147",
   "type": "single",
   "question": [
     "You are defining an alert that notifies you when a key regeneration event is recorded in the Activity Log for your Azure AI Services resource.",
@@ -3501,7 +3528,7 @@
     "- ❌ Option B involves querying logs but is more complex and not required for a basic activity log alert."
   ]
 },{
-  "id": "Q148",
+  "id": "148",
   "type": "single",
   "question": [
     "You are building a solution that will detect anomalies in sensor data from the previous 24 hours.",
@@ -3531,7 +3558,7 @@
   ]
 }
 ,{
-  "id": "Q149",
+  "id": "149",
   "type": "single",
   "question": [
     "You are viewing a metric for your Azure AI Services resource in a chart.",
@@ -3560,7 +3587,7 @@
     "- ❌ Cloning duplicates the chart but does not combine it with others."
   ]
 },{
-  "id": "Q150",
+  "id": "150",
   "type": "single",
   "question": [
     "You need to regenerate the primary subscription key for an Azure AI Services resource that an app uses.",
@@ -3590,7 +3617,7 @@
   ]
 },
 {
-  "id": "Q151",
+  "id": "151",
   "type": "multiple",
   "question": [
     "In a multi-turn conversation, which methods would you use to initiate a waterfall dialog,",
@@ -3605,7 +3632,7 @@
   "correctAnswer": ["A", "D"],
   "explanation": "The 'begin' method is used to start a new waterfall dialog by pushing it onto the dialog stack. The 'prompt' method also initiates a dialog to ask the user for input, effectively pushing a dialog on the stack. 'Replace' swaps the current dialog, and 'cancel' ends dialogs."
 },{
-  "id": "Q152",
+  "id": "152",
   "type": "single",
   "question": [
     "You are currently using the Azure Speech service to convert text to speech.",
@@ -3634,7 +3661,7 @@
     "Use Case 3: Output as an in-memory stream → Var 2 (null, audioConfig)."
   ]
 },{
-  "id": "Q153",
+  "id": "153",
   "type": "single",
   "question": [
     "In your organizational application, you have navigation options for various functions across different screens.",
@@ -3656,7 +3683,7 @@
   ]
 }
 ,{
-  "id": "Q154",
+  "id": "154",
   "type": "single",
   "question": [
     "You are developing a monitoring system that will analyze engine sensor data, such as rotation speed, angle, temperature, and pressure.",
@@ -3678,7 +3705,7 @@
 }
 
 ,{
-  "id": "Q155",
+  "id": "155",
   "type": "single",
   "question": [
     "What does RAG with Azure OpenAI enable developers to do?"
@@ -3695,7 +3722,7 @@
   ]
 }
 ,{
-  "id": "Q156",
+  "id": "156",
   "type": "single",
   "question": [
     "What are some recommended prompt engineering techniques when using RAG with Azure OpenAI on your own data?"
@@ -3712,7 +3739,7 @@
     "Using long prompts or excessive conversation history can lead to token overuse or reduced context relevance in RAG setups."
   ]
 },{
-  "id": "Q157",
+  "id": "157",
   "type": "single",
   "question": [
     "What is the recommended way to add data when using Azure OpenAI on your data?"
@@ -3729,7 +3756,7 @@
     "While direct connections to storage accounts are possible, using AI Studio ensures compatibility and optimized indexing for RAG-based scenarios."
   ]
 },{
-  "id": "Q158",
+  "id": "158",
   "type": "single",
   "question": [
     "Members of a group named Management-Bookkeeper must define how to extract tables from the financial documents.",
@@ -3758,7 +3785,7 @@
   ]
 },
 {
-  "id": "Q159",
+  "id": "159",
   "type": "single",
   "question": [
     "You have a factory that produces food products.",
@@ -3783,7 +3810,7 @@
   ]
 }
 ,{
-  "id": "Q160",
+  "id": "160",
   "type": "single",
   "question": [
     "You are designing a content management system.",
@@ -3804,7 +3831,7 @@
     "Other Azure AI services focus on translation, document processing, or language understanding but do not directly optimize the reading experience."
   ]
 },{
-  "id": "Q161",
+  "id": "161",
   "type": "single",
   "question": [
     "You build a language model by using a Language Understanding service.",
@@ -3829,7 +3856,7 @@
   ]
 }
 ,{
-  "id": "Q162",
+  "id": "162",
   "type": "single",
   "question": [
     "You build a language model by using a Language Understanding service.",
@@ -3854,7 +3881,7 @@
   ]
 }
 ,{
-  "id": "Q163",
+  "id": "163",
   "type": "single",
   "question": [
     "You build a language model by using a Language Understanding service.",
@@ -3879,7 +3906,7 @@
   ]
 }
 ,{
-  "id": "Q164",
+  "id": "164",
   "type": "single",
   "question": [
     "You develop an application to identify species of flowers by training a Custom Vision model.",
@@ -3900,7 +3927,7 @@
   ]
 }
 ,{
-  "id": "Q165",
+  "id": "165",
   "type": "single",
   "question": [
     "You develop an application to identify species of flowers by training a Custom Vision model.",
@@ -3921,7 +3948,7 @@
   ]
 }
 ,{
-  "id": "Q166",
+  "id": "166",
   "type": "single",
   "question": [
     "You develop an application to identify species of flowers by training a Custom Vision model.",
@@ -3941,7 +3968,7 @@
     "Creating a new model would reset previous training and lose all prior knowledge, which is not optimal for ongoing improvements."
   ]
 },{
-  "id": "Q167",
+  "id": "167",
   "type": "single",
   "question": [
     "You deploy a web app that is used as a management portal for indexing in Azure Cognitive Search.",
@@ -3978,7 +4005,7 @@
   ]
 }
 ,{
-  "id": "Q168",
+  "id": "168",
   "type": "single",
   "question": [
     "You have an existing Azure Cognitive Search service.",
@@ -4014,7 +4041,7 @@
   ]
 }
 ,{
-  "id": "Q169",
+  "id": "169",
   "type": "multiple",
   "question": [
     "You need to implement a table projection to generate a physical expression of an Azure Cognitive Search index.",
@@ -4039,7 +4066,7 @@
   ]
 }
 ,{
-  "id": "Q170",
+  "id": "170",
   "type": "single",
   "question": [
     "You have the following data sources:",
@@ -4066,7 +4093,7 @@
     "Migrating Sales data to MongoDB API is unnecessary because Core (SQL) API is supported."
   ]
 },{
-  "id": "Q171",
+  "id": "171",
   "type": "single",
   "question": [
     "You are building a bot on a local computer by using the Microsoft Bot Framework.",
@@ -4088,7 +4115,7 @@
     "Creating a Speech service is unrelated to translating the LUIS model."
   ]
 },{
-  "id": "Q172",
+  "id": "172",
   "type": "multiple",
   "question": [
     "You noticed that attempts to connect frequently result in HTTP 403 Forbidden and HTTP 401 Unauthorized errors.",
@@ -4107,7 +4134,7 @@
     "An invalid endpoint usually results in a different error (such as DNS failure or 404 Not Found) rather than 403 Forbidden."
   ]
 },{
-  "id": "Q173",
+  "id": "173",
   "type": "single",
   "question": [
     "You have been asked to develop a real-time speech-to-speech translation prototype that will be showcased in the next corporate webinar.",
@@ -4140,7 +4167,7 @@
     "Immersive Reader is designed to improve text readability and comprehension, not for speech synthesis."
   ]
 },{
-  "id": "Q174",
+  "id": "174",
   "type": "multiple",
   "question": [
     "After your company's call center support staff receive a call, you need to implement an AI solution to identify additional metrics.",
@@ -4165,7 +4192,7 @@
   ]
 }
 ,{
-  "id": "Q175",
+  "id": "175",
   "type": "single",
   "question": [
     "You are training a Conversational Language Understanding (CLU) application.",
@@ -4186,7 +4213,7 @@
   ]
 }
 ,{
-  "id": "Q176",
+  "id": "176",
   "type": "single",
   "question": [
     "Your company decided to use the Azure AI Vision to analyze images for insights extraction.",
@@ -4207,7 +4234,7 @@
     "Contacting Azure support or hiring a firm might help but are not standard methods for initial cost estimation."
   ]
 },{
-  "id": "Q177",
+  "id": "177",
   "type": "single",
   "question": [
     "You developed a chatbot using Conversational Language Understanding (CLU) and published it.",
@@ -4226,32 +4253,6 @@
     "Intents represent the goal or action the user wants to achieve, which the system tries to infer from the utterances.",
     "Entities are specific pieces of information extracted from utterances to help fulfill intents.",
     "Patterns are predefined templates or rules used to match utterances."
-  ]
-},{
-  "id": "Q178",
-  "type": "single",
-  "question": [
-    "You have an Azure Cognitive Search solution and a collection of blog posts that include a category field.",
-    "You need to index the posts. The solution must meet the following requirements:",
-    " - Include the category field in the search results.",
-    " - Ensure that users can search for words in the category field.",
-    " - Ensure that users can perform drill down filtering based on category.",
-    "Which index attributes should you configure for the category field?"
-  ],
-  "options": [
-    { "id": "a", "text": "searchable, sortable, and retrievable" },
-    { "id": "b", "text": "searchable, facetable, and retrievable" },
-    { "id": "c", "text": "retrievable, filterable, and sortable" },
-    { "id": "d", "text": "retrievable, facetable, and key" }
-  ],
-  "correctAnswer": "b",
-  "explanation": [
-    "To meet the requirements:",
-    "- The category field must be searchable so users can search for words in it.",
-    "- It must be retrievable to include the field in search results.",
-    "- It must be facetable to allow drill-down filtering (facets).",
-    "Sortable is not strictly required based on the requirements.",
-    "Key is used for unique identifiers and is not applicable here."
   ]
 }
 

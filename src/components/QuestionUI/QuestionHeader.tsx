@@ -11,7 +11,7 @@ interface QuestionHeaderProps {
 const QuestionHeader = ({ questionNumber, questionText,id , totalQuestions}: QuestionHeaderProps) => {
   return (
     <div className="question-header">
-      <h3>{id} of {totalQuestions}</h3>
+      <h3>Q:{id} of {totalQuestions}</h3>
       <ul>
         {questionText.map((line, idx) => (
           <li key={idx}>{line}</li>
