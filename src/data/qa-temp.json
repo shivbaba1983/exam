@@ -2707,7 +2707,7 @@
   ]
 },{
   "id": "Q122",
-  "type": "drag-sequence",
+  "type": "single",
   "question": [
     "You are developing a solution for the Management-Bookkeepers group to meet the document processing requirements.",
     "The solution must contain a Form Recognizer resource and an Azure web app that hosts the Form Recognizer sample labeling tool.",
