@@ -149,6 +149,7 @@ const QuestionUI = () => {
                 questionNumber={currentPage * questionsPerPage + index + 1}
                 questionText={formatQuestionSimple(question.question)}
                 id={question.id}
+                totalQuestions={filteredQuestions?.length}
               />
 
               <div className="option-container">
