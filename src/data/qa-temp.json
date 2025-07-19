@@ -4254,13 +4254,67 @@
     "Entities are specific pieces of information extracted from utterances to help fulfill intents.",
     "Patterns are predefined templates or rules used to match utterances."
   ]
+},
+{
+  "id": "178",
+  "type": "multiple",
+  "question": [
+    "You are developing a photo application that will find photos of a person based on a sample image using the Azure Face API.",
+    "You need to create a POST request to find the matching photos.",
+    "How should you complete the request?",
+    "",
+    "POST {Endpoint}/face/v1.0/_______",
+    "",
+    "Request Body",
+    "{",
+    "  \"faceId\": \"e5c24a82-6845-4031-9d5d-978d£9175426\",",
+    "  \"largeFaceListId\": \"sample list\",",
+    "  \"maxNumOfCandidatesReturned\": 10,",
+    "  \"mode\": \"_______\"",
+    "}"
+  ],
+  "options": [
+    { "id": "a", "text": "POST {Endpoint}/face/v1.0/detect" },
+    { "id": "b", "text": "POST {Endpoint}/face/v1.0/group" },
+    { "id": "c", "text": "POST {Endpoint}/face/v1.0/findsimilars" },
+    { "id": "d", "text": "POST {Endpoint}/face/v1.0/verify" },
+    { "id": "e", "text": "\"mode\": \"matchPerson\"" },
+    { "id": "f", "text": "\"mode\": \"matchFace\"" }
+  ],
+  "correctAnswer": ["a", "e"],
+  "explanation": [
+    "`/detect` is the correct endpoint to extract faceId from the image. This is the first required step in identifying or finding similar faces.",
+    "The `mode` value should be `matchPerson` when the goal is to match a face to a person in a large face list."
+  ]
 }
-
-
-
-
-
-
+,{
+  "id": "179",
+  "type": "drag-sequence",
+  "question": [
+    "You plan to use containerized versions of the Anomaly Detector API on local devices for testing and in on-premises datacenters.",
+    "You need to ensure that the containerized deployments meet the following requirements:",
+    "- Prevent billing and API information from being stored in the command-line histories of the devices that run the container.",
+    "- Control access to the container images by using Azure role-based access control (Azure RBAC).",
+    "",
+    "Which four actions should you perform in sequence?",
+    "NOTE: More than one order of answer choices is correct. You will receive credit for any of the correct orders you select."
+  ],
+  "options": [
+    { "id": "a", "text": "Create a custom Dockerfile." },
+    { "id": "b", "text": "Pull the Anomaly Detector container image." },
+    { "id": "c", "text": "Distribute a docker run script." },
+    { "id": "d", "text": "Push the image to an Azure container registry." },
+    { "id": "e", "text": "Build the image." },
+    { "id": "f", "text": "Push the image to Docker Hub." }
+  ],
+  "correctAnswer": ["b", "a", "d", "c"],
+  "explanation": [
+    "1. Pull the Anomaly Detector container image from Microsoft Container Registry as a base image.",
+    "2. Create a custom Dockerfile to configure secure access and avoid leaking billing data via CLI.",
+    "3. Push the customized image to Azure Container Registry, which supports Azure RBAC.",
+    "4. Distribute a docker run script to automate the container startup without exposing sensitive values."
+  ]
+}
 
 
 
