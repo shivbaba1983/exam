@@ -4314,7 +4314,27 @@
     "3. Push the customized image to Azure Container Registry, which supports Azure RBAC.",
     "4. Distribute a docker run script to automate the container startup without exposing sensitive values."
   ]
+},{
+  "id": "q180",
+  "type": "multiple",
+  "question": [
+    "You need to build a solution that will use optical character recognition (OCR) to scan sensitive documents by using the Computer Vision API.",
+    "The solution must NOT be deployed to the public cloud.",
+    "What should you do?"
+  ],
+  "options": [
+    { "id": "a", "text": "Build an on-premises web app to query the Computer Vision endpoint." },
+    { "id": "b", "text": "Host the Computer Vision endpoint in a container on an on-premises server." },
+    { "id": "c", "text": "Host an exported Open Neural Network Exchange (ONNX) model on an on-premises server." },
+    { "id": "d", "text": "Build an Azure web app to query the Computer Vision." }
+  ],
+  "correctAnswer": ["b"],
+  "explanation": [
+    "The Computer Vision API supports containerized deployment, allowing you to run the OCR functionality on-premises without exposing data to the public cloud.",
+    "This is ideal for scanning sensitive documents in secure environments."
+  ]
 }
+
 
 
 
