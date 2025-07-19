@@ -27,14 +27,13 @@ const QuestionUI = () => {
 
   const questionRefs = useRef<{ [key: string]: HTMLDivElement | null }>({});
 
-  const filteredQuestions = questionsData.filter(q =>
-    (Array.isArray(q.question)
-      ? q.question.join(' ')
-      : q.question
-    )
-      .toLowerCase()
-      .includes(searchTerm.toLowerCase())
-  );
+  const filteredQuestions = questionsData.filter(q => {
+    const questionText = Array.isArray(q.question) ? q.question.join(' ') : q.question;
+    const optionsText = q.options?.map(opt => opt.text).join(' ') || '';
+
+    const fullText = (questionText + ' ' + optionsText).toLowerCase();
+    return fullText.includes(searchTerm.toLowerCase());
+  });
 
   const totalPages = Math.ceil(filteredQuestions.length / questionsPerPage);
   const pageQuestions = filteredQuestions.slice(
@@ -89,38 +88,38 @@ const QuestionUI = () => {
         onJump={handlePageJump}
       /> */}
       {/* Top bar with search and pagination side by side */}
-<div className="top-bar">
-  <div className="pagination-wrapper">
-    <Pagination
-      currentIndex={currentPage}
-      total={totalPages}
-      onJump={handlePageJump}
-    />
-  </div>
+      <div className="top-bar">
+        <div className="pagination-wrapper">
+          <Pagination
+            currentIndex={currentPage}
+            total={totalPages}
+            onJump={handlePageJump}
+          />
+        </div>
 
-  <div className="search-wrapper">
-    <input
-      type="text"
-      placeholder="Search questions..."
-      value={searchTerm}
-      onChange={e => setSearchTerm(e.target.value)}
-      onKeyDown={e => {
-        if (e.key === 'Enter') setCurrentPage(0);
-      }}
-      aria-label="Search questions"
-      className="top-search"
-    />
-    {searchTerm && (
-      <button
-        className="clear-search"
-        onClick={() => setSearchTerm('')}
-        aria-label="Clear search"
-      >
-        ×
-      </button>
-    )}
-  </div>
-</div>
+        <div className="search-wrapper">
+          <input
+            type="text"
+            placeholder="Search questions..."
+            value={searchTerm}
+            onChange={e => setSearchTerm(e.target.value)}
+            onKeyDown={e => {
+              if (e.key === 'Enter') setCurrentPage(0);
+            }}
+            aria-label="Search questions"
+            className="top-search"
+          />
+          {searchTerm && (
+            <button
+              className="clear-search"
+              onClick={() => setSearchTerm('')}
+              aria-label="Clear search"
+            >
+              ×
+            </button>
+          )}
+        </div>
+      </div>
 
       <div className="question-ui">
 

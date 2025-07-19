@@ -4315,7 +4315,7 @@
     "4. Distribute a docker run script to automate the container startup without exposing sensitive values."
   ]
 },{
-  "id": "q180",
+  "id": "180",
   "type": "multiple",
   "question": [
     "You need to build a solution that will use optical character recognition (OCR) to scan sensitive documents by using the Computer Vision API.",
@@ -4333,7 +4333,28 @@
     "The Computer Vision API supports containerized deployment, allowing you to run the OCR functionality on-premises without exposing data to the public cloud.",
     "This is ideal for scanning sensitive documents in secure environments."
   ]
+},{
+  "id": "181",
+  "type": "single",
+  "question": [
+    "What Azure OpenAI base model can you deploy to access the capabilities of ChatGPT?",
+    "",
+    "A. text‑davinci‑008",
+    "B. gpt‑3.5‑turbo",
+    "C. text‑mbadding‑ada‑002"
+  ],
+  "options": [
+    { "id": "a", "text": "text‑davinci‑008" },
+    { "id": "b", "text": "gpt‑3.5‑turbo" },
+    { "id": "c", "text": "text‑mbadding‑ada‑002" }
+  ],
+  "correctAnswer": "b",
+  "explanation": [
+    "The correct base model for ChatGPT-like conversational capabilities in Azure OpenAI is **gpt‑3.5‑turbo**.",
+    "The other two options are either invalid or do not support multi-turn chat functionality."
+  ]
 }
+
 
 
 
