@@ -4307,7 +4307,7 @@
     { "id": "e", "text": "Build the image." },
     { "id": "f", "text": "Push the image to Docker Hub." }
   ],
-  "correctAnswer": ["b", "a", "d", "c"],
+  "correctAnswer": ["b", "a", "e", "d"],
   "explanation": [
     "1. Pull the Anomaly Detector container image from Microsoft Container Registry as a base image.",
     "2. Create a custom Dockerfile to configure secure access and avoid leaking billing data via CLI.",
@@ -4353,7 +4353,31 @@
     "The correct base model for ChatGPT-like conversational capabilities in Azure OpenAI is **gpt‑3.5‑turbo**.",
     "The other two options are either invalid or do not support multi-turn chat functionality."
   ]
+},{
+  "id": "182",
+  "type": "multiple",
+  "question": [
+    "You build a chatbot that uses the Azure OpenAI GPT-3.5 model.",
+    "You need to improve the quality of the responses from the chatbot.",
+    "The solution must minimize development effort.",
+    "What are two ways to achieve the goal?",
+    "Each correct answer presents a complete solution."
+  ],
+  "options": [
+    { "id": "a", "text": "Fine-tune the model" },
+    { "id": "b", "text": "Provide grounding content" },
+    { "id": "c", "text": "Add sample request/response pair" },
+    { "id": "d", "text": "Retrain the language model by using your own data" },
+    { "id": "e", "text": "Train a custom large language model (LLM)" }
+  ],
+  "answer": ["b", "c"],
+  "explanation": [
+    "Providing grounding content improves accuracy by feeding relevant knowledge into the model without additional training.",
+    "Adding sample request/response pairs (few-shot prompting) steers the model behavior effectively with minimal effort.",
+    "Fine-tuning, retraining, and building custom LLMs require significant time, data, and infrastructure, which contradicts the requirement to minimize development effort."
+  ]
 }
+
 
 
 
