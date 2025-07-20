@@ -615,13 +615,23 @@
     "https://www.videoindexer.ai/embed/pla.... &captions= ..........................."
   ],
   "options": [
-    { "id": "A", "text": "widgets=people, search, controls=search; showcaptions=true, captions=en-US" },
-    { "id": "B", "text": "widgets=false, controls=search; showcaptions=true, captions=en-US" },
-    { "id": "C", "text": "widgets=people,keywords, controls=search; showcaptions=true, captions=en-US" }
+    {
+      "id": "A",
+      "text": "widgets=people, search, controls=search; showcaptions=true, captions=en-US"
+    },
+    {
+      "id": "B",
+      "text": "widgets=false, controls=search; showcaptions=true, captions=en-US"
+    },
+    {
+      "id": "C",
+      "text": "widgets=people,keywords, controls=search; showcaptions=true, captions=en-US"
+    }
   ],
   "correctAnswer": "C",
-  "explanation": "Option C correctly configures the Insights widget to show people and keywords widgets with search controls, while the Player widget is set to show captions in US English."
-},{
+  "explanation": "Option C correctly configures both widgets to meet the specified requirements:\n\n- `widgets=people,keywords` ensures that the Cognitive Insights widget displays identified people and keyword data.\n- `controls=search` enables the keyword search functionality within the video content.\n- `showcaptions=true` and `captions=en-US` in the Player widget display captions in US English.\n\nThis combination satisfies all three requirements: searchable video content, named people identification, and US English captions."
+}
+,{
   "id": "35",
   "type": "single",
   "question": [
@@ -3649,10 +3659,10 @@
     "Take a moment to review each use case and map them to the corresponding variables to meet the objective."
   ],
   "options": [
-    { "id": "a", "text": "Use Case Var 3; Use Case 2a 2; Use Case Sar 1" },
-    { "id": "b", "text": "Use Case Var 3; Use Case 2: Var 1; Use Case 3: Var 2" },
-    { "id": "c", "text": "Use Case Var 3; Use Case 2:Var 1; Use Case ar 2" },
-    { "id": "d", "text": "Use Case Var 3; Use Case 2Var 4; Use Case Sar 2" }
+    { "id": "a", "text": "Use Case 1:Var 3; Use Case 2:Var 2; Use Case 3:Var 1" },
+    { "id": "a", "text": "Use Case 1:Var 3; Use Case 2:Var 4; Use Case 3:Var 1" },
+    { "id": "a", "text": "Use Case 1:Var 3; Use Case 2:Var 1; Use Case 3:Var 2" },
+    { "id": "a", "text": "Use Case 1:Var 3; Use Case 2:Var 4; Use Case 3:Var 2" }
   ],
   "correctAnswer": "b",
   "explanation": [
