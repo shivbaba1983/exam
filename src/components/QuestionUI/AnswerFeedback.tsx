@@ -8,7 +8,7 @@ interface AnswerFeedbackProps {
 
 const AnswerFeedback = ({ isCorrect, explanation }: AnswerFeedbackProps) => (
   <div className={isCorrect ? 'correct' : 'incorrect'}>
-    {isCorrect ? `✅ Correct: ${explanation}` : `❌ Incorrect. `}
+    {isCorrect ? `✅ Correct: ${explanation}` : `❌ Incorrect. Right answer is- ${explanation}`}
   </div>
 );
 
