@@ -3660,9 +3660,9 @@
   ],
   "options": [
     { "id": "a", "text": "Use Case 1:Var 3; Use Case 2:Var 2; Use Case 3:Var 1" },
-    { "id": "a", "text": "Use Case 1:Var 3; Use Case 2:Var 4; Use Case 3:Var 1" },
-    { "id": "a", "text": "Use Case 1:Var 3; Use Case 2:Var 1; Use Case 3:Var 2" },
-    { "id": "a", "text": "Use Case 1:Var 3; Use Case 2:Var 4; Use Case 3:Var 2" }
+    { "id": "b", "text": "Use Case 1:Var 3; Use Case 2:Var 4; Use Case 3:Var 1" },
+    { "id": "c", "text": "Use Case 1:Var 3; Use Case 2:Var 1; Use Case 3:Var 2" },
+    { "id": "d", "text": "Use Case 1:Var 3; Use Case 2:Var 4; Use Case 3:Var 2" }
   ],
   "correctAnswer": "b",
   "explanation": [
