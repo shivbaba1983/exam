@@ -4291,12 +4291,17 @@
     { "id": "e", "text": "\"mode\": \"matchPerson\"" },
     { "id": "f", "text": "\"mode\": \"matchFace\"" }
   ],
-  "correctAnswer": ["a", "e"],
+  "correctAnswer": ["c", "f"],
   "explanation": [
-    "`/detect` is the correct endpoint to extract faceId from the image. This is the first required step in identifying or finding similar faces.",
-    "The `mode` value should be `matchPerson` when the goal is to match a face to a person in a large face list."
+    "✅ Option c (POST {Endpoint}/face/v1.0/findsimilars) is correct because this is the appropriate Azure Face API endpoint used to find similar faces based on a given faceId against a face list or large face list.",
+    "✅ Option f (\"mode\": \"matchFace\") is correct because `matchFace` is the appropriate mode when you are looking for visual similarity, which is the case for matching a face image in a photo application.",
+    "❌ Option a (detect) is used to detect faces and retrieve faceIds, not to match them.",
+    "❌ Option b (group) is used to group similar faces automatically, not to match against a known list.",
+    "❌ Option d (verify) is used to determine whether two faces belong to the same person, which is not the goal here.",
+    "❌ Option e (\"mode\": \"matchPerson\") is not a valid value for the `mode` field in the Face API. Only `matchFace` is a supported value."
   ]
 }
+
 ,{
   "id": "179",
   "type": "drag-sequence",
