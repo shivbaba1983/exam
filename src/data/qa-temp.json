@@ -4385,7 +4385,7 @@
     { "id": "d", "text": "Retrain the language model by using your own data" },
     { "id": "e", "text": "Train a custom large language model (LLM)" }
   ],
-  "answer": ["b", "c"],
+  "correctAnswer": ["b", "c"],
   "explanation": [
     "Providing grounding content improves accuracy by feeding relevant knowledge into the model without additional training.",
     "Adding sample request/response pairs (few-shot prompting) steers the model behavior effectively with minimal effort.",
