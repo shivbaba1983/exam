@@ -1569,31 +1569,23 @@
   "explanation": "To train custom models in Speech Studio, you should upload a .zip file that includes multiple .wav audio files along with a transcript file in the specified format. Other formats like .wma or Word documents are not supported for training."
 },{
   "id": "80",
-  "type": "multiple",
+  "type": "single",
   "question": [
     "What should you upload to a voice talent profile for a custom neural voice in a retail self-service check-out system?"
   ],
   "options": [
-    {
-      "id": "a",
-      "text": "A five-minute .wmp or .mp3 file of the voice talent describing the retailer."
-    },
-    {
-      "id": "b",
-      "text": "A .zip file that contains 60-second .wav files and the associated transcripts as .txt files."
-    },
-    {
-      "id": "c",
-      "text": "A five-minute .flac audio file and the associated transcript as a .txt file."
-    },
-    {
-      "id": "d",
-      "text": "A .wav or .mp3 file of the voice talent consenting to the creation of a synthetic version of their voice."
-    }
+    { "id": "a", "text": "A five-minute .wmp or .mp3 file of the voice talent describing the retailer." },
+    { "id": "b", "text": "A .zip file that contains 60-second .wav files and the associated transcripts as .txt files." },
+    { "id": "c", "text": "A five-minute .flac audio file and the associated transcript as a .txt file." },
+    { "id": "d", "text": "A .wav or .mp3 file of the voice talent consenting to the creation of a synthetic version of their voice." }
   ],
-  "correctAnswer": ["b"],
-  "explanation": "For Custom Neural Voice training in Azure, you must upload a .zip file containing 60-second .wav audio clips and corresponding .txt transcript files. This structured dataset is required to train the synthetic voice model accurately."
-},{
+  "correctAnswer": "d",
+  "explanation": [
+    "To proceed with creating a Custom Neural Voice, Microsoft requires the voice talent to provide explicit consent.",
+    "This consent must be recorded in an audio format such as .wav or .mp3 and uploaded as part of the voice talent profile."
+  ]
+}
+,{
   "id": "81",
   "type": "multiple",
   "question": [
@@ -4390,6 +4382,31 @@
     "Providing grounding content improves accuracy by feeding relevant knowledge into the model without additional training.",
     "Adding sample request/response pairs (few-shot prompting) steers the model behavior effectively with minimal effort.",
     "Fine-tuning, retraining, and building custom LLMs require significant time, data, and infrastructure, which contradicts the requirement to minimize development effort."
+  ]
+},{
+  "id": "183",
+  "type": "drag-sequence",
+  "question": [
+    "You're developing an Azure OpenAI-powered content generation tool.",
+    "You have to configure the model to write press releases.",
+    "The model should be hosted for web application access.",
+    "The solution must minimize development effort.",
+    "",
+    "Which three actions should you perform in sequence in Azure OpenAI Studio?"
+  ],
+  "options": [
+    { "id": "1", "text": "Create a deployment that uses the text-embedding-ada-002 model." },
+    { "id": "2", "text": "Apply the Customer Service Assistant system message template." },
+    { "id": "3", "text": "Apply the Marketing Writing Assistant system message template." },
+    { "id": "4", "text": "Create a deployment that uses the GPT-35 Turbo model." },
+    { "id": "5", "text": "Deploy the solution to a new web app." },
+    { "id": "6", "text": "Apply the Default system message template." }
+  ],
+  "correctAnswer": ["4", "3", "5"],
+  "explanation": [
+    "Step 1: GPT-35 Turbo is the appropriate model for generating high-quality natural language like press releases.",
+    "Step 2: The 'Marketing Writing Assistant' template aligns the model with press release writing behavior.",
+    "Step 3: Deploying to a web app provides quick access with minimal development effort."
   ]
 }
 
