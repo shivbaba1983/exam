@@ -19,6 +19,7 @@ const FileDiffViewer=()=> {
 
   return (
     <div className="p-4 space-y-4">
+       <h1 className="text-xl font-bold p-4">File Comparison Tool</h1>
       <div className="flex flex-col sm:flex-row gap-4">
         <input type="file" accept=".txt,.json,.ts,.js,.scss,.cs" onChange={(e) => handleFileChange(e, setFile1Content)} />
         <input type="file" accept=".txt,.json,.ts,.js,.scss,.cs" onChange={(e) => handleFileChange(e, setFile2Content)} />
