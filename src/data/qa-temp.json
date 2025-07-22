@@ -3921,13 +3921,14 @@
     { "id": "a", "text": "Yes" },
     { "id": "b", "text": "No" }
   ],
-  "correctAnswer": "a",
+  "correctAnswer": "b",
   "explanation": [
-    "Yes, the Smart Labeler tool in Custom Vision can automatically suggest tags for newly uploaded images based on previously trained data.",
-    "This helps speed up the labeling process for new flower species, especially when similar tags or features already exist in the project.",
-    "It is an efficient and supported method for expanding your classifier with minimal manual labeling effort."
+    "No, using the Smart Labeler tool helps automate the tagging process for new images, but it does not retrain the model.",
+    "To ensure the classifier can identify the new flower species, you must upload and tag the images, then retrain the model.",
+    "Without retraining, the model will not learn to recognize the new species."
   ]
 }
+
 ,{
   "id": "165",
   "type": "single",

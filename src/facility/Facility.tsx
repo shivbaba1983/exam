@@ -5,6 +5,7 @@ import CopyRenameImages from './../components/RenameImages';
 import ImageOCRApp from './../components/ImageOCRApp';
 import FolderOCRApp from './../components/FolderOCRApp';
 import QuestionForm from './../components/QuestionForm';
+import  FileDiffViewer  from './../filedifference/FileDiffViewer';
 const Facility = ({ }) => {
 
     return (<div>
@@ -16,7 +17,9 @@ const Facility = ({ }) => {
         <CopyRenameImages/>
         <ImageOCRApp/>
         <FolderOCRApp/>
+           <FileDiffViewer/>
           <QuestionForm />
+       
     </div>)
 }
 
