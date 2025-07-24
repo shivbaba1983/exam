@@ -4409,7 +4409,38 @@
     "Step 2: The 'Marketing Writing Assistant' template aligns the model with press release writing behavior.",
     "Step 3: Deploying to a web app provides quick access with minimal development effort."
   ]
+},{
+  "id": "184",
+  "type": "multiple",
+  "question": [
+    "You are building an app that allows users to upload artwork and photographs.",
+    "The app should categorize each uploaded image as either a photograph or a drawing, and it should also generate a brief caption that describes the content of the image.",
+    "",
+    "Requirement:",
+    "* Categorize the image as either a photograph or a drawing.",
+    "* Generate a caption for the image.",
+    "* Minimize development effort.",
+    "",
+    "Question:",
+    "Which two services should you use to meet the requirements?"
+  ],
+  "options": [
+    { "id": "a", "text": "image classification in Custom Vision" },
+    { "id": "b", "text": "image caption in Azure AI Vision" },
+    { "id": "c", "text": "object detection in Custom Vision" },
+    { "id": "d", "text": "image type detection in Azure AI Vision" },
+    { "id": "e", "text": "content tags in Azure AI Vision" }
+  ],
+  "correctAnswer": ["b", "d"],
+  "explanation": [
+    "✅ Option b (image caption in Azure AI Vision) is correct because it generates natural-language descriptions of image content.",
+    "✅ Option d (image type detection in Azure AI Vision) is correct because it can categorize an image as a photograph or a drawing.",
+    "❌ Option a is incorrect because Custom Vision requires training your own model, which adds development effort.",
+    "❌ Option c is incorrect because object detection identifies objects but does not provide type classification or captions.",
+    "❌ Option e is incorrect because content tags are not full captions and don’t distinguish image types."
+  ]
 }
+
 
 
 
