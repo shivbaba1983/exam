@@ -28,8 +28,112 @@
       background-color: #e6f0fb;
     }
   }
+.ellipsis {
+  padding: 6px 8px;
+  font-size: 0.9rem;
+  color: #888;
+  user-select: none;
+}
+  .page-jump {.pagination {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+  padding: 10px;
+
+  .page-nav,
+  .page-number {
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    background: white;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.2s ease;
+    white-space: nowrap;
+
+    &.active {
+      background-color: #0078d4;
+      color: white;
+      font-weight: bold;
+      cursor: default;
+    }
+
+    &:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+
+    &:hover:not(:disabled):not(.active) {
+      background-color: #e6f0fb;
+    }
+  }
 
   .page-jump {
+    display: flex;
+    align-items: center;
+    margin-left: 12px;
+    flex-wrap: wrap;
+
+    label {
+      font-size: 0.9rem;
+      color: #333;
+    }
+
+    input {
+      margin-left: 6px;
+      padding: 4px 8px;
+      font-size: 0.9rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      width: 60px;
+      transition: border-color 0.2s ease;
+
+      &:focus {
+        outline: none;
+        border-color: #0078d4;
+        box-shadow: 0 0 5px rgba(0, 120, 212, 0.5);
+      }
+    }
+  }
+
+  .ellipsis {
+    padding: 6px 8px;
+    color: #999;
+    font-size: 0.9rem;
+  }
+}
+
+// Responsive tweaks for small glass
+@media (max-width: 600px) {
+  .pagination {
+    gap: 4px;
+    justify-content: center;
+
+    .page-number,
+    .page-nav {
+      padding: 4px 8px;
+      font-size: 0.8rem;
+      flex-shrink: 0;
+    }
+
+    .page-jump {
+      width: 100%;
+      justify-content: center;
+      margin-top: 10px;
+
+      label {
+        font-size: 0.8rem;
+      }
+
+      input {
+        width: 50px;
+        font-size: 0.8rem;
+      }
+    }
+  }
+}
+
     display: flex;
     align-items: center;
     margin-left: 12px;

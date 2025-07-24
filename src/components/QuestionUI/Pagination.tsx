@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './Pagination.scss';
 
 interface PaginationProps {
@@ -12,7 +12,10 @@ const Pagination = ({ currentIndex, total, onJump }: PaginationProps) => {
   let start = 0;
 
   if (currentIndex >= maxVisible / 2) {
-    start = Math.min(currentIndex - Math.floor(maxVisible / 2), total - maxVisible);
+    start = Math.min(
+      currentIndex - Math.floor(maxVisible / 2),
+      total - maxVisible
+    );
     if (start < 0) start = 0;
   }
 
@@ -23,19 +26,16 @@ const Pagination = ({ currentIndex, total, onJump }: PaginationProps) => {
 
   const [inputValue, setInputValue] = useState((currentIndex + 1).toString());
 
-  // Validate and jump to page (0-based index)
   const jumpToPage = (value: string) => {
     const num = Number(value);
     if (!isNaN(num) && num >= 1 && num <= total) {
       onJump(num - 1);
     } else {
-      // Reset to current page if invalid input
       setInputValue((currentIndex + 1).toString());
     }
   };
 
-  // Update textbox on page change from outside
-  React.useEffect(() => {
+  useEffect(() => {
     setInputValue((currentIndex + 1).toString());
   }, [currentIndex]);
 
@@ -49,6 +49,8 @@ const Pagination = ({ currentIndex, total, onJump }: PaginationProps) => {
         First
       </button>
 
+      {start > 0 && <span className="ellipsis">...</span>}
+
       {pages.map((i) => (
         <button
           key={i}
@@ -59,6 +61,8 @@ const Pagination = ({ currentIndex, total, onJump }: PaginationProps) => {
         </button>
       ))}
 
+      {start + maxVisible < total && <span className="ellipsis">...</span>}
+
       <button
         className="page-nav"
         onClick={() => onJump(total - 1)}
@@ -67,9 +71,8 @@ const Pagination = ({ currentIndex, total, onJump }: PaginationProps) => {
         Last
       </button>
 
-      {/* New page number input */}
       <div className="page-jump">
-        <label htmlFor="pageInput">Go to page: </label>
+        <label htmlFor="pageInput">Go to page:</label>
         <input
           id="pageInput"
           type="number"
@@ -81,10 +84,9 @@ const Pagination = ({ currentIndex, total, onJump }: PaginationProps) => {
           onKeyDown={(e) => {
             if (e.key === 'Enter') {
               jumpToPage(inputValue);
-              e.currentTarget.blur(); // remove focus after enter
+              e.currentTarget.blur();
             }
           }}
-          style={{ width: '60px', marginLeft: '5px' }}
         />
       </div>
     </div>
