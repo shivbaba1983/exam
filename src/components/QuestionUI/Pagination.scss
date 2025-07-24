@@ -1,40 +1,4 @@
 .pagination {
- // display: flex;
-  align-items: center;
-  gap: 8px;
-
-  .page-nav,
-  .page-number {
-    padding: 6px 12px;
-    border: 1px solid #ccc;
-    background: white;
-    cursor: pointer;
-    border-radius: 4px;
-    transition: background-color 0.2s ease;
-
-    &.active {
-      background-color: #0078d4;
-      color: white;
-      font-weight: bold;
-      cursor: default;
-    }
-
-    &:disabled {
-      opacity: 0.5;
-      cursor: not-allowed;
-    }
-
-    &:hover:not(:disabled):not(.active) {
-      background-color: #e6f0fb;
-    }
-  }
-.ellipsis {
-  padding: 6px 8px;
-  font-size: 0.9rem;
-  color: #888;
-  user-select: none;
-}
-  .page-jump {.pagination {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
@@ -69,19 +33,27 @@
     }
   }
 
+  .ellipsis {
+    padding: 6px 8px;
+    font-size: 0.9rem;
+    color: #888;
+    user-select: none;
+  }
+
   .page-jump {
     display: flex;
     align-items: center;
+    gap: 6px;
     margin-left: 12px;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
 
     label {
       font-size: 0.9rem;
       color: #333;
+      white-space: nowrap;
     }
 
     input {
-      margin-left: 6px;
       padding: 4px 8px;
       font-size: 0.9rem;
       border: 1px solid #ccc;
@@ -96,19 +68,12 @@
       }
     }
   }
-
-  .ellipsis {
-    padding: 6px 8px;
-    color: #999;
-    font-size: 0.9rem;
-  }
 }
 
-// Responsive tweaks for small glass
+// ✅ Responsive tweaks for small glass
 @media (max-width: 600px) {
   .pagination {
     gap: 4px;
-    justify-content: center;
 
     .page-number,
     .page-nav {
@@ -118,72 +83,17 @@
     }
 
     .page-jump {
-      width: 100%;
-      justify-content: center;
-      margin-top: 10px;
-
-      label {
-        font-size: 0.8rem;
-      }
-
-      input {
-        width: 50px;
-        font-size: 0.8rem;
-      }
-    }
-  }
-}
-
-    display: flex;
-    align-items: center;
-    margin-left: 12px;
-
-    label {
-      font-size: 0.9rem;
-      color: #333;
-    }
-
-    input {
-      margin-left: 6px;
-      padding: 4px 8px;
-      font-size: 0.9rem;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-      width: 60px;
-      transition: border-color 0.2s ease;
-
-      &:focus {
-        outline: none;
-        border-color: #0078d4;
-        box-shadow: 0 0 5px rgba(0, 120, 212, 0.5);
-      }
-    }
-  }
-}
-@media (max-width: 600px) {
-  .pagination {
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 4px;
-
-    .page-number,
-    .page-nav {
-      padding: 6px 8px;
-      font-size: 0.85rem;
-    }
-
-    .page-jump {
-      width: 100%;
-      justify-content: center;
-      margin-top: 8px;
+      flex-wrap: nowrap;
+      margin-top: 6px;
+      gap: 4px;
 
       label {
         font-size: 0.85rem;
       }
 
       input {
-        font-size: 0.85rem;
         width: 50px;
+        font-size: 0.85rem;
       }
     }
   }

@@ -8,22 +8,6 @@ interface PaginationProps {
 }
 
 const Pagination = ({ currentIndex, total, onJump }: PaginationProps) => {
-  const maxVisible = 10;
-  let start = 0;
-
-  if (currentIndex >= maxVisible / 2) {
-    start = Math.min(
-      currentIndex - Math.floor(maxVisible / 2),
-      total - maxVisible
-    );
-    if (start < 0) start = 0;
-  }
-
-  const pages = [];
-  for (let i = start; i < Math.min(total, start + maxVisible); i++) {
-    pages.push(i);
-  }
-
   const [inputValue, setInputValue] = useState((currentIndex + 1).toString());
 
   const jumpToPage = (value: string) => {
@@ -39,6 +23,17 @@ const Pagination = ({ currentIndex, total, onJump }: PaginationProps) => {
     setInputValue((currentIndex + 1).toString());
   }, [currentIndex]);
 
+  const prev = Math.max(currentIndex - 1, 0);
+  const next = Math.min(currentIndex + 1, total - 1);
+
+  const displayPages = Array.from(
+    new Set([
+      currentIndex - 1,
+      currentIndex,
+      currentIndex + 1,
+    ])
+  ).filter((i) => i >= 0 && i < total);
+
   return (
     <div className="pagination">
       <button
@@ -49,9 +44,7 @@ const Pagination = ({ currentIndex, total, onJump }: PaginationProps) => {
         First
       </button>
 
-      {start > 0 && <span className="ellipsis">...</span>}
-
-      {pages.map((i) => (
+      {displayPages.map((i) => (
         <button
           key={i}
           className={`page-number ${i === currentIndex ? 'active' : ''}`}
@@ -60,8 +53,6 @@ const Pagination = ({ currentIndex, total, onJump }: PaginationProps) => {
           {i + 1}
         </button>
       ))}
-
-      {start + maxVisible < total && <span className="ellipsis">...</span>}
 
       <button
         className="page-nav"
