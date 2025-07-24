@@ -4439,7 +4439,37 @@
     "❌ Option c is incorrect because object detection identifies objects but does not provide type classification or captions.",
     "❌ Option e is incorrect because content tags are not full captions and don’t distinguish image types."
   ]
+},{
+  "id": "185",
+  "type": "single",
+  "question": [
+    "You have a collection of 50,000 scanned documents that contain text.",
+    "You plan to make the text available through Azure Cognitive Search.",
+    "You need to configure an enrichment pipeline to perform optical character recognition (OCR) and text analytics.",
+    "The solution must minimize costs.",
+    "",
+    "What should you attach to the skillset?",
+    "",
+    "A. a new Computer Vision resource",
+    "B. a free (Limited enrichments) Cognitive Services resource",
+    "C. an Azure Machine Learning Designer pipeline",
+    "D. a new Cognitive Services resource that uses the S0 pricing tier"
+  ],
+  "options": [
+    { "id": "a", "text": "a new Computer Vision resource" },
+    { "id": "b", "text": "a free (Limited enrichments) Cognitive Services resource" },
+    { "id": "c", "text": "an Azure Machine Learning Designer pipeline" },
+    { "id": "d", "text": "a new Cognitive Services resource that uses the S0 pricing tier" }
+  ],
+  "correctAnswer": "d",
+  "explanation": [
+    "The free (Limited enrichments) tier supports only 1,000 text records per month and is not suitable for processing 50,000 documents.",
+    "Standalone Computer Vision resources cannot be attached directly to an Azure Cognitive Search skillset.",
+    "Azure Machine Learning is unnecessary and expensive for basic OCR and text analytics tasks.",
+    "The S0-tier Cognitive Services resource supports scalable document enrichment and is required for this workload."
+  ]
 }
+
 
 
 
