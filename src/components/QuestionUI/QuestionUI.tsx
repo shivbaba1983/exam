@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import questionsData from './../../data/qa-temp.json';
+import questionsData from './../../data/qa.json';
 import QuestionHeader from './QuestionHeader';
 import OptionsRenderer from './OptionsRenderer';
 import Controls from './Controls';
