@@ -1,11 +1,11 @@
 import React, { useState, useEffect, useRef } from 'react';
-import questionsData from './../../data/qa.json';
+import questionsData from '../../data/qa.json';
 import QuestionHeader from './QuestionHeader';
 import OptionsRenderer from './OptionsRenderer';
 import Controls from './Controls';
 import Pagination from './Pagination';
 import AnswerFeedback from './AnswerFeedback';
-import './QuestionUI.scss';
+import './QuestionMaster.scss';
 
 const formatQuestionSimple = (text: string | string[]): string[] => {
   if (Array.isArray(text)) {
@@ -18,7 +18,7 @@ const formatQuestionSimple = (text: string | string[]): string[] => {
     .filter(Boolean);
 };
 
-const QuestionUI = () => {
+const QuestionMaster = () => {
   const [answers, setAnswers] = useState<any>({});
   const [submitted, setSubmitted] = useState<{ [key: string]: boolean }>({});
   const [currentPage, setCurrentPage] = useState(0);
@@ -228,4 +228,4 @@ const QuestionUI = () => {
   );
 };
 
-export default QuestionUI;
+export default QuestionMaster;
