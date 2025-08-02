@@ -1,10 +1,14 @@
 import React from 'react';
 import SectionedGallery from './../components/SectionedGallery';
-const Learn = ({ }) => {
+import ReactReducerLearn from './../reducer-learning/ReactReducerLearn';
+import SumTwoNumber from '@/reducer-learning/SumTwoNumber';
 
+const Learn = ({ }) => {
     return (<div>
-        <p> Welcome, This Learn page</p>
-        <SectionedGallery />
+        <p> Welcome, This Learn page</p>       
+        <ReactReducerLearn/>
+        <SumTwoNumber/>
+         <SectionedGallery />
     </div>)
 }
 
