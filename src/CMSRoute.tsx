@@ -12,8 +12,8 @@ const CMSRoute = () => (
       <Link to="/dashboard" className="nav-button">Dashboard</Link>
       <Link to="/" className="nav-button">Exam</Link>
 
-      <Link to="/utility" className="nav-button">Utility</Link>
-      <Link to="/learn" className="nav-button">Learn</Link>
+      {/* <Link to="/utility" className="nav-button">Utility</Link>
+      <Link to="/learn" className="nav-button">Learn</Link> */}
 
     </nav>
 
@@ -21,8 +21,8 @@ const CMSRoute = () => (
       <Route path="/dashboard" element={<Dashboard />} />
       <Route path="/" element={<MainResponsiveLayout />} />
 
-      <Route path="/utility" element={<Utility />} />
-      <Route path="/learn" element={<Learn />} />
+      {/* <Route path="/utility" element={<Utility />} />
+      <Route path="/learn" element={<Learn />} /> */}
 
     </Routes>
   </div>
