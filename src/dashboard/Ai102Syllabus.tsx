@@ -27,6 +27,13 @@ const Ai102Syllabus = () => {
 
       <h3>Key Azure Services</h3>
       <p className="service-list">{exam.servicesCovered.join(', ')}</p>
+      <a
+        href="https://learn.microsoft.com/en-us/credentials/certifications/azure-ai-engineer/?practice-assessment-type=certification"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        More Details &#8599;
+      </a>
     </div>
   );
 };
