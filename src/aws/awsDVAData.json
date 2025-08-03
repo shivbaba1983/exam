@@ -1,0 +1,63 @@
+{
+  "exam": {
+    "title": "AWS Certified Developer – Associate (DVA-C02)",
+    "overview": {
+      "code": "DVA-C02",
+      "level": "Associate",
+      "duration": "130 minutes",
+      "format": "Multiple choice and multiple response",
+      "cost": "USD $150",
+      "delivery": "Pearson VUE or PSI (online proctored or test center)"
+    },
+    "domains": [
+      {
+        "title": "Development with AWS Services",
+        "weight": "32%",
+        "topics": [
+          "Writing code that interacts with AWS services using the AWS SDKs",
+          "Using messaging services like Amazon SNS and SQS",
+          "Integrating APIs with Amazon API Gateway and AWS Lambda",
+          "Configuring permissions using IAM for programmatic access"
+        ]
+      },
+      {
+        "title": "Security",
+        "weight": "26%",
+        "topics": [
+          "Encrypting data using KMS and other AWS encryption tools",
+          "Managing application authentication with Cognito or IAM",
+          "Implementing secure APIs and identity-based policies",
+          "Securing Lambda and API Gateway endpoints"
+        ]
+      },
+      {
+        "title": "Deployment",
+        "weight": "24%",
+        "topics": [
+          "Automating deployments using CodePipeline, CodeBuild, and CodeDeploy",
+          "Packaging and deploying serverless apps with SAM or CloudFormation",
+          "Monitoring deployment changes and rollbacks",
+          "Managing application versioning"
+        ]
+      },
+      {
+        "title": "Troubleshooting and Monitoring",
+        "weight": "18%",
+        "topics": [
+          "Using CloudWatch Logs, Metrics, and Alarms for observability",
+          "Tracing and debugging with AWS X-Ray",
+          "Identifying application issues using logging and alerting",
+          "Understanding failure modes and mitigation strategies"
+        ]
+      }
+    ],
+    "recommendedServices": [
+      "Lambda", "EC2", "ECS", "EKS", "S3", "EFS", "DynamoDB", "RDS",
+      "CodeCommit", "CodePipeline", "CodeBuild", "CodeDeploy",
+      "IAM", "KMS", "Cognito", "Secrets Manager",
+      "SNS", "SQS", "EventBridge",
+      "CloudWatch", "X-Ray", "CloudTrail",
+      "API Gateway", "SAM", "CloudFormation", "AWS CLI", "SDKs"
+    ]
+  }
+}

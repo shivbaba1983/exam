@@ -1,0 +1,77 @@
+{
+  "exam": {
+    "code": "AI-102",
+    "title": "Microsoft Certified: Azure AI Engineer Associate",
+    "duration": "120 minutes",
+    "passingScore": 700,
+    "priceUSD": 165,
+    "skillsMeasured": [
+      {
+        "domain": "Plan and Manage an Azure AI Solution",
+        "weight": "15–20%",
+        "topics": [
+          "Select appropriate Azure AI services and development tools",
+          "Plan cost-effective AI solutions",
+          "Define a monitoring strategy for AI applications",
+          "Manage the lifecycle of AI solutions"
+        ]
+      },
+      {
+        "domain": "Implement Image and Video Processing Solutions",
+        "weight": "20–25%",
+        "topics": [
+          "Use Azure AI Vision for object detection, classification, and image tagging",
+          "Face detection, verification, and identification",
+          "Read printed and handwritten text (OCR)",
+          "Analyze video content with Video Indexer"
+        ]
+      },
+      {
+        "domain": "Implement Natural Language Processing (NLP) Solutions",
+        "weight": "20–25%",
+        "topics": [
+          "Use Azure AI Language for entity recognition, key phrase extraction, sentiment analysis, summarization",
+          "Language detection",
+          "Build conversational AI using Azure Bot Service",
+          "Use Language Studio to manage NLP projects"
+        ]
+      },
+      {
+        "domain": "Implement Knowledge Mining Solutions",
+        "weight": "15–20%",
+        "topics": [
+          "Implement Azure AI Search (Cognitive Search)",
+          "Use built-in and custom skills like OCR and key phrase extraction",
+          "Manage knowledge store and content indexing"
+        ]
+      },
+      {
+        "domain": "Implement Conversational AI Solutions",
+        "weight": "15–20%",
+        "topics": [
+          "Build bots using Azure Bot Framework",
+          "Use Power Virtual Agents for low-code bots",
+          "Integrate language understanding into bots",
+          "Deploy bots to various channels (Teams, Web, etc.)",
+          "Monitor and improve bot performance"
+        ]
+      }
+    ],
+    "servicesCovered": [
+      "Azure AI Vision",
+      "Custom Vision",
+      "Face API",
+      "Video Indexer",
+      "Azure AI Language",
+      "Text Analytics",
+      "Question Answering",
+      "Azure Bot Service",
+      "Azure Functions",
+      "Azure AI Search (Cognitive Search)",
+      "Azure OpenAI",
+      "Power Virtual Agents",
+      "Language Studio",
+      "Vision Studio"
+    ]
+  }
+}
