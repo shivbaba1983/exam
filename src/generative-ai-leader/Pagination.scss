@@ -1,0 +1,100 @@
+.pagination {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+  padding: 10px;
+
+  .page-nav,
+  .page-number {
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    background: white;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.2s ease;
+    white-space: nowrap;
+
+    &.active {
+      background-color: #0078d4;
+      color: white;
+      font-weight: bold;
+      cursor: default;
+    }
+
+    &:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+
+    &:hover:not(:disabled):not(.active) {
+      background-color: #e6f0fb;
+    }
+  }
+
+  .ellipsis {
+    padding: 6px 8px;
+    font-size: 0.9rem;
+    color: #888;
+    user-select: none;
+  }
+
+  .page-jump {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-left: 12px;
+    flex-wrap: nowrap;
+
+    label {
+      font-size: 0.9rem;
+      color: #333;
+      white-space: nowrap;
+    }
+
+    input {
+      padding: 4px 8px;
+      font-size: 0.9rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      width: 60px;
+      transition: border-color 0.2s ease;
+
+      &:focus {
+        outline: none;
+        border-color: #0078d4;
+        box-shadow: 0 0 5px rgba(0, 120, 212, 0.5);
+      }
+    }
+  }
+}
+
+// ✅ Responsive tweaks for small glass
+@media (max-width: 600px) {
+  .pagination {
+    gap: 4px;
+
+    .page-number,
+    .page-nav {
+      padding: 4px 8px;
+      font-size: 0.8rem;
+      flex-shrink: 0;
+    }
+
+    .page-jump {
+      flex-wrap: nowrap;
+      margin-top: 6px;
+      gap: 4px;
+
+      label {
+        font-size: 0.85rem;
+      }
+
+      input {
+        width: 50px;
+        font-size: 0.85rem;
+      }
+    }
+  }
+}

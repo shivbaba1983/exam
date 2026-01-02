@@ -5,6 +5,7 @@ import Utility from './utility/Utility';
 import Dashboard from './../src/dashboard/Dashboard';
 import AWS from './aws/AWS';
 import Learn from './../src/learn/Learn';
+import AILeaderHome from './../src/generative-ai-leader/AILeaderHome';
 import './CMSRoute.scss'; // Import styles
 
 const CMSRoute = () => (
@@ -15,7 +16,7 @@ const CMSRoute = () => (
       {/* <Link to="/aws" className="nav-button">AWS</Link> */}
       <Link to="/utility" className="nav-button">Utility</Link>
       <Link to="/learn" className="nav-button">Learn</Link>
-
+      <Link to="/GenerativeAILeader" className='nav-button'>GenerativeAILeader</Link>
     </nav>
 
     <Routes>
@@ -24,7 +25,7 @@ const CMSRoute = () => (
       {/* <Route path="/aws" element={<AWS />} /> */}
       <Route path="/utility" element={<Utility />} />
       <Route path="/learn" element={<Learn />} />
-
+      <Route path="/GenerativeAILeader" element={<AILeaderHome />} />
     </Routes>
   </div>
 );

@@ -1,0 +1,20 @@
+.matching-pairs {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.matching-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  .left-item {
+    min-width: 180px;
+    font-weight: 600;
+  }
+
+  select {
+    padding: 4px 8px;
+  }
+}

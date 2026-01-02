@@ -1,0 +1,26 @@
+.question-header {
+  border: 1px solid #ddd;
+  padding: 5px;
+  margin-bottom: 1rem;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+
+  h3 {
+    margin-bottom: 0.75rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #333;
+  }
+
+  ul {
+    list-style: none;     // ❌ removes bullet points
+    padding-left: 0;      // ❌ removes left padding
+    margin: 0;
+
+    li {
+      margin-bottom: 0.5rem;
+      line-height: 1.0;
+      color: #444;
+    }
+  }
+}
