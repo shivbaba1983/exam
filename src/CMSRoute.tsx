@@ -14,18 +14,19 @@ const CMSRoute = () => (
       <Link to="/dashboard" className="nav-button">Dashboard</Link>
       <Link to="/" className="nav-button">Exam</Link>
       {/* <Link to="/aws" className="nav-button">AWS</Link> */}
+          <Link to="/GenerativeAILeader" className='nav-button'>GenAILeader</Link>
       <Link to="/utility" className="nav-button">Utility</Link>
-      <Link to="/learn" className="nav-button">Learn</Link>
-      <Link to="/GenerativeAILeader" className='nav-button'>GenerativeAILeader</Link>
+      <Link to="/learn" className="nav-button">Learn</Link>  
     </nav>
 
     <Routes>
       <Route path="/dashboard" element={<Dashboard />} />
       <Route path="/" element={<MainResponsiveLayout />} />
       {/* <Route path="/aws" element={<AWS />} /> */}
+      <Route path="/GenerativeAILeader" element={<AILeaderHome />} />
       <Route path="/utility" element={<Utility />} />
       <Route path="/learn" element={<Learn />} />
-      <Route path="/GenerativeAILeader" element={<AILeaderHome />} />
+
     </Routes>
   </div>
 );

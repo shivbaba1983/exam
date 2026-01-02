@@ -920,6 +920,1405 @@
   ],
   "correctAnswer": "c",
   "explanation": "Platform compatibility ensures seamless integration and avoids operational disruptions."
+},
+{
+  "id": "61",
+  "type": "single",
+  "question": [
+    "What does the generative aspect of generative AI refer to?"
+  ],
+  "options": [
+    { "id": "a", "text": "Creating new data instances" },
+    { "id": "b", "text": "Classifying existing data" },
+    { "id": "c", "text": "Predicting future trends" },
+    { "id": "d", "text": "Organizing data into clusters" }
+  ],
+  "correctAnswer": "a",
+  "explanation": "The generative aspect refers to the model's ability to create new data instances that resemble the training data."
+},
+{
+  "id": "62",
+  "type": "single",
+  "question": [
+    "A company wants to use AI to create realistic images of non-existent animals.",
+    "Which AI model type should they consider?"
+  ],
+  "options": [
+    { "id": "a", "text": "Recurrent neural network" },
+    { "id": "b", "text": "Generative adversarial network" },
+    { "id": "c", "text": "Convolutional neural network" },
+    { "id": "d", "text": "Linear regression" }
+  ],
+  "correctAnswer": "b",
+  "explanation": "GANs are ideal for generating realistic images, including those of fictional or non-existent objects."
+},
+{
+  "id": "63",
+  "type": "single",
+  "question": [
+    "What is the primary goal of generative AI models?"
+  ],
+  "options": [
+    { "id": "a", "text": "To classify data into categories" },
+    { "id": "b", "text": "To optimize data storage" },
+    { "id": "c", "text": "To generate new data similar to training data" },
+    { "id": "d", "text": "To ensure data privacy" }
+  ],
+  "correctAnswer": "c",
+  "explanation": "Generative AI models create new data instances that resemble the training data, such as images, text, or music."
+},
+{
+  "id": "64",
+  "type": "single",
+  "question": [
+    "Which phase of the AI lifecycle involves evaluating the model's performance?"
+  ],
+  "options": [
+    { "id": "a", "text": "Data collection" },
+    { "id": "b", "text": "Evaluation" },
+    { "id": "c", "text": "Deployment" },
+    { "id": "d", "text": "Training" }
+  ],
+  "correctAnswer": "b",
+  "explanation": "The evaluation phase assesses model performance using metrics to determine accuracy and effectiveness."
+},
+{
+  "id": "65",
+  "type": "single",
+  "question": [
+    "What is a common challenge when training generative AI models?"
+  ],
+  "options": [
+    { "id": "a", "text": "Need for large amounts of data" },
+    { "id": "b", "text": "Limited application areas" },
+    { "id": "c", "text": "Low computational cost" },
+    { "id": "d", "text": "High interpretability" }
+  ],
+  "correctAnswer": "a",
+  "explanation": "Generative models often require large datasets to learn effectively, which can be challenging."
+},
+{
+  "id": "66",
+  "type": "single",
+  "question": [
+    "A company wants to use generative AI to create realistic product images for marketing.",
+    "What aspect should they focus on to ensure high-quality outputs?"
+  ],
+  "options": [
+    { "id": "a", "text": "Reducing model complexity" },
+    { "id": "b", "text": "Increasing computational power" },
+    { "id": "c", "text": "Enhancing model interpretability" },
+    { "id": "d", "text": "Using high-quality training data" }
+  ],
+  "correctAnswer": "d",
+  "explanation": "High-quality training data is essential for generating realistic and high-quality outputs."
+},
+{
+  "id": "67",
+  "type": "single",
+  "question": [
+    "What is a key characteristic of foundation models in generative AI?"
+  ],
+  "options": [
+    { "id": "a", "text": "They are task-specific" },
+    { "id": "b", "text": "They can be fine-tuned for various applications" },
+    { "id": "c", "text": "They require very little training data" },
+    { "id": "d", "text": "They are always smaller than traditional models" }
+  ],
+  "correctAnswer": "b",
+  "explanation": "Foundation models are adaptable and can be fine-tuned for many downstream tasks."
+},
+{
+  "id": "68",
+  "type": "single",
+  "question": [
+    "Which of the following best describes a large language model (LLM)?"
+  ],
+  "options": [
+    { "id": "a", "text": "A model trained on extensive text data to generate human-like text" },
+    { "id": "b", "text": "A model that only processes numerical data" },
+    { "id": "c", "text": "A model used exclusively for image recognition" },
+    { "id": "d", "text": "A model that operates without any training data" }
+  ],
+  "correctAnswer": "a",
+  "explanation": "LLMs are trained on vast amounts of text to understand and generate human-like language."
+},
+{
+  "id": "69",
+  "type": "single",
+  "question": [
+    "What is the primary advantage of using foundation models in AI development?"
+  ],
+  "options": [
+    { "id": "a", "text": "They eliminate the need for any data" },
+    { "id": "b", "text": "They are cheaper to develop from scratch" },
+    { "id": "c", "text": "They reduce the need for extensive task-specific data" },
+    { "id": "d", "text": "They are always more accurate than traditional models" }
+  ],
+  "correctAnswer": "c",
+  "explanation": "Foundation models reduce the need for large task-specific datasets by providing a strong pretrained base."
+},
+{
+  "id": "70",
+  "type": "single",
+  "question": [
+    "A company wants to implement a chatbot that can handle customer inquiries in multiple languages.",
+    "Which feature of LLMs makes them suitable for this task?"
+  ],
+  "options": [
+    { "id": "a", "text": "Ability to process numerical data" },
+    { "id": "b", "text": "Exclusive focus on English" },
+    { "id": "c", "text": "Minimal training data requirement" },
+    { "id": "d", "text": "Multilingual text generation capability" }
+  ],
+  "correctAnswer": "d",
+  "explanation": "LLMs can understand and generate text in multiple languages, making them ideal for multilingual chatbots."
+},
+{
+  "id": "71",
+  "type": "single",
+  "question": [
+    "What is a key advantage of multimodal models in generative AI?"
+  ],
+  "options": [
+    { "id": "a", "text": "They only process text data" },
+    { "id": "b", "text": "They integrate multiple data types for richer outputs" },
+    { "id": "c", "text": "They are limited to image processing" },
+    { "id": "d", "text": "They require less computational power" }
+  ],
+  "correctAnswer": "b",
+  "explanation": "Multimodal models combine text, images, audio, and more to produce richer, context-aware outputs."
+},
+{
+  "id": "72",
+  "type": "single",
+  "question": [
+    "Which component is essential for a multimodal model to process different types of data?"
+  ],
+  "options": [
+    { "id": "a", "text": "Only a text encoder" },
+    { "id": "b", "text": "Only an image decoder" },
+    { "id": "c", "text": "A fusion mechanism" },
+    { "id": "d", "text": "A single data pipeline" }
+  ],
+  "correctAnswer": "c",
+  "explanation": "A fusion mechanism integrates multiple data types within a multimodal model."
+},
+{
+  "id": "73",
+  "type": "single",
+  "question": [
+    "In the context of multimodal models, what does alignment refer to?"
+  ],
+  "options": [
+    { "id": "a", "text": "Ensuring data modalities correspond accurately" },
+    { "id": "b", "text": "Increasing model complexity" },
+    { "id": "c", "text": "Reducing computational load" },
+    { "id": "d", "text": "Simplifying data preprocessing" }
+  ],
+  "correctAnswer": "a",
+  "explanation": "Alignment ensures that different data modalities correspond accurately, enabling effective multimodal integration."
+},{
+  "id": "74",
+  "type": "single",
+  "question": [
+    "A company wants to develop a chatbot that can understand both text and images.",
+    "Which aspect of multimodal models should they focus on to achieve this?"
+  ],
+  "options": [
+    { "id": "a", "text": "Reducing model size" },
+    { "id": "b", "text": "Improving text-only processing" },
+    { "id": "c", "text": "Enhancing image resolution" },
+    { "id": "d", "text": "Integration of data modalities" }
+  ],
+  "correctAnswer": "d",
+  "explanation": "Multimodal models require strong integration of different data modalities to process and relate text and image inputs effectively."
+},
+{
+  "id": "75",
+  "type": "single",
+  "question": [
+    "What is a primary limitation of generative AI models in terms of data privacy?"
+  ],
+  "options": [
+    { "id": "a", "text": "They may inadvertently expose sensitive data" },
+    { "id": "b", "text": "They cannot process encrypted data" },
+    { "id": "c", "text": "They are unable to anonymize data" },
+    { "id": "d", "text": "They require constant internet access" }
+  ],
+  "correctAnswer": "a",
+  "explanation": "Generative AI models often require large datasets that may contain sensitive information, raising privacy concerns."
+},
+{
+  "id": "76",
+  "type": "single",
+  "question": [
+    "A company uses generative AI to create marketing content but notices biased outputs.",
+    "What is a likely cause of this issue?"
+  ],
+  "options": [
+    { "id": "a", "text": "The AI model is outdated" },
+    { "id": "b", "text": "The AI lacks sufficient computational power" },
+    { "id": "c", "text": "The training data contains inherent biases" },
+    { "id": "d", "text": "The AI is not trained on enough data" }
+  ],
+  "correctAnswer": "c",
+  "explanation": "Bias in AI outputs typically stems from biased training data that reflects existing prejudices."
+},
+{
+  "id": "77",
+  "type": "single",
+  "question": [
+    "Why might generative AI models produce inaccurate outputs?"
+  ],
+  "options": [
+    { "id": "a", "text": "They are inherently flawed" },
+    { "id": "b", "text": "They rely on the quality of their training data" },
+    { "id": "c", "text": "They cannot learn from new data" },
+    { "id": "d", "text": "They are limited to specific tasks" }
+  ],
+  "correctAnswer": "b",
+  "explanation": "Generative AI models depend heavily on the quality and diversity of their training data."
+},
+{
+  "id": "78",
+  "type": "single",
+  "question": [
+    "What is a common misconception about the capabilities of generative AI models?"
+  ],
+  "options": [
+    { "id": "a", "text": "They can generate content in any language" },
+    { "id": "b", "text": "They can operate without human oversight" },
+    { "id": "c", "text": "They are always unbiased" },
+    { "id": "d", "text": "They understand the content they create" }
+  ],
+  "correctAnswer": "d",
+  "explanation": "Generative AI models do not truly understand content; they generate patterns based on training data."
+},
+{
+  "id": "79",
+  "type": "single",
+  "question": [
+    "What is the primary purpose of a prompt in generative AI?"
+  ],
+  "options": [
+    { "id": "a", "text": "To guide the AI model's output" },
+    { "id": "b", "text": "To evaluate the AI model's performance" },
+    { "id": "c", "text": "To train the AI model" },
+    { "id": "d", "text": "To store data for the AI model" }
+  ],
+  "correctAnswer": "a",
+  "explanation": "Prompts guide the AI model to generate relevant and coherent outputs."
+},
+{
+  "id": "80",
+  "type": "single",
+  "question": [
+    "Which element is crucial for creating an effective AI prompt?"
+  ],
+  "options": [
+    { "id": "a", "text": "Length" },
+    { "id": "b", "text": "Clarity" },
+    { "id": "c", "text": "Complexity" },
+    { "id": "d", "text": "Ambiguity" }
+  ],
+  "correctAnswer": "b",
+  "explanation": "Clear prompts help the AI understand the task and produce accurate outputs."
+},
+{
+  "id": "81",
+  "type": "single",
+  "question": [
+    "What is a common mistake when crafting prompts for generative AI?"
+  ],
+  "options": [
+    { "id": "a", "text": "Using simple language" },
+    { "id": "b", "text": "Providing context" },
+    { "id": "c", "text": "Making prompts too complex" },
+    { "id": "d", "text": "Being specific" }
+  ],
+  "correctAnswer": "c",
+  "explanation": "Overly complex prompts can confuse the AI and reduce output quality."
+},
+{
+  "id": "82",
+  "type": "single",
+  "question": [
+    "You want an AI to generate a creative story about a space adventure.",
+    "What should you include in your prompt to achieve this?"
+  ],
+  "options": [
+    { "id": "a", "text": "A list of space facts" },
+    { "id": "b", "text": "A summary of previous stories" },
+    { "id": "c", "text": "A question about space" },
+    { "id": "d", "text": "Characters and setting details" }
+  ],
+  "correctAnswer": "d",
+  "explanation": "Providing characters and setting details helps the AI generate a focused and creative story."
+},
+{
+  "id": "83",
+  "type": "single",
+  "question": [
+    "What is the primary function of an agent in generative AI?"
+  ],
+  "options": [
+    { "id": "a", "text": "To store data" },
+    { "id": "b", "text": "To perform tasks autonomously" },
+    { "id": "c", "text": "To generate random outputs" },
+    { "id": "d", "text": "To monitor system performance" }
+  ],
+  "correctAnswer": "b",
+  "explanation": "Agents autonomously perform tasks, often interacting with environments or external systems."
+},
+{
+  "id": "84",
+  "type": "single",
+  "question": [
+    "Which tool is commonly used by agents to interact with external systems?"
+  ],
+  "options": [
+    { "id": "a", "text": "Databases" },
+    { "id": "b", "text": "User interfaces" },
+    { "id": "c", "text": "APIs" },
+    { "id": "d", "text": "Spreadsheets" }
+  ],
+  "correctAnswer": "c",
+  "explanation": "APIs allow agents to interact with external systems and services programmatically."
+},{
+  "id": "85",
+  "type": "single",
+  "question": [
+    "In the context of generative AI, what does tool use typically refer to?"
+  ],
+  "options": [
+    { "id": "a", "text": "Leveraging external resources" },
+    { "id": "b", "text": "Creating new algorithms" },
+    { "id": "c", "text": "Improving hardware efficiency" },
+    { "id": "d", "text": "Enhancing user experience" }
+  ],
+  "correctAnswer": "a",
+  "explanation": "Tool use refers to an AI system's ability to leverage external tools or resources to enhance its capabilities."
+},
+{
+  "id": "86",
+  "type": "single",
+  "question": [
+    "A company wants to implement an AI agent to automate customer support.",
+    "Which aspect should they prioritize to ensure effective tool use?"
+  ],
+  "options": [
+    { "id": "a", "text": "Designing a new database" },
+    { "id": "b", "text": "Hiring more staff" },
+    { "id": "c", "text": "Developing a new user interface" },
+    { "id": "d", "text": "Integration with existing systems" }
+  ],
+  "correctAnswer": "d",
+  "explanation": "Integration with existing systems ensures the AI agent can effectively use tools and provide seamless support."
+},
+{
+  "id": "87",
+  "type": "single",
+  "question": [
+    "What is the primary purpose of Vertex AI in Google Cloud's generative AI offerings?"
+  ],
+  "options": [
+    { "id": "a", "text": "To provide cloud storage solutions" },
+    { "id": "b", "text": "To simplify the development and deployment of machine learning models" },
+    { "id": "c", "text": "To manage network security" },
+    { "id": "d", "text": "To offer data analytics tools" }
+  ],
+  "correctAnswer": "b",
+  "explanation": "Vertex AI streamlines building, deploying, and scaling machine learning models."
+},
+{
+  "id": "88",
+  "type": "single",
+  "question": [
+    "Which feature of Vertex AI allows for the automated tuning of hyperparameters?"
+  ],
+  "options": [
+    { "id": "a", "text": "Data labeling" },
+    { "id": "b", "text": "Model monitoring" },
+    { "id": "c", "text": "Hyperparameter tuning" },
+    { "id": "d", "text": "Feature store" }
+  ],
+  "correctAnswer": "c",
+  "explanation": "Vertex AI includes automated hyperparameter tuning to optimize model performance."
+},
+{
+  "id": "89",
+  "type": "single",
+  "question": [
+    "What is a key advantage of using Vertex AI's pre-trained models?"
+  ],
+  "options": [
+    { "id": "a", "text": "They reduce the need for large datasets and training time" },
+    { "id": "b", "text": "They are exclusively for image processing tasks" },
+    { "id": "c", "text": "They require extensive customization before use" },
+    { "id": "d", "text": "They are only available in beta versions" }
+  ],
+  "correctAnswer": "a",
+  "explanation": "Pre-trained models reduce the need for large datasets and extensive training time."
+},
+{
+  "id": "90",
+  "type": "single",
+  "question": [
+    "A company wants to deploy a machine learning model that can scale automatically based on demand.",
+    "Which Vertex AI feature should they use?"
+  ],
+  "options": [
+    { "id": "a", "text": "Data labeling" },
+    { "id": "b", "text": "Feature store" },
+    { "id": "c", "text": "Hyperparameter tuning" },
+    { "id": "d", "text": "Model deployment with autoscaling" }
+  ],
+  "correctAnswer": "d",
+  "explanation": "Vertex AI supports autoscaling during model deployment to adjust resources based on demand."
+},
+{
+  "id": "91",
+  "type": "single",
+  "question": [
+    "What is the primary function of Google Cloud's Gemini AI model?"
+  ],
+  "options": [
+    { "id": "a", "text": "Image recognition" },
+    { "id": "b", "text": "Natural language understanding" },
+    { "id": "c", "text": "Data storage optimization" },
+    { "id": "d", "text": "Network security" }
+  ],
+  "correctAnswer": "b",
+  "explanation": "Gemini is designed for advanced natural language understanding and generation."
+},
+{
+  "id": "92",
+  "type": "single",
+  "question": [
+    "Which Google Cloud model is specifically designed for large-scale language tasks?"
+  ],
+  "options": [
+    { "id": "a", "text": "Gemini" },
+    { "id": "b", "text": "Vertex AI" },
+    { "id": "c", "text": "AutoML" },
+    { "id": "d", "text": "BigQuery" }
+  ],
+  "correctAnswer": "a",
+  "explanation": "Gemini is tailored for large-scale language tasks with advanced AI capabilities."
+},
+{
+  "id": "93",
+  "type": "single",
+  "question": [
+    "What distinguishes Google models from other generative AI offerings?"
+  ],
+  "options": [
+    { "id": "a", "text": "Lower cost" },
+    { "id": "b", "text": "Faster deployment" },
+    { "id": "c", "text": "Integration with Google's ecosystem" },
+    { "id": "d", "text": "Open-source availability" }
+  ],
+  "correctAnswer": "c",
+  "explanation": "Google models are known for seamless integration with Google's ecosystem and advanced AI capabilities."
+},
+{
+  "id": "94",
+  "type": "single",
+  "question": [
+    "A company wants to implement a chatbot that can understand and generate human-like responses.",
+    "Which Google Cloud AI model should they consider?"
+  ],
+  "options": [
+    { "id": "a", "text": "Gemini" },
+    { "id": "b", "text": "AutoML" },
+    { "id": "c", "text": "Vertex AI" },
+    { "id": "d", "text": "BigQuery" }
+  ],
+  "correctAnswer": "a",
+  "explanation": "Gemini is ideal for natural language understanding and generation, making it suitable for chatbots."
+},{
+  "id": "95",
+  "type": "single",
+  "question": [
+    "What is the primary function of Google Cloud's AI Studio?"
+  ],
+  "options": [
+    { "id": "a", "text": "To provide cloud storage solutions" },
+    { "id": "b", "text": "To build, deploy, and manage machine learning models" },
+    { "id": "c", "text": "To offer virtual machine hosting" },
+    { "id": "d", "text": "To create and manage databases" }
+  ],
+  "correctAnswer": "b",
+  "explanation": "AI Studio is designed to help users build, deploy, and manage machine learning models efficiently on Google Cloud."
+},
+{
+  "id": "96",
+  "type": "single",
+  "question": [
+    "Which Google Cloud service is primarily used for integrating AI models into applications?"
+  ],
+  "options": [
+    { "id": "a", "text": "Cloud Functions" },
+    { "id": "b", "text": "BigQuery" },
+    { "id": "c", "text": "Vertex AI" },
+    { "id": "d", "text": "Cloud Run" }
+  ],
+  "correctAnswer": "c",
+  "explanation": "Vertex AI is the primary service used for integrating AI models into applications on Google Cloud."
+},
+{
+  "id": "97",
+  "type": "single",
+  "question": [
+    "What is a key benefit of using Google Cloud's AI Studio for model deployment?"
+  ],
+  "options": [
+    { "id": "a", "text": "Simplified deployment process" },
+    { "id": "b", "text": "Increased storage capacity" },
+    { "id": "c", "text": "Enhanced data analytics" },
+    { "id": "d", "text": "Improved network security" }
+  ],
+  "correctAnswer": "a",
+  "explanation": "AI Studio simplifies the deployment process by providing tools and infrastructure to manage machine learning models effectively."
+},
+{
+  "id": "98",
+  "type": "single",
+  "question": [
+    "A company wants to integrate a machine learning model into their web application using Google Cloud.",
+    "Which service should they use?"
+  ],
+  "options": [
+    { "id": "a", "text": "Cloud Storage" },
+    { "id": "b", "text": "App Engine" },
+    { "id": "c", "text": "Cloud SQL" },
+    { "id": "d", "text": "Vertex AI" }
+  ],
+  "correctAnswer": "d",
+  "explanation": "Vertex AI is designed to help integrate machine learning models into applications."
+},{
+  "id": "99",
+  "type": "single",
+  "question": [
+    "What is the primary purpose of Google Cloud's Agent Builder?"
+  ],
+  "options": [
+    { "id": "a", "text": "To simplify the creation and deployment of conversational agents" },
+    { "id": "b", "text": "To manage cloud storage solutions" },
+    { "id": "c", "text": "To optimize network traffic" },
+    { "id": "d", "text": "To enhance data security protocols" }
+  ],
+  "correctAnswer": "a",
+  "explanation": "Agent Builder simplifies the creation and deployment of conversational agents using Google's AI technologies."
+},
+{
+  "id": "100",
+  "type": "single",
+  "question": [
+    "Which feature of Google Cloud Agent Builder allows integration with external APIs?"
+  ],
+  "options": [
+    { "id": "a", "text": "Data analytics" },
+    { "id": "b", "text": "Plugins" },
+    { "id": "c", "text": "Security protocols" },
+    { "id": "d", "text": "Cloud storage" }
+  ],
+  "correctAnswer": "b",
+  "explanation": "Plugins enable integration with external APIs, extending the agent's capabilities."
+},
+{
+  "id": "101",
+  "type": "single",
+  "question": [
+    "What is a key benefit of using Google Cloud's plugins in Agent Builder?"
+  ],
+  "options": [
+    { "id": "a", "text": "Improved data encryption" },
+    { "id": "b", "text": "Faster network speeds" },
+    { "id": "c", "text": "Integration with external services" },
+    { "id": "d", "text": "Enhanced user interface design" }
+  ],
+  "correctAnswer": "c",
+  "explanation": "Plugins allow agents to integrate with external services, extending their functionality."
+},
+{
+  "id": "102",
+  "type": "single",
+  "question": [
+    "A company wants to deploy a chatbot that can access their CRM system for customer data.",
+    "Which feature of Google Cloud's Agent Builder should they use?"
+  ],
+  "options": [
+    { "id": "a", "text": "Data encryption" },
+    { "id": "b", "text": "Network optimization" },
+    { "id": "c", "text": "User interface design" },
+    { "id": "d", "text": "Plugins" }
+  ],
+  "correctAnswer": "d",
+  "explanation": "Plugins allow integration with external systems like CRM platforms."
+},
+{
+  "id": "103",
+  "type": "single",
+  "question": [
+    "What is the primary function of Google's generative AI search and retrieval tools?"
+  ],
+  "options": [
+    { "id": "a", "text": "Enhancing information retrieval efficiency" },
+    { "id": "b", "text": "Creating new AI models" },
+    { "id": "c", "text": "Managing cloud infrastructure" },
+    { "id": "d", "text": "Developing mobile applications" }
+  ],
+  "correctAnswer": "a",
+  "explanation": "These tools enhance the ability to find and retrieve relevant information efficiently."
+},
+{
+  "id": "104",
+  "type": "single",
+  "question": [
+    "Which Google Cloud tool is specifically designed for retrieval-augmented generation (RAG) tasks?"
+  ],
+  "options": [
+    { "id": "a", "text": "BigQuery" },
+    { "id": "b", "text": "Vertex AI" },
+    { "id": "c", "text": "Cloud Functions" },
+    { "id": "d", "text": "App Engine" }
+  ],
+  "correctAnswer": "b",
+  "explanation": "Vertex AI supports RAG by integrating retrieval capabilities with generative models."
+},
+{
+  "id": "105",
+  "type": "single",
+  "question": [
+    "What advantage does retrieval-augmented generation offer in AI applications?"
+  ],
+  "options": [
+    { "id": "a", "text": "Increased data storage" },
+    { "id": "b", "text": "Faster computation speeds" },
+    { "id": "c", "text": "Enhanced output accuracy" },
+    { "id": "d", "text": "Reduced energy consumption" }
+  ],
+  "correctAnswer": "c",
+  "explanation": "RAG improves accuracy by combining retrieval with generative modeling."
+},
+{
+  "id": "106",
+  "type": "single",
+  "question": [
+    "A company wants to improve its customer support chatbot by making responses more contextually relevant.",
+    "Which Google Cloud tool should they consider for integrating RAG?"
+  ],
+  "options": [
+    { "id": "a", "text": "Cloud Storage" },
+    { "id": "b", "text": "Dataflow" },
+    { "id": "c", "text": "Cloud Run" },
+    { "id": "d", "text": "Vertex AI" }
+  ],
+  "correctAnswer": "d",
+  "explanation": "Vertex AI enables retrieval-augmented generation for more accurate chatbot responses."
+},
+{
+  "id": "107",
+  "type": "single",
+  "question": [
+    "Which Google Cloud service is primarily used for managing containerized applications?"
+  ],
+  "options": [
+    { "id": "a", "text": "Cloud Functions" },
+    { "id": "b", "text": "Google Kubernetes Engine" },
+    { "id": "c", "text": "Cloud Run" },
+    { "id": "d", "text": "App Engine" }
+  ],
+  "correctAnswer": "b",
+  "explanation": "Google Kubernetes Engine is a managed service for running containerized applications."
+},
+{
+  "id": "108",
+  "type": "single",
+  "question": [
+    "What is the primary purpose of Google Cloud's Anthos?"
+  ],
+  "options": [
+    { "id": "a", "text": "Data analytics" },
+    { "id": "b", "text": "Machine learning" },
+    { "id": "c", "text": "Hybrid and multi-cloud management" },
+    { "id": "d", "text": "Serverless computing" }
+  ],
+  "correctAnswer": "c",
+  "explanation": "Anthos manages applications across hybrid and multi-cloud environments."
+},
+{
+  "id": "109",
+  "type": "single",
+  "question": [
+    "Which Google Cloud service provides a fully managed environment for deploying, managing, and scaling applications?"
+  ],
+  "options": [
+    { "id": "a", "text": "Cloud Storage" },
+    { "id": "b", "text": "BigQuery" },
+    { "id": "c", "text": "Cloud SQL" },
+    { "id": "d", "text": "App Engine" }
+  ],
+  "correctAnswer": "d",
+  "explanation": "App Engine provides a fully managed platform for scalable web and mobile applications."
+},
+{
+  "id": "110",
+  "type": "single",
+  "question": [
+    "Your team needs to deploy a machine learning model that requires GPU acceleration.",
+    "Which Google Cloud service should you use?"
+  ],
+  "options": [
+    { "id": "a", "text": "AI Platform" },
+    { "id": "b", "text": "Cloud Functions" },
+    { "id": "c", "text": "Cloud Spanner" },
+    { "id": "d", "text": "Pub/Sub" }
+  ],
+  "correctAnswer": "a",
+  "explanation": "AI Platform supports GPU-accelerated training and deployment."
+},
+{
+  "id": "111",
+  "type": "single",
+  "question": [
+    "What is the primary purpose of Google Cloud Vertex AI?"
+  ],
+  "options": [
+    { "id": "a", "text": "To manage cloud storage solutions" },
+    { "id": "b", "text": "To build, deploy, and scale machine learning models" },
+    { "id": "c", "text": "To enhance network security" },
+    { "id": "d", "text": "To provide real-time data analytics" }
+  ],
+  "correctAnswer": "b",
+  "explanation": "Vertex AI provides a unified platform for building, deploying, and scaling ML models."
+},
+{
+  "id": "112",
+  "type": "single",
+  "question": [
+    "Which Google Cloud service offers pre-trained models for natural language processing tasks?"
+  ],
+  "options": [
+    { "id": "a", "text": "Cloud Vision API" },
+    { "id": "b", "text": "Cloud Speech-to-Text" },
+    { "id": "c", "text": "Natural Language API" },
+    { "id": "d", "text": "Cloud Translation API" }
+  ],
+  "correctAnswer": "c",
+  "explanation": "The Natural Language API provides pre-trained models for sentiment analysis, entity recognition, and more."
+},
+{
+  "id": "113",
+  "type": "single",
+  "question": [
+    "A company wants to automate customer service responses using AI.",
+    "Which Google Cloud service should they consider for generating human-like text responses?"
+  ],
+  "options": [
+    { "id": "a", "text": "Dialogflow CX" },
+    { "id": "b", "text": "Cloud Functions" },
+    { "id": "c", "text": "BigQuery" },
+    { "id": "d", "text": "Cloud Run" }
+  ],
+  "correctAnswer": "a",
+  "explanation": "Dialogflow CX is designed for creating conversational agents capable of generating human-like responses."
+},
+{
+  "id": "114",
+  "type": "single",
+  "question": [
+    "Which API would you use to convert text into speech using Google Cloud services?"
+  ],
+  "options": [
+    { "id": "a", "text": "Speech-to-Text API" },
+    { "id": "b", "text": "Vision API" },
+    { "id": "c", "text": "Natural Language API" },
+    { "id": "d", "text": "Text-to-Speech API" }
+  ],
+  "correctAnswer": "d",
+  "explanation": "The Text-to-Speech API converts text into natural-sounding speech."
+},{
+  "id": "119",
+  "type": "single",
+  "question": [
+    "What is the primary purpose of using temperature settings in advanced prompt engineering?"
+  ],
+  "options": [
+    { "id": "a", "text": "To control the randomness of the model's output" },
+    { "id": "b", "text": "To increase the speed of model processing" },
+    { "id": "c", "text": "To enhance the model's understanding of context" },
+    { "id": "d", "text": "To improve the accuracy of the model's predictions" }
+  ],
+  "correctAnswer": "a",
+  "explanation": "Temperature settings control randomness. Lower values produce deterministic outputs; higher values produce more creative outputs."
+},
+{
+  "id": "120",
+  "type": "single",
+  "question": [
+    "Which technique is used to ensure a model generates diverse outputs?"
+  ],
+  "options": [
+    { "id": "a", "text": "Beam search" },
+    { "id": "b", "text": "Top‑K sampling" },
+    { "id": "c", "text": "Greedy decoding" },
+    { "id": "d", "text": "Temperature scaling" }
+  ],
+  "correctAnswer": "b",
+  "explanation": "Top‑K sampling limits the model to the top K probable next words, promoting diversity."
+},
+{
+  "id": "121",
+  "type": "single",
+  "question": [
+    "A company wants to generate creative marketing slogans using a language model.",
+    "Which parameter should they adjust to increase creativity?"
+  ],
+  "options": [
+    { "id": "a", "text": "Decrease the batch size" },
+    { "id": "b", "text": "Use beam search" },
+    { "id": "c", "text": "Lower the learning rate" },
+    { "id": "d", "text": "Increase the temperature" }
+  ],
+  "correctAnswer": "d",
+  "explanation": "Increasing temperature allows the model to produce more varied and creative outputs."
+},
+{
+  "id": "122",
+  "type": "single",
+  "question": [
+    "Why might adjusting the top‑p parameter sometimes lead to less predictable outputs?"
+  ],
+  "options": [
+    { "id": "a", "text": "It always selects the most probable word" },
+    { "id": "b", "text": "It limits the model to a fixed number of options" },
+    { "id": "c", "text": "It includes words based on cumulative probability" },
+    { "id": "d", "text": "It reduces the model's vocabulary size" }
+  ],
+  "correctAnswer": "c",
+  "explanation": "Top‑p (nucleus) sampling selects from words whose cumulative probability exceeds a threshold, which may include less probable words."
+},
+{
+  "id": "123",
+  "type": "single",
+  "question": [
+    "What is the primary purpose of grounding in AI model outputs?"
+  ],
+  "options": [
+    { "id": "a", "text": "To ensure outputs are based on factual information" },
+    { "id": "b", "text": "To increase model processing speed" },
+    { "id": "c", "text": "To improve aesthetic quality of outputs" },
+    { "id": "d", "text": "To reduce computational cost" }
+  ],
+  "correctAnswer": "a",
+  "explanation": "Grounding ensures AI outputs are based on factual, reliable information."
+},
+{
+  "id": "124",
+  "type": "single",
+  "question": [
+    "Which technique is commonly used to fact‑check AI model outputs?"
+  ],
+  "options": [
+    { "id": "a", "text": "Increasing model complexity" },
+    { "id": "b", "text": "Cross‑referencing with trusted sources" },
+    { "id": "c", "text": "Using larger datasets" },
+    { "id": "d", "text": "Applying data augmentation" }
+  ],
+  "correctAnswer": "b",
+  "explanation": "Cross‑referencing outputs with trusted sources is a standard fact‑checking method."
+},
+{
+  "id": "125",
+  "type": "single",
+  "question": [
+    "How does grounding improve the reliability of AI‑generated content?"
+  ],
+  "options": [
+    { "id": "a", "text": "By making outputs more creative" },
+    { "id": "b", "text": "By speeding up generation" },
+    { "id": "c", "text": "By linking outputs to verified data" },
+    { "id": "d", "text": "By reducing model size" }
+  ],
+  "correctAnswer": "c",
+  "explanation": "Grounding ties outputs to verified data, reducing misinformation."
+},
+{
+  "id": "126",
+  "type": "single",
+  "question": [
+    "A company uses AI to generate news articles.",
+    "How can they ensure the articles are factually accurate?"
+  ],
+  "options": [
+    { "id": "a", "text": "Use a more complex model" },
+    { "id": "b", "text": "Increase dataset size" },
+    { "id": "c", "text": "Enhance model creativity" },
+    { "id": "d", "text": "Implement a fact‑checking system" }
+  ],
+  "correctAnswer": "d",
+  "explanation": "A fact‑checking system verifies information against reliable sources."
+},
+{
+  "id": "127",
+  "type": "single",
+  "question": [
+    "What is the primary goal of fine‑tuning a pre‑trained model?"
+  ],
+  "options": [
+    { "id": "a", "text": "To increase model size" },
+    { "id": "b", "text": "To adapt the model to a specific task" },
+    { "id": "c", "text": "To reduce model complexity" },
+    { "id": "d", "text": "To enhance generalization" }
+  ],
+  "correctAnswer": "b",
+  "explanation": "Fine‑tuning adapts a pre‑trained model to a specific task or dataset."
+},
+{
+  "id": "128",
+  "type": "single",
+  "question": [
+    "Which technique is commonly used to prevent overfitting during fine‑tuning?"
+  ],
+  "options": [
+    { "id": "a", "text": "Increasing learning rate" },
+    { "id": "b", "text": "Reducing dataset size" },
+    { "id": "c", "text": "Applying dropout" },
+    { "id": "d", "text": "Using a deeper model" }
+  ],
+  "correctAnswer": "c",
+  "explanation": "Dropout is a regularization technique that helps prevent overfitting."
+},
+{
+  "id": "129",
+  "type": "single",
+  "question": [
+    "What is a common outcome of not fine‑tuning a pre‑trained model for a specific task?"
+  ],
+  "options": [
+    { "id": "a", "text": "Suboptimal performance" },
+    { "id": "b", "text": "Increased training time" },
+    { "id": "c", "text": "Improved accuracy" },
+    { "id": "d", "text": "Reduced model size" }
+  ],
+  "correctAnswer": "a",
+  "explanation": "Without fine‑tuning, the model may not perform well on task‑specific data."
+},
+{
+  "id": "130",
+  "type": "single",
+  "question": [
+    "A company wants to adapt a language model to understand medical terminology better.",
+    "Which technique should they use?"
+  ],
+  "options": [
+    { "id": "a", "text": "Increase the model's layers" },
+    { "id": "b", "text": "Use a larger dataset" },
+    { "id": "c", "text": "Apply data augmentation" },
+    { "id": "d", "text": "Fine‑tune on medical data" }
+  ],
+  "correctAnswer": "d",
+  "explanation": "Fine‑tuning on medical‑specific data helps the model learn domain terminology."
+},
+{
+  "id": "131",
+  "type": "single",
+  "question": [
+    "What is the primary purpose of incorporating human‑in‑the‑loop (HITL) in machine learning models?"
+  ],
+  "options": [
+    { "id": "a", "text": "To improve model accuracy through human feedback" },
+    { "id": "b", "text": "To automate the entire decision‑making process" },
+    { "id": "c", "text": "To reduce the need for data preprocessing" },
+    { "id": "d", "text": "To eliminate human bias" }
+  ],
+  "correctAnswer": "a",
+  "explanation": "HITL improves accuracy by incorporating human feedback during training."
+},
+{
+  "id": "132",
+  "type": "single",
+  "question": [
+    "Which phase of model development benefits most from human‑in‑the‑loop techniques?"
+  ],
+  "options": [
+    { "id": "a", "text": "Deployment" },
+    { "id": "b", "text": "Training" },
+    { "id": "c", "text": "Data collection" },
+    { "id": "d", "text": "Model evaluation" }
+  ],
+  "correctAnswer": "b",
+  "explanation": "Training benefits most because human feedback can correct and guide learning."
+},
+{
+  "id": "133",
+  "type": "single",
+  "question": [
+    "How does human‑in‑the‑loop help reduce model bias?"
+  ],
+  "options": [
+    { "id": "a", "text": "By automating bias detection" },
+    { "id": "b", "text": "By eliminating the need for diverse data" },
+    { "id": "c", "text": "By allowing humans to correct biased outputs" },
+    { "id": "d", "text": "By increasing model complexity" }
+  ],
+  "correctAnswer": "c",
+  "explanation": "Humans can identify and correct biased outputs, reducing bias in predictions."
+},
+{
+  "id": "134",
+  "type": "single",
+  "question": [
+    "A company uses HITL to refine its customer service chatbot.",
+    "How does this approach improve the chatbot's responses?"
+  ],
+  "options": [
+    { "id": "a", "text": "By fully automating response generation" },
+    { "id": "b", "text": "By reducing the need for training data" },
+    { "id": "c", "text": "By eliminating human intervention" },
+    { "id": "d", "text": "By refining responses through human feedback" }
+  ],
+  "correctAnswer": "d",
+  "explanation": "Human reviewers refine chatbot responses, improving accuracy and relevance."
+},
+{
+  "id": "135",
+  "type": "single",
+  "question": [
+    "What is a common technique to reduce hallucination in AI models?"
+  ],
+  "options": [
+    { "id": "a", "text": "Using a diverse and comprehensive training dataset" },
+    { "id": "b", "text": "Increasing model complexity" },
+    { "id": "c", "text": "Limiting the model's training data" },
+    { "id": "d", "text": "Reducing the number of training epochs" }
+  ],
+  "correctAnswer": "a",
+  "explanation": "Diverse datasets help models learn accurate information and reduce hallucinations."
+},
+{
+  "id": "136",
+  "type": "single",
+  "question": [
+    "Which method is effective in mitigating bias in AI models?"
+  ],
+  "options": [
+    { "id": "a", "text": "Using a single‑source dataset" },
+    { "id": "b", "text": "Ensuring training data represents diverse groups" },
+    { "id": "c", "text": "Ignoring outlier data points" },
+    { "id": "d", "text": "Focusing on accuracy over fairness" }
+  ],
+  "correctAnswer": "b",
+  "explanation": "Representative training data helps prevent skewed learning and reduces bias."
+},{
+  "id": "137",
+  "type": "single",
+  "question": [
+    "A company notices its AI model often generates incorrect facts.",
+    "What strategy should they implement to address this issue?"
+  ],
+  "options": [
+    { "id": "a", "text": "Increase the model's training data size" },
+    { "id": "b", "text": "Reduce the model's complexity" },
+    { "id": "c", "text": "Implement a fact-checking mechanism" },
+    { "id": "d", "text": "Focus on improving model speed" }
+  ],
+  "correctAnswer": "c",
+  "explanation": "A fact-checking mechanism verifies the accuracy of outputs and reduces incorrect information."
+},
+{
+  "id": "138",
+  "type": "single",
+  "question": [
+    "What role does regularization play in reducing model bias?"
+  ],
+  "options": [
+    { "id": "a", "text": "It increases model complexity" },
+    { "id": "b", "text": "It focuses on improving model speed" },
+    { "id": "c", "text": "It enhances model accuracy" },
+    { "id": "d", "text": "It prevents overfitting by penalizing complex models" }
+  ],
+  "correctAnswer": "d",
+  "explanation": "Regularization penalizes overly complex models, reducing overfitting and bias."
+},
+{
+  "id": "139",
+  "type": "single",
+  "question": [
+    "What is the primary purpose of using precision as a metric in model evaluation?"
+  ],
+  "options": [
+    { "id": "a", "text": "To measure the accuracy of positive predictions" },
+    { "id": "b", "text": "To measure the accuracy of negative predictions" },
+    { "id": "c", "text": "To evaluate overall model accuracy" },
+    { "id": "d", "text": "To determine the model's ability to generalize" }
+  ],
+  "correctAnswer": "a",
+  "explanation": "Precision measures how many predicted positives are actually correct, minimizing false positives."
+},
+{
+  "id": "140",
+  "type": "single",
+  "question": [
+    "Which metric is most suitable when false negatives are more critical than false positives?"
+  ],
+  "options": [
+    { "id": "a", "text": "Precision" },
+    { "id": "b", "text": "Recall" },
+    { "id": "c", "text": "F1 score" },
+    { "id": "d", "text": "Accuracy" }
+  ],
+  "correctAnswer": "b",
+  "explanation": "Recall minimizes false negatives, making it ideal when missing positive cases is costly."
+},
+{
+  "id": "141",
+  "type": "single",
+  "question": [
+    "What does the F1 score represent in model evaluation?"
+  ],
+  "options": [
+    { "id": "a", "text": "The average of precision and recall" },
+    { "id": "b", "text": "The difference between precision and recall" },
+    { "id": "c", "text": "The harmonic mean of precision and recall" },
+    { "id": "d", "text": "The sum of precision and recall" }
+  ],
+  "correctAnswer": "c",
+  "explanation": "The F1 score balances precision and recall using their harmonic mean."
+},
+{
+  "id": "142",
+  "type": "single",
+  "question": [
+    "A model predicts whether emails are spam.",
+    "If missing a spam email is more costly than marking a normal email as spam, which metric should be prioritized?"
+  ],
+  "options": [
+    { "id": "a", "text": "Precision" },
+    { "id": "b", "text": "Accuracy" },
+    { "id": "c", "text": "F1 score" },
+    { "id": "d", "text": "Recall" }
+  ],
+  "correctAnswer": "d",
+  "explanation": "Recall minimizes false negatives, which is crucial when missing spam emails is costly."
+},
+{
+  "id": "143",
+  "type": "single",
+  "question": [
+    "What is the primary goal of identifying use cases in business strategies for AI solutions?"
+  ],
+  "options": [
+    { "id": "a", "text": "To increase technology adoption" },
+    { "id": "b", "text": "To align AI solutions with business objectives" },
+    { "id": "c", "text": "To reduce operational costs" },
+    { "id": "d", "text": "To enhance employee productivity" }
+  ],
+  "correctAnswer": "b",
+  "explanation": "Use case identification ensures AI solutions support business goals and deliver value."
+},
+{
+  "id": "144",
+  "type": "single",
+  "question": [
+    "Which factor is crucial when selecting a use case for AI implementation?"
+  ],
+  "options": [
+    { "id": "a", "text": "Feasibility" },
+    { "id": "b", "text": "Popularity" },
+    { "id": "c", "text": "Novelty" },
+    { "id": "d", "text": "Complexity" }
+  ],
+  "correctAnswer": "a",
+  "explanation": "Feasibility determines whether the AI solution can realistically be implemented."
+},
+{
+  "id": "145",
+  "type": "single",
+  "question": [
+    "A retail company wants to use AI to improve customer service.",
+    "What is a key consideration in identifying a suitable use case?"
+  ],
+  "options": [
+    { "id": "a", "text": "The number of customer service agents" },
+    { "id": "b", "text": "The cost of AI technology" },
+    { "id": "c", "text": "The specific problem, such as reducing response time" },
+    { "id": "d", "text": "The availability of customer data" }
+  ],
+  "correctAnswer": "c",
+  "explanation": "Identifying a specific problem helps determine whether AI can effectively address it."
+},
+{
+  "id": "146",
+  "type": "single",
+  "question": [
+    "Why is stakeholder involvement important in AI use case identification?"
+  ],
+  "options": [
+    { "id": "a", "text": "To reduce project costs" },
+    { "id": "b", "text": "To accelerate implementation" },
+    { "id": "c", "text": "To enhance technical performance" },
+    { "id": "d", "text": "To ensure the solution meets user needs" }
+  ],
+  "correctAnswer": "d",
+  "explanation": "Stakeholders ensure the AI solution meets real user needs and gains acceptance."
+},
+{
+  "id": "147",
+  "type": "single",
+  "question": [
+    "What is a key factor in ensuring successful adoption of AI solutions in a business environment?"
+  ],
+  "options": [
+    { "id": "a", "text": "Stakeholder engagement" },
+    { "id": "b", "text": "Technical complexity" },
+    { "id": "c", "text": "Cost reduction" },
+    { "id": "d", "text": "Regulatory compliance" }
+  ],
+  "correctAnswer": "a",
+  "explanation": "Engaging stakeholders ensures understanding, support, and smoother adoption."
+},
+{
+  "id": "148",
+  "type": "single",
+  "question": [
+    "Which approach is most effective for managing resistance to AI adoption in an organization?"
+  ],
+  "options": [
+    { "id": "a", "text": "Mandating usage" },
+    { "id": "b", "text": "Training and education" },
+    { "id": "c", "text": "Ignoring resistance" },
+    { "id": "d", "text": "Outsourcing AI tasks" }
+  ],
+  "correctAnswer": "b",
+  "explanation": "Training and education reduce fear and help employees understand AI's benefits."
+},
+{
+  "id": "149",
+  "type": "single",
+  "question": [
+    "What role does leadership play in the change management process for AI solutions?"
+  ],
+  "options": [
+    { "id": "a", "text": "Technical support" },
+    { "id": "b", "text": "Financial oversight" },
+    { "id": "c", "text": "Vision and direction" },
+    { "id": "d", "text": "Day-to-day operations" }
+  ],
+  "correctAnswer": "c",
+  "explanation": "Leadership provides vision and direction, ensuring alignment with organizational goals."
+},
+{
+  "id": "150",
+  "type": "single",
+  "question": [
+    "A company is implementing AI to automate customer service.",
+    "What should be prioritized to ensure employee buy-in?"
+  ],
+  "options": [
+    { "id": "a", "text": "Reducing staff numbers" },
+    { "id": "b", "text": "Increasing technical training" },
+    { "id": "c", "text": "Enhancing data security" },
+    { "id": "d", "text": "Communicating the benefits" }
+  ],
+  "correctAnswer": "d",
+  "explanation": "Communicating benefits helps employees understand how AI supports their roles."
+},
+{
+  "id": "151",
+  "type": "single",
+  "question": [
+    "What is the primary purpose of implementing governance frameworks in AI solutions?"
+  ],
+  "options": [
+    { "id": "a", "text": "To ensure responsible and ethical AI development" },
+    { "id": "b", "text": "To increase deployment speed" },
+    { "id": "c", "text": "To reduce implementation cost" },
+    { "id": "d", "text": "To enhance technical performance" }
+  ],
+  "correctAnswer": "a",
+  "explanation": "Governance frameworks ensure AI is developed and deployed responsibly and ethically."
+},
+{
+  "id": "152",
+  "type": "single",
+  "question": [
+    "Which aspect of AI governance focuses on ensuring AI systems do not perpetuate bias?"
+  ],
+  "options": [
+    { "id": "a", "text": "Transparency" },
+    { "id": "b", "text": "Fairness" },
+    { "id": "c", "text": "Accountability" },
+    { "id": "d", "text": "Security" }
+  ],
+  "correctAnswer": "b",
+  "explanation": "Fairness ensures AI systems avoid discrimination and biased outcomes."
+},
+{
+  "id": "153",
+  "type": "single",
+  "question": [
+    "What is a key ethical concern when deploying AI solutions in business?"
+  ],
+  "options": [
+    { "id": "a", "text": "Cost efficiency" },
+    { "id": "b", "text": "Scalability" },
+    { "id": "c", "text": "Privacy" },
+    { "id": "d", "text": "Interoperability" }
+  ],
+  "correctAnswer": "c",
+  "explanation": "AI systems often handle sensitive data, making privacy a major ethical concern."
+},
+{
+  "id": "154",
+  "type": "single",
+  "question": [
+    "What is the primary purpose of implementing encryption in AI solutions?"
+  ],
+  "options": [
+    { "id": "a", "text": "To improve data processing speed" },
+    { "id": "b", "text": "To protect data from unauthorized access" },
+    { "id": "c", "text": "To reduce storage costs" },
+    { "id": "d", "text": "To enhance user interface design" }
+  ],
+  "correctAnswer": "b",
+  "explanation": "Encryption ensures data is secure and unreadable without proper authorization."
+},
+{
+  "id": "155",
+  "type": "single",
+  "question": [
+    "Which regulation governs data protection and privacy in the European Union?"
+  ],
+  "options": [
+    { "id": "a", "text": "GDPR" },
+    { "id": "b", "text": "HIPAA" },
+    { "id": "c", "text": "CCPA" },
+    { "id": "d", "text": "SOX" }
+  ],
+  "correctAnswer": "a",
+  "explanation": "GDPR is the EU's primary regulation for data protection and privacy."
+},
+{
+  "id": "156",
+  "type": "single",
+  "question": [
+    "A company processes personal data using an AI system.",
+    "What must they do to comply with GDPR?"
+  ],
+  "options": [
+    { "id": "a", "text": "Implement a firewall" },
+    { "id": "b", "text": "Encrypt all data" },
+    { "id": "c", "text": "Obtain explicit user consent" },
+    { "id": "d", "text": "Use cloud storage" }
+  ],
+  "correctAnswer": "c",
+  "explanation": "GDPR requires explicit user consent before processing personal data."
 }
+
+
 
 ]
