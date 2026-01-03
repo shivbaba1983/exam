@@ -1741,7 +1741,7 @@
   "correctAnswer": "d",
   "explanation": "The Text-to-Speech API converts text into natural-sounding speech."
 },{
-  "id": "119",
+  "id": "115",
   "type": "single",
   "question": [
     "What is the primary purpose of using temperature settings in advanced prompt engineering?"
@@ -1756,7 +1756,7 @@
   "explanation": "Temperature settings control randomness. Lower values produce deterministic outputs; higher values produce more creative outputs."
 },
 {
-  "id": "120",
+  "id": "116",
   "type": "single",
   "question": [
     "Which technique is used to ensure a model generates diverse outputs?"
@@ -1771,7 +1771,7 @@
   "explanation": "Top‑K sampling limits the model to the top K probable next words, promoting diversity."
 },
 {
-  "id": "121",
+  "id": "117",
   "type": "single",
   "question": [
     "A company wants to generate creative marketing slogans using a language model.",
@@ -1787,7 +1787,7 @@
   "explanation": "Increasing temperature allows the model to produce more varied and creative outputs."
 },
 {
-  "id": "122",
+  "id": "118",
   "type": "single",
   "question": [
     "Why might adjusting the top‑p parameter sometimes lead to less predictable outputs?"
@@ -1802,7 +1802,7 @@
   "explanation": "Top‑p (nucleus) sampling selects from words whose cumulative probability exceeds a threshold, which may include less probable words."
 },
 {
-  "id": "123",
+  "id": "119",
   "type": "single",
   "question": [
     "What is the primary purpose of grounding in AI model outputs?"
@@ -1817,7 +1817,7 @@
   "explanation": "Grounding ensures AI outputs are based on factual, reliable information."
 },
 {
-  "id": "124",
+  "id": "120",
   "type": "single",
   "question": [
     "Which technique is commonly used to fact‑check AI model outputs?"
@@ -1832,7 +1832,7 @@
   "explanation": "Cross‑referencing outputs with trusted sources is a standard fact‑checking method."
 },
 {
-  "id": "125",
+  "id": "121",
   "type": "single",
   "question": [
     "How does grounding improve the reliability of AI‑generated content?"
@@ -1847,7 +1847,7 @@
   "explanation": "Grounding ties outputs to verified data, reducing misinformation."
 },
 {
-  "id": "126",
+  "id": "122",
   "type": "single",
   "question": [
     "A company uses AI to generate news articles.",
@@ -1863,7 +1863,7 @@
   "explanation": "A fact‑checking system verifies information against reliable sources."
 },
 {
-  "id": "127",
+  "id": "123",
   "type": "single",
   "question": [
     "What is the primary goal of fine‑tuning a pre‑trained model?"
@@ -1878,7 +1878,7 @@
   "explanation": "Fine‑tuning adapts a pre‑trained model to a specific task or dataset."
 },
 {
-  "id": "128",
+  "id": "124",
   "type": "single",
   "question": [
     "Which technique is commonly used to prevent overfitting during fine‑tuning?"
@@ -1893,7 +1893,7 @@
   "explanation": "Dropout is a regularization technique that helps prevent overfitting."
 },
 {
-  "id": "129",
+  "id": "125",
   "type": "single",
   "question": [
     "What is a common outcome of not fine‑tuning a pre‑trained model for a specific task?"
@@ -1908,7 +1908,7 @@
   "explanation": "Without fine‑tuning, the model may not perform well on task‑specific data."
 },
 {
-  "id": "130",
+  "id": "126",
   "type": "single",
   "question": [
     "A company wants to adapt a language model to understand medical terminology better.",
@@ -1924,7 +1924,7 @@
   "explanation": "Fine‑tuning on medical‑specific data helps the model learn domain terminology."
 },
 {
-  "id": "131",
+  "id": "127",
   "type": "single",
   "question": [
     "What is the primary purpose of incorporating human‑in‑the‑loop (HITL) in machine learning models?"
@@ -1939,7 +1939,7 @@
   "explanation": "HITL improves accuracy by incorporating human feedback during training."
 },
 {
-  "id": "132",
+  "id": "128",
   "type": "single",
   "question": [
     "Which phase of model development benefits most from human‑in‑the‑loop techniques?"
@@ -1954,7 +1954,7 @@
   "explanation": "Training benefits most because human feedback can correct and guide learning."
 },
 {
-  "id": "133",
+  "id": "129",
   "type": "single",
   "question": [
     "How does human‑in‑the‑loop help reduce model bias?"
@@ -1969,7 +1969,7 @@
   "explanation": "Humans can identify and correct biased outputs, reducing bias in predictions."
 },
 {
-  "id": "134",
+  "id": "130",
   "type": "single",
   "question": [
     "A company uses HITL to refine its customer service chatbot.",
@@ -1985,7 +1985,7 @@
   "explanation": "Human reviewers refine chatbot responses, improving accuracy and relevance."
 },
 {
-  "id": "135",
+  "id": "131",
   "type": "single",
   "question": [
     "What is a common technique to reduce hallucination in AI models?"
@@ -2000,7 +2000,7 @@
   "explanation": "Diverse datasets help models learn accurate information and reduce hallucinations."
 },
 {
-  "id": "136",
+  "id": "132",
   "type": "single",
   "question": [
     "Which method is effective in mitigating bias in AI models?"
@@ -2014,7 +2014,7 @@
   "correctAnswer": "b",
   "explanation": "Representative training data helps prevent skewed learning and reduces bias."
 },{
-  "id": "137",
+  "id": "133",
   "type": "single",
   "question": [
     "A company notices its AI model often generates incorrect facts.",
@@ -2030,7 +2030,7 @@
   "explanation": "A fact-checking mechanism verifies the accuracy of outputs and reduces incorrect information."
 },
 {
-  "id": "138",
+  "id": "134",
   "type": "single",
   "question": [
     "What role does regularization play in reducing model bias?"
@@ -2045,7 +2045,7 @@
   "explanation": "Regularization penalizes overly complex models, reducing overfitting and bias."
 },
 {
-  "id": "139",
+  "id": "135",
   "type": "single",
   "question": [
     "What is the primary purpose of using precision as a metric in model evaluation?"
@@ -2060,7 +2060,7 @@
   "explanation": "Precision measures how many predicted positives are actually correct, minimizing false positives."
 },
 {
-  "id": "140",
+  "id": "136",
   "type": "single",
   "question": [
     "Which metric is most suitable when false negatives are more critical than false positives?"
@@ -2075,7 +2075,7 @@
   "explanation": "Recall minimizes false negatives, making it ideal when missing positive cases is costly."
 },
 {
-  "id": "141",
+  "id": "137",
   "type": "single",
   "question": [
     "What does the F1 score represent in model evaluation?"
@@ -2090,7 +2090,7 @@
   "explanation": "The F1 score balances precision and recall using their harmonic mean."
 },
 {
-  "id": "142",
+  "id": "138",
   "type": "single",
   "question": [
     "A model predicts whether emails are spam.",
@@ -2106,7 +2106,7 @@
   "explanation": "Recall minimizes false negatives, which is crucial when missing spam emails is costly."
 },
 {
-  "id": "143",
+  "id": "139",
   "type": "single",
   "question": [
     "What is the primary goal of identifying use cases in business strategies for AI solutions?"
@@ -2121,7 +2121,7 @@
   "explanation": "Use case identification ensures AI solutions support business goals and deliver value."
 },
 {
-  "id": "144",
+  "id": "140",
   "type": "single",
   "question": [
     "Which factor is crucial when selecting a use case for AI implementation?"
@@ -2136,7 +2136,7 @@
   "explanation": "Feasibility determines whether the AI solution can realistically be implemented."
 },
 {
-  "id": "145",
+  "id": "141",
   "type": "single",
   "question": [
     "A retail company wants to use AI to improve customer service.",
@@ -2152,7 +2152,7 @@
   "explanation": "Identifying a specific problem helps determine whether AI can effectively address it."
 },
 {
-  "id": "146",
+  "id": "142",
   "type": "single",
   "question": [
     "Why is stakeholder involvement important in AI use case identification?"
@@ -2167,7 +2167,7 @@
   "explanation": "Stakeholders ensure the AI solution meets real user needs and gains acceptance."
 },
 {
-  "id": "147",
+  "id": "143",
   "type": "single",
   "question": [
     "What is a key factor in ensuring successful adoption of AI solutions in a business environment?"
@@ -2182,7 +2182,7 @@
   "explanation": "Engaging stakeholders ensures understanding, support, and smoother adoption."
 },
 {
-  "id": "148",
+  "id": "144",
   "type": "single",
   "question": [
     "Which approach is most effective for managing resistance to AI adoption in an organization?"
@@ -2197,7 +2197,7 @@
   "explanation": "Training and education reduce fear and help employees understand AI's benefits."
 },
 {
-  "id": "149",
+  "id": "145",
   "type": "single",
   "question": [
     "What role does leadership play in the change management process for AI solutions?"
@@ -2212,7 +2212,7 @@
   "explanation": "Leadership provides vision and direction, ensuring alignment with organizational goals."
 },
 {
-  "id": "150",
+  "id": "146",
   "type": "single",
   "question": [
     "A company is implementing AI to automate customer service.",
@@ -2228,7 +2228,7 @@
   "explanation": "Communicating benefits helps employees understand how AI supports their roles."
 },
 {
-  "id": "151",
+  "id": "147",
   "type": "single",
   "question": [
     "What is the primary purpose of implementing governance frameworks in AI solutions?"
@@ -2243,7 +2243,7 @@
   "explanation": "Governance frameworks ensure AI is developed and deployed responsibly and ethically."
 },
 {
-  "id": "152",
+  "id": "148",
   "type": "single",
   "question": [
     "Which aspect of AI governance focuses on ensuring AI systems do not perpetuate bias?"
@@ -2258,7 +2258,7 @@
   "explanation": "Fairness ensures AI systems avoid discrimination and biased outcomes."
 },
 {
-  "id": "153",
+  "id": "149",
   "type": "single",
   "question": [
     "What is a key ethical concern when deploying AI solutions in business?"
@@ -2273,7 +2273,7 @@
   "explanation": "AI systems often handle sensitive data, making privacy a major ethical concern."
 },
 {
-  "id": "154",
+  "id": "150",
   "type": "single",
   "question": [
     "What is the primary purpose of implementing encryption in AI solutions?"
@@ -2288,7 +2288,7 @@
   "explanation": "Encryption ensures data is secure and unreadable without proper authorization."
 },
 {
-  "id": "155",
+  "id": "151",
   "type": "single",
   "question": [
     "Which regulation governs data protection and privacy in the European Union?"
@@ -2303,7 +2303,7 @@
   "explanation": "GDPR is the EU's primary regulation for data protection and privacy."
 },
 {
-  "id": "156",
+  "id": "152",
   "type": "single",
   "question": [
     "A company processes personal data using an AI system.",
