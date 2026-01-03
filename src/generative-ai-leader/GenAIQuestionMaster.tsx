@@ -80,6 +80,12 @@ const GenAIQuestionMaster = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }, [currentPage]);
 
+  const sanitizeSearch = (value: string) => {
+    return value
+      .replace(/[^a-zA-Z0-9 ,'": ]/g, '')
+      .slice(0, 50);
+  };
+
   return (
     <div>
       {/* Top bar with search and pagination side by side */}
@@ -93,17 +99,18 @@ const GenAIQuestionMaster = () => {
         </div>
 
         <div className="search-wrapper">
-          <input
-            type="text"
-            placeholder="Search questions..."
-            value={searchTerm}
-            onChange={e => setSearchTerm(e.target.value)}
-            onKeyDown={e => {
-              if (e.key === 'Enter') setCurrentPage(0);
-            }}
-            aria-label="Search questions"
-            className="top-search"
-          />
+        <input
+        type="text"
+        maxLength={50}
+        placeholder="Search questions..."
+        value={searchTerm}
+        onChange={e => setSearchTerm(sanitizeSearch(e.target.value))}
+        onKeyDown={e => {
+          if (e.key === 'Enter') setCurrentPage(0);
+        }}
+        aria-label="Search questions"
+        className="top-search"
+      />
           {searchTerm && (
             <button
               className="clear-search"
