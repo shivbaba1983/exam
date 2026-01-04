@@ -8,10 +8,10 @@ interface QuestionHeaderProps {
   totalQuestions:number;
 }
 
-const QuestionHeader = ({ questionNumber, questionText,id , totalQuestions}: QuestionHeaderProps) => {
+const QuestionHeader = ({ questionNumber, questionText,id , totalQuestions, examName}: QuestionHeaderProps) => {
   return (
     <div className="question-header">
-      <h3>Q:{id} of {totalQuestions}</h3>
+      <h3>Q:{id} of {totalQuestions} : {examName}</h3>
       <ul>
         {questionText.map((line, idx) => (
           <li key={idx}>{line}</li>

@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import questionsData from '../../data/qa.json';
+//import questionsData from '../../data/qa.json';
 import QuestionHeader from './QuestionHeader';
 import OptionsRenderer from './OptionsRenderer';
 import Controls from './Controls';
@@ -18,14 +18,17 @@ const formatQuestionSimple = (text: string | string[]): string[] => {
     .filter(Boolean);
 };
 
-const QuestionMaster = () => {
+const QuestionMaster = ({ questionsData , examName}) => {
   const [answers, setAnswers] = useState<any>({});
   const [submitted, setSubmitted] = useState<{ [key: string]: boolean }>({});
   const [currentPage, setCurrentPage] = useState(0);
   const [questionsPerPage, setQuestionsPerPage] = useState(1);
   const [searchTerm, setSearchTerm] = useState('');
- const [speakingId, setSpeakingId] = useState<string | null>(null);
+  const [speakingId, setSpeakingId] = useState<string | null>(null);
   const speechRef = useRef<SpeechSynthesisUtterance | null>(null);
+  // 🔊 SPEECH ADDITION
+  const [speechRate, setSpeechRate] = useState<number>(1);
+
   const questionRefs = useRef<{ [key: string]: HTMLDivElement | null }>({});
 
   const filteredQuestions = questionsData.filter(q => {
@@ -57,7 +60,7 @@ const QuestionMaster = () => {
 
   useEffect(() => {
     setCurrentPage(0);
-  }, [searchTerm, questionsPerPage]);
+  }, [searchTerm, questionsPerPage, questionsData]);
 
   const handleOptionChange = (qid: string, value: any) => {
     setAnswers(prev => ({ ...prev, [qid]: value }));
@@ -81,13 +84,14 @@ const QuestionMaster = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }, [currentPage]);
 
-    const sanitizeSearch = (value: string) => {
+  const sanitizeSearch = (value: string) => {
     return value
       .replace(/[^a-zA-Z0-9 ,'": ]/g, '')
       .slice(0, 50);
   };
 
-   const buildSpeechText = (question: any) => {
+  // 🔊 SPEECH ADDITION
+  const buildSpeechText = (question: any) => {
     const questionText = Array.isArray(question.question)
       ? question.question.join('. ')
       : question.question;
@@ -116,7 +120,6 @@ const QuestionMaster = () => {
       return;
     }
 
-    // Stop if already speaking same question
     if (speakingId === question.id) {
       window.speechSynthesis.cancel();
       setSpeakingId(null);
@@ -126,7 +129,7 @@ const QuestionMaster = () => {
     window.speechSynthesis.cancel();
 
     const utterance = new SpeechSynthesisUtterance(buildSpeechText(question));
-    utterance.rate = 0.95;
+    utterance.rate = speechRate; // ✅ FIXED
     utterance.pitch = 1;
     utterance.lang = 'en-US';
 
@@ -139,14 +142,14 @@ const QuestionMaster = () => {
     window.speechSynthesis.speak(utterance);
   };
 
-    useEffect(() => {
+
+  useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
 
     // 🔊 SPEECH ADDITION
     window.speechSynthesis.cancel();
     setSpeakingId(null);
   }, [currentPage]);
-
   return (
     <div>
       {/* <Pagination
@@ -165,18 +168,18 @@ const QuestionMaster = () => {
         </div>
 
         <div className="search-wrapper">
-        <input
-        type="text"
-        maxLength={50}
-        placeholder="Search questions..."
-        value={searchTerm}
-        onChange={e => setSearchTerm(sanitizeSearch(e.target.value))}
-        onKeyDown={e => {
-          if (e.key === 'Enter') setCurrentPage(0);
-        }}
-        aria-label="Search questions"
-        className="top-search"
-      />
+          <input
+            type="text"
+            maxLength={50}
+            placeholder="Search questions..."
+            value={searchTerm}
+            onChange={e => setSearchTerm(sanitizeSearch(e.target.value))}
+            onKeyDown={e => {
+              if (e.key === 'Enter') setCurrentPage(0);
+            }}
+            aria-label="Search questions"
+            className="top-search"
+          />
           {searchTerm && (
             <button
               className="clear-search"
@@ -217,7 +220,9 @@ const QuestionMaster = () => {
                 questionText={formatQuestionSimple(question.question)}
                 id={question.id}
                 totalQuestions={filteredQuestions?.length}
+                examName={examName}
               />
+              {/* 🔊 SPEECH ADDITION */}
               <button
                 className="speak-btn"
                 onClick={() => handleSpeak(question)}
@@ -225,6 +230,15 @@ const QuestionMaster = () => {
               >
                 {speakingId === question.id ? '⏹ Stop Reading' : '🔊 Read Aloud'}
               </button>
+              {/* 🔊 SPEECH SPEED SELECTOR */}
+              <select
+                value={speechRate}
+                onChange={(e) => setSpeechRate(Number(e.target.value))}
+              >
+                <option value={0.75}>🐢 Slow</option>
+                <option value={1}>🚶 Normal</option>
+                <option value={1.35}>⚡ Fast</option>
+              </select>
               <div className="option-container">
                 <OptionsRenderer
                   question={question}

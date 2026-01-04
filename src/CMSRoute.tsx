@@ -1,34 +1,61 @@
-import React from 'react';
-import { Routes, Route, Link } from 'react-router-dom';
+import React, { useState } from 'react';
+import { Routes, Route, Link, useParams } from 'react-router-dom';
 import MainResponsiveLayout from './main-responsive-layout/MainResponsiveLayout';
 import Utility from './utility/Utility';
 import Dashboard from './../src/dashboard/Dashboard';
-import AWS from './aws/AWS';
 import Learn from './../src/learn/Learn';
-import AILeaderHome from './../src/generative-ai-leader/AILeaderHome';
-import './CMSRoute.scss'; // Import styles
+import './CMSRoute.scss';
 
-const CMSRoute = () => (
-  <div className="cms-container">
-    <nav className="nav-bar">
-      <Link to="/dashboard" className="nav-button">Dashboard</Link>
-      <Link to="/" className="nav-button">Exam</Link>
-      {/* <Link to="/aws" className="nav-button">AWS</Link> */}
-          <Link to="/GenerativeAILeader" className='nav-button'>GenAILeader</Link>
-      <Link to="/utility" className="nav-button">Utility</Link>
-      <Link to="/learn" className="nav-button">Learn</Link>  
-    </nav>
+/* 🔹 Wrapper to extract examName param */
+const ExamLayoutWrapper = () => {
+  const { examName } = useParams<{ examName: string }>();
 
-    <Routes>
-      <Route path="/dashboard" element={<Dashboard />} />
-      <Route path="/" element={<MainResponsiveLayout />} />
-      {/* <Route path="/aws" element={<AWS />} /> */}
-      <Route path="/GenerativeAILeader" element={<AILeaderHome />} />
-      <Route path="/utility" element={<Utility />} />
-      <Route path="/learn" element={<Learn />} />
+  return <MainResponsiveLayout examName={examName || 'AI-102'} />;
+};
 
-    </Routes>
-  </div>
-);
+const CMSRoute = () => {
 
+  const [showExamMenu, setShowExamMenu] = useState(false);
+
+  return (
+    <div className="cms-container">
+      <nav className="nav-bar">
+        <Link to="/dashboard" className="nav-button">Dashboard</Link>
+
+        {/* 🔥 Exam menu */}
+        <div
+          className="nav-dropdown"
+          onClick={() => setShowExamMenu(prev => !prev)}
+        >
+          <span className="nav-button">Exam ▾</span>
+
+          <div className={`dropdown-menu ${showExamMenu ? 'show' : ''}`}>
+            <Link to="/exam/AI-102" className="dropdown-item">AI-102 Exam</Link>
+            <Link to="/exam/Generative-AI-Leader" className="dropdown-item">Generative AI Leader</Link>
+            <Link to="/exam/AWS" className="dropdown-item">AWS Exam</Link>
+          </div>
+        </div>
+
+        <Link to="/utility" className="nav-button">Utility</Link>
+        <Link to="/learn" className="nav-button">Learn</Link>
+      </nav>
+
+      <Routes>
+        <Route path="/dashboard" element={<Dashboard />} />
+
+        {/* 🔥 Exam Routes */}
+        <Route path="/exam/:examName" element={<ExamLayoutWrapper />} />
+
+        {/* Existing */}
+
+        <Route path="/utility" element={<Utility />} />
+        <Route path="/learn" element={<Learn />} />
+
+        {/* Default */}
+        <Route path="/" element={<ExamLayoutWrapper />} />
+      </Routes>
+    </div>
+  )
+
+}
 export default CMSRoute;
