@@ -2317,8 +2317,336 @@
   ],
   "correctAnswer": "c",
   "explanation": "GDPR requires explicit user consent before processing personal data."
+},{
+  "id": "153",
+  "type": "single",
+  "question": [
+    "A company is evaluating the use of large language models (LLMs) to enhance its operations and customer interactions.",
+    "What is a primary characteristic of LLMs?"
+  ],
+  "options": [
+    { "id": "a", "text": "LLMs excel in highly specific technical tasks requiring deep single‑domain expertise" },
+    { "id": "b", "text": "LLMs learn and generalize effectively from very small datasets for niche applications" },
+    { "id": "c", "text": "LLMs have strong inherent logical reasoning abilities without additional prompting" },
+    { "id": "d", "text": "LLMs are trained on vast datasets enabling broad language and context understanding and adaptability across many tasks" }
+  ],
+  "correctAnswer": "d",
+  "explanation": "LLMs are foundation models trained on massive, diverse datasets (text, images, code), giving them broad language understanding and adaptability across many tasks."
+},{
+  "id": "154",
+  "type": "single",
+  "question": [
+    "An AI robot learns optimal package delivery routes in a city.",
+    "It receives positive scores for successful deliveries and negative scores for delays or failures.",
+    "Through this feedback, the robot improves its navigation over time.",
+    "What type of machine learning is being used to train the robot?"
+  ],
+  "options": [
+    { "id": "a", "text": "Supervised learning" },
+    { "id": "b", "text": "Deep learning" },
+    { "id": "c", "text": "Unsupervised learning" },
+    { "id": "d", "text": "Reinforcement learning" }
+  ],
+  "correctAnswer": "d",
+  "explanation": "Reinforcement learning trains an agent through interaction with its environment using rewards and penalties to improve decision‑making over time."
+},{
+  "id": "155",
+  "type": "single",
+  "question": [
+    "A company wants to use generative AI to automate complex workflows and improve decision‑making across departments.",
+    "They are considering implementing AI agents as part of their strategy.",
+    "What is the primary function of an AI agent in a generative AI system?"
+  ],
+  "options": [
+    { "id": "a", "text": "To provide the computing power for training and running advanced AI models" },
+    { "id": "b", "text": "To be the user interface for interacting with AI models" },
+    { "id": "c", "text": "To be a smart system that can analyze, use tools, and make decisions to reach goals" },
+    { "id": "d", "text": "To be a central storage place for the data that AI models use" }
+  ],
+  "correctAnswer": "c",
+  "explanation": "AI agents observe, analyze, use tools, and act to achieve goals with minimal human oversight, making decisions based on their environment."
+},
+{
+  "id": "156",
+  "type": "single",
+  "question": [
+    "An advertising agency needs to generate many photorealistic images from text for client campaigns because traditional photo shoots are slow and costly.",
+    "Which Google foundation model should they use?"
+  ],
+  "options": [
+    { "id": "a", "text": "Gemini" },
+    { "id": "b", "text": "Gemma" },
+    { "id": "c", "text": "Imagen" },
+    { "id": "d", "text": "Meghan" }
+  ],
+  "correctAnswer": "c",
+  "explanation": "Imagen is a powerful text‑to‑image diffusion model that generates high‑quality photorealistic images from textual descriptions."
+},
+{
+  "id": "157",
+  "type": "single",
+  "question": [
+    "A company wants to integrate generative AI but is concerned about becoming dependent on a single technology provider.",
+    "They want flexibility to choose and integrate different AI tools as their needs evolve.",
+    "Which inherent characteristic of Google Cloud addresses this concern?"
+  ],
+  "options": [
+    { "id": "a", "text": "Google Cloud's emphasis on an open approach within its AI offerings" },
+    { "id": "b", "text": "Google Cloud's tightly integrated proprietary AI solutions" },
+    { "id": "c", "text": "Google Cloud's strategy of fully managed AI services" },
+    { "id": "d", "text": "Google Cloud's focus on automating AI workflows" }
+  ],
+  "correctAnswer": "a",
+  "explanation": "Google Cloud’s open approach supports customer choice, reduces vendor lock‑in, and enables integration across diverse tools and platforms."
+},{
+  "id": "158",
+  "type": "single",
+  "question": [
+    "A consulting research team needs to analyze multiple lengthy reports, identify key trends, link information across sources, and organize insights efficiently.",
+    "Manual methods are too slow and complex.",
+    "Which Google Cloud offering should they use?"
+  ],
+  "options": [
+    { "id": "a", "text": "Notebook LM" },
+    { "id": "b", "text": "Gemini" },
+    { "id": "c", "text": "Vertex AI Search" },
+    { "id": "d", "text": "Gemini for Google Workspace" }
+  ],
+  "correctAnswer": "a",
+  "explanation": "Notebook LM is an AI‑first notebook grounded in user‑provided documents, enabling summarization, cross‑document insights, and source‑based answers."
+},{
+  "id": "160",
+  "type": "single",
+  "question": [
+    "A tech company has separate teams using different tools for machine learning projects, causing duplicated work and scaling issues.",
+    "They need a central platform to manage AI development, deployment, and monitoring efficiently.",
+    "Which Google Cloud offering should they use?"
+  ],
+  "options": [
+    { "id": "a", "text": "Cloud Functions" },
+    { "id": "b", "text": "Vertex AI" },
+    { "id": "c", "text": "Google Agent Space" },
+    { "id": "d", "text": "BigQuery" }
+  ],
+  "correctAnswer": "b",
+  "explanation": "Vertex AI is Google Cloud’s unified ML platform that streamlines data preparation, training, deployment, and monitoring across the entire ML lifecycle."
+},{
+  "id": "161",
+  "type": "single",
+  "question": [
+    "A software company's AI chatbot struggles to answer customer questions about recently released features because this information is not in its original training data.",
+    "The company wants the chatbot to use the latest product documentation to give accurate, up‑to‑date responses without retraining the entire model.",
+    "Which technique should they use?"
+  ],
+  "options": [
+    { "id": "a", "text": "Fine‑tuning" },
+    { "id": "b", "text": "Prompt engineering" },
+    { "id": "c", "text": "Retrieval‑Augmented Generation (RAG)" },
+    { "id": "d", "text": "Human‑in‑the‑loop (HITL)" }
+  ],
+  "correctAnswer": "c",
+  "explanation": "RAG retrieves relevant information from external sources such as updated product documentation and uses it to generate accurate responses without retraining the model."
+},{
+  "id": "162",
+  "type": "single",
+  "question": [
+    "A business analyst asks an AI model to generate information about the quarterly revenue of a new startup.",
+    "The model confidently provides a revenue figure and references a press release, but the startup has not released any financial reports and no such press release exists.",
+    "Which large language model limitation does this exemplify?"
+  ],
+  "options": [
+    { "id": "a", "text": "Knowledge cutoff" },
+    { "id": "b", "text": "Data dependency" },
+    { "id": "c", "text": "Hallucinations" },
+    { "id": "d", "text": "Model bias" }
+  ],
+  "correctAnswer": "c",
+  "explanation": "Hallucinations occur when a model generates plausible‑sounding but incorrect or fabricated information, such as nonexistent revenue data or press releases."
+},{
+  "id": "163",
+  "type": "single",
+  "question": [
+    "An internal AI tool that answers employee policy questions is providing outdated and inaccurate information.",
+    "The company wants the tool to give reliable answers based on the latest official documents.",
+    "What should the organization do?"
+  ],
+  "options": [
+    { "id": "a", "text": "Fine‑tune the language model with a broader general knowledge dataset" },
+    { "id": "b", "text": "Increase the model's temperature setting" },
+    { "id": "c", "text": "Implement grounding techniques" },
+    { "id": "d", "text": "Reduce the token count parameter" }
+  ],
+  "correctAnswer": "c",
+  "explanation": "Grounding connects model outputs to verifiable sources such as internal documents, ensuring accuracy. RAG is one grounding method that retrieves relevant information before generating responses."
+},{
+  "id": "164",
+  "type": "single",
+  "question": [
+    "A sales team wants to create dynamic and personalized video pitches for potential clients.",
+    "They need an AI model that can transform client information into engaging video content tailored to each client's needs.",
+    "Which Google model should they use?"
+  ],
+  "options": [
+    { "id": "a", "text": "Gemma" },
+    { "id": "b", "text": "Gemini" },
+    { "id": "c", "text": "Imagen" },
+    { "id": "d", "text": "Veo" }
+  ],
+  "correctAnswer": "d",
+  "explanation": "Veo is capable of generating high‑quality video content from text or images, making it suitable for personalized video pitches."
+},{
+  "id": "165",
+  "type": "single",
+  "question": [
+    "A growing retail company has fragmented phone, email, and basic website chat support.",
+    "They need a unified cloud solution that integrates communication channels, provides consistent customer experiences, and scales securely.",
+    "Which Google Cloud offering should they use?"
+  ],
+  "options": [
+    { "id": "a", "text": "Vertex AI Platform" },
+    { "id": "b", "text": "Google Cloud Contact Center as a Service (CCaaS)" },
+    { "id": "c", "text": "Conversational AI" },
+    { "id": "d", "text": "Vertex AI Search" }
+  ],
+  "correctAnswer": "b",
+  "explanation": "Google Cloud CCaaS provides an integrated, scalable, secure contact center solution with omnichannel support and CRM integration."
+},{
+  "id": "166",
+  "type": "single",
+  "question": [
+    "An organization wants to improve how employees access and use internal information scattered across various systems.",
+    "They want tools that can understand and use this data to enhance productivity and decision‑making.",
+    "What is a key benefit of using Google Cloud Agent Space in this scenario?"
+  ],
+  "options": [
+    { "id": "a", "text": "It enhances external customer engagement through AI‑powered chatbots" },
+    { "id": "b", "text": "It manages infrastructure and hardware for AI model training" },
+    { "id": "c", "text": "It allows employees to find and use internal information more easily by creating custom AI agents that access and understand enterprise data" },
+    { "id": "d", "text": "It is designed primarily for building predictive machine learning models" }
+  ],
+  "correctAnswer": "c",
+  "explanation": "Google Agent Space enables creation of custom AI agents that access and understand data across enterprise systems, helping employees find information and automate tasks."
+},{
+  "id": "167",
+  "type": "single",
+  "question": [
+    "What is reinforcement learning?"
+  ],
+  "options": [
+    { "id": "a", "text": "Learning from labeled data with correct output pairs" },
+    { "id": "b", "text": "Learning by identifying patterns in unlabeled data" },
+    { "id": "c", "text": "Learning through interaction and feedback" },
+    { "id": "d", "text": "Learning by training on vast data to generate new content" }
+  ],
+  "correctAnswer": "c",
+  "explanation": "Reinforcement learning is defined as learning through interaction with an environment and receiving feedback in the form of rewards or penalties."
+},{
+  "id": "168",
+  "type": "single",
+  "question": [
+    "A company is developing a system to automatically categorize customer support emails.",
+    "They have thousands of past emails, each manually reviewed and tagged with categories such as billing inquiry, technical support, or feature request.",
+    "What type of data is this?"
+  ],
+  "options": [
+    { "id": "a", "text": "Unlabeled data" },
+    { "id": "b", "text": "Labeled data" },
+    { "id": "c", "text": "Structured data" },
+    { "id": "d", "text": "Raw data" }
+  ],
+  "correctAnswer": "b",
+  "explanation": "The emails are manually tagged with categories, meaning each data point has an associated label, making it labeled data."
+},{
+  "id": "169",
+  "type": "single",
+  "question": [
+    "What is the definition of a generative AI model?"
+  ],
+  "options": [
+    { "id": "a", "text": "A physical device that houses the hardware components of a GenAI system" },
+    { "id": "b", "text": "A complex algorithm trained on vast amounts of data to learn patterns and relationships" },
+    { "id": "c", "text": "A user interface that allows users to interact with a GenAI system" },
+    { "id": "d", "text": "A set of rules governing responsible development and use of GenAI" }
+  ],
+  "correctAnswer": "b",
+  "explanation": "A generative AI model is a sophisticated algorithm trained on large and diverse datasets to learn patterns and relationships, enabling it to generate new content such as text, images, or audio."
+},{
+  "id": "170",
+  "type": "single",
+  "question": [
+    "A software company has developers who need to write, review, debug, and generate code from natural language descriptions using generative AI.",
+    "What type of agent is this?"
+  ],
+  "options": [
+    { "id": "a", "text": "Data analysis agent" },
+    { "id": "b", "text": "Workflow agent" },
+    { "id": "c", "text": "Data agent" },
+    { "id": "d", "text": "Code agent" }
+  ],
+  "correctAnswer": "d",
+  "explanation": "A code agent assists developers in writing, reviewing, debugging, and generating code from natural language descriptions."
+},{
+  "id": "171",
+  "type": "single",
+  "question": [
+    "An advertising agency needs to quickly create many photorealistic images from text descriptions for client campaigns because traditional photo shoots are too slow and costly.",
+    "Which Google foundation model should they use?"
+  ],
+  "options": [
+    { "id": "a", "text": "Gemini" },
+    { "id": "b", "text": "Gemma" },
+    { "id": "c", "text": "Veo" },
+    { "id": "d", "text": "Imagen" }
+  ],
+  "correctAnswer": "d",
+  "explanation": "Imagen specializes in generating high‑quality images from text, making it ideal for fast and affordable visual content creation."
+},{
+  "id": "172",
+  "type": "single",
+  "question": [
+    "A research scientist wants to use Veo to visualize live fluctuating data streams on a real‑time dashboard.",
+    "Why would Veo be a poor choice for this task?"
+  ],
+  "options": [
+    { "id": "a", "text": "Veo generates videos from static inputs like text or images and cannot dynamically visualize live data" },
+    { "id": "b", "text": "Veo lacks specific scientific visualization styles needed for accurate data representation" },
+    { "id": "c", "text": "Veo would require too many computational resources for this scenario" },
+    { "id": "d", "text": "Veo is designed for short‑form video, not continuous long‑duration displays" }
+  ],
+  "correctAnswer": "a",
+  "explanation": "Veo generates videos from static inputs such as text or images and cannot process or visualize live, real‑time data streams, which the scientist's task requires."
+},
+{
+  "id": "173",
+  "type": "single",
+  "question": [
+    "A company sells custom‑designed phone cases on their website.",
+    "How should Imagen be effectively used?"
+  ],
+  "options": [
+    { "id": "a", "text": "To generate realistic images of phone cases on devices from text descriptions of designs" },
+    { "id": "b", "text": "To analyze customer feedback and identify design trends" },
+    { "id": "c", "text": "To predict demand for different phone case designs based on sales data" },
+    { "id": "d", "text": "To transcribe customer audio feedback on prototype designs" }
+  ],
+  "correctAnswer": "a",
+  "explanation": "Imagen generates high‑quality images from text descriptions, making it ideal for creating realistic product mockups of custom phone case designs."
+},{
+  "id": "174",
+  "type": "single",
+  "question": [
+    "A company lacks extensive in‑house machine learning and AI expertise.",
+    "How does Google Cloud democratize AI for such organizations?"
+  ],
+  "options": [
+    { "id": "a", "text": "By offering exclusive access to its most powerful AI models only to high‑spending clients" },
+    { "id": "b", "text": "By providing fully automated AI solutions requiring no technical input" },
+    { "id": "c", "text": "By providing a comprehensive AI platform with low‑code/no‑code tools, pre‑trained models, and easy‑to‑use APIs" },
+    { "id": "d", "text": "By offering free custom AI solution development and deployment for all businesses" }
+  ],
+  "correctAnswer": "c",
+  "explanation": "Google Cloud democratizes AI by offering low‑code/no‑code tools, pre‑trained models, and user‑friendly APIs, enabling teams without deep ML expertise to build and deploy AI solutions."
 }
-
 
 
 ]

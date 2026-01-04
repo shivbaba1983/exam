@@ -24,7 +24,8 @@ const GenAIQuestionMaster = () => {
   const [currentPage, setCurrentPage] = useState(0);
   const [questionsPerPage, setQuestionsPerPage] = useState(1);
   const [searchTerm, setSearchTerm] = useState('');
-
+ const [speakingId, setSpeakingId] = useState<string | null>(null);
+  const speechRef = useRef<SpeechSynthesisUtterance | null>(null);
   const questionRefs = useRef<{ [key: string]: HTMLDivElement | null }>({});
 
   const filteredQuestions = questionsData.filter(q => {
@@ -80,14 +81,79 @@ const GenAIQuestionMaster = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }, [currentPage]);
 
-  const sanitizeSearch = (value: string) => {
+    const sanitizeSearch = (value: string) => {
     return value
       .replace(/[^a-zA-Z0-9 ,'": ]/g, '')
       .slice(0, 50);
   };
 
+   const buildSpeechText = (question: any) => {
+    const questionText = Array.isArray(question.question)
+      ? question.question.join('. ')
+      : question.question;
+
+    const optionsText = question.options
+      ? question.options.map((o: any, i: number) => `Option ${i + 1}. ${o.text}.`).join(' ')
+      : '';
+
+    const explanationText = question.explanation
+      ? `Explanation. ${question.explanation}`
+      : '';
+
+    return `
+      Question.
+      ${questionText}.
+      ${optionsText}
+      Correct Answer.
+      ${JSON.stringify(question.correctAnswer)}.
+      ${explanationText}
+    `;
+  };
+
+  const handleSpeak = (question: any) => {
+    if (!('speechSynthesis' in window)) {
+      alert('Text to speech not supported');
+      return;
+    }
+
+    // Stop if already speaking same question
+    if (speakingId === question.id) {
+      window.speechSynthesis.cancel();
+      setSpeakingId(null);
+      return;
+    }
+
+    window.speechSynthesis.cancel();
+
+    const utterance = new SpeechSynthesisUtterance(buildSpeechText(question));
+    utterance.rate = 0.95;
+    utterance.pitch = 1;
+    utterance.lang = 'en-US';
+
+    utterance.onend = () => {
+      setSpeakingId(null);
+    };
+
+    speechRef.current = utterance;
+    setSpeakingId(question.id);
+    window.speechSynthesis.speak(utterance);
+  };
+
+    useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+
+    // 🔊 SPEECH ADDITION
+    window.speechSynthesis.cancel();
+    setSpeakingId(null);
+  }, [currentPage]);
+
   return (
     <div>
+      {/* <Pagination
+        currentIndex={currentPage}
+        total={totalPages}
+        onJump={handlePageJump}
+      /> */}
       {/* Top bar with search and pagination side by side */}
       <div className="top-bar">
         <div className="pagination-wrapper">
@@ -152,7 +218,13 @@ const GenAIQuestionMaster = () => {
                 id={question.id}
                 totalQuestions={filteredQuestions?.length}
               />
-
+              <button
+                className="speak-btn"
+                onClick={() => handleSpeak(question)}
+                style={{ marginBottom: '10px' }}
+              >
+                {speakingId === question.id ? '⏹ Stop Reading' : '🔊 Read Aloud'}
+              </button>
               <div className="option-container">
                 <OptionsRenderer
                   question={question}
