@@ -4,7 +4,7 @@
 .question-ui {
   //padding: 1rem;
   font-family: sans-serif;
-  text-align: left;
+ // text-align: left;
   .question-card {
     background: #fdfdfd;
     border-radius: 12px;
@@ -24,7 +24,7 @@
     padding: 2px 0;
     position: relative;
     z-index: 1000;
-   // text-align: left;
+    text-align: left;
     -webkit-overflow-scrolling: touch;
   }
 
