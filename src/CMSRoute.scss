@@ -56,9 +56,13 @@
   z-index: 1000;
 }
 
-/* ✅ Keeps dropdown open while hovering menu */
-.nav-dropdown:hover .dropdown-menu,
-.dropdown-menu:hover {
+/* Desktop hover */
+.nav-dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+/* Mobile click */
+.dropdown-menu.show {
   display: block;
 }
 
@@ -79,3 +83,4 @@
     color: #004999;
   }
 }
+

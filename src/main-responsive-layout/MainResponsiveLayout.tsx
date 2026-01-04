@@ -9,7 +9,7 @@ interface Props {
   examName?: string;
 }
 
-const MainResponsiveLayout: React.FC<Props> = ({ examName }) => {
+const MainResponsiveLayout= ({ examName }) => {
 
   const examDataMap: { [key: string]: any[] } = {
     'AI-102': AI102,

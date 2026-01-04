@@ -2646,7 +2646,25 @@
   ],
   "correctAnswer": "c",
   "explanation": "Google Cloud democratizes AI by offering low‑code/no‑code tools, pre‑trained models, and user‑friendly APIs, enabling teams without deep ML expertise to build and deploy AI solutions."
+},{
+  "id": "175",
+  "type": "single",
+  "question": [
+    "The Human Resources department deploys a generative AI model to screen job applications and provide a shortlist of candidates.",
+    "Recruiters notice that some seemingly qualified candidates are consistently being overlooked, and the AI provides no explanation for its rankings or exclusions.",
+    "The company needs to address this lack of transparency.",
+    "What should they do?"
+  ],
+  "options": [
+    { "id": "a", "text": "Collect a larger and more diverse dataset for the generative AI model" },
+    { "id": "b", "text": "Fine‑tune the generative AI model" },
+    { "id": "c", "text": "Implement explainable GenAI policies" },
+    { "id": "d", "text": "Develop fairness assessments for the generative AI model" }
+  ],
+  "correctAnswer": "c",
+  "explanation": "Implementing explainable GenAI policies directly addresses the lack of transparency by making the model’s decision‑making process understandable. Explainable AI helps HR teams and recruiters see which factors influence rankings or exclusions, improving trust and enabling identification of potential issues."
 }
+
 
 
 ]
