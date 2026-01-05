@@ -5,6 +5,7 @@ import SumTwoNumber from '@/reducer-learning/SumTwoNumber';
 import VoiceToText from './VoiceToText';
 import VoiceRecorderSaveLocal from './VoiceRecorderSaveLocal';
 import VoiceRecorderWithTranscription from './VoiceRecorderWithTranscription';
+import TextToSpeech from './TextToSpeech';
 const Learn = ({ }) => {
     return (<div>
         <p> Welcome, This Learn page</p>       
@@ -12,6 +13,7 @@ const Learn = ({ }) => {
         <SumTwoNumber/>
          <SectionedGallery />
          <VoiceToText/>
+         <TextToSpeech/>
          <VoiceRecorderSaveLocal/>
          <VoiceRecorderWithTranscription/>
     </div>)
