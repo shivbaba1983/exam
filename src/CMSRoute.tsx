@@ -3,7 +3,7 @@ import { Routes, Route, Link, useParams } from 'react-router-dom';
 import MainResponsiveLayout from './main-responsive-layout/MainResponsiveLayout';
 import Utility from './utility/Utility';
 import Dashboard from './../src/dashboard/Dashboard';
-import Learn from './../src/learn/Learn';
+//import Learn from './../src/learn/Learn';
 import './CMSRoute.scss';
 
 /* 🔹 Wrapper to extract examName param */
@@ -37,7 +37,7 @@ const CMSRoute = () => {
         </div>
 
         <Link to="/utility" className="nav-button">Utility</Link>
-        <Link to="/learn" className="nav-button">Learn</Link>
+        {/* <Link to="/learn" className="nav-button">Learn</Link> */}
       </nav>
 
       <Routes>
@@ -49,7 +49,7 @@ const CMSRoute = () => {
         {/* Existing */}
 
         <Route path="/utility" element={<Utility />} />
-        <Route path="/learn" element={<Learn />} />
+        {/* <Route path="/learn" element={<Learn />} /> */}
 
         {/* Default */}
         <Route path="/" element={<ExamLayoutWrapper />} />
