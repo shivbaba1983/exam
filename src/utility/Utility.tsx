@@ -5,9 +5,6 @@ import FolderOCRApp from '../components/FolderOCRApp';
 import FileDiffViewer from '../filedifference/FileDiffViewer';
 import FileDiffViewerReducer from '../filedifference/FileDiffViewerReducer';
 
-import SectionedGallery from './../components/SectionedGallery';
-import ReactReducerLearn from './../reducer-learning/ReactReducerLearn';
-import SumTwoNumber from '@/reducer-learning/SumTwoNumber';
 import VoiceToText from './VoiceToText';
 import VoiceRecorderSaveLocal from './VoiceRecorderSaveLocal';
 import VoiceRecorderWithTranscription from './VoiceRecorderWithTranscription';
@@ -18,45 +15,60 @@ import './Utility.scss';
 const Utility = () => {
   return (
     <div className="facility-page">
-      <h1 className="page-title">Facility Page</h1>
+      <h1 className="page-title">Utility Dashboard</h1>
 
-        <VoiceToText />
-        <TextToSpeech />
+      <div className="dashboard-grid">
+        {/* LEFT COLUMN – VOICE & AUDIO */}
+        <div className="dashboard-column">
+          <section className="facility-section">
+            <h2 className="section-title">Speech Recognition (Voice → Text)</h2>
+            <VoiceToText />
+          </section>
 
-        <VoiceRecorderSaveLocal />
-        <VoiceRecorderWithTranscription />
-      <section className="facility-section">
-        <h2 className="section-title">Image OCR</h2>
-        <ImageOCRApp />
-      </section>
+          <section className="facility-section">
+            <h2 className="section-title">Speech Synthesis (Text → Voice)</h2>
+            <TextToSpeech />
+          </section>
 
-      <section className="facility-section">
-        <h2 className="section-title">Folder OCR</h2>
-        <FolderOCRApp />
-      </section>
+          <section className="facility-section">
+            <h2 className="section-title">Audio Recorder (Save Locally)</h2>
+            <VoiceRecorderSaveLocal />
+          </section>
 
-      <section className="facility-section">
-        <h2 className="section-title">File Difference Viewer</h2>
-        <FileDiffViewer />
-        <h2 className="section-title">File Difference Viewer using React Reducer</h2>
-        <FileDiffViewerReducer />
-      </section>
+          <section className="facility-section">
+            <h2 className="section-title">Audio Recorder with Live Transcription</h2>
+            <VoiceRecorderWithTranscription />
+          </section>
+        </div>
 
-      <section className="facility-section">
-        <h2 className="section-title">Copy & Rename Images</h2>
-        <CopyRenameImages />
-      </section>
+        {/* RIGHT COLUMN – FILES & OCR */}
+        <div className="dashboard-column">
+          <section className="facility-section">
+            <h2 className="section-title">Image OCR (Extract Text from Images)</h2>
+            <ImageOCRApp />
+          </section>
 
-      {/* ✅ Newly added components */}
-      {/* <section className="facility-section">
-        <h2 className="section-title">Reducer & Utilities</h2>
+          <section className="facility-section">
+            <h2 className="section-title">Folder OCR (Bulk Image Processing)</h2>
+            <FolderOCRApp />
+          </section>
 
-        <ReactReducerLearn />
-        <SumTwoNumber />
-        <SectionedGallery />
+          <section className="facility-section">
+            <h2 className="section-title">File Difference Viewer</h2>
+            <FileDiffViewer />
+          </section>
 
+          <section className="facility-section">
+            <h2 className="section-title">File Difference Viewer (Reducer-based)</h2>
+            <FileDiffViewerReducer />
+          </section>
 
-      </section> */}
+          <section className="facility-section">
+            <h2 className="section-title">Bulk Copy & Rename Images</h2>
+            <CopyRenameImages />
+          </section>
+        </div>
+      </div>
     </div>
   );
 };
