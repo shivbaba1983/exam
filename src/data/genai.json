@@ -2414,6 +2414,23 @@
   ],
   "correctAnswer": "a",
   "explanation": "Notebook LM is an AI‑first notebook grounded in user‑provided documents, enabling summarization, cross‑document insights, and source‑based answers."
+},
+{
+  "id": "159",
+  "type": "single",
+  "question": [
+    "A consulting research team needs to analyze multiple lengthy reports, identify key trends, link information across sources, and organize insights efficiently.",
+    "Manual methods are too slow and complex.",
+    "Which Google Cloud offering should they use?"
+  ],
+  "options": [
+    { "id": "a", "text": "Notebook LM" },
+    { "id": "b", "text": "Gemini" },
+    { "id": "c", "text": "Vertex AI Search" },
+    { "id": "d", "text": "Gemini for Google Workspace" }
+  ],
+  "correctAnswer": "a",
+  "explanation": "Notebook LM is an AI‑first notebook grounded in user‑provided documents, enabling summarization, cross‑document insights, and source‑based answers."
 },{
   "id": "160",
   "type": "single",
@@ -2663,8 +2680,235 @@
   ],
   "correctAnswer": "c",
   "explanation": "Implementing explainable GenAI policies directly addresses the lack of transparency by making the model’s decision‑making process understandable. Explainable AI helps HR teams and recruiters see which factors influence rankings or exclusions, improving trust and enabling identification of potential issues."
+},{
+  "id": "176",
+  "type": "single",
+  "question": [
+    "Which of the following defines generative AI?"
+  ],
+  "options": [
+    { "id": "a", "text": "It's a type of artificial intelligence that analyzes existing data to identify patterns and make predictions" },
+    { "id": "b", "text": "It's a type of artificial intelligence that can create new content, including images, text, and music" },
+    { "id": "c", "text": "It's a type of artificial intelligence that focuses on automating repetitive tasks and improving efficiency" },
+    { "id": "d", "text": "It's a specific application, like a chatbot, that utilizes AI technology" }
+  ],
+  "correctAnswer": "b",
+  "explanation": "Generative AI refers to AI systems capable of creating new content such as text, images, audio, or other media by learning patterns from large datasets."
+},{
+  "id": "177",
+  "type": "single",
+  "question": [
+    "A CEO is hesitant to invest in generative AI because they believe it is only useful for building chatbots.",
+    "Which of the following examples demonstrates that generative AI can offer their business much more?"
+  ],
+  "options": [
+    { "id": "a", "text": "Counting the number of website visitors and their locations" },
+    { "id": "b", "text": "Scheduling meetings and managing calendars to help employees improve time management" },
+    { "id": "c", "text": "Creating photorealistic images of new product prototypes based on text descriptions" },
+    { "id": "d", "text": "Providing generic responses to all customer inquiries, regardless of the issue" }
+  ],
+  "correctAnswer": "c",
+  "explanation": "Generative AI can create new content such as photorealistic product prototypes from text descriptions, demonstrating capabilities far beyond simple chatbot interactions."
+},{
+  "id": "178",
+  "type": "single",
+  "question": [
+    "Which of the following describes a multimodal generative AI application?"
+  ],
+  "options": [
+    { "id": "a", "text": "Using Gemini in Gmail to write an email" },
+    { "id": "b", "text": "Using Imagen to create an image for a website" },
+    { "id": "c", "text": "Using NotebookLM Business to summarize a financial report" },
+    { "id": "d", "text": "Using generative AI to analyze customer sentiment in video testimonials and survey data" }
+  ],
+  "correctAnswer": "d",
+  "explanation": "Multimodal generative AI applications process and understand multiple data types—such as text, audio, images, and video. Analyzing customer sentiment in both video testimonials and survey text involves multiple modalities, making option D the correct example."
+},{
+  "id": "179",
+  "type": "multiple",
+  "question": [
+    "Which of the following items are foundation models? Select three."
+  ],
+  "options": [
+    { "id": "a", "text": "A deep learning model that can generate realistic images from text descriptions" },
+    { "id": "b", "text": "A decision tree model used to predict customer churn" },
+    { "id": "c", "text": "A linear regression model used to predict house prices" },
+    { "id": "d", "text": "A model trained on a vast dataset of images and videos, capable of understanding and generating visual content" },
+    { "id": "e", "text": "A model trained on a massive dataset of code, capable of translating languages and writing creative content" }
+  ],
+  "correctAnswer": ["a", "d", "e"],
+  "explanation": "Foundation models are large-scale models trained on massive, diverse datasets that enable broad generalization across many tasks. Models that generate images from text, understand and generate visual content, or work across code and language domains all qualify. Simpler models like decision trees and linear regression are not foundation models."
+},{
+  "id": "180",
+  "type": "multiple",
+  "question": [
+    "Which of the following statements accurately describes the relationship between foundation models and large language models (LLMs)? Select two."
+  ],
+  "options": [
+    { "id": "a", "text": "All foundation models are LLMs" },
+    { "id": "b", "text": "Foundation models and LLMs are unrelated concepts" },
+    { "id": "c", "text": "LLMs are a specialized type of foundation model" },
+    { "id": "d", "text": "All LLMs are foundation models" },
+    { "id": "e", "text": "Foundation models are only used for research, while LLMs are used for practical applications" }
+  ],
+  "correctAnswer": ["c", "d"],
+  "explanation": "LLMs are a specialized type of foundation model trained primarily on text. Because LLMs are built on large, diverse datasets and can generalize across many tasks, they fall under the broader category of foundation models. Not all foundation models are LLMs, but all LLMs are foundation models."
+},{
+  "id": "181",
+  "type": "single",
+  "question": [
+    "Which of the following defines a foundation model?"
+  ],
+  "options": [
+    { "id": "a", "text": "Small, highly specialized AI models trained on narrow datasets to perform specific tasks" },
+    { "id": "b", "text": "Traditional machine learning algorithms that rely on explicitly defined rules" },
+    { "id": "c", "text": "Large AI models trained on vast quantities of data, capable of adapting to a variety of tasks" },
+    { "id": "d", "text": "Hardware infrastructure used to train and deploy AI models" }
+  ],
+  "correctAnswer": "c",
+  "explanation": "Foundation models are large-scale AI models trained on massive, diverse datasets, enabling them to generalize and adapt to many different tasks across domains."
+},{
+  "id": "182",
+  "type": "single",
+  "question": [
+    "How do foundation models and prompt engineering work together to create value in generative AI?"
+  ],
+  "options": [
+    { "id": "a", "text": "Foundation models provide the computing power for generative AI, while prompt engineering directs that power to complete specific tasks" },
+    { "id": "b", "text": "Foundation models offer a vast knowledge base, and prompt engineering guides the model to use this knowledge in responses" },
+    { "id": "c", "text": "Prompt engineering trains foundation models on specific tasks, allowing them to generate highly specialized content and insights" },
+    { "id": "d", "text": "Foundation models ensure the ethical use of generative AI, while prompt engineering focuses on improving the quality and creativity of outputs" }
+  ],
+  "correctAnswer": "b",
+  "explanation": "Foundation models contain broad knowledge learned from massive datasets, and prompt engineering helps guide the model to apply that knowledge effectively for specific tasks, enabling more accurate and useful outputs."
+},{
+  "id": "183",
+  "type": "multiple",
+  "question": [
+    "Which of the following are key features of foundation models? Select three."
+  ],
+  "options": [
+    { "id": "a", "text": "Trained on diverse data" },
+    { "id": "b", "text": "Specialized to specific tasks" },
+    { "id": "c", "text": "Adaptable to new domains and tasks" },
+    { "id": "d", "text": "Flexible to support various use cases" }
+  ],
+  "correctAnswer": ["a", "c", "d"],
+  "explanation": "Foundation models are trained on large and diverse datasets, enabling them to generalize across domains. They are adaptable to new tasks and flexible enough to support a wide range of use cases. They are not narrowly specialized models."
+},{
+  "id": "184",
+  "type": "single",
+  "question": [
+    "Which statement about generative AI is correct?"
+  ],
+  "options": [
+    { "id": "a", "text": "Its primary function is to analyze existing data and provide predictive insights based on historical trends" },
+    { "id": "b", "text": "It is designed to create new and original content, such as text, images, audio, or code, that did not previously exist" },
+    { "id": "c", "text": "It exclusively relies on pre‑programmed rules and decision trees to produce outputs" },
+    { "id": "d", "text": "Its main purpose is to automate repetitive, manual tasks without creating any new information or content" }
+  ],
+  "correctAnswer": "b",
+  "explanation": "Generative AI is designed to create new and original content—such as text, images, audio, or code—by learning patterns from large datasets and generating outputs that did not previously exist."
+},{
+  "id": "185",
+  "type": "single",
+  "question": [
+    "What is the primary difference between foundation models and traditional AI models?"
+  ],
+  "options": [
+    { "id": "a", "text": "Foundation models are only trained on text data, while traditional models use images and code" },
+    { "id": "b", "text": "Foundation models are trained on specific data for a single task, while traditional models are trained on diverse data for various tasks" },
+    { "id": "c", "text": "Foundation models are trained on massive amounts of diverse data for various tasks, while traditional models are trained on specific data for a single task" },
+    { "id": "d", "text": "Foundation models cannot be adapted to new tasks, while traditional models can" }
+  ],
+  "correctAnswer": "c",
+  "explanation": "Foundation models are trained on massive, diverse datasets that allow them to generalize across many tasks. Traditional AI models are typically trained on narrow, task‑specific datasets and cannot generalize as broadly."
+},{
+  "id": "186",
+  "type": "single",
+  "question": [
+    "How does generative AI primarily augment human capabilities in critical thinking and problem‑solving?"
+  ],
+  "options": [
+    { "id": "a", "text": "By independently making informed decisions and solving complex problems without human intervention" },
+    { "id": "b", "text": "By generating final solutions that require no further human review or input" },
+    { "id": "c", "text": "By replacing the need for human critical thinking in strategic tasks" },
+    { "id": "d", "text": "By providing data and insights that humans then interpret to make informed decisions" }
+  ],
+  "correctAnswer": "d",
+  "explanation": "Generative AI augments human problem‑solving by producing insights, summaries, and perspectives that humans can interpret and evaluate. It supports critical thinking rather than replacing it."
+},{
+  "id": "187",
+  "type": "single",
+  "question": [
+    "What is a key advantage of using Google Cloud's generative AI ecosystem for businesses?"
+  ],
+  "options": [
+    { "id": "a", "text": "It forces every business to become an AI‑first company" },
+    { "id": "b", "text": "It eliminates the need for companies to cultivate internal generative AI knowledge" },
+    { "id": "c", "text": "It allows businesses to leverage Google's AI advancements without starting from scratch" },
+    { "id": "d", "text": "It guarantees immediate and widespread success in all generative AI initiatives" }
+  ],
+  "correctAnswer": "c",
+  "explanation": "Google Cloud's generative AI ecosystem provides ready‑to‑use models, tools, and infrastructure, enabling businesses to benefit from advanced AI capabilities without having to build everything from the ground up."
+},{
+  "id": "188",
+  "type": "multiple",
+  "question": [
+    "Which of the following are benefits of using Google Cloud for generative AI development? Select three."
+  ],
+  "options": [
+    { "id": "a", "text": "Access to pre-trained models like Gemini" },
+    { "id": "b", "text": "Automatic model upgrades and security patches" },
+    { "id": "c", "text": "Ready-made generative AI solutions for all applications and domains" },
+    { "id": "d", "text": "Enterprise-grade security and compliance features" },
+    { "id": "e", "text": "A guarantee of complete accuracy in all generated content" }
+  ],
+  "correctAnswer": ["a", "b", "d"],
+  "explanation": "Google Cloud provides access to powerful pre-trained models, handles automatic updates and security patches, and offers enterprise-grade security and compliance. It does not guarantee perfect accuracy, nor does it provide ready-made solutions for every possible domain."
+},{
+  "id": "189",
+  "type": "single",
+  "question": [
+    "What is the recommended approach for businesses to effectively implement generative AI?"
+  ],
+  "options": [
+    { "id": "a", "text": "Focus on a top-down strategy driven by executives" },
+    { "id": "b", "text": "Focus on a bottom-up approach with no overarching plan" },
+    { "id": "c", "text": "Adopt the latest generative AI trends" },
+    { "id": "d", "text": "Combine a top-down strategic vision with bottom-up input from teams" }
+  ],
+  "correctAnswer": "d",
+  "explanation": "Successful generative AI adoption requires a clear strategic vision from leadership combined with practical insights and experimentation from teams, ensuring alignment, innovation, and effective execution."
+},{
+  "id": "190",
+  "type": "single",
+  "question": [
+    "Why is it important for mid-level managers and individual contributors to be involved in generative AI adoption?"
+  ],
+  "options": [
+    { "id": "a", "text": "They have limited understanding of daily operations and user needs" },
+    { "id": "b", "text": "Their proximity to workflows allows them to identify impactful generative AI solutions" },
+    { "id": "c", "text": "They should avoid any involvement in generative AI experimentation" },
+    { "id": "d", "text": "Their focus should be solely on technical implementation details" }
+  ],
+  "correctAnswer": "b",
+  "explanation": "Mid-level managers and individual contributors work closest to day‑to‑day workflows, giving them insight into where generative AI can create meaningful improvements. Their involvement ensures solutions address real operational needs."
+},{
+  "id": "191",
+  "type": "single",
+  "question": [
+    "What is the purpose of a prompt in the context of foundation models?"
+  ],
+  "options": [
+    { "id": "a", "text": "To evaluate the model's performance" },
+    { "id": "b", "text": "To provide input to the model and trigger an output" },
+    { "id": "c", "text": "To fine-tune the model for a specific task" },
+    { "id": "d", "text": "To train the model on new data" }
+  ],
+  "correctAnswer": "b",
+  "explanation": "A prompt is the input given to a foundation model to guide it in generating a response. It acts as the instruction or context that triggers the model to produce an output."
 }
-
 
 
 ]
