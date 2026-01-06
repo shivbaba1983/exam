@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import axios from "axios";
-import { NASDAQ_TOKEN, IS_AWS_API } from './../constant/ExamConstant';
+import { NASDAQ_TOKEN, IS_AWS_API, LOCAL_URL } from './../constant/ExamConstant';
 const VoiceToTextWithAI = (): JSX.Element => {
   const [isListening, setIsListening] = useState<boolean>(false);
   const [text, setText] = useState<string>("");
@@ -75,10 +75,14 @@ const VoiceToTextWithAI = (): JSX.Element => {
 
     try {
       let res
-      if (IS_AWS_API)
-        res = await axios.get(`${NASDAQ_TOKEN}/api/review-essay/${text}`);
-      else
-        res = await axios.get(`http://localhost:3000/api/review-essay/${text}`);
+      if (IS_AWS_API) {
+        res = await axios.post(`${NASDAQ_TOKEN}/api/review-essay`, { text });
+        //res = await axios.get(`${NASDAQ_TOKEN}/api/review-essay/${text}`);
+      }
+      else {
+        //res = await axios.get(`${LOCAL_URL}/api/review-essay/${text}`);
+        res = await axios.post(`${LOCAL_URL}/api/review-essay`, { text });
+      }
 
       setAIResponse(res?.data);
     } catch (err: any) {
