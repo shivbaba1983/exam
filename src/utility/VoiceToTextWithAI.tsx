@@ -3,7 +3,7 @@ import axios from "axios";
 import { NASDAQ_TOKEN, IS_AWS_API, LOCAL_URL } from './../constant/ExamConstant';
 const VoiceToTextWithAI = (): JSX.Element => {
   const [isListening, setIsListening] = useState<boolean>(false);
-  const [text, setText] = useState<string>("");
+  const [text, setText] = useState<string>("hello");
   const [aiResponse, setAIResponse] = useState<any>(null);
   const [loading, setLoading] = useState<boolean>(false);
 
@@ -76,8 +76,22 @@ const VoiceToTextWithAI = (): JSX.Element => {
     try {
       let res
       if (IS_AWS_API) {
-        res = await axios.post(`${NASDAQ_TOKEN}/api/review-essay`, { text });
+        //const url = `https://07tps3arid.execute-api.us-east-1.amazonaws.com/welcome/mywelcomeresource?text=${selectedTicker}`;
+        //res = await axios.post(`${NASDAQ_TOKEN}/api/review-essay`, { text });
         //res = await axios.get(`${NASDAQ_TOKEN}/api/review-essay/${text}`);
+
+//         res= await axios.post(
+//   "https://07tps3arid.execute-api.us-east-1.amazonaws.com/welcome/reviewEssay",
+//   { text }
+// );
+    const url=`https://07tps3arid.execute-api.us-east-1.amazonaws.com/welcome/eassy?text=${text}`
+ res =  await fetch(url)
+ console.log('**************', res)
+    // res= await axios.get(
+    //   "https://07tps3arid.execute-api.us-east-1.amazonaws.com/welcome/eassy",
+    //   { params: { text } }
+    // );
+
       }
       else {
         //res = await axios.get(`${LOCAL_URL}/api/review-essay/${text}`);
