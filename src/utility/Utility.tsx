@@ -9,7 +9,7 @@ import VoiceToText from './VoiceToText';
 import VoiceRecorderSaveLocal from './VoiceRecorderSaveLocal';
 import VoiceRecorderWithTranscription from './VoiceRecorderWithTranscription';
 import TextToSpeech from './TextToSpeech';
-
+import VoiceToTextWithAI from './VoiceToTextWithAI';
 import './Utility.scss';
 
 const Utility = () => {
@@ -21,15 +21,17 @@ const Utility = () => {
         {/* LEFT COLUMN – VOICE & AUDIO */}
         <div className="dashboard-column">
           <section className="facility-section">
+            <h2 className="section-title">VoiceToTextWithAI</h2>
+            <VoiceToTextWithAI />
+          </section>
+          <section className="facility-section">
             <h2 className="section-title">Speech Recognition (Voice → Text)</h2>
             <VoiceToText />
           </section>
-
           <section className="facility-section">
             <h2 className="section-title">Speech Synthesis (Text → Voice)</h2>
             <TextToSpeech />
           </section>
-
           <section className="facility-section">
             <h2 className="section-title">Audio Recorder (Save Locally)</h2>
             <VoiceRecorderSaveLocal />
