@@ -1,9 +1,10 @@
 import React, { useEffect, useRef, useState } from "react";
 import axios from "axios";
-import { NASDAQ_TOKEN, IS_AWS_API, LOCAL_URL } from './../constant/ExamConstant';
+import { NASDAQ_TOKEN, IS_AWS_API, LOCAL_URL } from "./../constant/ExamConstant";
+
 const VoiceToTextWithAI = (): JSX.Element => {
   const [isListening, setIsListening] = useState<boolean>(false);
-  const [text, setText] = useState<string>("hello");
+  const [text, setText] = useState<string>("this is a test for easy writung");
   const [aiResponse, setAIResponse] = useState<any>(null);
   const [loading, setLoading] = useState<boolean>(false);
 
@@ -12,8 +13,7 @@ const VoiceToTextWithAI = (): JSX.Element => {
   // Speech recognition setup
   useEffect(() => {
     const SpeechRecognition =
-      (window as any).SpeechRecognition ||
-      (window as any).webkitSpeechRecognition;
+      (window as any).SpeechRecognition || (window as any).webkitSpeechRecognition;
 
     if (!SpeechRecognition) {
       alert("Speech Recognition not supported in this browser");
@@ -27,13 +27,11 @@ const VoiceToTextWithAI = (): JSX.Element => {
 
     recognition.onresult = (event: any) => {
       let finalText = "";
-
       for (let i = event.resultIndex; i < event.results.length; i++) {
         if (event.results[i].isFinal) {
           finalText += event.results[i][0].transcript + " ";
         }
       }
-
       if (finalText) {
         setText((prev) => prev + finalText);
       }
@@ -74,38 +72,32 @@ const VoiceToTextWithAI = (): JSX.Element => {
     setAIResponse(null);
 
     try {
-      let res
+      let res: any;
       if (IS_AWS_API) {
-        //const url = `https://07tps3arid.execute-api.us-east-1.amazonaws.com/welcome/mywelcomeresource?text=${selectedTicker}`;
-        //res = await axios.post(`${NASDAQ_TOKEN}/api/review-essay`, { text });
-        //res = await axios.get(`${NASDAQ_TOKEN}/api/review-essay/${text}`);
+        // Lambda + API Gateway POST
+        res = await axios.post(
+          "https://07tps3arid.execute-api.us-east-1.amazonaws.com/welcome/review-essay",
+          { text },
+          { headers: { "Content-Type": "application/json" } }
+        );
 
-//         res= await axios.post(
-//   "https://07tps3arid.execute-api.us-east-1.amazonaws.com/welcome/reviewEssay",
-//   { text }
-// );
-    const url=`https://07tps3arid.execute-api.us-east-1.amazonaws.com/welcome/eassy?text=${text}`
- res =  await fetch(url)
- console.log('**************', res)
-    // res= await axios.get(
-    //   "https://07tps3arid.execute-api.us-east-1.amazonaws.com/welcome/eassy",
-    //   { params: { text } }
-    // );
+        // AWS Lambda response is usually { statusCode, body, headers }
+        const data =
+          typeof res.data.body === "string" ? JSON.parse(res.data.body) : res.data.body;
 
-      }
-      else {
-        //res = await axios.get(`${LOCAL_URL}/api/review-essay/${text}`);
+        setAIResponse(data);
+      } else {
+        // Local Express server
         res = await axios.post(`${LOCAL_URL}/api/review-essay`, { text });
+        setAIResponse(res?.data);
       }
-
-      setAIResponse(res?.data);
     } catch (err: any) {
       console.error("AI review error:", err);
-
     } finally {
       setLoading(false);
     }
   };
+
   return (
     <div style={{ padding: "16px", maxWidth: "700px", backgroundColor: "#f0f8ff" }}>
       <h3>🎤 Voice to Text + AI Essay Review</h3>
@@ -153,7 +145,7 @@ const VoiceToTextWithAI = (): JSX.Element => {
           <h4>Rating</h4>
           <p>{aiResponse.rating} / 10</p>
 
-          {aiResponse.issues && aiResponse.issues.length > 0 && (
+          {aiResponse.issues?.length > 0 && (
             <>
               <h4>Issues</h4>
               <ul>
@@ -164,7 +156,7 @@ const VoiceToTextWithAI = (): JSX.Element => {
             </>
           )}
 
-          {aiResponse.suggestions && aiResponse.suggestions.length > 0 && (
+          {aiResponse.suggestions?.length > 0 && (
             <>
               <h4>Suggestions</h4>
               <ul>
