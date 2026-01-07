@@ -49,7 +49,7 @@ const VoiceRecorderSaveLocal = ()=> {
   };
 
   return (
-    <div style={{ padding: "16px", maxWidth: "600px", backgroundColor:"pink"}}>
+    <div style={{ padding: "16px",  backgroundColor:"pink"}}>
       <h3>🎙️ Record & Save Audio</h3>
 
       <button onClick={startRecording} disabled={recording}>

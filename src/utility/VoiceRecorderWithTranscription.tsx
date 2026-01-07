@@ -64,7 +64,7 @@ const VoiceRecorderWithTranscription = () => {
   };
 
   return (
-    <div style={{ padding: "16px", maxWidth: "600px",  backgroundColor:"yellow"}}>
+    <div style={{ padding: "16px",  backgroundColor:"yellow"}}>
       <h3>🎙️ Record, Save & Transcribe</h3>
 
       <button onClick={startRecording} disabled={recording}>

@@ -62,7 +62,7 @@ const VoiceToText = (): JSX.Element => {
   };
 
   return (
-    <div style={{ padding: "16px", maxWidth: "600px" , backgroundColor:"green"}}>
+    <div style={{ padding: "16px",  backgroundColor:"green"}}>
       <h3>🎤 Voice to Text</h3>
 
       <div style={{ marginBottom: "12px" }}>

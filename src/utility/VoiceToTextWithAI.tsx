@@ -1,19 +1,20 @@
 import React, { useEffect, useRef, useState } from "react";
 import axios from "axios";
-import { NASDAQ_TOKEN, IS_AWS_API, LOCAL_URL } from "./../constant/ExamConstant";
+import { IS_AWS_API, LOCAL_URL } from "./../constant/ExamConstant";
+import "./VoiceToTextWithAI.scss";
 
 const VoiceToTextWithAI = (): JSX.Element => {
   const [isListening, setIsListening] = useState<boolean>(false);
-  const [text, setText] = useState<string>("this is a test for easy writung");
+  const [text, setText] = useState<string>("");
   const [aiResponse, setAIResponse] = useState<any>(null);
   const [loading, setLoading] = useState<boolean>(false);
 
   const recognitionRef = useRef<any>(null);
 
-  // Speech recognition setup
   useEffect(() => {
     const SpeechRecognition =
-      (window as any).SpeechRecognition || (window as any).webkitSpeechRecognition;
+      (window as any).SpeechRecognition ||
+      (window as any).webkitSpeechRecognition;
 
     if (!SpeechRecognition) {
       alert("Speech Recognition not supported in this browser");
@@ -37,8 +38,7 @@ const VoiceToTextWithAI = (): JSX.Element => {
       }
     };
 
-    recognition.onerror = (event: any) => {
-      console.error("Speech recognition error", event);
+    recognition.onerror = () => {
       setIsListening(false);
     };
 
@@ -46,17 +46,13 @@ const VoiceToTextWithAI = (): JSX.Element => {
   }, []);
 
   const startListening = (): void => {
-    if (recognitionRef.current) {
-      recognitionRef.current.start();
-      setIsListening(true);
-    }
+    recognitionRef.current?.start();
+    setIsListening(true);
   };
 
   const stopListening = (): void => {
-    if (recognitionRef.current) {
-      recognitionRef.current.stop();
-      setIsListening(false);
-    }
+    recognitionRef.current?.stop();
+    setIsListening(false);
   };
 
   const clearText = (): void => {
@@ -64,7 +60,6 @@ const VoiceToTextWithAI = (): JSX.Element => {
     setAIResponse(null);
   };
 
-  // Call AI review API
   const reviewEssayWithAI = async (): Promise<void> => {
     if (!text.trim()) return;
 
@@ -73,25 +68,25 @@ const VoiceToTextWithAI = (): JSX.Element => {
 
     try {
       let res: any;
+
       if (IS_AWS_API) {
-        // Lambda + API Gateway POST
         res = await axios.post(
           "https://07tps3arid.execute-api.us-east-1.amazonaws.com/welcome/review-essay",
           { text },
           { headers: { "Content-Type": "application/json" } }
         );
 
-        // AWS Lambda response is usually { statusCode, body, headers }
         const data =
-          typeof res.data.body === "string" ? JSON.parse(res.data.body) : res.data.body;
+          typeof res.data.body === "string"
+            ? JSON.parse(res.data.body)
+            : res.data.body;
 
         setAIResponse(data);
       } else {
-        // Local Express server
         res = await axios.post(`${LOCAL_URL}/api/review-essay`, { text });
         setAIResponse(res?.data);
       }
-    } catch (err: any) {
+    } catch (err) {
       console.error("AI review error:", err);
     } finally {
       setLoading(false);
@@ -99,11 +94,10 @@ const VoiceToTextWithAI = (): JSX.Element => {
   };
 
   return (
-    <div style={{ padding: "16px", maxWidth: "700px", backgroundColor: "#f0f8ff" }}>
+    <div className="voice-ai-container">
       <h3>🎤 Voice to Text + AI Essay Review</h3>
 
-      {/* Voice controls */}
-      <div style={{ marginBottom: "12px" }}>
+      <div className="controls">
         <button onClick={startListening} disabled={isListening}>
           Start
         </button>
@@ -113,33 +107,28 @@ const VoiceToTextWithAI = (): JSX.Element => {
         <button onClick={clearText}>Clear</button>
       </div>
 
-      {/* Speech text */}
       <textarea
         value={text}
         readOnly
         rows={8}
-        style={{ width: "100%", marginBottom: "12px" }}
         placeholder="Your speech will appear here..."
       />
 
-      {/* AI review button */}
       <button
+        className="review-btn"
         onClick={reviewEssayWithAI}
         disabled={loading || !text.trim()}
-        style={{ marginBottom: "16px" }}
       >
         {loading ? "Reviewing..." : "Review Essay with AI"}
       </button>
 
-      {/* AI Response */}
       {aiResponse && (
-        <div style={{ border: "1px solid #ccc", padding: "12px", borderRadius: "8px" }}>
+        <div className="ai-response">
           <h4>Corrected Essay</h4>
           <textarea
             value={aiResponse.correctedEssay}
             readOnly
             rows={6}
-            style={{ width: "100%", marginBottom: "12px" }}
           />
 
           <h4>Rating</h4>

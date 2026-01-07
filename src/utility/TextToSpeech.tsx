@@ -24,7 +24,7 @@ const TextToSpeech = () => {
   };
 
   return (
-    <div style={{ maxWidth: '600px', padding: '16px', backgroundColor:"lightcyan"}}>
+    <div style={{  padding: '16px', backgroundColor:"lightcyan"}}>
       <h3>Text to Speech</h3>
 
       <textarea
