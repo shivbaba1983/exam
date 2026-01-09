@@ -109,9 +109,9 @@ const VoiceToTextWithAI = (): JSX.Element => {
 
       <textarea
         value={text}
-        readOnly
+        onChange={(e) => setText(e.target.value)}
         rows={8}
-        placeholder="Your speech will appear here..."
+        placeholder="Speak or paste/type your essay here..."
       />
 
       <button
