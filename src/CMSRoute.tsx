@@ -33,6 +33,7 @@ const CMSRoute = () => {
             <Link to="/exam/AI-102" className="dropdown-item">AI-102 Exam</Link>
             <Link to="/exam/Generative-AI-Leader" className="dropdown-item">Generative AI Leader</Link>
             <Link to="/exam/AWS" className="dropdown-item">AWS Exam</Link>
+            <Link to="/exam/Databrick" className="dropdown-item">Databrick</Link>
           </div>
         </div>
 

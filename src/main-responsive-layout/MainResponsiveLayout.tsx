@@ -3,6 +3,7 @@ import QuestionMaster from '../components/QuestionUI/QuestionMaster';
 
 import AI102 from '../data/qa.json';
 import GenerativeAILeader from '../data/genai.json';
+import Databrick from '../data/databricks.json';
 // import AWS from '../data/aws.json'; // future
 
 interface Props {
@@ -14,6 +15,7 @@ const MainResponsiveLayout= ({ examName }) => {
   const examDataMap: { [key: string]: any[] } = {
     'AI-102': AI102,
     'Generative-AI-Leader': GenerativeAILeader,
+    'Databrick':Databrick
     // 'AWS': AWS
   };
 

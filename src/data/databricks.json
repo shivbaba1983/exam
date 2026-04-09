@@ -1,0 +1,715 @@
+[
+  {
+    "id": "q1",
+    "type": "single",
+    "question": [
+      "What is the main advantage of Databricks Lakehouse Platform?",
+      "Select the correct answer."
+    ],
+    "options": [
+      { "id": "a", "text": "Only supports SQL" },
+      { "id": "b", "text": "Combines Data Lake and Data Warehouse" },
+      { "id": "c", "text": "Only used for Machine Learning" },
+      { "id": "d", "text": "Stores only structured data" }
+    ],
+    "correctAnswer": "b",
+    "explanation": "Databricks Lakehouse combines the benefits of both data lakes and data warehouses."
+  },
+  {
+    "id": "q2",
+    "type": "single",
+    "question": [
+      "Which of the following best describes a Databricks cluster?"
+    ],
+    "options": [
+      { "id": "a", "text": "A storage system" },
+      { "id": "b", "text": "A compute resource for running workloads" },
+      { "id": "c", "text": "A database table" },
+      { "id": "d", "text": "A visualization tool" }
+    ],
+    "correctAnswer": "b",
+    "explanation": "Clusters provide the compute resources required to run notebooks and jobs."
+  },
+  {
+    "id": "q3",
+    "type": "single",
+    "question": [
+      "What is the primary purpose of a Databricks notebook?"
+    ],
+    "options": [
+      { "id": "a", "text": "Store raw data" },
+      { "id": "b", "text": "Execute and document code" },
+      { "id": "c", "text": "Manage clusters" },
+      { "id": "d", "text": "Monitor logs" }
+    ],
+    "correctAnswer": "b",
+    "explanation": "Notebooks allow users to write, execute, and document code interactively."
+  },
+  {
+    "id": "q4",
+    "type": "single",
+    "question": [
+      "What is lazy evaluation in Apache Spark?"
+    ],
+    "options": [
+      { "id": "a", "text": "Execution happens immediately" },
+      { "id": "b", "text": "Execution is delayed until an action is called" },
+      { "id": "c", "text": "Execution never happens" },
+      { "id": "d", "text": "Execution happens twice" }
+    ],
+    "correctAnswer": "b",
+    "explanation": "Spark delays execution until an action triggers it, optimizing the execution plan."
+  },
+  {
+    "id": "q5",
+    "type": "single",
+    "question": [
+      "Which of the following is an action in Spark?"
+    ],
+    "options": [
+      { "id": "a", "text": "filter()" },
+      { "id": "b", "text": "select()" },
+      { "id": "c", "text": "show()" },
+      { "id": "d", "text": "groupBy()" }
+    ],
+    "correctAnswer": "c",
+    "explanation": "show() triggers execution and displays results."
+  },
+  {
+    "id": "q6",
+    "type": "single",
+    "question": [
+      "Which operation is a transformation in Spark?"
+    ],
+    "options": [
+      { "id": "a", "text": "collect()" },
+      { "id": "b", "text": "count()" },
+      { "id": "c", "text": "filter()" },
+      { "id": "d", "text": "show()" }
+    ],
+    "correctAnswer": "c",
+    "explanation": "filter() is a transformation because it returns a new DataFrame without triggering execution."
+  },
+  {
+    "id": "q7",
+    "type": "single",
+    "question": [
+      "What is Delta Lake primarily used for?"
+    ],
+    "options": [
+      { "id": "a", "text": "Visualization" },
+      { "id": "b", "text": "Storage layer with ACID transactions" },
+      { "id": "c", "text": "Machine learning training" },
+      { "id": "d", "text": "UI dashboards" }
+    ],
+    "correctAnswer": "b",
+    "explanation": "Delta Lake provides reliable storage with ACID guarantees."
+  },
+  {
+    "id": "q8",
+    "type": "single",
+    "question": [
+      "What does ACID stand for?"
+    ],
+    "options": [
+      { "id": "a", "text": "Atomicity, Consistency, Isolation, Durability" },
+      { "id": "b", "text": "Accuracy, Clarity, Integrity, Durability" },
+      { "id": "c", "text": "Atomicity, Clarity, Isolation, Data" },
+      { "id": "d", "text": "None" }
+    ],
+    "correctAnswer": "a",
+    "explanation": "ACID ensures reliable database transactions."
+  },
+  {
+    "id": "q9",
+    "type": "single",
+    "question": [
+      "What is the purpose of MERGE INTO in Delta Lake?"
+    ],
+    "options": [
+      { "id": "a", "text": "Delete data" },
+      { "id": "b", "text": "Upsert data" },
+      { "id": "c", "text": "Read data" },
+      { "id": "d", "text": "Backup data" }
+    ],
+    "correctAnswer": "b",
+    "explanation": "MERGE INTO allows updating existing records and inserting new ones."
+  },
+  {
+    "id": "q10",
+    "type": "single",
+    "question": [
+      "What is the purpose of OPTIMIZE in Delta Lake?"
+    ],
+    "options": [
+      { "id": "a", "text": "Delete data" },
+      { "id": "b", "text": "Compact small files" },
+      { "id": "c", "text": "Create schema" },
+      { "id": "d", "text": "Stream data" }
+    ],
+    "correctAnswer": "b",
+    "explanation": "OPTIMIZE compacts small files to improve performance."
+  },
+  {
+    "id": "q11",
+    "type": "boolean",
+    "question": [
+      "Apache Spark executes transformations immediately when they are defined."
+    ],
+    "correctAnswer": "False",
+    "explanation": "Spark uses lazy evaluation; execution happens only when an action is triggered."
+  },
+  {
+    "id": "q12",
+    "type": "single",
+    "question": [
+      "Which structure is schema-based and optimized in Spark?"
+    ],
+    "options": [
+      { "id": "a", "text": "RDD" },
+      { "id": "b", "text": "DataFrame" },
+      { "id": "c", "text": "List" },
+      { "id": "d", "text": "Array" }
+    ],
+    "correctAnswer": "b",
+    "explanation": "DataFrames are optimized and schema-based compared to RDDs."
+  },
+  {
+    "id": "q13",
+    "type": "multiple",
+    "question": [
+      "Which of the following are Spark transformations?"
+    ],
+    "options": [
+      { "id": "a", "text": "filter()" },
+      { "id": "b", "text": "select()" },
+      { "id": "c", "text": "count()" },
+      { "id": "d", "text": "groupBy()" }
+    ],
+    "correctAnswer": ["a", "b", "d"],
+    "explanation": "filter, select, and groupBy are transformations; count is an action."
+  },
+  {
+    "id": "q14",
+    "type": "drag-sequence",
+    "question": [
+      "Arrange the Spark execution flow in correct order:"
+    ],
+    "options": [
+      { "id": "a", "text": "Action" },
+      { "id": "b", "text": "Transformation" },
+      { "id": "c", "text": "Execution Plan" }
+    ],
+    "correctAnswer": ["b", "c", "a"],
+    "explanation": "Transformations → Execution Plan → Action triggers execution."
+  },
+  {
+    "id": "q15",
+    "type": "single",
+    "question": [
+      "What is the purpose of partitioning in Spark?"
+    ],
+    "options": [
+      { "id": "a", "text": "Store data permanently" },
+      { "id": "b", "text": "Enable parallel processing" },
+      { "id": "c", "text": "Delete data" },
+      { "id": "d", "text": "Visualize data" }
+    ],
+    "correctAnswer": "b",
+    "explanation": "Partitioning splits data to allow parallel computation."
+  },
+  {
+    "id": "q16",
+    "type": "boolean",
+    "question": [
+      "Shuffle operations can impact performance negatively."
+    ],
+    "correctAnswer": "True",
+    "explanation": "Shuffle involves data movement across nodes, which is expensive."
+  },
+  {
+    "id": "q17",
+    "type": "single",
+    "question": [
+      "What is broadcast join used for?"
+    ],
+    "options": [
+      { "id": "a", "text": "Joining large datasets only" },
+      { "id": "b", "text": "Sending small dataset to all nodes" },
+      { "id": "c", "text": "Deleting duplicate data" },
+      { "id": "d", "text": "Sorting data" }
+    ],
+    "correctAnswer": "b",
+    "explanation": "Broadcast join improves performance when one dataset is small."
+  },
+  {
+    "id": "q18",
+    "type": "multiple",
+    "question": [
+      "Which are Spark actions?"
+    ],
+    "options": [
+      { "id": "a", "text": "collect()" },
+      { "id": "b", "text": "show()" },
+      { "id": "c", "text": "filter()" },
+      { "id": "d", "text": "count()" }
+    ],
+    "correctAnswer": ["a", "b", "d"],
+    "explanation": "collect, show, and count trigger execution."
+  },
+{
+    "id": "q19",
+    "type": "dropdown-pair",
+    "question": [
+      "Match the Spark concept with its correct description:"
+    ],
+    "leftOptions": [
+      { "id": "transformation", "text": "Transformation" },
+      { "id": "action", "text": "Action" }
+    ],
+    "rightOptions": [
+      { "id": "trigger", "text": "Triggers execution" },
+      { "id": "returns", "text": "Returns new dataset" }
+    ],
+    "correctAnswer": { "left": "action", "right": "trigger" },
+    "explanation": "Action triggers execution, while transformation returns a new dataset (lazy evaluation)."
+  },
+  {
+    "id": "q20",
+    "type": "single",
+    "question": [
+      "What does caching do in Spark?"
+    ],
+    "options": [
+      { "id": "a", "text": "Deletes data" },
+      { "id": "b", "text": "Stores data in memory for reuse" },
+      { "id": "c", "text": "Sends data to disk only" },
+      { "id": "d", "text": "Compresses files" }
+    ],
+    "correctAnswer": "b",
+    "explanation": "Caching improves performance by avoiding recomputation."
+  },
+
+  {
+    "id": "q21",
+    "type": "single",
+    "question": [
+      "What is schema inference?"
+    ],
+    "options": [
+      { "id": "a", "text": "Manual schema definition" },
+      { "id": "b", "text": "Automatic detection of schema" },
+      { "id": "c", "text": "Deleting schema" },
+      { "id": "d", "text": "None" }
+    ],
+    "correctAnswer": "b",
+    "explanation": "Schema inference automatically determines column types."
+  },
+  {
+    "id": "q22",
+    "type": "boolean",
+    "question": [
+      "withColumn() can be used to modify existing columns."
+    ],
+    "correctAnswer": "True",
+    "explanation": "withColumn can both create and update columns."
+  },
+  {
+    "id": "q23",
+    "type": "single",
+    "question": [
+      "Which join keeps all records from left table?"
+    ],
+    "options": [
+      { "id": "a", "text": "Inner join" },
+      { "id": "b", "text": "Left join" },
+      { "id": "c", "text": "Right join" },
+      { "id": "d", "text": "Full join" }
+    ],
+    "correctAnswer": "b",
+    "explanation": "Left join keeps all records from the left dataset."
+  },
+  {
+    "id": "q24",
+    "type": "multiple",
+    "question": [
+      "Which file formats are commonly used in Databricks?"
+    ],
+    "options": [
+      { "id": "a", "text": "CSV" },
+      { "id": "b", "text": "Parquet" },
+      { "id": "c", "text": "JSON" },
+      { "id": "d", "text": "MP3" }
+    ],
+    "correctAnswer": ["a", "b", "c"],
+    "explanation": "CSV, Parquet, and JSON are supported structured data formats."
+  },
+  {
+    "id": "q25",
+    "type": "drag-sequence",
+    "question": [
+      "Arrange steps to read and process data in Spark:"
+    ],
+    "options": [
+      { "id": "a", "text": "Apply transformations" },
+      { "id": "b", "text": "Read data" },
+      { "id": "c", "text": "Trigger action" }
+    ],
+    "correctAnswer": ["b", "a", "c"],
+    "explanation": "Read → Transform → Action."
+  },
+
+  {
+    "id": "q26",
+    "type": "single",
+    "question": [
+      "What is Delta Lake time travel?"
+    ],
+    "options": [
+      { "id": "a", "text": "Move data across regions" },
+      { "id": "b", "text": "Access previous versions of data" },
+      { "id": "c", "text": "Delete old data" },
+      { "id": "d", "text": "Stream data" }
+    ],
+    "correctAnswer": "b",
+    "explanation": "Time travel allows querying historical versions."
+  },
+  {
+    "id": "q27",
+    "type": "boolean",
+    "question": [
+      "Delta Lake supports ACID transactions."
+    ],
+    "correctAnswer": "True",
+    "explanation": "Delta ensures reliable transactions."
+  },
+  {
+    "id": "q28",
+    "type": "single",
+    "question": [
+      "What does VACUUM do?"
+    ],
+    "options": [
+      { "id": "a", "text": "Optimize queries" },
+      { "id": "b", "text": "Remove old files" },
+      { "id": "c", "text": "Insert data" },
+      { "id": "d", "text": "Create tables" }
+    ],
+    "correctAnswer": "b",
+    "explanation": "VACUUM deletes unused files."
+  },
+  {
+    "id": "q29",
+    "type": "multiple",
+    "question": [
+      "Which operations improve performance in Delta Lake?"
+    ],
+    "options": [
+      { "id": "a", "text": "OPTIMIZE" },
+      { "id": "b", "text": "Z-ORDER" },
+      { "id": "c", "text": "DELETE" },
+      { "id": "d", "text": "VACUUM" }
+    ],
+    "correctAnswer": ["a", "b"],
+    "explanation": "OPTIMIZE and Z-ORDER improve query performance."
+  },
+{
+    "id": "q30",
+    "type": "dropdown-pair",
+    "question": [
+      "Which Delta Lake operation performs an upsert (update + insert)?"
+    ],
+    "leftOptions": [
+      { "id": "merge", "text": "MERGE" },
+      { "id": "vacuum", "text": "VACUUM" }
+    ],
+    "rightOptions": [
+      { "id": "upsert", "text": "Upsert" },
+      { "id": "cleanup", "text": "Cleanup old files" }
+    ],
+    "correctAnswer": { "left": "merge", "right": "upsert" },
+    "explanation": "MERGE performs upsert operations, while VACUUM cleans up old files."
+  },
+
+  {
+    "id": "q31",
+    "type": "single",
+    "question": [
+      "What is Structured Streaming?"
+    ],
+    "options": [
+      { "id": "a", "text": "Batch only processing" },
+      { "id": "b", "text": "Real-time stream processing" },
+      { "id": "c", "text": "Data storage" },
+      { "id": "d", "text": "Visualization" }
+    ],
+    "correctAnswer": "b",
+    "explanation": "Structured Streaming processes real-time data."
+  },
+  {
+    "id": "q32",
+    "type": "boolean",
+    "question": [
+      "Auto Loader is used for incremental ingestion."
+    ],
+    "correctAnswer": "True",
+    "explanation": "Auto Loader loads new files incrementally."
+  },
+  {
+    "id": "q33",
+    "type": "single",
+    "question": [
+      "What is Delta Live Tables?"
+    ],
+    "options": [
+      { "id": "a", "text": "Visualization tool" },
+      { "id": "b", "text": "Pipeline framework" },
+      { "id": "c", "text": "Database engine" },
+      { "id": "d", "text": "Notebook editor" }
+    ],
+    "correctAnswer": "b",
+    "explanation": "DLT is used to build data pipelines."
+  },
+  {
+    "id": "q34",
+    "type": "multiple",
+    "question": [
+      "Which are streaming concepts?"
+    ],
+    "options": [
+      { "id": "a", "text": "Trigger interval" },
+      { "id": "b", "text": "Checkpointing" },
+      { "id": "c", "text": "Batch processing" },
+      { "id": "d", "text": "Watermarking" }
+    ],
+    "correctAnswer": ["a", "b", "d"],
+    "explanation": "Trigger, checkpointing, watermarking are streaming concepts."
+  },
+  {
+    "id": "q35",
+    "type": "drag-sequence",
+    "question": [
+      "Arrange streaming workflow:"
+    ],
+    "options": [
+      { "id": "a", "text": "Process data" },
+      { "id": "b", "text": "Ingest data" },
+      { "id": "c", "text": "Write output" }
+    ],
+    "correctAnswer": ["b", "a", "c"],
+    "explanation": "Ingest → Process → Output."
+  },
+
+  {
+    "id": "q36",
+    "type": "single",
+    "question": [
+      "What is Unity Catalog?"
+    ],
+    "options": [
+      { "id": "a", "text": "Storage system" },
+      { "id": "b", "text": "Governance solution" },
+      { "id": "c", "text": "Compute engine" },
+      { "id": "d", "text": "Notebook" }
+    ],
+    "correctAnswer": "b",
+    "explanation": "Unity Catalog manages data governance."
+  },
+  {
+    "id": "q37",
+    "type": "boolean",
+    "question": [
+      "Data lineage tracks data flow."
+    ],
+    "correctAnswer": "True",
+    "explanation": "Lineage helps trace data origins."
+  },
+  {
+    "id": "q38",
+    "type": "single",
+    "question": [
+      "What is access control?"
+    ],
+    "options": [
+      { "id": "a", "text": "Data deletion" },
+      { "id": "b", "text": "Permission management" },
+      { "id": "c", "text": "Query optimization" },
+      { "id": "d", "text": "Data storage" }
+    ],
+    "correctAnswer": "b",
+    "explanation": "Access control manages permissions."
+  },
+  {
+    "id": "q39",
+    "type": "multiple",
+    "question": [
+      "Which improve Spark performance?"
+    ],
+    "options": [
+      { "id": "a", "text": "Caching" },
+      { "id": "b", "text": "Partitioning" },
+      { "id": "c", "text": "Broadcast joins" },
+      { "id": "d", "text": "Random shuffles" }
+    ],
+    "correctAnswer": ["a", "b", "c"],
+    "explanation": "Caching, partitioning, broadcast joins improve performance."
+  },
+{
+    "id": "q40",
+    "type": "dropdown-pair",
+    "question": [
+      "Which optimization technique stores data in memory for faster access?"
+    ],
+    "leftOptions": [
+      { "id": "caching", "text": "Caching" },
+      { "id": "partitioning", "text": "Partitioning" }
+    ],
+    "rightOptions": [
+      { "id": "memory", "text": "Store in memory" },
+      { "id": "parallel", "text": "Parallel processing" }
+    ],
+    "correctAnswer": { "left": "caching", "right": "memory" },
+    "explanation": "Caching stores data in memory, while partitioning improves parallelism."
+  },
+
+  {
+    "id": "q41",
+    "type": "single",
+    "question": [
+      "What is auto-scaling?"
+    ],
+    "options": [
+      { "id": "a", "text": "Manual scaling" },
+      { "id": "b", "text": "Automatic adjustment of resources" },
+      { "id": "c", "text": "Deleting clusters" },
+      { "id": "d", "text": "Fixed compute" }
+    ],
+    "correctAnswer": "b",
+    "explanation": "Auto-scaling adjusts cluster size dynamically."
+  },
+  {
+    "id": "q42",
+    "type": "boolean",
+    "question": [
+      "Job clusters terminate automatically after execution."
+    ],
+    "correctAnswer": "True",
+    "explanation": "Job clusters are ephemeral."
+  },
+  {
+    "id": "q43",
+    "type": "single",
+    "question": [
+      "Which is best for scheduled jobs?"
+    ],
+    "options": [
+      { "id": "a", "text": "All-purpose cluster" },
+      { "id": "b", "text": "Job cluster" },
+      { "id": "c", "text": "Notebook only" },
+      { "id": "d", "text": "DBFS" }
+    ],
+    "correctAnswer": "b",
+    "explanation": "Job clusters are ideal for scheduled workloads."
+  },
+  {
+    "id": "q44",
+    "type": "multiple",
+    "question": [
+      "Which are Databricks components?"
+    ],
+    "options": [
+      { "id": "a", "text": "Workspace" },
+      { "id": "b", "text": "Cluster" },
+      { "id": "c", "text": "Notebook" },
+      { "id": "d", "text": "Compiler" }
+    ],
+    "correctAnswer": ["a", "b", "c"],
+    "explanation": "Workspace, cluster, notebook are core components."
+  },
+  {
+    "id": "q45",
+    "type": "drag-sequence",
+    "question": [
+      "Arrange job execution steps:"
+    ],
+    "options": [
+      { "id": "a", "text": "Create cluster" },
+      { "id": "b", "text": "Run job" },
+      { "id": "c", "text": "Terminate cluster" }
+    ],
+    "correctAnswer": ["a", "b", "c"],
+    "explanation": "Cluster → Run → Terminate."
+  },
+
+  {
+    "id": "q46",
+    "type": "single",
+    "question": [
+      "What is data lineage used for?"
+    ],
+    "options": [
+      { "id": "a", "text": "Delete data" },
+      { "id": "b", "text": "Track data flow" },
+      { "id": "c", "text": "Store data" },
+      { "id": "d", "text": "Encrypt data" }
+    ],
+    "correctAnswer": "b",
+    "explanation": "Lineage tracks how data moves and transforms."
+  },
+  {
+    "id": "q47",
+    "type": "boolean",
+    "question": [
+      "Z-ORDER improves query performance."
+    ],
+    "correctAnswer": "True",
+    "explanation": "Z-ORDER optimizes data layout."
+  },
+  {
+    "id": "q48",
+    "type": "single",
+    "question": [
+      "What is skewed data?"
+    ],
+    "options": [
+      { "id": "a", "text": "Even distribution" },
+      { "id": "b", "text": "Uneven distribution" },
+      { "id": "c", "text": "Sorted data" },
+      { "id": "d", "text": "Compressed data" }
+    ],
+    "correctAnswer": "b",
+    "explanation": "Skewed data leads to performance issues."
+  },
+  {
+    "id": "q49",
+    "type": "multiple",
+    "question": [
+      "Which are Delta Lake features?"
+    ],
+    "options": [
+      { "id": "a", "text": "ACID transactions" },
+      { "id": "b", "text": "Time travel" },
+      { "id": "c", "text": "Schema enforcement" },
+      { "id": "d", "text": "Manual execution only" }
+    ],
+    "correctAnswer": ["a", "b", "c"],
+    "explanation": "Delta supports ACID, time travel, and schema enforcement."
+  },
+ {
+    "id": "q50",
+    "type": "dropdown-pair",
+    "question": [
+      "Which Spark concept involves movement of data across partitions?"
+    ],
+    "leftOptions": [
+      { "id": "shuffle", "text": "Shuffle" },
+      { "id": "cache", "text": "Cache" }
+    ],
+    "rightOptions": [
+      { "id": "movement", "text": "Data movement" },
+      { "id": "memory", "text": "Store in memory" }
+    ],
+    "correctAnswer": { "left": "shuffle", "right": "movement" },
+    "explanation": "Shuffle refers to data movement across partitions; cache stores data in memory."
+  }
+]
