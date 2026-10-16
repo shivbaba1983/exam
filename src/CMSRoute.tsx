@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Routes, Route, Link, useParams } from 'react-router-dom';
 import MainResponsiveLayout from './main-responsive-layout/MainResponsiveLayout';
 import Utility from './utility/Utility';
+import English from './communication/English';
 import Dashboard from './../src/dashboard/Dashboard';
 //import Learn from './../src/learn/Learn';
 import './CMSRoute.scss';
@@ -38,6 +39,7 @@ const CMSRoute = () => {
         </div>
 
         <Link to="/utility" className="nav-button">Utility</Link>
+        <Link to="/english" className="nav-button">English</Link>
         {/* <Link to="/learn" className="nav-button">Learn</Link> */}
       </nav>
 
@@ -50,6 +52,7 @@ const CMSRoute = () => {
         {/* Existing */}
 
         <Route path="/utility" element={<Utility />} />
+        <Route path="/english" element={<English />} />
         {/* <Route path="/learn" element={<Learn />} /> */}
 
         {/* Default */}
