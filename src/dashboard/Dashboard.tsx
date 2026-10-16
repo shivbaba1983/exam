@@ -2,11 +2,15 @@ import React from 'react';
 import { Link } from 'react-router-dom'; // assuming you're using react-router
 import Ai102Syllabus from './Ai102Syllabus';
 import DailyEnglishPractice from "./DailyEnglishPractice";
+import SpokenEnglishConversation from "./SpokenEnglishConversation";
 const Dashboard = () => {
     return (
         <div>
                 <div>
       <DailyEnglishPractice />
+    </div>
+    <div>
+        <SpokenEnglishConversation/>
     </div>
 
             <h2>Welcome to the AI-102 (Microsoft: Azure AI Engineer Associate) Exam Preparation.</h2>
