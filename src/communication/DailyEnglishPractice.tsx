@@ -317,7 +317,7 @@ function PhraseList({ items, numbered = false }: { items: string[]; numbered?: b
 }
 
 export default function DailyEnglishPractice() {
-  const [expandedSections, setExpandedSections] = useState<string[]>(["morning"]);
+  const [expandedSections, setExpandedSections] = useState<string[]>([""]);
   const [allExpanded, setAllExpanded] = useState(false);
   const [search, setSearch] = useState("");
   const [showRoutineStory, setShowRoutineStory] = useState(true);
