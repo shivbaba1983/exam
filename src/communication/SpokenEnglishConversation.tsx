@@ -1,7 +1,6 @@
 import { useMemo, useState } from "react";
 import transcript from "./spokenEngldocument.txt?raw";
 import "./SpokenEnglishConversation.scss";
-
 type Speaker = "David" | "Alice" | "Note" | "Other";
 type Line = { id: number; speaker: Speaker; text: string };
 

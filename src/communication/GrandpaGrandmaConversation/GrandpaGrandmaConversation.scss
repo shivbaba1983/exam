@@ -1,0 +1,231 @@
+
+.grandparents-conversation {
+  max-width: 900px;
+  margin: 24px auto;
+  padding: 24px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 18px;
+  color: #243247;
+  font-family: Arial, Helvetica, sans-serif;
+
+  .conversation-header {
+    padding: 28px 18px;
+    text-align: center;
+    background: linear-gradient(135deg, #e0f2fe, #f3e8ff);
+    border-radius: 14px;
+
+    .conversation-icon {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 36px;
+    }
+
+    h2 {
+      margin: 0;
+      color: #253858;
+      font-size: 27px;
+    }
+
+    p {
+      margin: 10px 0;
+      color: #52647a;
+      font-size: 15px;
+    }
+
+    .conversation-tag {
+      display: inline-block;
+      margin-top: 5px;
+      padding: 7px 13px;
+      color: #51418a;
+      background: #ffffff;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 600;
+    }
+  }
+
+  .conversation-controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 20px 0 14px;
+
+    .speaker-toggle {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 14px;
+      border: 1px solid #dbe3ed;
+      border-radius: 9px;
+      cursor: pointer;
+      font-size: 14px;
+      font-weight: 600;
+
+      input {
+        width: 16px;
+        height: 16px;
+        cursor: pointer;
+      }
+    }
+
+    .grandpa-toggle {
+      color: #1d4ed8;
+      background: #eff6ff;
+    }
+
+    .grandma-toggle {
+      color: #a21caf;
+      background: #fdf4ff;
+    }
+  }
+
+  .conversation-summary {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 20px;
+
+    span {
+      padding: 7px 11px;
+      color: #475569;
+      background: #e9eef5;
+      border-radius: 20px;
+      font-size: 12px;
+    }
+  }
+
+  .conversation-messages {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .conversation-message {
+    display: flex;
+    align-items: flex-start;
+    gap: 11px;
+    max-width: 88%;
+
+    .speaker-avatar {
+      display: flex;
+      flex: 0 0 38px;
+      align-items: center;
+      justify-content: center;
+      width: 38px;
+      height: 38px;
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 50%;
+      font-size: 22px;
+    }
+
+    .message-content {
+      padding: 12px 15px;
+      border-radius: 4px 13px 13px 13px;
+
+      .speaker-name {
+        display: block;
+        margin-bottom: 5px;
+        font-size: 12px;
+        font-weight: 700;
+      }
+
+      p {
+        margin: 0;
+        font-size: 15px;
+        line-height: 1.65;
+        overflow-wrap: anywhere;
+      }
+    }
+  }
+
+  .message-grandpa {
+    align-self: flex-start;
+
+    .message-content {
+      background: #dbeafe;
+      border: 1px solid #bfdbfe;
+
+      .speaker-name {
+        color: #1d4ed8;
+      }
+    }
+  }
+
+  .message-grandma {
+    align-self: flex-end;
+    flex-direction: row-reverse;
+
+    .message-content {
+      background: #fae8ff;
+      border: 1px solid #f5d0fe;
+      border-radius: 13px 4px 13px 13px;
+
+      .speaker-name {
+        color: #a21caf;
+      }
+    }
+  }
+
+  .conversation-footer {
+    margin-top: 26px;
+    padding: 18px;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+
+    strong {
+      color: #334155;
+      font-size: 14px;
+    }
+
+    p {
+      margin: 7px 0 12px;
+      color: #64748b;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    span {
+      color: #64748b;
+      font-size: 12px;
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .grandparents-conversation {
+    margin: 10px;
+    padding: 14px;
+    border-radius: 12px;
+
+    .conversation-header {
+      padding: 22px 12px;
+
+      h2 {
+        font-size: 22px;
+      }
+    }
+
+    .conversation-message {
+      max-width: 96%;
+      gap: 7px;
+
+      .speaker-avatar {
+        flex-basis: 32px;
+        width: 32px;
+        height: 32px;
+        font-size: 19px;
+      }
+
+      .message-content {
+        padding: 10px 12px;
+
+        p {
+          font-size: 14px;
+        }
+      }
+    }
+  }
+}
