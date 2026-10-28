@@ -3,10 +3,27 @@ import React, { useState } from 'react';
 import DailyEnglishPractice from './DailyEnglishPractice';
 import SpokenEnglishConversation from './SpokenEnglishConversation';
 import GrandpaGrandmaConversation from './GrandpaGrandmaConversation/GrandpaGrandmaConversation';
+import ThinkWalkTalkEnglish from './ThinkWalkTalkEnglish/ThinkWalkTalkEnglish';
 import './EnglishDashboard.scss';
 
+type NavigationItem = {
+    id: string;
+    label: string;
+    icon: string;
+};
+
+const navigationItems: NavigationItem[] = [
+    { id: 'tips', label: 'Tips', icon: '💡' },
+    { id: 'conversation', label: 'Conversation', icon: '💬' },
+    { id: 'thinkEnglish', label: 'Think English', icon: '🧠' },
+
+    // Add future navigation items here.
+    // { id: 'vocabulary', label: 'Vocabulary', icon: '📚' },
+    // { id: 'listening', label: 'Listening', icon: '🎧' },
+];
+
 const EnglishDashboard: React.FC = () => {
-    const [activeTab, setActiveTab] = useState<'tips' | 'conversation'>('tips');
+    const [activeTab, setActiveTab] = useState('tips');
 
     const [expandedSection, setExpandedSection] = useState<
         'dayBeginning' | 'grandparents' | null
@@ -15,47 +32,27 @@ const EnglishDashboard: React.FC = () => {
     const toggleSection = (
         section: 'dayBeginning' | 'grandparents'
     ) => {
-        setExpandedSection((currentSection) =>
-            currentSection === section ? null : section
+        setExpandedSection((current) =>
+            current === section ? null : section
         );
     };
 
-    return (
-        <div className="english-dashboard">
-            <div className="english-dashboard__buttons">
-                <button
-                    type="button"
-                    className={`english-dashboard__button ${
-                        activeTab === 'tips' ? 'active' : ''
-                    }`}
-                    onClick={() => setActiveTab('tips')}
-                >
-                    Tips
-                </button>
+    const renderContent = () => {
+        switch (activeTab) {
+            case 'tips':
+                return <DailyEnglishPractice />;
 
-                <button
-                    type="button"
-                    className={`english-dashboard__button ${
-                        activeTab === 'conversation' ? 'active' : ''
-                    }`}
-                    onClick={() => setActiveTab('conversation')}
-                >
-                    Conversation
-                </button>
-            </div>
-
-            <div className="english-dashboard__content">
-                {activeTab === 'tips' && <DailyEnglishPractice />}
-
-                {activeTab === 'conversation' && (
+            case 'conversation':
+                return (
                     <div className="english-dashboard__sections">
-                        {/* Day Beginning Conversation */}
                         <section className="english-section">
                             <button
                                 type="button"
                                 className="english-section__header"
                                 onClick={() => toggleSection('dayBeginning')}
-                                aria-expanded={expandedSection === 'dayBeginning'}
+                                aria-expanded={
+                                    expandedSection === 'dayBeginning'
+                                }
                             >
                                 <span className="english-section__title">
                                     <span className="english-section__icon">
@@ -78,13 +75,14 @@ const EnglishDashboard: React.FC = () => {
                             )}
                         </section>
 
-                        {/* Grandpa & Grandma Conversation */}
                         <section className="english-section">
                             <button
                                 type="button"
                                 className="english-section__header grandparents-header"
                                 onClick={() => toggleSection('grandparents')}
-                                aria-expanded={expandedSection === 'grandparents'}
+                                aria-expanded={
+                                    expandedSection === 'grandparents'
+                                }
                             >
                                 <span className="english-section__title">
                                     <span className="english-section__icon">
@@ -107,8 +105,62 @@ const EnglishDashboard: React.FC = () => {
                             )}
                         </section>
                     </div>
-                )}
-            </div>
+                );
+
+            case 'thinkEnglish':
+                return <ThinkWalkTalkEnglish />;
+
+            default:
+                return (
+                    <div className="english-dashboard__placeholder">
+                        <h3>Coming Soon</h3>
+                        <p>This learning section will be available soon.</p>
+                    </div>
+                );
+        }
+    };
+
+    return (
+        <div className="english-dashboard">
+            <nav
+                className="english-dashboard__nav"
+                aria-label="English learning navigation"
+            >
+                <div
+                    className="english-dashboard__buttons"
+                    role="tablist"
+                    aria-label="Learning sections"
+                >
+                    {navigationItems.map((item) => (
+                        <button
+                            key={item.id}
+                            type="button"
+                            role="tab"
+                            id={`english-tab-${item.id}`}
+                            aria-selected={activeTab === item.id}
+                            aria-controls="english-tab-panel"
+                            className={`english-dashboard__button ${
+                                activeTab === item.id ? 'active' : ''
+                            }`}
+                            onClick={() => setActiveTab(item.id)}
+                        >
+                            <span className="english-dashboard__button-icon">
+                                {item.icon}
+                            </span>
+                            <span>{item.label}</span>
+                        </button>
+                    ))}
+                </div>
+            </nav>
+
+            <main
+                className="english-dashboard__content"
+                id="english-tab-panel"
+                role="tabpanel"
+                aria-labelledby={`english-tab-${activeTab}`}
+            >
+                {renderContent()}
+            </main>
         </div>
     );
 };
